@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2015/10/23 17:23:47 by syusof           ###   ########.fr       */
+/*   Updated: 2015/10/23 20:12:33 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,13 @@ int main(int ac,char **av)
 		printf("%s\n",getgrgid(sb.st_gid)->gr_name);
 		printf("%lld\n",sb.st_size);
 		printf("%lld\n",sb.st_size);
-		printf("%s\n",ctime(&(sb.st_ctime)));
+//		printf("%s\n",ctime(&(sb.st_ctime)));
+
+		printf("%d\n",(localtime(&(sb.st_ctime)))->tm_mon);
+		printf("%d\n",(localtime(&(sb.st_ctime)))->tm_mday);
+		printf("%d\n",(localtime(&(sb.st_ctime)))->tm_hour);
+		printf("%d\n",(localtime(&(sb.st_ctime)))->tm_min);
+		printf("%d\n",(localtime(&(sb.st_ctime)))->tm_year);
 	}
 
 	/*
