@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2015/10/22 20:05:58 by syusof           ###   ########.fr       */
+/*   Updated: 2015/10/23 16:54:29 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@
 # include <sys/types.h>
 # include <sys/stat.h>
 # include <unistd.h>
+# include <pwd.h>
+# include <grp.h>
+# include <time.h>
 
 
 typedef struct		s_lst
