@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2015/11/04 16:02:15 by syusof           ###   ########.fr       */
+/*   Updated: 2015/11/04 19:36:34 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ int main(int ac,char **av)
 	t_lst			*lstmp;
 	t_lst			*lsta;
 
+	lsta = NULL;
+	lstmp = NULL;
+
 	ac = 0;
 	pdir1 = opendir(".");
 
@@ -35,11 +38,12 @@ int main(int ac,char **av)
 			return (0);
 		e->name = pdirent1->d_name;
 		lstmp = create_lst(e);
+
 		lst_add(&lsta, &lstmp);
 
-		ft_sort(&lsta);
 
 	}
+	ft_sort(&lsta);
 	closedir(pdir1);
 	
 	if(av[1])
