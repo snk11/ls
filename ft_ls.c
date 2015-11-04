@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2015/11/04 14:55:56 by syusof           ###   ########.fr       */
+/*   Updated: 2015/11/04 16:02:15 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@ int main(int ac,char **av)
 	struct dirent	*pdirent1;
 	DIR				*pdir1;
 	struct stat		sb;
+	t_name			*e;
+	t_lst			*lstmp;
+	t_lst			*lsta;
 
 	ac = 0;
 	pdir1 = opendir(".");
@@ -27,6 +30,15 @@ int main(int ac,char **av)
 	{
 		if ((strncmp(pdirent1->d_name,".",1)) && (strncmp(pdirent1->d_name,"..",2)))
 			printf("%s\n",pdirent1->d_name);
+		
+		if (!(e = (t_name*)malloc(sizeof(t_name))))
+			return (0);
+		e->name = pdirent1->d_name;
+		lstmp = create_lst(e);
+		lst_add(&lsta, &lstmp);
+
+		ft_sort(&lsta);
+
 	}
 	closedir(pdir1);
 	
