@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2015/11/04 00:19:08 by syusof           ###   ########.fr       */
+/*   Updated: 2015/11/04 14:55:56 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ int main(int ac,char **av)
 
 	while ((pdirent1 = readdir(pdir1)))
 	{
-		printf("%s\n",pdirent1->d_name);
+		if ((strncmp(pdirent1->d_name,".",1)) && (strncmp(pdirent1->d_name,"..",2)))
+			printf("%s\n",pdirent1->d_name);
 	}
 	closedir(pdir1);
 	
