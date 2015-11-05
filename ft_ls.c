@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2015/11/04 19:36:34 by syusof           ###   ########.fr       */
+/*   Updated: 2015/11/05 11:21:38 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ int main(int ac,char **av)
 			printf("%d\n",(localtime(&(sb.st_ctime)))->tm_hour);
 			printf("%d\n",(localtime(&(sb.st_ctime)))->tm_min);
 			printf("%d\n",(localtime(&(sb.st_ctime)))->tm_year);
+
 		}
 	}
 
