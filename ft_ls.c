@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2015/11/05 11:21:38 by syusof           ###   ########.fr       */
+/*   Updated: 2015/11/12 14:27:36 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ int main(int ac,char **av)
 
 	while ((pdirent1 = readdir(pdir1)))
 	{
-		if ((strncmp(pdirent1->d_name,".",1)) && (strncmp(pdirent1->d_name,"..",2)))
-			printf("%s\n",pdirent1->d_name);
+//		if ((strncmp(pdirent1->d_name,".",1)) && (strncmp(pdirent1->d_name,"..",2)))
+//			printf("%s\n",pdirent1->d_name);
 		
 		if (!(e = (t_name*)malloc(sizeof(t_name))))
 			return (0);
@@ -44,6 +44,12 @@ int main(int ac,char **av)
 
 	}
 	ft_sort(&lsta);
+	lstmp = lsta;
+	while (lstmp)
+	{
+		printf("%s\n",((t_name*)((lstmp))->content)->name);
+		lstmp = lstmp->next;
+	}
 	closedir(pdir1);
 	
 	if(av[1])

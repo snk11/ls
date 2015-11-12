@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 16:06:31 by syusof            #+#    #+#             */
-/*   Updated: 2015/11/04 19:38:52 by syusof           ###   ########.fr       */
+/*   Updated: 2015/11/12 14:00:02 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void		ft_sort(t_lst **lsta)
 			}
 			lstmp = (*lsta)->next;
 		}
-		while(lstmp->next)
+		while(lstmp && lstmp->next)
 		{
 			if (ft_strcmp(((t_name*)(lstmp)->content)->name,((t_name*)((lstmp)->next)->content)->name) > 0)
 			{
