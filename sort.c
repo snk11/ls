@@ -6,12 +6,13 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 16:06:31 by syusof            #+#    #+#             */
-/*   Updated: 2015/11/13 03:22:56 by syusof           ###   ########.fr       */
+/*   Updated: 2015/11/13 05:55:28 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "ft_ls.h"
 
+/*
 void	swap(t_lst **lsta)
 {
 	t_lst	*lstmp;
@@ -21,11 +22,11 @@ void	swap(t_lst **lsta)
 	{
 		lstmp = (*lsta)->next;
 		(*lsta)->next = (*lsta)->next->next;
-		lst_add(lsta, &lstmp);
+		lst_add1(lsta, &lstmp);
 		lstmp = NULL;
 	}
 }
-/*
+
 void		ft_sort(t_lst **lsta)
 {
 	int		w = 1;

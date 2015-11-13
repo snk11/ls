@@ -6,13 +6,14 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 18:32:04 by syusof            #+#    #+#             */
-/*   Updated: 2015/10/08 15:43:47 by syusof           ###   ########.fr       */
+/*   Updated: 2015/11/13 06:22:23 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "push_swap.h"
 
 #include <stdio.h>
+
 void		lst_add(t_lst **toplist, t_lst **t_lst1)
 {
 

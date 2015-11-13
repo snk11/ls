@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2015/11/13 03:39:40 by syusof           ###   ########.fr       */
+/*   Updated: 2015/11/13 06:24:14 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ typedef struct		s_lst
 	struct s_lst	*next;
 }					t_lst;
 */
+
 typedef struct		s_name
 {
 	char			*name;
@@ -48,9 +49,9 @@ typedef struct		s_stat
 }					t_stat;
 
 
-void		lst_add(t_lst **toplist, t_lst **t_lst1);
-t_lst		*create_lst(void *content);
-void	swap(t_lst **lsta);
-void		ft_sort(t_lst **lsta);
+//void		lst_add1(t_lst **toplist, t_lst **t_lst1);
+//t_lst		*create_lst1(void *content);
+//void	swap(t_lst **lsta);
+//void		ft_sort(t_lst **lsta);
 
 # endif

@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2015/11/13 04:50:58 by syusof           ###   ########.fr       */
+/*   Updated: 2015/11/13 06:29:59 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,17 @@
 
 # include <stdlib.h>
 
-# include "libft/libft.h"
+# include "../libft/libft.h"
 # include "../ft_ls.h"
 
+/*
 typedef struct			s_lst
 {
 	void				*content;
 	struct s_lst		*next;
 }						t_lst;
+*/
+
 
 typedef struct			s_numb
 {
@@ -30,6 +33,7 @@ typedef struct			s_numb
 }						t_numb;
 
 void		lst_add(t_lst **toplist, t_lst **t_lst1);
+void		push_swap(t_lst **lsta);
 void		lst_add_del(t_lst **toplist, t_lst **t_lst1);
 t_lst		*create_lst(void *content);
 void	push(t_lst **lstb, t_lst **lsta);

@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/04 13:00:41 by syusof            #+#    #+#             */
-/*   Updated: 2015/05/16 13:33:36 by syusof           ###   ########.fr       */
+/*   Updated: 2015/11/13 06:23:53 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,27 @@
 # include <fcntl.h>
 # include <limits.h>
 
+typedef struct		s_lst
+{
+	void			*content;
+	struct s_lst	*next;
+}					t_lst;
+
+/*
 typedef struct		s_list
 {
 	void			*content;
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
+*/
 
-void				ft_lstadd(t_list **alst, t_list *new);
-void				ft_lstdel(t_list **alst, void (*del)(void*, size_t));
-t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
-void				ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
-void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
-t_list				*ft_lstnew(void const *content, size_t content_size);
+//void				ft_lstadd(t_list **alst, t_list *new);
+//void				ft_lstdel(t_list **alst, void (*del)(void*, size_t));
+//t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+//void				ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
+//void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+//t_list				*ft_lstnew(void const *content, size_t content_size);
 size_t				ft_strlen(const char *s);
 char				*ft_strcpy(char *s1, const char *s2);
 char				*ft_strdup(const char *str);

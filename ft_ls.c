@@ -6,11 +6,12 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2015/11/13 03:38:22 by syusof           ###   ########.fr       */
+/*   Updated: 2015/11/13 06:33:55 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "ft_ls.h"
+# include "push_swap/push_swap.h"
 
 
 int main(int ac,char **av)
