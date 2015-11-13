@@ -6,7 +6,7 @@
 #    By: syusof <syusof@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/10/15 21:10:44 by syusof            #+#    #+#              #
-#    Updated: 2015/11/13 06:32:07 by syusof           ###   ########.fr        #
+#    Updated: 2015/11/13 06:36:33 by syusof           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ $(NAME):
 	make -C libft/ re
 	make -C push_swap/ re
 	gcc $(FLAGS) $(SRCS)
-	gcc -o $(NAME) $(OFILES)  -L libft/ -lft
+	gcc -o $(NAME) $(OFILES) push_swap/*.o -L libft/ -lft
 
 clean:
 	rm -f $(OFILES)
