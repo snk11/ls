@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/15 21:14:19 by syusof            #+#    #+#             */
-/*   Updated: 2015/10/08 14:28:30 by syusof           ###   ########.fr       */
+/*   Updated: 2015/11/13 04:56:39 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -35,7 +35,8 @@ int		get_index(t_lst **lstmp, int nbelemc)
 	int index;
 
 	index = 0;
-	while (((t_numb*)(*lstmp)->content)->val < ((t_numb*)((*lstmp)->next)->content)->val && (index < nbelemc - 1))
+
+		while(ft_strcmp(((t_name*)(*lstmp)->content)->name,((t_name*)((*lstmp)->next)->content)->name) > 0 && (index < nbelemc - 1))
 	{
 		index++;
 		if (((*lstmp)->next)->next)
@@ -76,7 +77,8 @@ void		ft_sort(t_lst **lsta)
 
 	if ((*lsta)->next)
 	{
-		if (((t_numb*)(*lsta)->content)->val > ((t_numb*)((*lsta)->next)->content)->val)
+
+		if (ft_strcmp(((t_name*)(*lsta)->content)->name,((t_name*)((*lsta)->next)->content)->name) > 0)
 			swap(lsta);
 	}
 
@@ -94,9 +96,10 @@ void		ft_sort(t_lst **lsta)
 			index = get_index(&lstmp,nbelemc);
 			printf("index = %d\n", index);
 			if (lstb)
-				printf("lstb = %d\n",((t_numb*)(lstmp)->content)->val);
+				printf("lstb = %s\n",((t_name*)(lstmp)->content)->name);
 		}
-		if (((t_numb*)lstmp->content)->val > ((t_numb*)(lstmp->next)->content)->val || index2 > 0)
+
+		if (ft_strcmp(((t_name*)(lstmp)->content)->name,((t_name*)((lstmp)->next)->content)->name) > 0 || index2 > 0)
 		{
 			printf("A\n");
 			if (lstb == NULL)
@@ -124,20 +127,20 @@ void		ft_sort(t_lst **lsta)
 			}
 			if ((*lsta)->next)
 			{
-				if (((t_numb*)(*lsta)->content)->val > ((t_numb*)((*lsta)->next)->content)->val)
+				if (ft_strcmp(((t_name*)(*lsta)->content)->name,((t_name*)((*lsta)->next)->content)->name) > 0)
 					swap(lsta);
 			}
 		}
 		lstmp = *lsta;
 		if ((lstmp)->next)
 		{
-			printf("lsta: %d\n",((t_numb*)(lstmp)->content)->val);
+			printf("lsta: %s\n",((t_name*)(lstmp)->content)->name);
 			while ((lstmp->next)->next)
 			{
-				printf("lsta: %d\n",((t_numb*)(lstmp->next)->content)->val);
+				printf("lsta: %s\n",((t_name*)(lstmp->next)->content)->name);
 				lstmp = lstmp->next;
 			}
-			printf("lsta: %d\n",((t_numb*)(lstmp->next)->content)->val);
+			printf("lsta: %s\n",((t_name*)(lstmp->next)->content)->name);
 		}
 
 	}

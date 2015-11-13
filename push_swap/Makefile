@@ -6,7 +6,7 @@
 #    By: syusof <syusof@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/05/31 19:17:09 by syusof            #+#    #+#              #
-#    Updated: 2015/06/12 20:51:48 by syusof           ###   ########.fr        #
+#    Updated: 2015/11/13 04:59:25 by syusof           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,10 +17,6 @@ SRCS = *.c
 OFILES = $(SRCS:.c=.o)
 
 FLAGS = -I libft/includes/ -c
-
-MAIN = push_swap.c
-
-OMAIN = $(MAIN:.c=.o)
 
 all: $(NAME)
 
