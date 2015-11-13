@@ -6,7 +6,7 @@
 #    By: syusof <syusof@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/10/15 21:10:44 by syusof            #+#    #+#              #
-#    Updated: 2015/10/15 21:11:23 by syusof           ###   ########.fr        #
+#    Updated: 2015/11/13 03:27:09 by syusof           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCS = *.c
 
 OFILES = $(SRCS:.c=.o)
 
-FLAGS = -I libft/includes/ -c
+FLAGS = -I libft/includes/ push_swap/includes -c
 
 MAIN = ft_ls.c
 

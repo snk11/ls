@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2015/11/04 17:43:24 by syusof           ###   ########.fr       */
+/*   Updated: 2015/11/13 03:39:40 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,15 @@
 # include <pwd.h>
 # include <grp.h>
 # include <time.h>
+# include "push_swap/push_swap.h"
 
-
+/*
 typedef struct		s_lst
 {
 	void			*content;
 	struct s_lst	*next;
 }					t_lst;
-
+*/
 typedef struct		s_name
 {
 	char			*name;
