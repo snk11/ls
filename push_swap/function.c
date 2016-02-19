@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 18:32:04 by syusof            #+#    #+#             */
-/*   Updated: 2016/02/19 09:50:47 by syusof           ###   ########.fr       */
+/*   Updated: 2016/02/19 10:55:00 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ void		lst_add(t_lst **toplist, t_lst **t_lst1)
 		lstmp->next = *toplist;
 		*toplist = lstmp;
 	}
-		*t_lst1 = (*t_lst1)->next;
-//		*t_lst1 = NULL;
+
+		*t_lst1 = (*t_lst1)->next;//pour changer l autre tete de liste lors du push a vers b
 }
 
 void		lst_add_del(t_lst **toplist, t_lst **t_lst1)
