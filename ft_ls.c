@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/02/20 09:52:44 by syusof           ###   ########.fr       */
+/*   Updated: 2016/02/20 10:35:53 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ int main(int ac,char **av)
 	lstmp = NULL;
 	lstmp2 = NULL;
 
-	ac = 0;
 	pdir1 = opendir(".");
 
 
@@ -66,31 +65,48 @@ int main(int ac,char **av)
 	{
 		if (strcmp(av[1], "-1") >= 0)
 		{
-			i = 2;
-			while (av[i])
+			if(ac > 2)
 			{
-				if (!(e2 = (t_name*)malloc(sizeof(t_name))))
-					return (0);
-				e2->name = ft_strsub(av[i],0,ft_strlen(av[i]));
-				lstmp2 = create_lst(e2);
-				lst_add(&lstb, &lstmp2);
-				i++;
-			}
-			lstmp2 = lstb;
-			while (lstmp)
-			{
-				while (lstmp2)
+				i = 2;
+				while (av[i])
 				{
-					if ( (((t_name*)(lstmp)->content)->name)[0] != '.' && strcmp((((t_name*)((lstmp))->content)->name),((t_name*)(lstmp2)->content)->name) == 0)
-					{
-						printf("%s:\n",((t_name*)(lstmp2)->content)->name);
-						if (lstmp2->next)
-							printf("\n");
-					}
-					lstmp2 = lstmp2->next;
+					if (!(e2 = (t_name*)malloc(sizeof(t_name))))
+						return (0);
+					e2->name = ft_strsub(av[i],0,ft_strlen(av[i]));
+					lstmp2 = create_lst(e2);
+					lst_add(&lstb, &lstmp2);
+					i++;
 				}
+				push_swap(&lstb);
 				lstmp2 = lstb;
-				lstmp = lstmp->next;
+				while (lstmp)
+				{
+					while (lstmp2)
+					{
+						if ( (((t_name*)(lstmp)->content)->name)[0] != '.' && strcmp((((t_name*)((lstmp))->content)->name),((t_name*)(lstmp2)->content)->name) == 0)
+						{
+							ft_putstr(((t_name*)(lstmp2)->content)->name);
+							ft_putstr(":\n");
+							if (lstmp2->next)
+								ft_putstr("\n");
+						}
+						lstmp2 = lstmp2->next;
+					}
+					lstmp2 = lstb;
+					lstmp = lstmp->next;
+				}
+			}
+			else
+			{
+				while (lstmp)
+				{
+					if ( (((t_name*)(lstmp)->content)->name)[0] != '.')
+					{
+						ft_putstr(((t_name*)((lstmp))->content)->name);
+						ft_putstr("\n");
+					}
+					lstmp = lstmp->next;
+				}
 			}
 		}
 /*
