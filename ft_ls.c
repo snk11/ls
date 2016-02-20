@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/02/20 10:35:53 by syusof           ###   ########.fr       */
+/*   Updated: 2016/02/20 12:50:22 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,38 +32,15 @@ int main(int ac,char **av)
 	lstmp = NULL;
 	lstmp2 = NULL;
 
-	pdir1 = opendir(".");
 
 
-	while ((pdirent1 = readdir(pdir1)))
-	{
-//		if ((strncmp(pdirent1->d_name,".",1)) && (strncmp(pdirent1->d_name,"..",2)))
-//			printf("%s\n",pdirent1->d_name);
-		
-		if (!(e = (t_name*)malloc(sizeof(t_name))))
-			return (0);
-		e->name = pdirent1->d_name;
-		lstmp = create_lst(e);
-
-		lst_add(&lsta, &lstmp);
-
-
-	}
-	push_swap(&lsta);
-	lstmp = lsta;
-	while (lstmp)
-	{
-//		printf("%s\n",((t_name*)((lstmp))->content)->name);
-		lstmp = lstmp->next;
-	}
-	closedir(pdir1);
-
-	lstmp = lsta;
+	lsta = ft_getreplist(".");
 	
+	lstmp = lsta;
 	if(av[1])
 //	if (strncmp(av[1], "-l",ft_strlen(av[1])))
 	{
-		if (strcmp(av[1], "-1") >= 0)
+		if (strcmp(av[1], "-1") == 0)
 		{
 			if(ac > 2)
 			{
@@ -98,15 +75,27 @@ int main(int ac,char **av)
 			}
 			else
 			{
-				while (lstmp)
-				{
-					if ( (((t_name*)(lstmp)->content)->name)[0] != '.')
-					{
-						ft_putstr(((t_name*)((lstmp))->content)->name);
-						ft_putstr("\n");
-					}
-					lstmp = lstmp->next;
-				}
+				ft_printlist(lstmp);
+			}
+		}
+		else if (strcmp(av[1], "-1R") == 0)
+		{
+			int level = 0;
+
+			level = ft_countlevel(lstmp);
+			printf("level = %d\n",level);
+//			while(lstmp)
+//			{
+//				stat(lstmp, &sb);
+
+//			}
+//			ft_printlist(lstmp);
+			while(lstmp)
+			{
+//				stat(lstmp, &sb);
+//				if(S_ISDIR(sb.st_mode))
+//					lstmp2 = ft_getreplist(lstmp);
+				lstmp = lstmp->next;
 			}
 		}
 /*

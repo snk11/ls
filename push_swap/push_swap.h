@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/02/20 08:58:27 by syusof           ###   ########.fr       */
+/*   Updated: 2016/02/20 11:39:14 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 //# include "../libft/libft.h"
 # include "../ft_ls.h"
 
+/*
 typedef struct			s_lst
 {
 	void				*content;
 	struct s_lst		*next;
 }						t_lst;
-
 
 typedef struct			s_numb
 {
@@ -40,5 +40,6 @@ void	reverse(t_lst **lsta);
 void	rotate(t_lst **lsta);
 void		ft_sort(t_lst **lsta);
 void	swap(t_lst **lsta);
+*/
 
 #endif

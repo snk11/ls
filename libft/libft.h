@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/04 13:00:41 by syusof            #+#    #+#             */
-/*   Updated: 2016/02/20 08:59:50 by syusof           ###   ########.fr       */
+/*   Updated: 2016/02/20 11:18:09 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 # include <sys/uio.h>
 # include <fcntl.h>
 # include <limits.h>
-# include "../ft_ls.h"
 
 /*
 typedef struct		s_lst

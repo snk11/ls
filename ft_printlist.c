@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_printlist.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
+/*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/05 15:03:37 by syusof            #+#    #+#             */
-/*   Updated: 2016/02/20 11:23:36 by syusof           ###   ########.fr       */
+/*   Created: 2016/02/20 11:46:17 by syusof            #+#    #+#             */
+/*   Updated: 2016/02/20 11:57:01 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+# include "ft_ls.h"
 
-char	*ft_strnew(size_t size)
+void	ft_printlist(t_lst *lstmp)
 {
-	char		*str;
-	size_t		i;
-
-	if ((str = (char*)malloc(sizeof(char) * size)))
+	while (lstmp)
 	{
-		i = 0;
-		while (i <= size)
+		if ( (((t_name*)(lstmp)->content)->name)[0] != '.')
 		{
-			str[i] = 0;
-			i++;
+			ft_putstr(((t_name*)((lstmp))->content)->name);
+			ft_putstr("\n");
 		}
-		return (str);
+		lstmp = lstmp->next;
 	}
-	return (NULL);
 }
