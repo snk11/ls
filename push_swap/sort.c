@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/15 21:14:19 by syusof            #+#    #+#             */
-/*   Updated: 2016/02/19 10:56:09 by syusof           ###   ########.fr       */
+/*   Updated: 2016/02/20 08:58:15 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -29,7 +29,6 @@ int		ft_comptelem(t_lst *lsta)
 	return (nb - 1);
 }
 
-#include <stdio.h>
 int		get_index(t_lst **lstmp, int nbelemc)
 {
 	int index;

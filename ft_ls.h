@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2015/11/13 06:24:14 by syusof           ###   ########.fr       */
+/*   Updated: 2016/02/20 08:39:28 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ typedef struct		s_name
 {
 	char			*name;
 }					t_name;
-
 
 
 typedef struct		s_stat

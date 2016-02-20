@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2015/11/13 06:29:59 by syusof           ###   ########.fr       */
+/*   Updated: 2016/02/20 08:58:27 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,14 @@
 
 # include <stdlib.h>
 
-# include "../libft/libft.h"
+//# include "../libft/libft.h"
 # include "../ft_ls.h"
 
-/*
 typedef struct			s_lst
 {
 	void				*content;
 	struct s_lst		*next;
 }						t_lst;
-*/
 
 
 typedef struct			s_numb
