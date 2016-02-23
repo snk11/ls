@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/02/20 14:44:07 by syusof           ###   ########.fr       */
+/*   Updated: 2016/02/23 21:32:25 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ int main(int ac,char **av)
 	t_lst			*lsta;
 	t_lst			*lstb;
 	int i;
+	int ind1;
+	int indp;
 
 	lsta = NULL;
 	lstb = NULL;
@@ -82,21 +84,39 @@ int main(int ac,char **av)
 		{
 			int level = 0;
 
-			level = ft_countlevel(lstmp);
-			printf("level = %d\n",level);
+//			level = ft_countlevel(lstmp);
+//			printf("level = %d\n",level);
 //			while(lstmp)
 //			{
 //				stat(lstmp, &sb);
 
 //			}
-//			ft_printlist(lstmp);
-//			while(lstmp)
-//			{
-//				stat(lstmp, &sb);
-//				if(S_ISDIR(sb.st_mode))
-//					lstmp2 = ft_getreplist(lstmp);
-//				lstmp = lstmp->next;
-//			}
+			ft_printlist(lstmp);
+			ind1 = 0;
+			indp = 0;
+			while(ind1 == 0)
+			{
+				if (indp == 0)
+				{
+					stat(((t_name*)(lstmp)->content)->name,&sb);
+					if(S_ISDIR(sb.st_mode))
+						lst_add1(&lstb,&lstmp);
+					lstmp = lstmp->next;
+					if (!lstmp)
+						indp = 1;
+				}
+				else if (lstb)
+				{
+					stat(((t_name*)(lstb)->content)->name,&sb);
+					if(S_ISDIR(sb.st_mode))
+						lst_add1(&lstmp,&lstb);
+					lstb = lstb->next;
+					if (!lstb)
+						indp = 0;
+				}
+				if (!lstmp && !lstb)
+					ind1 = 1;
+			}
 		}
 /*
 		stat(av[1], &sb);

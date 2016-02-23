@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/02/20 12:41:21 by syusof           ###   ########.fr       */
+/*   Updated: 2016/02/23 21:06:34 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	swap(t_lst **lsta);
 t_lst *ft_getreplist(char *rep);
 void	ft_printlist(t_lst *lstmp);
 int		ft_countlevel(t_lst *lstmp);
-//void		lst_add1(t_lst **toplist, t_lst **t_lst1);
+void		lst_add1(t_lst **toplist, t_lst **t_lst1);
 //t_lst		*create_lst1(void *content);
 //void	swap(t_lst **lsta);
 //void		ft_sort(t_lst **lsta);
