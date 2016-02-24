@@ -6,19 +6,19 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 15:43:19 by syusof            #+#    #+#             */
-/*   Updated: 2016/02/23 21:22:46 by syusof           ###   ########.fr       */
+/*   Updated: 2016/02/24 07:57:44 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "ft_ls.h"
 
-void		lst_add1(t_lst **toplist, t_lst **t_lst1)
+void		lst_add1(t_lst **toplist, t_lst *t_lst1)
 {
 
 	t_lst		*lstmp;
 
 	lstmp = NULL;
-	lstmp = create_lst((*t_lst1)->content);
+	lstmp = create_lst((t_lst1)->content);
 	if (*toplist == NULL)
 	{
 		*toplist = lstmp;
@@ -28,7 +28,24 @@ void		lst_add1(t_lst **toplist, t_lst **t_lst1)
 		lstmp->next = *toplist;
 		*toplist = lstmp;
 	}
-//		*t_lst1 = (*t_lst1)->next;
+	//		*t_lst1 = (*t_lst1)->next;
+}
+
+void	ft_push1stback(t_lst **lstmp)
+{
+	t_lst	*lst;
+
+	lst = NULL;
+	lst = *lstmp;
+	while (lst->next)
+	{
+		lst = lst->next;
+	}
+	lst->next = create_lst((*lstmp)->content);
+	*lstmp = (*lstmp)->next;
+						ft_putstr("pushback = ");
+//						ft_putstr(((t_name*)(lst->next)->content)->name);
+						ft_putstr("\n");
 }
 
 
@@ -52,3 +69,5 @@ t_lst		*create_lst1(void *content)
 	curlst->next = NULL;
 	return (curlst);
 }
+
+
