@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/02/24 08:04:26 by syusof           ###   ########.fr       */
+/*   Updated: 2016/02/24 08:40:55 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -211,6 +211,12 @@ int main(int ac,char **av)
 						lstmp2 = create_lst(e3);
 						lst_add1(&lstval, lstmp2);
 						ft_push1stback(&lstval);
+						if (!(e4 = (t_name*)malloc(sizeof(t_name))))
+							return (0);
+						e4->name = strbuf1;
+						lstmp2 = create_lst(e4);
+						lst_add1(&lstname, lstmp2);
+						ft_push1stback(&lstname);
 //						ft_putstr(((t_name*)(lstmp3)->content)->name);
 //						ft_putstr("\n");
 						}

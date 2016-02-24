@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/24 04:29:57 by syusof            #+#    #+#             */
-/*   Updated: 2016/02/24 06:19:27 by syusof           ###   ########.fr       */
+/*   Updated: 2016/02/24 08:13:02 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ int		ft_countfiles(char *str)
 		lstmp3 = lstmp3->next;
 		ret++;
 	}
+	printf("ret = %d\n",ret);
 	return (ret);
 }
