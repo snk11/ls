@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/02/25 00:21:33 by syusof           ###   ########.fr       */
+/*   Updated: 2016/02/25 04:20:25 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int main(int ac,char **av)
 	t_lst			*lstname;
 	t_lst			*lstall;
 	int i;
+	int ret;
 	int ind0;
 	int ind1;
 	int indp;
@@ -41,9 +42,10 @@ int main(int ac,char **av)
 	char	*str1 = ".";
 	char	*strbuf;
 	char	*strbuf1;
-	char	*namerep;
+//	char	*namerep;
 	t_lst		*headlst;
 
+	ret = ft_countfiles("./libft");
 	lsta = NULL;
 	lstb = NULL;
 	lstmp = NULL;
@@ -53,12 +55,13 @@ int main(int ac,char **av)
 	strbuf1 = NULL;
 	lstname = NULL;
 	lstall = NULL;
-	namerep = NULL;
+//	namerep = NULL;
 	headlst = NULL;
 
 	ind0 = 0;
 	lsta = ft_getreplist(".");
 	
+
 	lstmp = lsta;
 	if(av[1])
 //	if (strncmp(av[1], "-l",ft_strlen(av[1])))
@@ -109,12 +112,14 @@ int main(int ac,char **av)
 			indrep = 0;
 			nbfiles = 0;
 			i = 0;
-						lstmp3 = lstmp;
+							
+							lstmp3 = lstmp;
 						while(lstmp3 && ((t_name*)(lstmp3)->content)->name[0] == '.')
 							lstmp3 = lstmp3->next;
 						if (!(e3 = (t_numb*)malloc(sizeof(t_numb))))
 							return (0);
 						e3->val = ft_countfiles(".");
+						e3->val = 21;
 						lstmp2 = create_lst(e3);
 						lst_add1(&lstval, lstmp2);
 						if (!(e4 = (t_name*)malloc(sizeof(t_name))))
@@ -122,7 +127,7 @@ int main(int ac,char **av)
 						e4->name = ".";
 						lstmp2 = create_lst(e4);
 						lst_add1(&lstname, lstmp2);
-						namerep = ((t_name*)(lstname)->content)->name;
+//						namerep = ((t_name*)(lstname)->content)->name;
 						nbfiles = ((t_numb*)(lstval->content))->val;
 						if (!(e5 = (t_head*)malloc(sizeof(t_head))))
 							return (0);
@@ -138,95 +143,124 @@ int main(int ac,char **av)
 						ft_putstr("\n");
 			while(ind1 == 0)
 			{
-				printf("-----------\n");
-						ft_putstr("0nbfiles=");
-						ft_putnbr(nbfiles);
-						ft_putstr("\n");
-						ft_putstr("0rep =");
-						namerep = ((t_name*)(lstname)->content)->name;
-						ft_putstr(namerep);
-						ft_putstr("\n");
-						namerep = ((t_name*)(lstname)->content)->name;
-						if (lstmp3 == 0)
-							printf("lstmp3\n");
+				ft_putstr("-----------\n");
+//						ft_putstr("0nbfiles=");
+//						ft_putnbr(nbfiles);
+//						ft_putstr("\n");
+//						ft_putstr("0rep =");
+//						namerep = ((t_name*)(lstname)->content)->name;
+//						ft_putstr(namerep);
+//						ft_putstr("\n");
+//						namerep = ((t_name*)(lstname)->content)->name;
+//						if (lstmp3 == 0)
+//							printf("lstmp3\n");
+//							printf("indrep = %d\n",indrep);
 //				if (indp == 0)
 				{
-						if (nbfiles == 0 && lstmp3 == 0 && lstname && lstname->next)
+						if (nbfiles == 0 && lstmp3 == 0)
 						{
-							printf("pppppppppppppppppp");
+							ft_putstr("pppppppppppppppppp\n");
 							lstname = lstname->next;
 //							namerep = ((t_name*)(lstname)->content)->name;
-							lstall = lstall->next;
-							headlst = ((t_head*)(lstall)->content)->lst;
-						ft_putstr("headlst =");
+							if(lstall && lstall->next)
+							{
+								lstall = lstall->next;
+								headlst = ((t_head*)(lstall)->content)->lst;
+							}
+							else 
+								headlst = 0;
+						ft_putstr("headlst22 =");
 						ft_putstr(((t_name*)(headlst)->content)->name);
 						ft_putstr("\n");
 							lstval = lstval->next;
 							nbfiles = ((t_numb*)(lstval->content))->val;
-						ft_putstr("1rep =");
-						ft_putstr(((t_name*)(lstname)->content)->name);
-						ft_putstr("\n");
-						ft_putstr("2nbfiles =");
-						ft_putnbr(((t_numb*)((lstval)->content))->val);
-						ft_putstr("\n");
-						ft_putstr("3lst =");
-						ft_putstr(((t_name*)(headlst)->content)->name);
-						ft_putstr("\n");
-							ft_addreplist(&lstmp3,headlst,&lstname,&lstval);
+//						ft_putstr("1rep =");
+//						ft_putstr(((t_name*)(lstname)->content)->name);
+//						ft_putstr("\n");
+//						ft_putstr("2nbfiles =");
+//						ft_putnbr(((t_numb*)((lstval)->content))->val);
+//						ft_putstr("\n");
+//						ft_putstr("3lst =");
+//						ft_putstr(((t_name*)(headlst)->content)->name);
+//						ft_putstr("\n");
+//							ft_addreplist(&lstmp3,headlst,&lstname,&lstval);
 							}
 						if (lstmp3)
-						{
-							while(lstmp3 && ((t_name*)(lstmp3)->content)->name[0] == '.')
+				{
+							while(lstmp3->next && ((t_name*)(lstmp3)->content)->name[0] == '.')
 								lstmp3 = lstmp3->next;
 							if (!(e3 = (t_numb*)malloc(sizeof(t_numb))))
 								return (0);
-							ft_putstr(((t_name*)(lstmp3)->content)->name);
-							ft_putstr("\n");
-							ft_putstr("rep prime =");
-							ft_putstr(namerep);
-							ft_putstr("\n");
-							ft_putstr("nbfiles =");
-							ft_putnbr(nbfiles);
-							ft_putstr("\n");
-							stat(((t_name*)(lstmp3)->content)->name,&sb);
-							strbuf = ((t_name*)(lstmp3)->content)->name;
+							if(lstmp3)
+							{
+								ft_putstr(((t_name*)(lstmp3)->content)->name);
+								ft_putstr("\n");
+								ft_putstr("rep prime =");
+								ft_putstr(((t_name*)(lstname)->content)->name);
+								ft_putstr("\n");
+								ft_putstr("nbfiles =");
+								ft_putnbr(nbfiles);
+								ft_putstr("\n");
+								stat(((t_name*)(lstmp3)->content)->name,&sb);
+								strbuf = ((t_name*)(lstmp3)->content)->name;
+							}
 						}
-					if( lstmp3 && S_ISDIR(sb.st_mode) && indrep == 0)
+					if( lstmp3 && S_ISDIR(sb.st_mode) && indrep == 0 && strbuf[0] != 'p')
 					{
+							ft_putstr("kkkkkkkkkkkkkkkkkkkk");
 						indrep = 1;
-							strbuf1 = ft_makepath(namerep,((t_name*)(lstmp3)->content)->name);
+						ft_putstr("isdir,");
+						ft_putstr(((t_name*)(lstmp3)->content)->name);
+						ft_putstr("\n");
+						lstmp = lstmp3;
+							strbuf1 = ft_makepath(((t_name*)(lstname)->content)->name,((t_name*)(lstmp3)->content)->name);
+						ft_putstr("isdir,");
+						ft_putstr(((t_name*)(lstmp3)->content)->name);
+						ft_putstr("\n");
+						ft_putstr("isdir,");
+						ft_putstr(((t_name*)(lstmp)->content)->name);
+						ft_putstr("\n");
 //						while (strbuf)
 						{
-						if (!(e3 = (t_numb*)malloc(sizeof(t_numb))))
-							return (0);
-						e3->val = ft_countfiles(strbuf1);
+						
+//						if (!(e3 = (t_numb*)malloc(sizeof(t_numb))))
+//							return (0);
+			
+//						e3->val = ft_countfiles(strbuf1);
+						e3->val = ret;
 						lstmp2 = create_lst(e3);
 						lst_add1(&lstval, lstmp2);
 						ft_push1stback(&lstval);
-						if (!(e4 = (t_name*)malloc(sizeof(t_name))))
-							return (0);
+						
+//						if (!(e4 = (t_name*)malloc(sizeof(t_name))))
+//							return (0);
 						e4->name = strbuf1;
 						lstmp2 = create_lst(e4);
 						lst_add1(&lstname, lstmp2);
 						ft_push1stback(&lstname);
-						if (!(e5 = (t_head*)malloc(sizeof(t_head))))
-							return (0);
+						
+//						if (!(e5 = (t_head*)malloc(sizeof(t_head))))
+//							return (0);
 						e5->lst = lstmp3;
 						lstmp2 = create_lst(e5);
 						lst_add1(&lstall, lstmp2);
 						ft_push1stback(&lstall);
-						ft_putstr("1rep =");
-						ft_putstr(e4->name);
-						ft_putstr("\n");
-						ft_putstr("2nbfiles =");
-						ft_putnbr(e3->val);
-						ft_putstr("\n");
-						ft_putstr("3lst =");
-							headlst = ((t_head*)(lstall)->content)->lst;
-						ft_putstr(((t_name*)(headlst)->content)->name);
-						ft_putstr("\n");
-//						ft_putstr(((t_name*)(lstmp3)->content)->name);
+//						ft_putstr("1rep =");
+//						ft_putstr(e4->name);
 //						ft_putstr("\n");
+//						ft_putstr("2nbfiles =");
+//						ft_putnbr(e3->val);
+//						ft_putstr("\n");
+//						ft_putstr("3lst =");
+//							headlst = ((t_head*)(lstall)->content)->lst;
+//						ft_putstr(((t_name*)(headlst)->content)->name);
+//						ft_putstr("\n");
+						ft_putstr("isdir,");
+						ft_putstr(((t_name*)(lstmp3)->content)->name);
+						ft_putstr("\n");
+						ft_putstr("isdir,");
+						ft_putstr(((t_name*)(lstmp)->content)->name);
+						ft_putstr("\n");
 						}
 						lstmp3 = lstmp3->next;
 						nbfiles--;

@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 15:43:19 by syusof            #+#    #+#             */
-/*   Updated: 2016/02/24 07:57:44 by syusof           ###   ########.fr       */
+/*   Updated: 2016/02/25 02:41:37 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,15 +37,18 @@ void	ft_push1stback(t_lst **lstmp)
 
 	lst = NULL;
 	lst = *lstmp;
-	while (lst->next)
+	if ((*lstmp)->content)
 	{
-		lst = lst->next;
+		while (lst->next)
+		{
+			lst = lst->next;
+		}
+		lst->next = create_lst((*lstmp)->content);
+		*lstmp = (*lstmp)->next;
 	}
-	lst->next = create_lst((*lstmp)->content);
-	*lstmp = (*lstmp)->next;
-						ft_putstr("pushback = ");
+//						ft_putstr("pushback = ");
 //						ft_putstr(((t_name*)(lst->next)->content)->name);
-						ft_putstr("\n");
+//						ft_putstr("\n");
 }
 
 

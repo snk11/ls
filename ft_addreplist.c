@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/24 07:49:51 by syusof            #+#    #+#             */
-/*   Updated: 2016/02/25 00:29:26 by syusof           ###   ########.fr       */
+/*   Updated: 2016/02/25 01:19:39 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,9 @@ void ft_addreplist(t_lst **lst1,t_lst *lst2,t_lst **lstname,t_lst **lstval)
 	lst2 = lst2->next;
 	while (lst2)
 	{
+							ft_putstr("lst2 =");
+							ft_putstr(((t_name*)(lst2)->content)->name);
+							ft_putstr("\n");
 		lst_add1(lst1,lst2);
 		ft_push1stback(lst1);
 		lst2 = lst2->next;

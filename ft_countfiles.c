@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/24 04:29:57 by syusof            #+#    #+#             */
-/*   Updated: 2016/02/24 08:13:02 by syusof           ###   ########.fr       */
+/*   Updated: 2016/02/25 03:30:43 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int		ft_countfiles(char *str)
 	t_lst	*lstmp3;
 	int		ret;
 
+	lstmp3 = NULL;
 	ret = 0;
 	lstmp3 = ft_getreplist(str);
 	while(lstmp3 && ((t_name*)(lstmp3)->content)->name[0] == '.')
