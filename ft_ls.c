@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/02/25 04:20:25 by syusof           ###   ########.fr       */
+/*   Updated: 2016/02/25 06:59:03 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,11 @@ int main(int ac,char **av)
 	struct stat		sb;
 	t_name			*e;
 	t_name			*e2;
+	t_rep			*e6;
 	t_numb			*e3;
 	t_name			*e4;
 	t_head			*e5;
+	t_lst			*lst;
 	t_lst			*lstmp;
 	t_lst			*lstmp2;
 	t_lst			*lstmp3;
@@ -39,13 +41,16 @@ int main(int ac,char **av)
 	int indp;
 	int indrep;
 	int nbfiles;
+	char	*str;
 	char	*str1 = ".";
 	char	*strbuf;
 	char	*strbuf1;
 //	char	*namerep;
 	t_lst		*headlst;
 
-	ret = ft_countfiles("./libft");
+//	ret = ft_countfiles("./libft");
+	str= NULL;
+	lst = NULL;
 	lsta = NULL;
 	lstb = NULL;
 	lstmp = NULL;
@@ -57,12 +62,12 @@ int main(int ac,char **av)
 	lstall = NULL;
 //	namerep = NULL;
 	headlst = NULL;
-
+	e6 = 0;
 	ind0 = 0;
-	lsta = ft_getreplist(".");
+//	lsta = ft_getreplist(".");
 	
-
-	lstmp = lsta;
+	ft_trailrep(&lst,".");
+//	lstmp = lsta;
 	if(av[1])
 //	if (strncmp(av[1], "-l",ft_strlen(av[1])))
 	{

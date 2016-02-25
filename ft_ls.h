@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/02/24 22:31:04 by syusof           ###   ########.fr       */
+/*   Updated: 2016/02/25 06:53:49 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,12 @@ typedef struct			s_lst
 	struct s_lst		*next;
 }						t_lst;
 
+typedef struct			s_rep
+{
+	char			*name;
+	char			*path;
+	int					val;
+}						t_rep;
 
 typedef struct			s_numb
 {
@@ -82,6 +88,7 @@ void	ft_push1stback(t_lst **lstmp);
 int		ft_countfiles(char *str);
 //void ft_addreplist(t_lst **lst1,t_lst *lst2,char *str);
 void ft_addreplist(t_lst **lst1,t_lst *lst2,t_lst **lstname,t_lst **lstval);
+void	ft_trailrep(t_lst **lst,char *str);
 //t_lst		*create_lst1(void *content);
 //void	swap(t_lst **lsta);
 //void		ft_sort(t_lst **lsta);
