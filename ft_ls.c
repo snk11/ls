@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/02/25 06:59:03 by syusof           ###   ########.fr       */
+/*   Updated: 2016/02/25 08:59:01 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,10 @@ int main(int ac,char **av)
 	headlst = NULL;
 	e6 = 0;
 	ind0 = 0;
-//	lsta = ft_getreplist(".");
+	lsta = ft_getreplist(".");
 	
-	ft_trailrep(&lst,".");
-//	lstmp = lsta;
+//	ft_trailrep(&lst,".");
+	lstmp = lsta;
 	if(av[1])
 //	if (strncmp(av[1], "-l",ft_strlen(av[1])))
 	{
@@ -124,7 +124,7 @@ int main(int ac,char **av)
 						if (!(e3 = (t_numb*)malloc(sizeof(t_numb))))
 							return (0);
 						e3->val = ft_countfiles(".");
-						e3->val = 21;
+//						e3->val = 21;
 						lstmp2 = create_lst(e3);
 						lst_add1(&lstval, lstmp2);
 						if (!(e4 = (t_name*)malloc(sizeof(t_name))))
@@ -188,7 +188,7 @@ int main(int ac,char **av)
 //						ft_putstr("3lst =");
 //						ft_putstr(((t_name*)(headlst)->content)->name);
 //						ft_putstr("\n");
-//							ft_addreplist(&lstmp3,headlst,&lstname,&lstval);
+							ft_addreplist(&lstmp3,headlst,&lstname,&lstval);
 							}
 						if (lstmp3)
 				{
@@ -210,7 +210,7 @@ int main(int ac,char **av)
 								strbuf = ((t_name*)(lstmp3)->content)->name;
 							}
 						}
-					if( lstmp3 && S_ISDIR(sb.st_mode) && indrep == 0 && strbuf[0] != 'p')
+								if(stat(((t_name*)(lstmp3)->content)->name,&sb)== 0 && S_ISDIR(sb.st_mode) && indrep == 0 && strbuf[0] != 'p')
 					{
 							ft_putstr("kkkkkkkkkkkkkkkkkkkk");
 						indrep = 1;
