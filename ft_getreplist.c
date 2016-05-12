@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 11:00:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/12 14:12:34 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/12 14:22:31 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ t_lst *ft_getreplist(char *rep)
 		e->name = pdirent1->d_name;
 		lstmp = create_lst(e);
 
-		lst_add(&lsta, &lstmp);
+		lst_add(&lsta, lstmp);
 	}
 //	push_swap(&lsta);
 	lsta = lst_sort(lsta, croissant);

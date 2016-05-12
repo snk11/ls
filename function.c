@@ -6,13 +6,13 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 15:43:19 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/12 13:52:21 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/12 14:20:34 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "ft_ls.h"
 
-void		lst_add1(t_lst **toplist, t_lst *t_lst1)
+void		lst_add(t_lst **toplist, t_lst *t_lst1)
 {
 
 	t_lst		*lstmp;
@@ -52,7 +52,7 @@ void	ft_push1stback(t_lst **lstmp)
 }
 
 
-t_lst		*create_lst1(void *content)
+t_lst		*create_lst(void *content)
 {
 	t_lst	*curlst;
 

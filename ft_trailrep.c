@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/25 04:30:10 by syusof            #+#    #+#             */
-/*   Updated: 2016/02/25 08:40:57 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/12 14:25:05 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	ft_trailrep(t_lst **lst,char *str)
 							ft_putstr("path =");
 							ft_putstr(((t_rep*)(lstmp2)->content)->path);
 							ft_putstr("\n");
-	lst_add1(lst, lstmp2);
+	lst_add(lst, lstmp2);
 //	lst1 = ft_getreplist(str);
 	pdir1 = opendir(str);
 	while((pdirent1 = readdir(pdir1)))
