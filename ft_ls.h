@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/12 14:22:00 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/12 15:23:59 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@
 # include <pwd.h>
 # include <grp.h>
 # include <time.h>
+#include <errno.h>
+#include <string.h>
 
 /*
 typedef struct		s_lst
