@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 15:43:19 by syusof            #+#    #+#             */
-/*   Updated: 2016/02/25 02:41:37 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/12 13:52:21 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,7 @@ t_lst		*create_lst1(void *content)
 	curlst->next = NULL;
 	return (curlst);
 }
+
+
 
 
