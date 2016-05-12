@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/06 18:13:11 by syusof            #+#    #+#             */
-/*   Updated: 2014/11/12 17:03:09 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/11 15:51:35 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ char			*ft_itoa(int n)
 
 	if (n == INT_MIN)
 	{
-		str = ft_strnew(9);
+		str = ft_strnew(11);
 		str = ft_strcpy(str, "-2147483648");
 		return (str);
 	}
@@ -61,13 +61,13 @@ char			*ft_itoa(int n)
 	{
 		n = -n;
 		i = ft_countdigit(n);
-		str = ft_strnew(1 + i + 1);
+		str = ft_strnew(1 + i);
 		itoa_neg(str, n, i);
 	}
 	else
 	{
 		i = ft_countdigit(n);
-		str = ft_strnew(i + 1);
+		str = ft_strnew(i);
 		itoa_pos(str, n, i);
 	}
 	return (str);
