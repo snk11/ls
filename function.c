@@ -6,30 +6,39 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 15:43:19 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/15 12:41:42 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/15 16:39:38 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "ft_ls.h"
 
-void		lst_add(t_lst **toplist, t_lst *t_lst1)
+void		lst_add(t_lst **toplist, t_lst *lst1)
 {
+	t_lst	*lstmp;
+	t_lst	*lst11;
 
-	t_lst		*lstmp;
-
-	lstmp = NULL;
-	lstmp = ft_create_lst((t_lst1)->content);
+	lst11 = NULL;
 	if (*toplist == NULL)
 	{
-		*toplist = lstmp;
+		*toplist = lst1;
 	}
 	else
 	{
-		if(ft_isdir(lstmp))
-			lstmp->nextr = *toplist;
+		lstmp = *toplist;
+		if(ft_isdir(lst1))
+		{
+			while(lstmp->nextr)
+				lstmp = lstmp->nextr;
+			lst11 = ft_create_lst(lst1->content);
+			lstmp->nextr = lst11;
+		}
 		else
-			lstmp->nextr = *toplist;
-		*toplist = lstmp;
+		{
+			while(lstmp->nextl)
+				lstmp = lstmp->nextl;
+			lst11 = ft_create_lst(lst1->content);
+			lstmp->nextl = lst11;
+		}
 	}
 	//		*t_lst1 = (*t_lst1)->next;
 }

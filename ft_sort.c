@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 13:51:30 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/15 12:48:17 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/15 16:39:15 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int croissant(t_lsto *lsta)
 }
 
 
-t_lsto		*lst_sort(t_lsto *lst, int (*cmp)(t_lsto*))
+t_lsto		*ft_lst_sort(t_lsto *lst, int (*cmp)(t_lsto*))
 {
 	t_lsto *lstmp1;
 	t_lsto *lstmp2;

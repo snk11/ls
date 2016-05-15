@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 11:46:17 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/15 12:47:06 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/15 16:40:30 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,36 @@ void	ft_printlist(t_lst *lstmp)
 {
 	t_lsto	*lst1;
 	t_lsto	*lst2;
+	t_lst	*lstbegi;
 
 	lst1 = NULL;
 	lst2 = NULL;
+	lstbegi = lstmp;
 	while (lstmp)
 	{
-		if (ft_isdir(lstmp) == 0)
-		{
+		if(ft_isdir(lstmp) == 0)
 			lst_addo(&lst1, lstmp);
 			if ( (((t_rep*)(lstmp)->content)->name)[0] != '.')
 			{
 //				ft_putstr(((t_name*)((lstmp))->content)->name);
 //				ft_putstr("\n");
 			}
-		}
-		else
-		{
-			lst_addo(&lst2, lstmp);
-		}
 		lstmp = lstmp->nextl;
 	}
+	lstmp = lstbegi;
+	while (lstmp)
+	{
+		if (ft_isdir(lstmp) == 1)
+			lst_addo(&lst2, lstmp);
+			if ( (((t_rep*)(lstmp)->content)->name)[0] != '.')
+			{
+//				ft_putstr(((t_name*)((lstmp))->content)->name);
+//				ft_putstr("\n");
+			}
+		lstmp = lstmp->nextr;
+	}
+	lst1 = ft_lst_sort(lst1, croissant);
+	lst2 = ft_lst_sort(lst2, croissant);
 	while (lst1)
 	{
 		if ( (((t_rep*)(lst1)->content)->name)[0] != '.')
