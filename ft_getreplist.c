@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 11:00:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/15 12:50:13 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/15 18:10:37 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ t_lst *ft_getreplist(char *rep)
 		if (!(e = (t_rep*)malloc(sizeof(t_rep))))
 			return (0);
 		e->name = pdirent1->d_name;
+		e->path = ft_makepath(rep,pdirent1->d_name);
 		lstmp = ft_create_lst(e);
 
 		lst_add(&lsta, lstmp);

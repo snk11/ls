@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/15 12:45:45 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/15 18:07:07 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int main(int ac,char **av)
 	{
 		while(av[i])
 		{
-			if (ft_strcmp(av[i], "-1") != 0 && ft_strcmp(av[i], "--") != 0 )
+			if (ft_strcmp(av[i], "-1") != 0 && ft_strcmp(av[i], "--") != 0 && ft_strcmp(av[i], "-1R") != 0)
 			{
 				ft_putstr_fd("ls: ", 2);
 				opendir(av[i]);
@@ -53,6 +53,7 @@ int main(int ac,char **av)
 		if (inderror == 0 && (ft_strcmp(av[1], "-1R")== 0))
 		{
 			lst = ft_getreplist(".");
+			ft_printlist2(lst);
 		}
 		//else
 		/*
