@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/25 04:30:10 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/12 14:25:05 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/15 12:46:10 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_trailrep(t_lst **lst,char *str)
 	t_lst	*lst1;
 	t_lst	*lstname;
 	t_lst	*lstmp2;
-	t_name	*e1;
+	t_rep	*e1;
 	t_rep	*e2;
 	struct stat		sb;
 	int		ret;
@@ -38,7 +38,7 @@ void	ft_trailrep(t_lst **lst,char *str)
 	lst_add1(&lstname, lstmp2);
 	*/
 	e2 = (t_rep*)malloc(sizeof(t_rep));
-	lstmp2 = create_lst(e2);
+	lstmp2 = ft_create_lst(e2);
 	((t_rep*)(lstmp2)->content)->path = str;
 							ft_putstr("path =");
 							ft_putstr(((t_rep*)(lstmp2)->content)->path);

@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/12 15:23:59 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/15 12:43:00 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,15 @@ typedef struct		s_lst
 typedef struct			s_lst
 {
 	void				*content;
-	struct s_lst		*next;
+	struct s_lst		*nextl;
+	struct s_lst		*nextr;
 }						t_lst;
+
+typedef struct			s_lsto
+{
+	void				*content;
+	struct s_lsto		*next;
+}						t_lsto;
 
 typedef struct			s_rep
 {
@@ -54,11 +61,12 @@ typedef struct			s_numb
 	int					val;
 }						t_numb;
 
+/*
 typedef struct		s_name
 {
 	char			*name;
 }					t_name;
-
+*/
 typedef struct		s_head
 {
 	t_lst			*lst;
@@ -71,8 +79,10 @@ typedef struct		s_stat
 }					t_stat;
 
 void		lst_add(t_lst **toplist, t_lst *t_lst1);
+void		lst_addo(t_lsto **toplist, t_lst *t_lst1);
 void		lst_add_del(t_lst **toplist, t_lst **t_lst1);
-t_lst		*create_lst(void *content);
+t_lst		*ft_create_lst(void *content);
+t_lsto		*ft_create_lsto(void *content);
 t_lst *ft_getreplist(char *rep);
 void	ft_printlist(t_lst *lstmp);
 int		ft_countlevel(t_lst *lstmp);
@@ -85,7 +95,8 @@ void	ft_trailrep(t_lst **lst,char *str);
 //t_lst		*create_lst1(void *content);
 //void	swap(t_lst **lsta);
 //void		ft_sort(t_lst **lsta);
-int croissant(t_lst *lsta);
-t_lst		*lst_sort(t_lst *lst, int (*cmp)(t_lst*));
+int croissant(t_lsto *lsta);
+t_lsto		*lst_sort(t_lsto *lst, int (*cmp)(t_lsto*));
+int		ft_isdir(t_lst *lst1);
 
 # endif

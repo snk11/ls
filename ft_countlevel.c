@@ -6,12 +6,12 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 12:11:58 by syusof            #+#    #+#             */
-/*   Updated: 2016/02/20 14:43:04 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/15 12:15:57 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "ft_ls.h"
-
+/*
 int		ft_countlevel(t_lst *lstmp)
 {
 	int		ret;
@@ -62,3 +62,5 @@ int		ft_countlevel(t_lst *lstmp)
 	ret++;
 	return (ret);
 }
+*/
+

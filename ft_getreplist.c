@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 11:00:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/12 14:22:31 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/15 12:50:13 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ t_lst *ft_getreplist(char *rep)
 	struct dirent	*pdirent1;
 	DIR				*pdir1;
 	struct stat		sb;
-	t_name			*e;
-	t_name			*e2;
+	t_rep			*e;
+	t_rep			*e2;
 	t_lst			*lstmp;
 	t_lst			*lstmp2;
 	t_lst			*lsta;
@@ -40,16 +40,16 @@ t_lst *ft_getreplist(char *rep)
 //		if ((strncmp(pdirent1->d_name,".",1)) && (strncmp(pdirent1->d_name,"..",2)))
 //			printf("%s\n",pdirent1->d_name);
 		
-		if (!(e = (t_name*)malloc(sizeof(t_name))))
+		if (!(e = (t_rep*)malloc(sizeof(t_rep))))
 			return (0);
 		e->name = pdirent1->d_name;
-		lstmp = create_lst(e);
+		lstmp = ft_create_lst(e);
 
 		lst_add(&lsta, lstmp);
 	}
 //	push_swap(&lsta);
-	lsta = lst_sort(lsta, croissant);
-	lstmp = lsta;
+//	lsta = lst_sort(lsta, croissant);
+//	lstmp = lsta;
 	closedir(pdir1);
 
 	return (lsta);

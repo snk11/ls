@@ -6,24 +6,24 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 13:51:30 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/12 14:14:06 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/15 12:48:17 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
 
-int croissant(t_lst *lsta)
+int croissant(t_lsto *lsta)
 {
-		return (ft_strcmp(((t_name*)(lsta)->content)->name,((t_name*)((lsta)->next)->content)->name) < 0);
+		return (ft_strcmp(((t_rep*)(lsta)->content)->name,((t_rep*)((lsta)->next)->content)->name) < 0);
 }
 
 
-t_lst		*lst_sort(t_lst *lst, int (*cmp)(t_lst*))
+t_lsto		*lst_sort(t_lsto *lst, int (*cmp)(t_lsto*))
 {
-	t_lst *lstmp1;
-	t_lst *lstmp2;
-	t_lst *lstbegi;
+	t_lsto *lstmp1;
+	t_lsto *lstmp2;
+	t_lsto *lstbegi;
 	int		ind;
 
 	lstbegi = lst;

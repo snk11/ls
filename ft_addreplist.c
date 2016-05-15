@@ -6,16 +6,16 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/24 07:49:51 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/12 14:25:21 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/15 12:17:26 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "ft_ls.h"
-
+/*
 void ft_addreplist(t_lst **lst1,t_lst *lst2,t_lst **lstname,t_lst **lstval)
 {
 	t_lst *lstmp;
-
+*/
 //	printf("namerep = %s\n",str);
 /*
 						ft_putstr("1rep =");
@@ -28,6 +28,7 @@ void ft_addreplist(t_lst **lst1,t_lst *lst2,t_lst **lstname,t_lst **lstval)
 						ft_putstr(((t_name*)(lst2)->content)->name);
 						ft_putstr("\n");
 */
+/*
 	lstmp = NULL;
 	lstmp = ft_getreplist(((t_name*)(*lstname)->content)->name);
 	
@@ -49,3 +50,4 @@ void ft_addreplist(t_lst **lst1,t_lst *lst2,t_lst **lstname,t_lst **lstval)
 //		((t_numb*)((*lstval)->content))->val = ((t_numb*)((*lstval)->content))->val + 1;
 	}
 }
+*/

@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/12 18:00:51 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/15 12:45:45 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,10 @@ int main(int ac,char **av)
 		{
 			lst = ft_getreplist(".");
 			ft_printlist(lst);
+		}
+		if (inderror == 0 && (ft_strcmp(av[1], "-1R")== 0))
+		{
+			lst = ft_getreplist(".");
 		}
 		//else
 		/*
