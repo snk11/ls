@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 13:51:30 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/15 16:39:15 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/16 17:54:03 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_lsto		*ft_lst_sort(t_lsto *lst, int (*cmp)(t_lsto*))
 	t_lsto *lstmp2;
 	t_lsto *lstbegi;
 	int		ind;
-
+/*
 	lstbegi = lst;
 	lstmp1 = NULL;
 	lstmp2 = NULL;
@@ -66,7 +66,8 @@ t_lsto		*ft_lst_sort(t_lsto *lst, int (*cmp)(t_lsto*))
 			if (lst->next)
 				lst = lst->next;
 		}
-
 	}
-	return (lstbegi);
+	*/
+	//return (lstbegi);
+	return (lst);
 }

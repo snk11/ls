@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/15 18:07:35 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/16 15:45:49 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,12 +80,13 @@ typedef struct		s_stat
 
 void		lst_add(t_lst **toplist, t_lst *t_lst1);
 void		lst_addo(t_lsto **toplist, t_lst *t_lst1);
+void		lst_addo_down(t_lsto *toplist, t_lsto *lst1);
 void		lst_add_del(t_lst **toplist, t_lst **t_lst1);
 t_lst		*ft_create_lst(void *content);
 t_lsto		*ft_create_lsto(void *content);
 t_lst *ft_getreplist(char *rep);
 void	ft_printlist(t_lst *lstmp);
-void	ft_printlist2(t_lst *lstmp);
+t_lsto	*ft_printlist2(t_lst *lstmp);
 int		ft_countlevel(t_lst *lstmp);
 char	*ft_makepath(char *str1,char *str2);
 void	ft_push1stback(t_lst **lstmp);

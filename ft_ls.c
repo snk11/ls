@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/15 18:07:07 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/16 18:05:03 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int main(int ac,char **av)
 	DIR				*pdir1;
 	struct stat		sb;
 	t_lst			*lst;
+	t_lsto			*lsti;
+	t_lsto			*lstj;
 	int				i;
 	int				inderror;
 
@@ -53,7 +55,15 @@ int main(int ac,char **av)
 		if (inderror == 0 && (ft_strcmp(av[1], "-1R")== 0))
 		{
 			lst = ft_getreplist(".");
-			ft_printlist2(lst);
+			lsti = ft_printlist2(lst);
+			while (lsti)
+			{
+//				printf("pn = %s\n",((t_rep*)(lsti->content))->path);
+				lst = ft_getreplist(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
+				lstj = ft_printlist2(lst);
+//				lst_addo_down(lsti,lstj);
+				lsti = lsti->next;
+			}
 		}
 		//else
 		/*

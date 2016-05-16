@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 15:43:19 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/15 16:39:38 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/16 17:11:59 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ void		lst_add(t_lst **toplist, t_lst *lst1)
 			while(lstmp->nextr)
 				lstmp = lstmp->nextr;
 			lst11 = ft_create_lst(lst1->content);
+			((t_rep*)(lst11->content))->name= ((t_rep*)(lst1->content))->name;
+			((t_rep*)(lst11->content))->path = ((t_rep*)(lst1->content))->path;
 			lstmp->nextr = lst11;
 		}
 		else
@@ -37,19 +39,23 @@ void		lst_add(t_lst **toplist, t_lst *lst1)
 			while(lstmp->nextl)
 				lstmp = lstmp->nextl;
 			lst11 = ft_create_lst(lst1->content);
+			((t_rep*)(lst11->content))->name= ((t_rep*)(lst1->content))->name;
+			((t_rep*)(lst11->content))->path = ((t_rep*)(lst1->content))->path;
 			lstmp->nextl = lst11;
 		}
 	}
 	//		*t_lst1 = (*t_lst1)->next;
 }
 
-void		lst_addo(t_lsto **toplist, t_lst *t_lst1)
+void		lst_addo(t_lsto **toplist, t_lst *lst1)
 {
 
 	t_lsto		*lstmp;
 
 	lstmp = NULL;
-	lstmp = ft_create_lsto((t_lst1)->content);
+	lstmp = ft_create_lsto((lst1)->content);
+	((t_rep*)(lstmp->content))->name= ((t_rep*)(lst1->content))->name;
+	((t_rep*)(lstmp->content))->path = ((t_rep*)(lst1->content))->path;
 	if (*toplist == NULL)
 	{
 		*toplist = lstmp;
@@ -58,6 +64,28 @@ void		lst_addo(t_lsto **toplist, t_lst *t_lst1)
 	{
 		lstmp->next = *toplist;
 		*toplist = lstmp;
+	}
+	//		*t_lst1 = (*t_lst1)->next;
+}
+
+void		lst_addo_down(t_lsto *toplist, t_lsto *lst1)
+{
+
+	t_lsto		*lstmp;
+
+	lstmp = NULL;
+	lstmp = ft_create_lsto((lst1)->content);
+	((t_rep*)(lstmp->content))->name= ((t_rep*)(lst1->content))->name;
+	((t_rep*)(lstmp->content))->path = ((t_rep*)(lst1->content))->path;
+	if (toplist == NULL)
+	{
+		toplist = lstmp;
+	}
+	else
+	{
+		while (toplist->next)
+			toplist = toplist->next;
+		toplist = lstmp;
 	}
 	//		*t_lst1 = (*t_lst1)->next;
 }
@@ -99,6 +127,8 @@ t_lst		*ft_create_lst(void *content)
 	}
 	curlst->nextl = NULL;
 	curlst->nextr = NULL;
+
+//				printf("fffffff%s\n",((t_rep*)(curlst->content))->path);
 	return (curlst);
 }
 
