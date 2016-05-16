@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/16 19:07:07 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/16 22:10:18 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int main(int ac,char **av)
 	inderror = 0;
 	if (!av[1])
 	{
-		lst = ft_getreplist("libft");
+		lst = ft_getreplist(".");
 		ft_printlist(lst);
 	}
 	else if(av[i])

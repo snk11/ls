@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 11:46:17 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/16 19:09:45 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/16 22:11:52 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,8 +100,8 @@ t_lsto	*ft_printlist2(t_lst *lstmp)
 			}
 		lstmp = lstmp->nextr;
 	}
-//	lst1 = ft_lst_sort(lst1, croissant);
-//	lst2 = ft_lst_sort(lst2, croissant);
+	lst1 = ft_lst_sort(lst1, croissant);
+	lst2 = ft_lst_sort(lst2, croissant);
 	while (lst1)
 	{
 		if ( (((t_rep*)(lst1)->content)->name)[0] != '.')
