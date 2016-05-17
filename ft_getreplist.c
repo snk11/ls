@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 11:00:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/16 17:30:30 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/17 12:52:52 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ t_lst *ft_getreplist(char *rep)
 	pdir1 = opendir(rep);
 
 
+
 	while ((pdirent1 = readdir(pdir1)))
 	{
 //		if ((strncmp(pdirent1->d_name,".",1)) && (strncmp(pdirent1->d_name,"..",2)))
@@ -51,7 +52,7 @@ t_lst *ft_getreplist(char *rep)
 
 			((t_rep*)(lstmp->content))->name = pdirent1->d_name;
 			((t_rep*)(lstmp->content))->path = rep;
-			lst_add(&lsta, lstmp);
+			lsta = lst_add(lsta, lstmp);
 		}
 	}
 //	push_swap(&lsta);

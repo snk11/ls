@@ -6,12 +6,12 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/25 04:30:10 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/15 12:46:10 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/17 12:14:12 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "ft_ls.h"
-
+/*
 void	ft_trailrep(t_lst **lst,char *str)
 {
 	t_lst	*lst1;
@@ -31,12 +31,10 @@ void	ft_trailrep(t_lst **lst,char *str)
 	ret = 0;
 	ind1 = 0;
 	e2 = 0;
-	/*
-	e1 = (t_name*)malloc(sizeof(t_name));
-	e1->name = str;
-	lstmp2 = create_lst(e1);
-	lst_add1(&lstname, lstmp2);
-	*/
+//	e1 = (t_name*)malloc(sizeof(t_name));
+//	e1->name = str;
+//	lstmp2 = create_lst(e1);
+//	lst_add1(&lstname, lstmp2);
 	e2 = (t_rep*)malloc(sizeof(t_rep));
 	lstmp2 = ft_create_lst(e2);
 	((t_rep*)(lstmp2)->content)->path = str;
@@ -79,3 +77,4 @@ void	ft_trailrep(t_lst **lst,char *str)
 	closedir(pdir1);
 	((t_rep*)(*lst)->content)->val = ret;
 }
+*/

@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 11:46:17 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/16 22:11:52 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/17 13:08:17 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,28 +23,21 @@ void	ft_printlist(t_lst *lstmp)
 	lstbegi = lstmp;
 	while (lstmp)
 	{
-		if(ft_isdir(lstmp) == 0)
+		if(ft_isdir(ft_makepath(((t_rep*)(lstmp->content))->path,((t_rep*)(lstmp->content))->name)) == 0)
 			lst_addo(&lst1, lstmp);
-			if ( (((t_rep*)(lstmp)->content)->name)[0] != '.')
-			{
-//				ft_putstr(((t_rep*)((lstmp))->content)->name);
-//				ft_putstr("\n");
-			}
 		lstmp = lstmp->nextl;
 	}
 	lstmp = lstbegi;
 	while (lstmp)
 	{
-		if (ft_isdir(lstmp) == 1)
+//		if (ft_isdir(lstmp) == 1)
+		if(ft_isdir(ft_makepath(((t_rep*)(lstmp->content))->path,((t_rep*)(lstmp->content))->name)) == 1)
 			lst_addo(&lst2, lstmp);
-			if ( (((t_rep*)(lstmp)->content)->name)[0] != '.')
-			{
-//				ft_putstr(((t_rep*)((lstmp))->content)->name);
-//				ft_putstr("\n");
-			}
 		lstmp = lstmp->nextr;
 	}
 	lst1 = ft_lst_sort(lst1, croissant);
+	lst1 = ft_lst_sort(lst1, croissant);
+	lst2 = ft_lst_sort(lst2, croissant);
 	lst2 = ft_lst_sort(lst2, croissant);
 	while (lst1)
 	{
@@ -79,28 +72,22 @@ t_lsto	*ft_printlist2(t_lst *lstmp)
 	lstbegi = lstmp;
 	while (lstmp)
 	{
-		if(ft_isdir(lstmp) == 0)
+//		if(ft_isdir(lstmp) == 0)
+		if(ft_isdir(ft_makepath(((t_rep*)(lstmp->content))->path,((t_rep*)(lstmp->content))->name)) == 0)
 			lst_addo(&lst1, lstmp);
-			if ( (((t_rep*)(lstmp)->content)->name)[0] != '.')
-			{
-//				ft_putstr(((t_name*)((lstmp))->content)->name);
-//				ft_putstr("\n");
-			}
 		lstmp = lstmp->nextl;
 	}
 	lstmp = lstbegi;
 	while (lstmp)
 	{
-		if (ft_isdir(lstmp) == 1)
+//		if (ft_isdir(lstmp) == 1)
+		if(ft_isdir(ft_makepath(((t_rep*)(lstmp->content))->path,((t_rep*)(lstmp->content))->name)) == 1)
 			lst_addo(&lst2, lstmp);
-			if ( (((t_rep*)(lstmp)->content)->name)[0] != '.')
-			{
-//				ft_putstr(((t_name*)((lstmp))->content)->name);
-//				ft_putstr("\n");
-			}
 		lstmp = lstmp->nextr;
 	}
 	lst1 = ft_lst_sort(lst1, croissant);
+	lst1 = ft_lst_sort(lst1, croissant);
+	lst2 = ft_lst_sort(lst2, croissant);
 	lst2 = ft_lst_sort(lst2, croissant);
 	while (lst1)
 	{

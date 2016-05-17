@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/16 15:45:49 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/17 13:02:37 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,9 +78,9 @@ typedef struct		s_stat
 	struct stat		stat1;
 }					t_stat;
 
-void		lst_add(t_lst **toplist, t_lst *t_lst1);
+t_lst		*lst_add(t_lst *toplist, t_lst *t_lst1);
 void		lst_addo(t_lsto **toplist, t_lst *t_lst1);
-void		lst_addo_down(t_lsto *toplist, t_lsto *lst1);
+t_lsto		*lst_addo_down(t_lsto *toplist, t_lsto *lst1);
 void		lst_add_del(t_lst **toplist, t_lst **t_lst1);
 t_lst		*ft_create_lst(void *content);
 t_lsto		*ft_create_lsto(void *content);
@@ -99,6 +99,6 @@ void	ft_trailrep(t_lst **lst,char *str);
 //void		ft_sort(t_lst **lsta);
 int croissant(t_lsto *lsta);
 t_lsto		*ft_lst_sort(t_lsto *lst, int (*cmp)(t_lsto*));
-int		ft_isdir(t_lst *lst1);
+int		ft_isdir(char *s);
 
 # endif
