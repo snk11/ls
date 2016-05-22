@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 11:46:17 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/17 13:08:17 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/23 00:39:52 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,8 @@ t_lsto	*ft_printlist2(t_lst *lstmp)
 	{
 		if ( (((t_rep*)(lst1)->content)->name)[0] != '.')
 		{
+//			if(ft_strcmp(((t_rep*)((lst1))->content)->name, "lit.o") == 0)
+//				printf("NIMP\n");
 			ft_putstr(((t_rep*)((lst1))->content)->name);
 			ft_putstr("\n");
 		}

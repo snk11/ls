@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 13:51:30 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/17 10:22:26 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/23 00:14:28 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@ int croissant(t_lsto *lsta)
 		return (ft_strcmp(((t_rep*)(lsta)->content)->name,((t_rep*)((lsta)->next)->content)->name) < 0);
 }
 
+
+int croissant_pathname(t_lsto *lsti)
+{
+		return (ft_strcmp(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti)->content)->name),ft_makepath(((t_rep*)((lsti->next)->content))->path,((t_rep*)((lsti->next)->content))->name)) < 0);
+}
 
 t_lsto		*ft_lst_sort(t_lsto *lst, int (*cmp)(t_lsto*))
 {

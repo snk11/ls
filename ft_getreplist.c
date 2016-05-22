@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 11:00:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/17 12:52:52 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/23 00:25:30 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ t_lst *ft_getreplist(char *rep)
 			lstmp = ft_create_lst(e);
 
 			((t_rep*)(lstmp->content))->name = pdirent1->d_name;
+			printf("Create name = %s\n",((t_rep*)(lstmp->content))->name);
 			((t_rep*)(lstmp->content))->path = rep;
 			lsta = lst_add(lsta, lstmp);
 		}
