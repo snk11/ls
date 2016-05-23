@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/23 22:19:39 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/23 23:25:05 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,9 @@ int main(int ac,char **av)
 			lstibegi = lsti;
 			while (lsti)
 			{
+//				ft_putstr("R ");
+//				ft_putstr(((t_rep*)(lsti->content))->name);
 //				ft_putstr("\n");
-//				printf("%s:\n",ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
 				lst = ft_getreplist(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
 				if (lst)
 				{
