@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 11:46:17 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/23 21:02:22 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/23 22:19:13 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,8 @@ void	ft_printlist(t_lst *lstmp)
 			lst_addo(&lst2, lstmp);
 		lstmp = lstmp->nextr;
 	}
-	lst1 = ft_lst_sort(lst1, croissant);
-	lst1 = ft_lst_sort(lst1, croissant);
-	lst2 = ft_lst_sort(lst2, croissant);
-	lst2 = ft_lst_sort(lst2, croissant);
+	lst1 = ft_lst_sort1(lst1);
+	lst2 = ft_lst_sort1(lst2);
 	while (lst1)
 	{
 		if ( (((t_rep*)(lst1)->content)->name)[0] != '.')
@@ -85,10 +83,8 @@ t_lsto	*ft_printlist2(t_lst *lstmp)
 			lst_addo(&lst2, lstmp);
 		lstmp = lstmp->nextr;
 	}
-	lst1 = ft_lst_sort(lst1, croissant);
-	lst1 = ft_lst_sort(lst1, croissant);
-	lst2 = ft_lst_sort(lst2, croissant);
-	lst2 = ft_lst_sort(lst2, croissant);
+	lst1 = ft_lst_sort1(lst1);
+	lst2 = ft_lst_sort1(lst2);
 	while (lst1)
 	{
 		if ( (((t_rep*)(lst1)->content)->name)[0] != '.')
@@ -147,10 +143,8 @@ t_lsto	*ft_printlist3(t_lst *lstmp)
 			lst_addo(&lst2, lstmp);
 		lstmp = lstmp->nextr;
 	}
-	lst1 = ft_lst_sort(lst1, croissant);
-	lst1 = ft_lst_sort(lst1, croissant);
-	lst2 = ft_lst_sort(lst2, croissant);
-	lst2 = ft_lst_sort(lst2, croissant);
+	lst1 = ft_lst_sort1(lst1);
+	lst2 = ft_lst_sort1(lst2);
 //	while (lst1)
 //	{
 //		if ( (((t_rep*)(lst1)->content)->name)[0] != '.')

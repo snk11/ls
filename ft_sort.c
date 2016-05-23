@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 13:51:30 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/23 21:54:52 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/23 22:24:35 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,56 @@ t_lsto		*ft_lst_sort(t_lsto *lst, int (*cmp)(t_lsto*))
 		}
 	}
 	return (lstbegi);
+}
+
+
+t_lsto		*ft_lst_sort1(t_lsto *lst)
+{
+	t_lsto	*lst1;
+
+	lst1 = ft_lst_sort(lst,croissant);
+	lst1 = ft_lst_sort(lst1,croissant);
+	lst1 = ft_lst_sort(lst1,croissant);
+	lst1 = ft_lst_sort(lst1,croissant);
+	lst1 = ft_lst_sort(lst1,croissant);
+	lst1 = ft_lst_sort(lst1,croissant);
+	lst1 = ft_lst_sort(lst1,croissant);
+	lst1 = ft_lst_sort(lst1,croissant);
+	lst1 = ft_lst_sort(lst1,croissant);
+	lst1 = ft_lst_sort(lst1,croissant);
+	lst1 = ft_lst_sort(lst1,croissant);
+	lst1 = ft_lst_sort(lst1,croissant);
+	lst1 = ft_lst_sort(lst1,croissant);
+	lst1 = ft_lst_sort(lst1,croissant);
+	lst1 = ft_lst_sort(lst1,croissant);
+	lst1 = ft_lst_sort(lst1,croissant);
+	return (lst1);
+}
+
+
+
+t_lsto		*ft_lst_sort2(t_lsto *lst)
+{
+	t_lsto	*lst1;
+
+	lst1 = ft_lst_sort(lst,croissant_pathname);
+	lst1 = ft_lst_sort(lst1,croissant_pathname);
+	lst1 = ft_lst_sort(lst1,croissant_pathname);
+	lst1 = ft_lst_sort(lst1,croissant_pathname);
+	lst1 = ft_lst_sort(lst1,croissant_pathname);
+	lst1 = ft_lst_sort(lst1,croissant_pathname);
+	lst1 = ft_lst_sort(lst1,croissant_pathname);
+	lst1 = ft_lst_sort(lst1,croissant_pathname);
+	lst1 = ft_lst_sort(lst1,croissant_pathname);
+	lst1 = ft_lst_sort(lst1,croissant_pathname);
+	lst1 = ft_lst_sort(lst1,croissant_pathname);
+	lst1 = ft_lst_sort(lst1,croissant_pathname);
+	lst1 = ft_lst_sort(lst1,croissant_pathname);
+	lst1 = ft_lst_sort(lst1,croissant_pathname);
+	lst1 = ft_lst_sort(lst1,croissant_pathname);
+	lst1 = ft_lst_sort(lst1,croissant_pathname);
+	lst1 = ft_lst_sort(lst1,croissant_pathname);
+	lst1 = ft_lst_sort(lst1,croissant_pathname);
+	lst1 = ft_lst_sort(lst1,croissant_pathname);
+	return (lst1);
 }

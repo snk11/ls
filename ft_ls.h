@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/23 20:17:18 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/23 22:15:15 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,5 +102,7 @@ int croissant(t_lsto *lsta);
 int croissant_pathname(t_lsto *lsti);
 t_lsto		*ft_lst_sort(t_lsto *lst, int (*cmp)(t_lsto*));
 int		ft_isdir(char *s);
+t_lsto		*ft_lst_sort1(t_lsto *lst);
+t_lsto		*ft_lst_sort2(t_lsto *lst);
 
 # endif
