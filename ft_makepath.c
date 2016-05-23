@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/24 00:45:57 by syusof            #+#    #+#             */
-/*   Updated: 2016/02/25 08:44:33 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/23 05:19:28 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_makepath(char *str1,char *str2)
 	int	i;
 
 	len = ft_strlen(str1);
-	str = ft_strnew(len);
+	str = ft_strnew(len + 1);
 	i = 0;
 	while (i < len)
 	{
