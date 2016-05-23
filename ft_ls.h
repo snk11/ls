@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/23 00:00:18 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/23 20:17:18 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,7 @@ t_lsto		*ft_create_lsto(void *content);
 t_lst *ft_getreplist(char *rep);
 void	ft_printlist(t_lst *lstmp);
 t_lsto	*ft_printlist2(t_lst *lstmp);
+t_lsto	*ft_printlist3(t_lst *lstmp);
 int		ft_countlevel(t_lst *lstmp);
 char	*ft_makepath(char *str1,char *str2);
 void	ft_push1stback(t_lst **lstmp);

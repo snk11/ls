@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/23 05:13:02 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/23 20:43:17 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,14 @@ int main(int ac,char **av)
 	struct stat		sb;
 	t_lst			*lst;
 	t_lsto			*lsti;
+	t_lsto			*lstibegi;
 	t_lsto			*lstj;
 	int				i;
 	int				inderror;
 
 	lst = NULL;
 	lstj = NULL;
+	lstibegi = NULL;
 	i = 1;
 	inderror = 0;
 
@@ -64,17 +66,28 @@ int main(int ac,char **av)
 		{
 			lst = ft_getreplist(".");
 			lsti = ft_printlist2(lst);
+			lstibegi = lsti;
+			while (lsti)
+			{
+//				ft_putstr("\n");
+//				printf("%s:\n",ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
+				lst = ft_getreplist(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
+				if (lst)
+				{
+					lstj = ft_printlist3(lst);
+					lsti = lst_addo_down(lsti,lstj);
+//					lsti = ft_lst_sort(lsti,croissant_pathname);
+				}
+				lsti = lsti->next;
+			}
+			lstibegi = ft_lst_sort(lstibegi,croissant_pathname);
+			lsti = lstibegi;
 			while (lsti)
 			{
 				ft_putstr("\n");
 				printf("%s:\n",ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
 				lst = ft_getreplist(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
-				if (lst)
-				{
 					lstj = ft_printlist2(lst);
-					lsti = lst_addo_down(lsti,lstj);
-					lsti = ft_lst_sort(lsti,croissant_pathname);
-				}
 				lsti = lsti->next;
 			}
 		}
