@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/23 00:29:12 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/23 04:40:13 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,12 @@ int main(int ac,char **av)
 	if (!av[1])
 	{
 		lst = ft_getreplist(".");
+
+//		while (lst)
+//		{
+//			printf("%s\n",((t_rep*)(lst->content))->name);
+//			lst = lst->nextl;
+//		}
 		ft_printlist(lst);
 	}
 	else if(av[i])

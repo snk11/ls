@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 11:00:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/23 00:25:30 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/23 04:40:03 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,8 @@ t_lst *ft_getreplist(char *rep)
 		if (pdirent1->d_name[0] != '.')
 		{
 			lstmp = ft_create_lst(e);
-
-			((t_rep*)(lstmp->content))->name = pdirent1->d_name;
-			printf("Create name = %s\n",((t_rep*)(lstmp->content))->name);
-			((t_rep*)(lstmp->content))->path = rep;
+			((t_rep*)(lstmp->content))->name = ft_memmove2(pdirent1->d_name);
+			((t_rep*)(lstmp->content))->path = ft_memmove2(rep);
 			lsta = lst_add(lsta, lstmp);
 		}
 	}
