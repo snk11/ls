@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/23 20:43:17 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/23 21:03:39 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,8 @@ int main(int ac,char **av)
 			while (lsti)
 			{
 				ft_putstr("\n");
-				printf("%s:\n",ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
+				ft_putstr(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
+				ft_putstr(":\n");
 				lst = ft_getreplist(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
 					lstj = ft_printlist2(lst);
 				lsti = lsti->next;
