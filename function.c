@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 15:43:19 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/23 04:27:50 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/23 05:09:08 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ t_lst		*lst_add(t_lst *toplist, t_lst *lst1)
 	if (toplist == NULL)
 	{
 			lst11 = ft_create_lst(lst1->content);
-			((t_rep*)(lst11->content))->name= ((t_rep*)(lst1->content))->name;
-			((t_rep*)(lst11->content))->path = ((t_rep*)(lst1->content))->path;
+			((t_rep*)(lst11->content))->name = ft_memmove2(((t_rep*)(lst1->content))->name);
+			((t_rep*)(lst11->content))->path = ft_memmove2(((t_rep*)(lst1->content))->path);
 		toplist = lst11;
 	}
 	else
@@ -33,8 +33,8 @@ t_lst		*lst_add(t_lst *toplist, t_lst *lst1)
 			while(lstmp->nextr)
 				lstmp = lstmp->nextr;
 			lst11 = ft_create_lst(lst1->content);
-			((t_rep*)(lst11->content))->name = ((t_rep*)(lst1->content))->name;
-			((t_rep*)(lst11->content))->path = ((t_rep*)(lst1->content))->path;
+			((t_rep*)(lst11->content))->name = ft_memmove2(((t_rep*)(lst1->content))->name);
+			((t_rep*)(lst11->content))->path = ft_memmove2(((t_rep*)(lst1->content))->path);
 			lstmp->nextr = lst11;
 		}
 		else
@@ -42,8 +42,8 @@ t_lst		*lst_add(t_lst *toplist, t_lst *lst1)
 			while(lstmp->nextl)
 				lstmp = lstmp->nextl;
 			lst11 = ft_create_lst(lst1->content);
-			((t_rep*)(lst11->content))->name= ((t_rep*)(lst1->content))->name;
-			((t_rep*)(lst11->content))->path = ((t_rep*)(lst1->content))->path;
+			((t_rep*)(lst11->content))->name = ft_memmove2(((t_rep*)(lst1->content))->name);
+			((t_rep*)(lst11->content))->path = ft_memmove2(((t_rep*)(lst1->content))->path);
 			lstmp->nextl = lst11;
 		}
 	}
@@ -58,8 +58,8 @@ void		lst_addo(t_lsto **toplist, t_lst *lst1)
 
 	lstmp = NULL;
 	lstmp = ft_create_lsto((lst1)->content);
-	((t_rep*)(lstmp->content))->name= ((t_rep*)(lst1->content))->name;
-	((t_rep*)(lstmp->content))->path = ((t_rep*)(lst1->content))->path;
+			((t_rep*)(lstmp->content))->name = ft_memmove2(((t_rep*)(lst1->content))->name);
+			((t_rep*)(lstmp->content))->path = ft_memmove2(((t_rep*)(lst1->content))->path);
 	if (*toplist == NULL)
 	{
 		*toplist = lstmp;
@@ -87,8 +87,8 @@ t_lsto		*lst_addo_down(t_lsto *toplist, t_lsto *lst1)
 	while (lst1)
 	{
 		lstmp = ft_create_lsto((lst1)->content);
-		((t_rep*)(lstmp->content))->name= ((t_rep*)(lst1->content))->name;
-		((t_rep*)(lstmp->content))->path = ((t_rep*)(lst1->content))->path;
+			((t_rep*)(lstmp->content))->name = ft_memmove2(((t_rep*)(lst1->content))->name);
+			((t_rep*)(lstmp->content))->path = ft_memmove2(((t_rep*)(lst1->content))->path);
 		if (lstmp2 == NULL)
 		{
 			lstmp2 = lstmp;
