@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 11:46:17 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/23 22:19:13 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/24 13:25:52 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,9 @@ void	ft_printlist(t_lst *lstmp)
 			lst_addo(&lst2, lstmp);
 		lstmp = lstmp->nextr;
 	}
-	lst1 = ft_lst_sort1(lst1);
 	lst2 = ft_lst_sort1(lst2);
+	lst1 = lst_addo_down(lst1,lst2);
+	lst1 = ft_lst_sort1(lst1);
 	while (lst1)
 	{
 		if ( (((t_rep*)(lst1)->content)->name)[0] != '.')
@@ -45,15 +46,6 @@ void	ft_printlist(t_lst *lstmp)
 			ft_putstr("\n");
 		}
 		lst1 = lst1->next;
-	}
-	while (lst2)
-	{
-		if ( (((t_rep*)(lst2)->content)->name)[0] != '.')
-		{
-			ft_putstr(((t_rep*)((lst2))->content)->name);
-			ft_putstr("\n");
-		}
-		lst2 = lst2->next;
 	}
 }
 
@@ -83,8 +75,30 @@ t_lsto	*ft_printlist2(t_lst *lstmp)
 			lst_addo(&lst2, lstmp);
 		lstmp = lstmp->nextr;
 	}
-	lst1 = ft_lst_sort1(lst1);
 	lst2 = ft_lst_sort1(lst2);
+//	while (lst1)
+//	{
+//		if ( (((t_rep*)(lst1)->content)->name)[0] != '.')
+//		{
+//			if(ft_strcmp(((t_rep*)((lst1))->content)->name, "lit.o") == 0)
+//				printf("NIMP\n");
+//			ft_putstr(((t_rep*)((lst1))->content)->name);
+//			ft_putstr("\n");
+//		}
+//		lst1 = lst1->next;
+//	}
+	lstbegio = lst2;
+//	while (lst2)
+//	{
+//		if ( (((t_rep*)(lst2)->content)->name)[0] != '.')
+//		{
+//			ft_putstr(((t_rep*)((lst2))->content)->name);
+//			ft_putstr("\n");
+//		}
+//		lst2 = lst2->next;
+//	}
+	lst1 = lst_addo_down(lst1,lst2);
+	lst1 = ft_lst_sort1(lst1);
 	while (lst1)
 	{
 		if ( (((t_rep*)(lst1)->content)->name)[0] != '.')
@@ -95,16 +109,6 @@ t_lsto	*ft_printlist2(t_lst *lstmp)
 			ft_putstr("\n");
 		}
 		lst1 = lst1->next;
-	}
-	lstbegio = lst2;
-	while (lst2)
-	{
-		if ( (((t_rep*)(lst2)->content)->name)[0] != '.')
-		{
-			ft_putstr(((t_rep*)((lst2))->content)->name);
-			ft_putstr("\n");
-		}
-		lst2 = lst2->next;
 	}
 	/*
 	lst2 = lstbegio;
@@ -143,7 +147,6 @@ t_lsto	*ft_printlist3(t_lst *lstmp)
 			lst_addo(&lst2, lstmp);
 		lstmp = lstmp->nextr;
 	}
-	lst1 = ft_lst_sort1(lst1);
 	lst2 = ft_lst_sort1(lst2);
 //	while (lst1)
 //	{
