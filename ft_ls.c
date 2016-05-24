@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/23 23:25:05 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/24 12:03:55 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,14 +72,17 @@ int main(int ac,char **av)
 //				ft_putstr("R ");
 //				ft_putstr(((t_rep*)(lsti->content))->name);
 //				ft_putstr("\n");
-				lst = ft_getreplist(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
-				if (lst)
+				stat(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name),&sb);
+				if((sb.st_mode & S_IRUSR))
+					lst = ft_getreplist(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
+				if(lst && (sb.st_mode & S_IRUSR))
 				{
 					lstj = ft_printlist3(lst);
 					lsti = lst_addo_down(lsti,lstj);
 //					lsti = ft_lst_sort(lsti,croissant_pathname);
 				}
 				lsti = lsti->next;
+				lst = NULL;
 			}
 			lstibegi = ft_lst_sort2(lstibegi);
 			lsti = lstibegi;
@@ -88,13 +91,25 @@ int main(int ac,char **av)
 				ft_putstr("\n");
 				ft_putstr(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
 				ft_putstr(":\n");
-				lst = ft_getreplist(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
+				stat(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name),&sb);
+				if((sb.st_mode & S_IRUSR))
+					lst = ft_getreplist(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
+				if(lst)
 					lstj = ft_printlist2(lst);
+				else if ((sb.st_mode & S_IRUSR) == 0)
+				{
+					ft_putstr_fd("ls: ", 2);
+					opendir(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
+				//perror(strerror(ENOENT));
+					perror(((t_rep*)(lsti->content))->name);
+				}
 				lsti = lsti->next;
+				lst = NULL;
 			}
 		}
+	}
+	/*
 		//else
-		/*
 		{
 			stat(av[1], &sb);
 			{
@@ -118,9 +133,7 @@ int main(int ac,char **av)
 				printf("%d\n",(localtime(&(sb.st_ctime)))->tm_year);
 			}
 		}
-		*/
-	}
-
+*/
 
 	return (0);
 }
