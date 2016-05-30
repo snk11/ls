@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/30 15:48:43 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/30 16:07:03 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,14 @@ int main(int ac,char **av)
 	t_lsto			*lstj;
 	int				i;
 	int				inderror;
+	t_ind			ind;
 
 	lst = NULL;
 	lstj = NULL;
 	lstibegi = NULL;
 	i = 1;
 	inderror = 0;
-
+	ft_init(ind);
 	if (!av[1])
 	{
 		lst = ft_getreplist(".");

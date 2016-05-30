@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/30 14:51:39 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/30 16:03:34 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,11 @@ typedef struct			s_rep
 	char			*path;
 	int					val;
 }						t_rep;
+
+typedef struct			s_ind
+{
+	int					indminus1;
+}						t_ind;
 
 typedef struct			s_numb
 {
@@ -105,5 +110,6 @@ int		ft_isdir(char *s);
 t_lsto		*ft_lst_sort1(t_lsto *lst);
 t_lsto		*ft_lst_sort2(t_lsto *lst);
 t_lsto	*ft_getreplisto4(t_lst *lstmp);
+void	ft_init(t_ind ind);
 
 # endif
