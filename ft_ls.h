@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/23 22:15:15 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/30 14:51:39 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,5 +104,6 @@ t_lsto		*ft_lst_sort(t_lsto *lst, int (*cmp)(t_lsto*));
 int		ft_isdir(char *s);
 t_lsto		*ft_lst_sort1(t_lsto *lst);
 t_lsto		*ft_lst_sort2(t_lsto *lst);
+t_lsto	*ft_getreplisto4(t_lst *lstmp);
 
 # endif
