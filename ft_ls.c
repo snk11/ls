@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/30 17:05:51 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/30 17:43:10 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,10 @@ int main(int ac,char **av)
 				lsti = ft_getreplisto4(lst);
 				while (lsti)
 				{
-					if (ft_strcmp2(av[i],((t_rep*)(lsti->content))->name) == 0)
+					if (ft_strcmp2(av[i],((t_rep*)(lsti->content))->name) == 0 || ft_strcmp2(av[i],ft_strjoin("./",((t_rep*)(lsti->content))->name)) == 0)
 					{
 						lst = ft_getreplist(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
-						if (av[2])
+						if (av[3] || (av[2]  && i > 1 && (ind.indfirst == 1 && i > 2)))
 						{
 							ft_putstr(av[i]);
 							ft_putstr(":\n");
