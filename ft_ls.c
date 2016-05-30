@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/30 16:07:03 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/30 17:05:51 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,10 @@ int main(int ac,char **av)
 					inderror = 1;
 				}
 			}
-			if (inderror == 0 && (ft_strcmp(av[1], "-1") != 0 || ft_strcmp(av[1], "--") != 0) && ft_strcmp(av[1],"-1R") != 0)
+			if (inderror == 0 && (ft_strcmp(av[i], "-1") != 0 && ft_strcmp(av[i], "--") != 0 && ft_strcmp(av[i],"-1R") != 0))
 			{
-				if (i > 1)
+//				printf("i = %d, indfirst = %d\n",i,ind.indfirst);
+				if ( i > 1 && (ind.indfirst == 1 && i > 2) )
 					ft_putstr("\n");
 				lst = ft_getreplist(".");
 				lsti = ft_getreplisto4(lst);
@@ -79,8 +80,9 @@ int main(int ac,char **av)
 					lsti = lsti->next;
 				}
 			}
-			else if (i > 1 && inderror == 0 && (ft_strcmp(av[1], "-1") == 0 || ft_strcmp(av[1], "--") == 0))
+			else if (i == 1 && inderror == 0 && (ft_strcmp(av[i], "-1") == 0 || ft_strcmp(av[i], "--") == 0))
 			{
+				ind.indfirst = 1;
 /*
 				lst = ft_getreplist(".");
 				lsti = ft_printlist2(lst);
@@ -109,8 +111,9 @@ int main(int ac,char **av)
 				}
 */
 			}
-			else if (i > 1 && inderror == 0 && (ft_strcmp(av[1], "-1R")== 0 || ft_strcmp(av[1], "-1R")== 0))
+			else if (i == 1 && inderror == 0 && (ft_strcmp(av[i], "-1R")== 0 || ft_strcmp(av[i], "-1R")== 0))
 			{
+				ind.indfirst = 1;
 /*
 				lst = ft_getreplist(".");
 				lsti = ft_printlist2(lst);
@@ -172,7 +175,7 @@ int main(int ac,char **av)
 					inderror = 1;
 				}
 			}
-			if (inderror == 0 && (ft_strcmp(av[1], "-1") != 0 || ft_strcmp(av[1], "--") != 0) && ft_strcmp(av[1],"-1R") != 0)
+			if (inderror == 0 && (ft_strcmp(av[1], "-1") != 0 || ft_strcmp(av[1], "--") != 0 || ft_strcmp(av[1],"-1R") != 0))
 			{
 				lst = ft_getreplist(".");
 				lsti = ft_getreplisto4(lst);
