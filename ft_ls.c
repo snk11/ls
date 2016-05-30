@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/30 15:06:53 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/30 15:48:43 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,38 @@ int main(int ac,char **av)
 		{
 			if (ft_strcmp(av[i], "-1") != 0 && ft_strcmp(av[i], "--") != 0 && ft_strcmp(av[i], "-1R") != 0)
 			{
-				ft_putstr_fd("ls: ", 2);
-				opendir(av[i]);
+				if (!opendir(av[i]))
+				{
+					ft_putstr_fd("ls: ", 2);
 				//perror(strerror(ENOENT));
-				perror(av[i]);
-				inderror = 1;
+					perror(av[i]);
+					inderror = 1;
+				}
 			}
-			if (inderror == 0 && (ft_strcmp(av[1], "-1") == 0 || ft_strcmp(av[1], "--") == 0))
+			if (inderror == 0 && (ft_strcmp(av[1], "-1") != 0 || ft_strcmp(av[1], "--") != 0) && ft_strcmp(av[1],"-1R") != 0)
 			{
+				if (i > 1)
+					ft_putstr("\n");
+				lst = ft_getreplist(".");
+				lsti = ft_getreplisto4(lst);
+				while (lsti)
+				{
+					if (ft_strcmp2(av[i],((t_rep*)(lsti->content))->name) == 0)
+					{
+						lst = ft_getreplist(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
+						if (av[2])
+						{
+							ft_putstr(av[i]);
+							ft_putstr(":\n");
+						}
+						lstj = ft_printlist2(lst);
+					}
+					lsti = lsti->next;
+				}
+			}
+			else if (i > 1 && inderror == 0 && (ft_strcmp(av[1], "-1") == 0 || ft_strcmp(av[1], "--") == 0))
+			{
+/*
 				lst = ft_getreplist(".");
 				lsti = ft_printlist2(lst);
 				lstibegi = lsti;
@@ -82,9 +106,11 @@ int main(int ac,char **av)
 					lsti = lsti->next;
 					lst = NULL;
 				}
+*/
 			}
-			else if (inderror == 0 && (ft_strcmp(av[1], "-1R")== 0 || ft_strcmp(av[1], "-1R")== 0))
+			else if (i > 1 && inderror == 0 && (ft_strcmp(av[1], "-1R")== 0 || ft_strcmp(av[1], "-1R")== 0))
 			{
+/*
 				lst = ft_getreplist(".");
 				lsti = ft_printlist2(lst);
 				lstibegi = lsti;
@@ -127,6 +153,7 @@ int main(int ac,char **av)
 					lsti = lsti->next;
 					lst = NULL;
 				}
+*/
 			}
 			i++;
 		}
@@ -136,11 +163,11 @@ int main(int ac,char **av)
 	{
 			if (ft_strcmp(av[1], "-1") != 0 && ft_strcmp(av[1], "--") != 0 && ft_strcmp(av[1], "-1R") != 0)
 			{
-				if (!opendir(av[i]))
+				if (!opendir(av[1]))
 				{
 					ft_putstr_fd("ls: ", 2);
 				//perror(strerror(ENOENT));
-					perror(av[i]);
+					perror(av[1]);
 					inderror = 1;
 				}
 			}
