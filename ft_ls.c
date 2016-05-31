@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/31 11:21:13 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/31 15:56:10 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -165,7 +165,7 @@ int main(int ac,char **av)
 	}
 	else if(av[1])
 	{
-			if (ft_strcmp(av[1], "-1") != 0 && ft_strcmp(av[1], "--") != 0 && ft_strcmp(av[1], "-1R") != 0)
+			if (ft_strcmp(av[1], "-1") != 0 && ft_strcmp(av[1], "--") != 0 && ft_strcmp(av[1], "-1R") != 0 && ft_strcmp(av[1],"-1a") != 0 && ft_strcmp(av[1],"-1r") != 0)
 			{
 				if (!opendir(av[1]))
 				{
@@ -175,7 +175,7 @@ int main(int ac,char **av)
 					inderror = 1;
 				}
 			}
-			if (inderror == 0 && (ft_strcmp(av[1], "-1") != 0 && ft_strcmp(av[1], "--") != 0 && ft_strcmp(av[1],"-1R") != 0))
+			if (inderror == 0 && (ft_strcmp(av[1], "-1") != 0 && ft_strcmp(av[1], "--") != 0 && ft_strcmp(av[1],"-1R") != 0 && ft_strcmp(av[1],"-1a") != 0 && ft_strcmp(av[1],"-1r") != 0))
 			{
 //				if (lst = ft_getreplist();
 				
@@ -197,6 +197,16 @@ int main(int ac,char **av)
 			{
 				lst = ft_getreplist(".");
 				ft_printlist(lst);
+			}
+			else if (inderror == 0 && (ft_strcmp(av[1],"-1r")) == 0)
+			{
+				lst = ft_getreplist(".");
+				ft_printlist5(lst);
+			}
+			else if (inderror == 0 && (ft_strcmp(av[1],"-1a")) == 0)
+			{
+				lst = ft_getreplist4(".");
+				ft_printlist4(lst);
 			}
 			else if (inderror == 0 && (ft_strcmp(av[1], "-1R")) == 0)
 			{

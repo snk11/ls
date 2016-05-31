@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 13:51:30 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/23 22:29:07 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/31 16:17:37 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ int croissant(t_lsto *lsta)
 		return (ft_strcmp(((t_rep*)(lsta)->content)->name,((t_rep*)((lsta)->next)->content)->name) < 0);
 }
 
+int decreasing(t_lsto *lsta)
+{
+		return (ft_strcmp(((t_rep*)(lsta)->content)->name,((t_rep*)((lsta)->next)->content)->name) > 0);
+}
 
 int croissant_pathname(t_lsto *lsti)
 {
@@ -127,5 +131,34 @@ t_lsto		*ft_lst_sort2(t_lsto *lst)
 	lst1 = ft_lst_sort(lst1,croissant_pathname);
 	lst1 = ft_lst_sort(lst1,croissant_pathname);
 	lst1 = ft_lst_sort(lst1,croissant_pathname);
+	return (lst1);
+}
+
+t_lsto		*ft_lst_sort3(t_lsto *lst)
+{
+	t_lsto	*lst1;
+
+	lst1 = ft_lst_sort(lst,decreasing);
+	lst1 = ft_lst_sort(lst1,decreasing);
+	lst1 = ft_lst_sort(lst1,decreasing);
+	lst1 = ft_lst_sort(lst1,decreasing);
+	lst1 = ft_lst_sort(lst1,decreasing);
+	lst1 = ft_lst_sort(lst1,decreasing);
+	lst1 = ft_lst_sort(lst1,decreasing);
+	lst1 = ft_lst_sort(lst1,decreasing);
+	lst1 = ft_lst_sort(lst1,decreasing);
+	lst1 = ft_lst_sort(lst1,decreasing);
+	lst1 = ft_lst_sort(lst1,decreasing);
+	lst1 = ft_lst_sort(lst1,decreasing);
+	lst1 = ft_lst_sort(lst1,decreasing);
+	lst1 = ft_lst_sort(lst1,decreasing);
+	lst1 = ft_lst_sort(lst1,decreasing);
+	lst1 = ft_lst_sort(lst1,decreasing);
+	lst1 = ft_lst_sort(lst1,decreasing);
+	lst1 = ft_lst_sort(lst1,decreasing);
+	lst1 = ft_lst_sort(lst1,decreasing);
+	lst1 = ft_lst_sort(lst1,decreasing);
+	lst1 = ft_lst_sort(lst1,decreasing);
+	lst1 = ft_lst_sort(lst1,decreasing);
 	return (lst1);
 }

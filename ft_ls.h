@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/30 16:28:11 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/31 16:05:58 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,9 +91,12 @@ void		lst_add_del(t_lst **toplist, t_lst **t_lst1);
 t_lst		*ft_create_lst(void *content);
 t_lsto		*ft_create_lsto(void *content);
 t_lst *ft_getreplist(char *rep);
+t_lst *ft_getreplist4(char *rep);
 void	ft_printlist(t_lst *lstmp);
 t_lsto	*ft_printlist2(t_lst *lstmp);
 t_lsto	*ft_printlist3(t_lst *lstmp);
+void	ft_printlist4(t_lst *lstmp);
+void	ft_printlist5(t_lst *lstmp);
 int		ft_countlevel(t_lst *lstmp);
 char	*ft_makepath(char *str1,char *str2);
 void	ft_push1stback(t_lst **lstmp);
@@ -112,5 +115,7 @@ t_lsto		*ft_lst_sort1(t_lsto *lst);
 t_lsto		*ft_lst_sort2(t_lsto *lst);
 t_lsto	*ft_getreplisto4(t_lst *lstmp);
 void	ft_init(t_ind ind);
+t_lsto		*ft_lst_sort3(t_lsto *lst);
+int decreasing(t_lsto *lsta);
 
 # endif
