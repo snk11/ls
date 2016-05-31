@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/31 16:05:58 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/31 17:08:11 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,7 @@ t_lsto	*ft_printlist2(t_lst *lstmp);
 t_lsto	*ft_printlist3(t_lst *lstmp);
 void	ft_printlist4(t_lst *lstmp);
 void	ft_printlist5(t_lst *lstmp);
+void	ft_printlist6(t_lst *lstmp);
 int		ft_countlevel(t_lst *lstmp);
 char	*ft_makepath(char *str1,char *str2);
 void	ft_push1stback(t_lst **lstmp);
@@ -113,9 +114,11 @@ t_lsto		*ft_lst_sort(t_lsto *lst, int (*cmp)(t_lsto*));
 int		ft_isdir(char *s);
 t_lsto		*ft_lst_sort1(t_lsto *lst);
 t_lsto		*ft_lst_sort2(t_lsto *lst);
+t_lsto		*ft_lst_sort4(t_lsto *lst);
 t_lsto	*ft_getreplisto4(t_lst *lstmp);
 void	ft_init(t_ind ind);
 t_lsto		*ft_lst_sort3(t_lsto *lst);
 int decreasing(t_lsto *lsta);
+int decreasing_timestamp(t_lsto *lsta);
 
 # endif

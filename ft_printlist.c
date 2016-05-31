@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 11:46:17 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/31 16:09:05 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/31 17:22:49 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -295,3 +295,41 @@ void	ft_printlist5(t_lst *lstmp)
 		lst1 = lst1->next;
 	}
 }
+
+void	ft_printlist6(t_lst *lstmp)
+{
+	t_lsto	*lst1;
+	t_lsto	*lst2;
+	t_lst	*lstbegi;
+
+	lst1 = NULL;
+	lst2 = NULL;
+	lstbegi = lstmp;
+	while (lstmp)
+	{
+		if(ft_isdir(ft_makepath(((t_rep*)(lstmp->content))->path,((t_rep*)(lstmp->content))->name)) == 0)
+			lst_addo(&lst1, lstmp);
+		lstmp = lstmp->nextl;
+	}
+	lstmp = lstbegi;
+	while (lstmp)
+	{
+//		if (ft_isdir(lstmp) == 1)
+		if(ft_isdir(ft_makepath(((t_rep*)(lstmp->content))->path,((t_rep*)(lstmp->content))->name)) == 1)
+			lst_addo(&lst2, lstmp);
+		lstmp = lstmp->nextr;
+	}
+	lst2 = ft_lst_sort4(lst2);
+	lst1 = lst_addo_down(lst1,lst2);
+	lst1 = ft_lst_sort4(lst1);
+	while (lst1)
+	{
+		if ( (((t_rep*)(lst1)->content)->name)[0] != '.')
+		{
+			ft_putstr(((t_rep*)((lst1))->content)->name);
+			ft_putstr("\n");
+		}
+		lst1 = lst1->next;
+	}
+}
+
