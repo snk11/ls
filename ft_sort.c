@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 13:51:30 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/08 02:45:31 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/08 04:29:34 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,27 @@ int decreasing_timestamp(t_lsto *lsta)
 //	time_t	timestamp;
 	struct stat		sa;
 	struct stat		sb;
+	char			*s1;
+	char			*s2;
 
-	stat(((t_rep*)(lsta)->content)->name, &sa);
-	stat(((t_rep*)((lsta)->next)->content)->name, &sb);
+
+	s1 = ft_memmove2(((t_rep*)(lsta)->content)->name);
+	s2 = ft_memmove2(((t_rep*)((lsta)->next)->content)->name);
+	lstat(s1, &sa);
+	lstat(s2, &sb);
  	if (sa.st_atime >= sb.st_atime)
 	{
  		if (sa.st_atime > sb.st_atime)
 			return (1);
 		if (sa.st_atime == sb.st_atime && sa.st_atimespec.tv_nsec >= sb.st_atimespec.tv_nsec)
-			return (1);
+		{
+			if (sa.st_atimespec.tv_nsec > sb.st_atimespec.tv_nsec)
+				return (1);
+			if (sa.st_atimespec.tv_nsec == sb.st_atimespec.tv_nsec && ft_strcmp(s1,s2) <= 0)
+				return (1);
+			else
+				return (0);
+		}
 		else
 			return (0);
 	}
