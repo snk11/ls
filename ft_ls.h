@@ -6,13 +6,12 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/31 17:08:11 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/08 02:07:24 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # ifndef FT_LS_H
 # define FT_LS_H
-
 
 
 # include "libft/libft.h"

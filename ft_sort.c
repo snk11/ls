@@ -6,11 +6,12 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 13:51:30 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/31 18:32:22 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/08 02:45:31 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
+
 
 int croissant(t_lsto *lsta)
 {
@@ -27,14 +28,19 @@ int decreasing_timestamp(t_lsto *lsta)
 //	time_t	timestamp;
 	struct stat		sa;
 	struct stat		sb;
-	char			*s1;
-	char			*s2;
 
 	stat(((t_rep*)(lsta)->content)->name, &sa);
 	stat(((t_rep*)((lsta)->next)->content)->name, &sb);
-	s1 = ft_memmove2(ctime(&(sa.st_atime)));
-	s2 = ft_memmove2(ctime(&(sb.st_atime)));
-	return (ft_strcmp(s1,s2) > 0);
+ 	if (sa.st_atime >= sb.st_atime)
+	{
+ 		if (sa.st_atime > sb.st_atime)
+			return (1);
+		if (sa.st_atime == sb.st_atime && sa.st_atimespec.tv_nsec >= sb.st_atimespec.tv_nsec)
+			return (1);
+		else
+			return (0);
+	}
+	return (0);
 }
 
 int croissant_pathname(t_lsto *lsti)
@@ -75,7 +81,8 @@ t_lsto		*ft_lst_sort(t_lsto *lst, int (*cmp)(t_lsto*))
 			lst = lstbegi;
 			lst = lst->next;
 		}
-		while(lst->next != NULL && count < 999999)
+//		while(lst->next != NULL && count < 999999)
+		while(lst->next != NULL)
 		{
 			if ((cmp)(lst) == 0)
 			{
@@ -182,24 +189,6 @@ t_lsto		*ft_lst_sort4(t_lsto *lst)
 	t_lsto	*lst1;
 
 	lst1 = ft_lst_sort(lst,decreasing_timestamp);
-	lst1 = ft_lst_sort(lst1,decreasing_timestamp);
-	lst1 = ft_lst_sort(lst1,decreasing_timestamp);
-	lst1 = ft_lst_sort(lst1,decreasing_timestamp);
-	lst1 = ft_lst_sort(lst1,decreasing_timestamp);
-	lst1 = ft_lst_sort(lst1,decreasing_timestamp);
-	lst1 = ft_lst_sort(lst1,decreasing_timestamp);
-	lst1 = ft_lst_sort(lst1,decreasing_timestamp);
-	lst1 = ft_lst_sort(lst1,decreasing_timestamp);
-	lst1 = ft_lst_sort(lst1,decreasing_timestamp);
-	lst1 = ft_lst_sort(lst1,decreasing_timestamp);
-	lst1 = ft_lst_sort(lst1,decreasing_timestamp);
-	lst1 = ft_lst_sort(lst1,decreasing_timestamp);
-	lst1 = ft_lst_sort(lst1,decreasing_timestamp);
-	lst1 = ft_lst_sort(lst1,decreasing_timestamp);
-	lst1 = ft_lst_sort(lst1,decreasing_timestamp);
-	lst1 = ft_lst_sort(lst1,decreasing_timestamp);
-	lst1 = ft_lst_sort(lst1,decreasing_timestamp);
-	lst1 = ft_lst_sort(lst1,decreasing_timestamp);
-	lst1 = ft_lst_sort(lst1,decreasing_timestamp);
+//	lst1 = ft_lst_sort(lst1,decreasing_timestamp);
 	return (lst1);
 }
