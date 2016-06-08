@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 13:51:30 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/08 08:13:33 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/09 00:30:56 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int decreasing(t_lsto *lsta)
 	return (ft_strcmp(((t_rep*)(lsta)->content)->name,((t_rep*)((lsta)->next)->content)->name) > 0);
 }
 
-int decreasing_timestamp(t_lsto *lsta)
+int decreasing_time(t_lsto *lsta)
 {
 //	time_t	timestamp;
 	struct stat		sa;
@@ -38,15 +38,16 @@ int decreasing_timestamp(t_lsto *lsta)
 	lstat(s2, &sb);
 //	printf("s1 = %ld, s2 = %ld\n",sa.st_atime,sb.st_atime);
 //	printf("s1 = %s s2 = %s\n",ctime(&(sa.st_atime)),ctime(&(sb.st_atime)));
-	if (sa.st_atime >= sb.st_atime)
+	if (sa.st_mtime >= sb.st_mtime)
 	{
- 		if (sa.st_atime > sb.st_atime)
+//		printf("1\n");
+ 		if (sa.st_mtime > sb.st_mtime)
 			return (1);
-		if (sa.st_atime == sb.st_atime && sa.st_atimespec.tv_nsec >= sb.st_atimespec.tv_nsec)
+		if (sa.st_mtime == sb.st_mtime && sa.st_mtimespec.tv_nsec >= sb.st_mtimespec.tv_nsec)
 		{
-			if (sa.st_atimespec.tv_nsec > sb.st_atimespec.tv_nsec)
+			if (sa.st_mtimespec.tv_nsec > sb.st_mtimespec.tv_nsec)
 				return (1);
-			if (sa.st_atimespec.tv_nsec == sb.st_atimespec.tv_nsec && ft_strcmp(s1,s2) <= 0)
+			if (sa.st_mtimespec.tv_nsec == sb.st_mtimespec.tv_nsec && ft_strcmp(s1,s2) <= 0)
 				return (1);
 			else
 				return (0);
@@ -202,7 +203,7 @@ t_lsto		*ft_lst_sort4(t_lsto *lst)
 {
 	t_lsto	*lst1;
 
-	lst1 = ft_lst_sort(lst,decreasing_timestamp);
-//	lst1 = ft_lst_sort(lst1,decreasing_timestamp);
+	lst1 = ft_lst_sort(lst,decreasing_time);
+//	lst1 = ft_lst_sort(lst1,decreasing_time);
 	return (lst1);
 }

@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 11:46:17 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/08 07:18:30 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/09 00:31:33 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -301,6 +301,8 @@ void	ft_printlist6(t_lst *lstmp)
 	t_lsto	*lst1;
 	t_lsto	*lst2;
 	t_lst	*lstbegi;
+	struct stat		sa;
+	char			*s1;
 
 	lst1 = NULL;
 	lst2 = NULL;
@@ -314,7 +316,6 @@ void	ft_printlist6(t_lst *lstmp)
 	lstmp = lstbegi;
 	while (lstmp)
 	{
-//		if (ft_isdir(lstmp) == 1)
 		if(ft_isdir(ft_makepath(((t_rep*)(lstmp->content))->path,((t_rep*)(lstmp->content))->name)) == 1)
 			lst_addo(&lst2, lstmp);
 		lstmp = lstmp->nextr;
@@ -327,6 +328,9 @@ void	ft_printlist6(t_lst *lstmp)
 		if ( (((t_rep*)(lst1)->content)->name)[0] != '.')
 		{
 			ft_putstr(((t_rep*)((lst1))->content)->name);
+//	s1 = ft_memmove2(((t_rep*)(lst1)->content)->name);
+//	stat(s1, &sa);
+//	printf("s1 = %s \n",ctime(&(sa.st_mtime)));
 			ft_putstr("\n");
 		}
 		lst1 = lst1->next;
