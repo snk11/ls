@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 13:51:30 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/08 04:29:34 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/08 08:13:33 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,9 @@ int decreasing_timestamp(t_lsto *lsta)
 	s2 = ft_memmove2(((t_rep*)((lsta)->next)->content)->name);
 	lstat(s1, &sa);
 	lstat(s2, &sb);
- 	if (sa.st_atime >= sb.st_atime)
+//	printf("s1 = %ld, s2 = %ld\n",sa.st_atime,sb.st_atime);
+//	printf("s1 = %s s2 = %s\n",ctime(&(sa.st_atime)),ctime(&(sb.st_atime)));
+	if (sa.st_atime >= sb.st_atime)
 	{
  		if (sa.st_atime > sb.st_atime)
 			return (1);

@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/08 06:50:25 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/08 08:01:17 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int main(int ac,char **av)
 	{
 		while(av[i])
 		{
-			if (ft_strcmp(av[i], "-1") != 0 && ft_strcmp(av[i], "--") != 0 && ft_strcmp(av[i], "-1R") != 0)
+			if (ft_strcmp(av[i], "-1") != 0 && ft_strcmp(av[i], "--") != 0 && ft_strcmp(av[i], "-1R") != 0 && ft_strcmp(av[i],"-1a") != 0 && ft_strcmp(av[i],"-1r") != 0 && ft_strcmp(av[i],"-1t") != 0)
 			{
 				if (!opendir(av[i]))
 				{
@@ -58,12 +58,16 @@ int main(int ac,char **av)
 					inderror = 1;
 				}
 			}
-			if (inderror == 0 && (ft_strcmp(av[i], "-1") != 0 && ft_strcmp(av[i], "--") != 0 && ft_strcmp(av[i],"-1R") != 0))
+			if (ft_strcmp(av[i], "-1") != 0 && ft_strcmp(av[i], "--") != 0 && ft_strcmp(av[i], "-1R") != 0 && ft_strcmp(av[i],"-1a") != 0 && ft_strcmp(av[i],"-1r") != 0 && ft_strcmp(av[i],"-1t") != 0)
 			{
 //				printf("i = %d, indfirst = %d\n",i,ind.indfirst);
 				if (ind.indr == 1)
 				{
 					ft_r(av[i]);
+				}
+				else if (ind.indt == 1)
+				{
+					ft_t(av[i]);
 				}
 				else
 				{
@@ -120,7 +124,12 @@ int main(int ac,char **av)
 				}
 */
 			}
-			else if (i == 1 && inderror == 0 && (ft_strcmp(av[i], "-1R")== 0 || ft_strcmp(av[i], "-1R")== 0))
+			else if (i == 1 && inderror == 0 && (ft_strcmp(av[i],"-1t")) == 0)
+			{
+				ind.indfirst = 1;
+				ind.indt = 1;
+			}
+			else if (i == 1 && inderror == 0 && (ft_strcmp(av[i], "-1R")== 0))
 			{
 				ind.indfirst = 1;
 				ind.indr = 1;
