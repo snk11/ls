@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 11:46:17 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/09 00:31:33 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/09 01:17:35 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -301,8 +301,8 @@ void	ft_printlist6(t_lst *lstmp)
 	t_lsto	*lst1;
 	t_lsto	*lst2;
 	t_lst	*lstbegi;
-	struct stat		sa;
-	char			*s1;
+//	struct stat		sa;
+//	char			*s1;
 
 	lst1 = NULL;
 	lst2 = NULL;

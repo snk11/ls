@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 13:51:30 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/09 00:30:56 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/09 01:23:18 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,10 @@ int decreasing_time(t_lsto *lsta)
 	char			*s2;
 
 
-	s1 = ft_memmove2(((t_rep*)(lsta)->content)->name);
-	s2 = ft_memmove2(((t_rep*)((lsta)->next)->content)->name);
+	s1 = ft_memmove2(ft_makepath(((t_rep*)(lsta->content))->path,((t_rep*)(lsta->content))->name));
+	s2 = ft_memmove2(ft_makepath(((t_rep*)((lsta->next)->content))->path,((t_rep*)((lsta->next)->content))->name));
+//	s1 = ft_memmove2(((t_rep*)(lsta)->content)->name);
+//	s2 = ft_memmove2(((t_rep*)((lsta)->next)->content)->name);
 	lstat(s1, &sa);
 	lstat(s2, &sb);
 //	printf("s1 = %ld, s2 = %ld\n",sa.st_atime,sb.st_atime);

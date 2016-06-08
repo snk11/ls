@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/08 08:01:17 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/09 01:09:09 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,10 @@ int main(int ac,char **av)
 	i = 1;
 	inderror = 0;
 	ft_init(ind);
+	if (av[2])
+		ind.indav2 = 1;
+	if (av[3])
+		ind.indav3 = 1;
 	if (!av[1])
 	{
 		lst = ft_getreplist(".");
@@ -67,7 +71,7 @@ int main(int ac,char **av)
 				}
 				else if (ind.indt == 1)
 				{
-					ft_t(av[i]);
+					ft_t(av[i], ind, i);
 				}
 				else
 				{
