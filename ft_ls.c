@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/09 01:09:09 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/09 01:42:24 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int main(int ac,char **av)
 //				printf("i = %d, indfirst = %d\n",i,ind.indfirst);
 				if (ind.indr == 1)
 				{
-					ft_r(av[i]);
+					ft_r(av[i], ind, i);
 				}
 				else if (ind.indt == 1)
 				{

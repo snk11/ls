@@ -6,13 +6,13 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/08 06:45:09 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/08 07:00:29 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/09 01:53:19 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-void ft_r(char *s)
+void ft_r(char *s, t_ind ind, int i)
 {
 
 	struct stat		sb;
@@ -20,9 +20,15 @@ void ft_r(char *s)
 	t_lsto			*lsti;
 	t_lsto			*lstibegi;
 	t_lsto			*lstj;
-	int				i;
-	
+
+	if ( (i > 1 && (ind.indfirst == 1 && i > 2)) || (i > 1 && ind.indfirst == 0))
+		ft_putstr("\n");
 	lst = ft_getreplist(s);
+	if (ind.indav3 || (ind.indav2  && i > 1 && (ind.indfirst == 1 && i > 2))  || (ind.indav2 && ind.indfirst == 0))
+	{
+		ft_putstr(s);
+		ft_putstr(":\n");
+	}
 	lsti = ft_printlist2(lst);
 	lstibegi = lsti;
 	while (lsti)
