@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/09 01:42:14 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/09 02:42:13 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,5 +126,6 @@ int decreasing(t_lsto *lsta);
 int decreasing_time(t_lsto *lsta);
 void ft_t(char *s, t_ind ind, int i);
 void ft_r(char *s, t_ind ind, int i);
+void ft_printerror(char **av);
 
 # endif

@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/09 02:31:28 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/09 02:43:28 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,15 +50,16 @@ int main(int ac,char **av)
 	}
 	else if(av[2])
 	{
+		ft_printerror(av);
 		while(av[i])
 		{
 			if (ft_strcmp(av[i], "-1") != 0 && ft_strcmp(av[i], "--") != 0 && ft_strcmp(av[i], "-1R") != 0 && ft_strcmp(av[i],"-1a") != 0 && ft_strcmp(av[i],"-1r") != 0 && ft_strcmp(av[i],"-1t") != 0)
 			{
 				if (!opendir(av[i]))
 				{
-					ft_putstr_fd("ls: ", 2);
+//					ft_putstr_fd("ls: ", 2);
 				//perror(strerror(ENOENT));
-					perror(av[i]);
+//					perror(av[i]);
 					inderror = 1;
 				}
 			}
