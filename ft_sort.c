@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 13:51:30 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/09 05:07:16 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/09 05:48:26 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,11 @@
 int croissant(t_lsto *lsta)
 {
 		return (ft_strcmp(((t_rep*)(lsta)->content)->name,((t_rep*)((lsta)->next)->content)->name) < 0);
+}
+
+int croissant_char(t_lsto *lsta)
+{
+		return (ft_strcmp((lsta)->content,(lsta->next)->content) < 0);
 }
 
 int decreasing(t_lsto *lsta)

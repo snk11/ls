@@ -6,13 +6,13 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/09 02:37:03 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/09 05:05:13 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/09 06:03:36 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-void ft_printerror(char **av)
+void ft_printerror(char **av, t_ind ind)
 {
 	int	i;
 	int ind1;
@@ -44,7 +44,10 @@ void ft_printerror(char **av)
 		}
 		i++;
 	}
-	lst1 = ft_lst_sort(lst1,decreasing_time_char);
+	if (ind.indt == 1)
+		lst1 = ft_lst_sort(lst1,decreasing_time_char);
+	else if (ind.indone == 1)
+		lst1 = ft_lst_sort(lst1,croissant_char);
 	while (lst1)
 	{
 		ft_putstr(lst1->content);

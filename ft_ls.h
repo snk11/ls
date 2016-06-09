@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/09 05:42:09 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/09 06:01:14 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,6 +114,7 @@ void	ft_trailrep(t_lst **lst,char *str);
 //void	swap(t_lst **lsta);
 //void		ft_sort(t_lst **lsta);
 int croissant(t_lsto *lsta);
+int croissant_char(t_lsto *lsta);
 int croissant_pathname(t_lsto *lsti);
 t_lsto		*ft_lst_sort(t_lsto *lst, int (*cmp)(t_lsto*));
 int		ft_isdir(char *s);
@@ -128,6 +129,7 @@ int decreasing_time(t_lsto *lsta);
 int decreasing_time_char(t_lsto *lsta);
 void ft_t(char *s, t_ind ind, int *inder1);
 void ft_r(char *s, t_ind ind, int *inder1);
-void ft_printerror(char **av);
+void ft_printerror(char **av, t_ind ind);
+void ft_scan_ind(char **av,int *indone, int *indt, int *indr);
 
 # endif
