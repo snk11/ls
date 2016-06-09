@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 15:43:19 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/24 14:27:18 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/09 05:12:34 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,6 +147,50 @@ t_lsto		*lst_addo_down(t_lsto *toplist, t_lsto *lst1)
 	return (lsttopbegi);
 	//		*t_lst1 = (*t_lst1)->next;
 }
+
+t_lsto		*lst_addo_down_char(t_lsto *toplist, t_lsto *lst1)
+{
+
+	t_lsto		*lstmp;
+	t_lsto		*lstmp2;
+	t_lsto		*lstbegi;
+	t_lsto		*lsttopbegi;
+
+	lstmp = NULL;
+	lstmp2 = NULL;
+	lstbegi = NULL;
+	lsttopbegi = toplist;
+	while (lst1 && toplist)
+	{
+		lstmp = ft_create_lsto((lst1)->content);
+		{
+			lstmp2 = lsttopbegi;
+			while (lstmp2->next)
+				lstmp2 = lstmp2->next;
+			lstmp2->next = lstmp;
+		}
+		lst1 = lst1->next;
+	}
+	if (lst1 && toplist == NULL)
+	{
+			lstmp = ft_create_lsto((lst1)->content);
+				lsttopbegi = lstmp;
+				lst1 = lst1->next;
+		while(lst1)
+		{
+			lstmp = ft_create_lsto((lst1)->content);
+			{
+				lstmp2 = lsttopbegi;
+				while (lstmp2->next)
+					lstmp2 = lstmp2->next;
+				lstmp2->next = lstmp;
+			}
+			lst1 = lst1->next;
+		}
+	}
+	return (lsttopbegi);
+}
+
 /*
 void	ft_push1stback(t_lst **lstmp)
 {
@@ -210,6 +254,4 @@ t_lsto		*ft_create_lsto(void *content)
 	curlst->next = NULL;
 	return (curlst);
 }
-
-
 

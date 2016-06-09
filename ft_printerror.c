@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/09 02:37:03 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/09 03:25:24 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/09 05:05:13 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,12 @@ void ft_printerror(char **av)
 {
 	int	i;
 	int ind1;
+	t_lsto		*lst;
+	t_lsto		*lst1;
+	
 
+	lst = NULL;
+	lst1 = NULL;
 	i = 1;
 	ind1 = 0;
 	while(av[i])
@@ -30,12 +35,21 @@ void ft_printerror(char **av)
 			}
 			if (!ft_isdir(av[i]))
 			{
-				ft_putstr(av[i]);
-				ft_putstr("\n");
+				lst = ft_create_lsto(av[i]);
+				lst1 = lst_addo_down_char(lst1,lst);
+//				ft_putstr(av[i]);
+//				ft_putstr("\n");
 				ind1 = 1;
 			}
 		}
 		i++;
+	}
+	lst1 = ft_lst_sort(lst1,decreasing_time_char);
+	while (lst1)
+	{
+		ft_putstr(lst1->content);
+		ft_putstr("\n");
+		lst1 = lst1->next;
 	}
 	if (ind1 == 1)
 		ft_putstr("\n");

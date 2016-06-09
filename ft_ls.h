@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/09 03:50:50 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/09 05:12:50 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,7 @@ typedef struct		s_stat
 t_lst		*lst_add(t_lst *toplist, t_lst *t_lst1);
 void		lst_addo(t_lsto **toplist, t_lst *t_lst1);
 t_lsto		*lst_addo_down(t_lsto *toplist, t_lsto *lst1);
+t_lsto		*lst_addo_down_char(t_lsto *toplist, t_lsto *lst1);
 void		lst_add_del(t_lst **toplist, t_lst **t_lst1);
 t_lst		*ft_create_lst(void *content);
 t_lsto		*ft_create_lsto(void *content);
@@ -123,6 +124,7 @@ void	ft_init(t_ind ind);
 t_lsto		*ft_lst_sort3(t_lsto *lst);
 int decreasing(t_lsto *lsta);
 int decreasing_time(t_lsto *lsta);
+int decreasing_time_char(t_lsto *lsta);
 void ft_t(char *s, t_ind ind);
 void ft_r(char *s, t_ind ind);
 void ft_printerror(char **av);

@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 13:51:30 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/09 01:23:18 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/09 05:07:16 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,42 @@ int decreasing_time(t_lsto *lsta)
 	return (0);
 }
 
+int decreasing_time_char(t_lsto *lsta)
+{
+//	time_t	timestamp;
+	struct stat		sa;
+	struct stat		sb;
+	char			*s1;
+	char			*s2;
+
+
+	s1 = ft_memmove2(lsta->content);
+	s2 = ft_memmove2((lsta->next)->content);
+//	s1 = ft_memmove2(((t_rep*)(lsta)->content)->name);
+//	s2 = ft_memmove2(((t_rep*)((lsta)->next)->content)->name);
+	lstat(s1, &sa);
+	lstat(s2, &sb);
+//	printf("s1 = %ld, s2 = %ld\n",sa.st_atime,sb.st_atime);
+//	printf("s1 = %s s2 = %s\n",ctime(&(sa.st_atime)),ctime(&(sb.st_atime)));
+	if (sa.st_mtime >= sb.st_mtime)
+	{
+//		printf("1\n");
+ 		if (sa.st_mtime > sb.st_mtime)
+			return (1);
+		if (sa.st_mtime == sb.st_mtime && sa.st_mtimespec.tv_nsec >= sb.st_mtimespec.tv_nsec)
+		{
+			if (sa.st_mtimespec.tv_nsec > sb.st_mtimespec.tv_nsec)
+				return (1);
+			if (sa.st_mtimespec.tv_nsec == sb.st_mtimespec.tv_nsec && ft_strcmp(s1,s2) <= 0)
+				return (1);
+			else
+				return (0);
+		}
+		else
+			return (0);
+	}
+	return (0);
+}
 int croissant_pathname(t_lsto *lsti)
 {
 		return (ft_strcmp(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti)->content)->name),ft_makepath(((t_rep*)((lsti->next)->content))->path,((t_rep*)((lsti->next)->content))->name)) < 0);
