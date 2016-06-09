@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/09 05:12:50 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/09 05:42:09 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ typedef struct			s_ind
 	int					indr;
 	int					indt;
 	int					indav3;
+	int					inder1;
 }						t_ind;
 
 typedef struct			s_numb
@@ -125,8 +126,8 @@ t_lsto		*ft_lst_sort3(t_lsto *lst);
 int decreasing(t_lsto *lsta);
 int decreasing_time(t_lsto *lsta);
 int decreasing_time_char(t_lsto *lsta);
-void ft_t(char *s, t_ind ind);
-void ft_r(char *s, t_ind ind);
+void ft_t(char *s, t_ind ind, int *inder1);
+void ft_r(char *s, t_ind ind, int *inder1);
 void ft_printerror(char **av);
 
 # endif

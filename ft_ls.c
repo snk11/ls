@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/09 05:09:06 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/09 05:43:11 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int main(int ac,char **av)
 	int				i;
 	int				inderror;
 	t_ind			ind;
+	int j;
 
 	lst = NULL;
 	lstj = NULL;
@@ -49,8 +50,22 @@ int main(int ac,char **av)
 	else if(av[2])
 	{
 		ft_printerror(av);
+		j = 1;
+		while (av[j])
+		{
+			if (!opendir(av[i]))
+			{
+//					ft_putstr_fd("ls: ", 2);
+				//perror(strerror(ENOENT));
+//					perror(av[i]);
+				inderror = 1;
+				ind.inder1 = 1;
+			}
+			j++;
+		}
 		while(av[i])
 		{
+			inderror = 0;
 			if (ft_strcmp(av[i], "-1") != 0 && ft_strcmp(av[i], "--") != 0 && ft_strcmp(av[i], "-1R") != 0 && ft_strcmp(av[i],"-1a") != 0 && ft_strcmp(av[i],"-1r") != 0 && ft_strcmp(av[i],"-1t") != 0)
 			{
 				if (!opendir(av[i]))
@@ -67,11 +82,11 @@ int main(int ac,char **av)
 //				printf("i = %d, indfirst = %d\n",i,ind.indfirst);
 				if (ind.indr == 1)
 				{
-					ft_r(av[i], ind);
+					ft_r(av[i], ind, &(ind.inder1));
 				}
 				else if (ind.indt == 1)
 				{
-					ft_t(av[i], ind);
+					ft_t(av[i], ind, &(ind.inder1));
 				}
 				else
 				{
