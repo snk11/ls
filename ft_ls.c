@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/09 06:02:51 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/12 23:47:37 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,11 @@ int main(int ac,char **av)
 	t_lsto			*lstj;
 	int				i;
 	int				inderror;
-	t_ind			ind;
+	t_ind			*ind;
 	int j;
 
+	ind = NULL;
+	ind = (t_ind*)malloc(sizeof(t_ind));
 	lst = NULL;
 	lstj = NULL;
 	lstibegi = NULL;
@@ -35,7 +37,7 @@ int main(int ac,char **av)
 	inderror = 0;
 	ft_init(ind);
 	if (av[3])
-		ind.indav3 = 1;
+		ind->indav3 = 1;
 	if (!av[1])
 	{
 		lst = ft_getreplist(".");
@@ -49,7 +51,7 @@ int main(int ac,char **av)
 	}
 	else if(av[2])
 	{
-		ft_scan_ind(av,&(ind.indone),&(ind.indt),&(ind.indr));
+		ft_scan_ind(av,ind);
 		ft_printerror(av,ind);
 		j = 1;
 		while (av[j])
@@ -60,7 +62,7 @@ int main(int ac,char **av)
 				//perror(strerror(ENOENT));
 //					perror(av[i]);
 				inderror = 1;
-				ind.inder1 = 1;
+				ind->inder1 = 1;
 			}
 			j++;
 		}
@@ -76,23 +78,23 @@ int main(int ac,char **av)
 //					perror(av[i]);
 					inderror = 1;
 				}
-				ind.indfirst++;
+				ind->indfirst++;
 			}
 			if (inderror == 0 && ft_strcmp(av[i], "-1") != 0 && ft_strcmp(av[i], "--") != 0 && ft_strcmp(av[i], "-1R") != 0 && ft_strcmp(av[i],"-1a") != 0 && ft_strcmp(av[i],"-1r") != 0 && ft_strcmp(av[i],"-1t") != 0)
 			{
 //				printf("i = %d, indfirst = %d\n",i,ind.indfirst);
-				if (ind.indr == 1)
+				if (ind->indr == 1)
 				{
-					ft_r(av[i], ind, &(ind.inder1));
+					ft_r(av[i], ind);
 				}
-				else if (ind.indt == 1)
+				else if (ind->indt == 1)
 				{
-					ft_t(av[i], ind, &(ind.inder1));
+					ft_t(av[i], ind);
 				}
 				else
 				{
 //					if ( (i > 1 && (ind.indfirst == 1 && i > 2)) || (i > 1 && ind.indfirst == 0))
-					if (ind.indfirst > 1)
+					if (ind->indfirst > 1)
 						ft_putstr("\n");
 //				lst = ft_getreplist(".");
 //				lsti = ft_getreplisto4(lst);
@@ -103,7 +105,7 @@ int main(int ac,char **av)
 //						lst = ft_getreplist(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
 							lst = ft_getreplist(av[i]);
 //							if (av[3] || (av[2]  && i > 1 && (ind.indfirst == 1 && i > 2))  || (av[2] && ind.indfirst == 0))
-							if (av[3] || ind.indfirst > 1)
+							if (av[3] || ind->indfirst > 1)
 							{
 								ft_putstr(av[i]);
 								ft_putstr(":\n");
@@ -117,7 +119,7 @@ int main(int ac,char **av)
 			else if (i == 1 && inderror == 0 && (ft_strcmp(av[i], "-1") == 0 || ft_strcmp(av[i], "--") == 0))
 			{
 //				ind.indfirst = 1;
-				ind.indone = 1;
+				ind->indone = 1;
 /*
 				lst = ft_getreplist(".");
 				lsti = ft_printlist2(lst);
@@ -149,12 +151,12 @@ int main(int ac,char **av)
 			else if (i == 1 && inderror == 0 && (ft_strcmp(av[i],"-1t")) == 0)
 			{
 //				ind.indfirst = 1;
-				ind.indt = 1;
+				ind->indt = 1;
 			}
 			else if (i == 1 && inderror == 0 && (ft_strcmp(av[i], "-1R")== 0))
 			{
 //				ind.indfirst = 1;
-				ind.indr = 1;
+				ind->indr = 1;
 /*
 				lst = ft_getreplist(".");
 				lsti = ft_printlist2(lst);
