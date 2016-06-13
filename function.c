@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 15:43:19 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/09 05:12:34 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/13 06:40:01 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -162,7 +162,7 @@ t_lsto		*lst_addo_down_char(t_lsto *toplist, t_lsto *lst1)
 	lsttopbegi = toplist;
 	while (lst1 && toplist)
 	{
-		lstmp = ft_create_lsto((lst1)->content);
+		lstmp = ft_create_lsto_char((lst1)->content);
 		{
 			lstmp2 = lsttopbegi;
 			while (lstmp2->next)
@@ -173,12 +173,12 @@ t_lsto		*lst_addo_down_char(t_lsto *toplist, t_lsto *lst1)
 	}
 	if (lst1 && toplist == NULL)
 	{
-			lstmp = ft_create_lsto((lst1)->content);
+			lstmp = ft_create_lsto_char((lst1)->content);
 				lsttopbegi = lstmp;
 				lst1 = lst1->next;
 		while(lst1)
 		{
-			lstmp = ft_create_lsto((lst1)->content);
+			lstmp = ft_create_lsto_char((lst1)->content);
 			{
 				lstmp2 = lsttopbegi;
 				while (lstmp2->next)
@@ -255,3 +255,21 @@ t_lsto		*ft_create_lsto(void *content)
 	return (curlst);
 }
 
+t_lsto		*ft_create_lsto_char(char *content)
+{
+	t_lsto	*curlst;
+
+	curlst = NULL;
+	if (!(curlst = (t_lsto*)malloc(sizeof(t_lsto))))
+		return (NULL);
+	if (content == NULL)
+	{
+		curlst->content = NULL;
+	}
+	else
+	{
+		curlst->content = ft_memmove2(content);
+	}
+	curlst->next = NULL;
+	return (curlst);
+}

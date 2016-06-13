@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/13 05:11:17 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/13 06:38:52 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,7 @@ t_lsto		*lst_addo_down_char(t_lsto *toplist, t_lsto *lst1);
 void		lst_add_del(t_lst **toplist, t_lst **t_lst1);
 t_lst		*ft_create_lst(void *content);
 t_lsto		*ft_create_lsto(void *content);
+t_lsto		*ft_create_lsto_char(char *content);
 t_lst *ft_getreplist(char *rep);
 t_lst *ft_getreplist4(char *rep);
 void	ft_printlist(t_lst *lstmp);
