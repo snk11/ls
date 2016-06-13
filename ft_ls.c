@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/13 08:18:15 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/13 20:07:59 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int main(int ac,char **av)
 	else if(av[2])
 	{
 //		ft_scan_ind(av,ind);
-		ft_scan_option(av[1],ind);
+		ft_scan_option(av,ind);
 		ft_printerror(av,ind);
 		j = 1;
 		while (av[j])
@@ -117,10 +117,10 @@ int main(int ac,char **av)
 //				}
 				}
 			}
-			else if (i == 1 && inderror == 0 && (ft_strcmp(av[i], "-1") == 0 || ft_strcmp(av[i], "--") == 0))
+//			else if (i == 1 && inderror == 0 && (ft_strcmp(av[i], "-1") == 0 || ft_strcmp(av[i], "--") == 0))
 			{
 //				ind.indfirst = 1;
-				ind->indone = 1;
+//				ind->indone = 1;
 /*
 				lst = ft_getreplist(".");
 				lsti = ft_printlist2(lst);
@@ -149,15 +149,15 @@ int main(int ac,char **av)
 				}
 */
 			}
-			else if (i == 1 && inderror == 0 && (ft_strcmp(av[i],"-1t")) == 0)
+//			else if (i == 1 && inderror == 0 && (ft_strcmp(av[i],"-1t")) == 0)
 			{
 //				ind.indfirst = 1;
-				ind->indt = 1;
+//				ind->indt = 1;
 			}
-			else if (i == 1 && inderror == 0 && (ft_strcmp(av[i], "-1R")== 0))
+//			else if (i == 1 && inderror == 0 && (ft_strcmp(av[i], "-1R")== 0))
 			{
 //				ind.indfirst = 1;
-				ind->indr = 1;
+//				ind->indr = 1;
 /*
 				lst = ft_getreplist(".");
 				lsti = ft_printlist2(lst);

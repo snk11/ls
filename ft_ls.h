@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/13 06:38:52 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/13 20:05:36 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ typedef struct			s_ind
 	char				indillegal;
 	int					indav3;
 	int					inder1;
+	int					ind2;
 }						t_ind;
 
 typedef struct			s_numb
@@ -137,6 +138,6 @@ void ft_t(char *s, t_ind *ind);
 void ft_r(char *s, t_ind *ind);
 void ft_printerror(char **av, t_ind *ind);
 void ft_scan_ind(char **av,t_ind *ind);
-void	ft_scan_option(char *s,t_ind *ind);
+void	ft_scan_option(char **av,t_ind *ind);
 
 # endif

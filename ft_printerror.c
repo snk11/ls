@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/09 02:37:03 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/13 08:23:41 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/13 19:41:47 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void ft_printerror(char **av, t_ind *ind)
 	t_lsto		*lst;
 	t_lsto		*lst1;
 	t_lsto		*lst2;
+	int			ind2;
 	
 
 	lst = NULL;
@@ -26,7 +27,11 @@ void ft_printerror(char **av, t_ind *ind)
 	i = 1;
 	while(av[i])
 	{
-		if (ft_strcmp(av[i], "-1") != 0 && ft_strcmp(av[i], "--") != 0 && ft_strcmp(av[i], "-1R") != 0 && ft_strcmp(av[i],"-1a") != 0 && ft_strcmp(av[i],"-1r") != 0 && ft_strcmp(av[i],"-1t") != 0)
+		if (av[i][0] == '-' && ind->ind2 >= 0)
+			ind->ind2 = 1;
+		else
+			ind->ind2 = -1;
+		if (ind->ind2 == -1 || (ft_strcmp(av[i], "-1") != 0 && ft_strcmp(av[i], "--") != 0 && ft_strcmp(av[i], "-1R") != 0 && ft_strcmp(av[i],"-1a") != 0 && ft_strcmp(av[i],"-1r") != 0 && ft_strcmp(av[i],"-1t") != 0))
 		{
 //			if (!opendir(av[i]) && ft_isdir(av[i]))
 //			{

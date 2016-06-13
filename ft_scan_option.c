@@ -6,42 +6,45 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/12 23:31:06 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/13 03:11:03 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/13 20:11:22 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-void	ft_scan_option(char *s,t_ind *ind)
+void	ft_scan_option(char **av,t_ind *ind)
 {
 
 	int i;
+	int j;
 
-	i = 1;
-	if (s)
+	i = 0;
+	while (av[i] && av[i][0] == '-')
 	{
-		if (ft_strcmp(s, "-1") == 0 || ft_strcmp(s, "--") == 0)
+		if (ft_strcmp(av[i], "-1") == 0 || ft_strcmp(av[i], "--") == 0)
 		{
 			ind->indone = 1;
 		}
 		else
 		{
-			while (*s)
+			j = 0;
+			while (av[i][j])
 			{
-				if (*s == 'R')
+				if (av[i][j] == 'R')
 					ind->indr = 1;
-				else if (*s == 'a')
+				else if (av[i][j] == 'a')
 					ind->inda = 1;
-				else if (*s == 'r')
+				else if (av[i][j] == 'r')
 					ind->indreverse = 1;
-				else if (*s == 't')
+				else if (av[i][j] == 't')
 					ind->indt = 1;
-				else if (*s == 'l')
+				else if (av[i][j] == 'l')
 					ind->indl = 1;
 				else
-					ind->indillegal = *s;
-				s++;
+					ind->indillegal = av[i][j];
+				j++;
 			}
+			i++;
 		}
 //		else if (ft_strcmp(s,"-1t") == 0)
 //		{
