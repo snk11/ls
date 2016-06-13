@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/12 23:47:37 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/13 03:10:22 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,8 @@ int main(int ac,char **av)
 	}
 	else if(av[2])
 	{
-		ft_scan_ind(av,ind);
+//		ft_scan_ind(av,ind);
+		ft_scan_option(av[1],ind);
 		ft_printerror(av,ind);
 		j = 1;
 		while (av[j])
