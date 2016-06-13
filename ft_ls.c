@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/13 20:07:59 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/13 20:49:17 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int main(int ac,char **av)
 	{
 //		ft_scan_ind(av,ind);
 		ft_scan_option(av,ind);
-		ft_printerror(av,ind);
+//		ft_printerror(av,ind);
 		j = 1;
 		while (av[j])
 		{
@@ -84,6 +84,16 @@ int main(int ac,char **av)
 			if (inderror == 0 && ft_strcmp(av[i], "-1") != 0 && ft_strcmp(av[i], "--") != 0 && ft_strcmp(av[i], "-1R") != 0 && ft_strcmp(av[i],"-1a") != 0 && ft_strcmp(av[i],"-1r") != 0 && ft_strcmp(av[i],"-1t") != 0)
 			{
 //				printf("i = %d, indfirst = %d\n",i,ind.indfirst);
+				if (ind->indillegal != 0)
+				{
+					
+					ft_putstr_fd("ls: ", 2);
+					ft_putstr_fd("illegal option -- ", 2);
+					ft_putchar_fd(ind->indillegal, 2);
+					ft_putstr_fd("\n", 2);
+					ft_putstr_fd("usage: ls [-ABCFGHLOPRSTUWabcdefghiklmnopqrstuwx1] [file ...]\n",2);
+				}
+
 				if (ind->indr == 1)
 				{
 					ft_r(av[i], ind);
@@ -97,24 +107,13 @@ int main(int ac,char **av)
 //					if ( (i > 1 && (ind.indfirst == 1 && i > 2)) || (i > 1 && ind.indfirst == 0))
 					if (ind->indfirst > 1)
 						ft_putstr("\n");
-//				lst = ft_getreplist(".");
-//				lsti = ft_getreplisto4(lst);
-//				while (lsti)
-//				{
-//					if (ft_strcmp2(av[i],((t_rep*)(lsti->content))->name) == 0 || ft_strcmp2(av[i],ft_strjoin("./",((t_rep*)(lsti->content))->name)) == 0)
-//					{
-//						lst = ft_getreplist(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
 							lst = ft_getreplist(av[i]);
-//							if (av[3] || (av[2]  && i > 1 && (ind.indfirst == 1 && i > 2))  || (av[2] && ind.indfirst == 0))
 							if (av[3] || ind->indfirst > 1)
 							{
 								ft_putstr(av[i]);
 								ft_putstr(":\n");
 							}
 							lstj = ft_printlist2(lst);
-//					}
-//					lsti = lsti->next;
-//				}
 				}
 			}
 //			else if (i == 1 && inderror == 0 && (ft_strcmp(av[i], "-1") == 0 || ft_strcmp(av[i], "--") == 0))

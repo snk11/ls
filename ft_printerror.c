@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/09 02:37:03 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/13 19:41:47 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/13 20:40:20 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void ft_printerror(char **av, t_ind *ind)
 	lst1 = NULL;
 	lst2 = NULL;
 	i = 1;
-	while(av[i])
+	while(av[i] && ind->indillegal != 0)
 	{
 		if (av[i][0] == '-' && ind->ind2 >= 0)
 			ind->ind2 = 1;
