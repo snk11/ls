@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/09 02:37:03 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/13 06:58:16 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/13 07:57:35 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ void ft_printerror(char **av, t_ind *ind)
 //				ft_putstr("\n");
 				ind1 = 1;
 			}
-			else
+			else if (!opendir(av[i]) && !ft_isdir(av[i]))
+//			else if (!ft_isdir(av[i]))
 			{
 				lst = ft_create_lsto_char(av[i]);
 				lst2 = lst_addo_down_char(lst2,lst);
