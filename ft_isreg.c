@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdir.c                                         :+:      :+:    :+:   */
+/*   ft_isreg.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/15 12:07:58 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/13 05:09:12 by syusof           ###   ########.fr       */
+/*   Created: 2016/06/13 05:08:20 by syusof            #+#    #+#             */
+/*   Updated: 2016/06/13 05:15:31 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-int		ft_isdir(char *s)
+int		ft_isreg(char *s)
 {
 	struct stat		sb;
 
 	stat(s, &sb);
-	if(S_ISDIR(sb.st_mode))
+	if(S_ISREG(sb.st_mode))
 		return (1);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/13 03:10:22 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/13 05:14:37 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -212,9 +212,17 @@ int main(int ac,char **av)
 			{
 				if (!opendir(av[1]))
 				{
-					ft_putstr_fd("ls: ", 2);
+					if(!ft_isreg(av[1]))
+					{
+						ft_putstr_fd("ls: ", 2);
 				//perror(strerror(ENOENT));
-					perror(av[1]);
+						perror(av[1]);
+					}
+					else
+					{
+						ft_putstr(av[1]);
+						ft_putstr("\n");
+					}
 					inderror = 1;
 				}
 			}
