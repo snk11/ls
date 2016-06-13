@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/13 06:59:09 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/13 08:07:50 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int main(int ac,char **av)
 		j = 1;
 		while (av[j])
 		{
-			if (!opendir(av[i]))
+			if (!opendir(av[j]))
 			{
 //					ft_putstr_fd("ls: ", 2);
 				//perror(strerror(ENOENT));
