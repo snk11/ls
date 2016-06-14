@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/13 20:59:37 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/14 08:43:46 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,11 @@ int main(int ac,char **av)
 					ft_putstr_fd("usage: ls [-ABCFGHLOPRSTUWabcdefghiklmnopqrstuwx1] [file ...]\n",2);
 				}
 
-				if (ind->indr == 1)
+				else if (ind->indl == 1)
+				{
+					ft_l(av[i], ind);
+				}
+				else if (ind->indr == 1)
 				{
 					ft_r(av[i], ind);
 				}

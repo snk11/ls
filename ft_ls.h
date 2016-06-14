@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/13 20:05:36 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/14 08:30:00 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,7 @@ t_lsto	*ft_printlist3(t_lst *lstmp);
 void	ft_printlist4(t_lst *lstmp);
 void	ft_printlist5(t_lst *lstmp);
 void	ft_printlist6(t_lst *lstmp);
+void	ft_printlist7(t_lst *lstmp);
 int		ft_countlevel(t_lst *lstmp);
 char	*ft_makepath(char *str1,char *str2);
 void	ft_push1stback(t_lst **lstmp);
@@ -136,8 +137,10 @@ int decreasing_time(t_lsto *lsta);
 int decreasing_time_char(t_lsto *lsta);
 void ft_t(char *s, t_ind *ind);
 void ft_r(char *s, t_ind *ind);
+void ft_l(char *s,t_ind *ind);
 void ft_printerror(char **av, t_ind *ind);
 void ft_scan_ind(char **av,t_ind *ind);
 void	ft_scan_option(char **av,t_ind *ind);
+void	ft_print_permission(char *s);
 
 # endif
