@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/14 12:36:33 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/14 14:35:34 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,6 +142,7 @@ void ft_printerror(char **av, t_ind *ind);
 void ft_scan_ind(char **av,t_ind *ind);
 void	ft_scan_option(char **av,t_ind *ind);
 void	ft_print_permission(char *s);
-void	ft_printl(char *s);
+void	ft_printlreg(char *s);
+void	ft_printldir(char *s,t_ind *ind);
 
 # endif

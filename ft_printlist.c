@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 11:46:17 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/14 12:31:33 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/14 14:52:22 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -369,15 +369,15 @@ void	ft_printlist7(t_lst *lstmp)
 	{
 		if ( (((t_rep*)(lst1)->content)->name)[0] != '.')
 		{
-			stat(((t_rep*)((lst1))->content)->name,&sb);
-			ft_print_permission(((t_rep*)((lst1))->content)->name);
-			ft_putstr(" ");
+			stat(ft_makepath(((t_rep*)(lst1->content))->path,((t_rep*)(lst1->content))->name), &sb);
+			ft_print_permission(ft_makepath(((t_rep*)(lst1->content))->path,((t_rep*)(lst1->content))->name));
+			ft_putstr("  ");
 			ft_putstr(ft_ustoa(sb.st_nlink));
 			ft_putstr(" ");
 			ft_putstr(getpwuid(sb.st_uid)->pw_name);
-			ft_putstr(" ");
+			ft_putstr("  ");
 			ft_putstr(getgrgid(sb.st_gid)->gr_name);
-			ft_putstr(" ");
+			ft_putstr("  ");
 			ft_putstr(ft_lldtoa(sb.st_size));
 			ft_putstr(" ");
 			ft_putstr(ft_itoa((localtime(&(sb.st_ctime)))->tm_mon));
