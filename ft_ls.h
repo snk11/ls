@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/14 15:57:03 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/22 00:02:54 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,5 +146,6 @@ void	ft_print_permission(char *s);
 void	ft_printlreg(char *s);
 void	ft_printldir(char *s,t_ind *ind);
 void	ft_printlrdir(char *s,t_ind *ind);
+int	ft_check_string(char *s);
 
 # endif

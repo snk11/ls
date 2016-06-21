@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/14 15:30:53 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/22 00:09:50 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int main(int ac,char **av)
 		while(av[i])
 		{
 			inderror = 0;
-			if (ft_strcmp(av[i], "-1") != 0 && ft_strcmp(av[i], "--") != 0 && ft_strcmp(av[i], "-1R") != 0 && ft_strcmp(av[i],"-1a") != 0 && ft_strcmp(av[i],"-1r") != 0 && ft_strcmp(av[i],"-1t") != 0 && ft_strcmp(av[i],"-l") != 0)
+			if (ft_check_string(av[i]))
 			{
 				if (!opendir(av[i]))
 				{
@@ -88,7 +88,7 @@ int main(int ac,char **av)
 					ft_printlrdir(av[i],ind);
 				}
 			}
-			if (inderror == 0 && ft_strcmp(av[i], "-1") != 0 && ft_strcmp(av[i], "--") != 0 && ft_strcmp(av[i], "-1R") != 0 && ft_strcmp(av[i],"-1a") != 0 && ft_strcmp(av[i],"-1r") != 0 && ft_strcmp(av[i],"-1t") != 0 && ft_strcmp(av[i],"-l") != 0)
+			if (inderror == 0 && ft_check_string(av[i]))
 			{
 //				printf("i = %d, indfirst = %d\n",i,ind.indfirst);
 				if (ind->indillegal != 0)
@@ -219,7 +219,8 @@ int main(int ac,char **av)
 	else if(av[1])
 	{
 			ft_scan_option(av,ind);
-			if (ft_strcmp(av[1], "-1") != 0 && ft_strcmp(av[1], "--") != 0 && ft_strcmp(av[1], "-1R") != 0 && ft_strcmp(av[1],"-1a") != 0 && ft_strcmp(av[1],"-1r") != 0 && ft_strcmp(av[1],"-1t") != 0)
+			//if (ft_strcmp(av[1], "-1") != 0 && ft_strcmp(av[1], "--") != 0 && ft_strcmp(av[1], "-1R") != 0 && ft_strcmp(av[1],"-1a") != 0 && ft_strcmp(av[1],"-1r") != 0 && ft_strcmp(av[1],"-1t") != 0)
+			if (ft_check_string(av[1]))
 			{
 				if (!opendir(av[1]))
 				{
@@ -237,7 +238,8 @@ int main(int ac,char **av)
 					inderror = 1;
 				}
 			}
-			if (inderror == 0 && (ft_strcmp(av[1], "-1") != 0 && ft_strcmp(av[1], "--") != 0 && ft_strcmp(av[1],"-1R") != 0 && ft_strcmp(av[1],"-1a") != 0 && ft_strcmp(av[1],"-1r") != 0 && ft_strcmp(av[1],"-1t") != 0))
+			//if (inderror == 0 && (ft_strcmp(av[1], "-1") != 0 && ft_strcmp(av[1], "--") != 0 && ft_strcmp(av[1],"-1R") != 0 && ft_strcmp(av[1],"-1a") != 0 && ft_strcmp(av[1],"-1r") != 0 && ft_strcmp(av[1],"-1t") != 0))
+			if (inderror == 0 && ft_check_string(av[1]))
 			{
 //				if (lst = ft_getreplist();
 				
