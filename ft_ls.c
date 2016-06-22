@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/22 16:00:53 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/22 16:57:38 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int main(int ac,char **av)
 	{
 //		ft_scan_ind(av,ind);
 		ft_scan_option(av,ind);
-		ft_printerror(av,ind);
+//		ft_printerror(av,ind);
 		j = 1;
 		while (av[j])
 		{
@@ -154,6 +154,34 @@ int main(int ac,char **av)
 			else if(inderror == 1 && ind->indl == 1 && ft_isreg(av[i]))
 			{
 				ft_printlreg(av[i]);
+			}
+			else if (inderror == 1)
+			{
+//				if (!opendir(av[i]) && av[i][0] != '-')
+//				{
+//					ft_putstr_fd("ls: ", 2);
+					//perror(strerror(ENOENT));
+//					perror(av[i]);
+//				}
+				if (ind->indillegal != 0 && ind->ind1 == 0)
+				{
+					
+					ft_putstr_fd("ls: ", 2);
+					ft_putstr_fd("illegal option -- ", 2);
+					ft_putchar_fd(ind->indillegal, 2);
+					ft_putstr_fd("\n", 2);
+					ft_putstr_fd("usage: ls [-ABCFGHLOPRSTUWabcdefghiklmnopqrstuwx1] [file ...]\n",2);
+					ind->ind1 = 1;
+				}
+				else if (ind->ind1 == 0)
+				{
+					if (!opendir(av[i]) && av[i][0] != '-')
+					{
+						ft_putstr_fd("ls: ", 2);
+						//perror(strerror(ENOENT));
+						perror(av[i]);
+					}
+				}
 			}
 //			else if (i == 1 && inderror == 0 && (ft_strcmp(av[i], "-1") == 0 || ft_strcmp(av[i], "--") == 0))
 			{
