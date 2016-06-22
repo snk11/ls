@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 11:46:17 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/22 17:38:26 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/22 20:02:49 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -531,4 +531,135 @@ void	ft_printlist9(t_lst *lstmp)
 		}
 		lst1 = lst1->next;
 	}
+}
+
+t_lsto	*ft_printlist10(t_lst *lstmp)
+{
+	t_lsto	*lst1;
+	t_lsto	*lst2;
+	t_lsto	*lstbegio;
+	t_lst	*lstbegi;
+
+	lst1 = NULL;
+	lst2 = NULL;
+	lstbegi = lstmp;
+	while (lstmp)
+	{
+//		if(ft_isdir(lstmp) == 0)
+		if(ft_isdir(ft_makepath(((t_rep*)(lstmp->content))->path,((t_rep*)(lstmp->content))->name)) == 0)
+			lst_addo(&lst1, lstmp);
+		lstmp = lstmp->nextl;
+	}
+	lstmp = lstbegi;
+	while (lstmp)
+	{
+//		if (ft_isdir(lstmp) == 1)
+		if(ft_isdir(ft_makepath(((t_rep*)(lstmp->content))->path,((t_rep*)(lstmp->content))->name)) == 1)
+			lst_addo(&lst2, lstmp);
+		lstmp = lstmp->nextr;
+	}
+//	lst2 = ft_lst_sort1(lst2);
+	lst2 = ft_lst_sort(lst2,decreasing_time);
+//	while (lst1)
+//	{
+//		if ( (((t_rep*)(lst1)->content)->name)[0] != '.')
+//		{
+//			if(ft_strcmp(((t_rep*)((lst1))->content)->name, "lit.o") == 0)
+//				printf("NIMP\n");
+//			ft_putstr(((t_rep*)((lst1))->content)->name);
+//			ft_putstr("\n");
+//		}
+//		lst1 = lst1->next;
+//	}
+	lstbegio = lst2;
+//	while (lst2)
+//	{
+//		if ( (((t_rep*)(lst2)->content)->name)[0] != '.')
+//		{
+//			ft_putstr(((t_rep*)((lst2))->content)->name);
+//			ft_putstr("\n");
+//		}
+//		lst2 = lst2->next;
+//	}
+	lst1 = lst_addo_down(lst1,lst2);
+//	lst1 = ft_lst_sort1(lst1);
+	lst1 = ft_lst_sort(lst1, decreasing_time);
+	while (lst1)
+	{
+//		if ( (((t_rep*)(lst1)->content)->name)[0] != '.')
+		{
+//			if(ft_strcmp(((t_rep*)((lst1))->content)->name, "lit.o") == 0)
+//				printf("NIMP\n");
+			ft_putstr(((t_rep*)((lst1))->content)->name);
+			ft_putstr("\n");
+		}
+		lst1 = lst1->next;
+	}
+	/*
+	lst2 = lstbegio;
+	while (lst2)
+	{
+		ft_getreplist(((t_rep*)(lst2->content))->path);
+		lst2 = lst2->next;
+	}
+	*/
+	return (lstbegio);
+}
+
+t_lsto	*ft_printlist11(t_lst *lstmp)
+{
+	t_lsto	*lst1;
+	t_lsto	*lst2;
+	t_lsto	*lstbegio;
+	t_lst	*lstbegi;
+
+	lst1 = NULL;
+	lst2 = NULL;
+	lstbegi = lstmp;
+	while (lstmp)
+	{
+//		if(ft_isdir(lstmp) == 0)
+		if(ft_isdir(ft_makepath(((t_rep*)(lstmp->content))->path,((t_rep*)(lstmp->content))->name)) == 0)
+			lst_addo(&lst1, lstmp);
+		lstmp = lstmp->nextl;
+	}
+	lstmp = lstbegi;
+	while (lstmp)
+	{
+//		if (ft_isdir(lstmp) == 1)
+		if(ft_isdir(ft_makepath(((t_rep*)(lstmp->content))->path,((t_rep*)(lstmp->content))->name)) == 1)
+			lst_addo(&lst2, lstmp);
+		lstmp = lstmp->nextr;
+	}
+	lst2 = ft_lst_sort(lst2,decreasing_time);
+//	while (lst1)
+//	{
+//		if ( (((t_rep*)(lst1)->content)->name)[0] != '.')
+//		{
+//			if(ft_strcmp(((t_rep*)((lst1))->content)->name, "lit.o") == 0)
+//				printf("NIMP\n");
+//			ft_putstr(((t_rep*)((lst1))->content)->name);
+//			ft_putstr("\n");
+//		}
+//		lst1 = lst1->next;
+//	}
+	lstbegio = lst2;
+//	while (lst2)
+//	{
+//		if ( (((t_rep*)(lst2)->content)->name)[0] != '.')
+//		{
+//			ft_putstr(((t_rep*)((lst2))->content)->name);
+//			ft_putstr("\n");
+//		}
+//		lst2 = lst2->next;
+//	}
+	/*
+	lst2 = lstbegio;
+	while (lst2)
+	{
+		ft_getreplist(((t_rep*)(lst2->content))->path);
+		lst2 = lst2->next;
+	}
+	*/
+	return (lstbegio);
 }

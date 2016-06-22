@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 15:43:19 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/13 06:40:01 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/22 20:42:13 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ t_lst		*lst_add(t_lst *toplist, t_lst *lst1)
 	lst11 = NULL;
 	if (toplist == NULL)
 	{
-			lst11 = ft_create_lst(lst1->content);
-			((t_rep*)(lst11->content))->name = ft_memmove2(((t_rep*)(lst1->content))->name);
-			((t_rep*)(lst11->content))->path = ft_memmove2(((t_rep*)(lst1->content))->path);
+		lst11 = ft_create_lst(lst1->content);
+		((t_rep*)(lst11->content))->name = ft_memmove2(((t_rep*)(lst1->content))->name);
+		((t_rep*)(lst11->content))->path = ft_memmove2(((t_rep*)(lst1->content))->path);
 		toplist = lst11;
 	}
 	else
@@ -58,8 +58,8 @@ void		lst_addo(t_lsto **toplist, t_lst *lst1)
 
 	lstmp = NULL;
 	lstmp = ft_create_lsto((lst1)->content);
-			((t_rep*)(lstmp->content))->name = ft_memmove2(((t_rep*)(lst1->content))->name);
-			((t_rep*)(lstmp->content))->path = ft_memmove2(((t_rep*)(lst1->content))->path);
+	((t_rep*)(lstmp->content))->name = ft_memmove2(((t_rep*)(lst1->content))->name);
+	((t_rep*)(lstmp->content))->path = ft_memmove2(((t_rep*)(lst1->content))->path);
 	if (*toplist == NULL)
 	{
 		*toplist = lstmp;
@@ -87,60 +87,60 @@ t_lsto		*lst_addo_down(t_lsto *toplist, t_lsto *lst1)
 	while (lst1 && toplist)
 	{
 		lstmp = ft_create_lsto((lst1)->content);
-			((t_rep*)(lstmp->content))->name = ft_memmove2(((t_rep*)(lst1->content))->name);
-			((t_rep*)(lstmp->content))->path = ft_memmove2(((t_rep*)(lst1->content))->path);
-//		if (ind1 == 0)
-//		{
-//			lstmpbegi = lstmp;
-//			ind1 = 1;
-//		}
-//		if (ind1 == 1)
+		((t_rep*)(lstmp->content))->name = ft_memmove2(((t_rep*)(lst1->content))->name);
+		((t_rep*)(lstmp->content))->path = ft_memmove2(((t_rep*)(lst1->content))->path);
+		//		if (ind1 == 0)
+		//		{
+		//			lstmpbegi = lstmp;
+		//			ind1 = 1;
+		//		}
+		//		if (ind1 == 1)
 		{
 			lstmp2 = lsttopbegi;
 			while (lstmp2->next)
 				lstmp2 = lstmp2->next;
 			lstmp2->next = lstmp;
 		}
-//		if (lstmp2 == NULL)
-//		{
-//			lstmp2 = lstmp;
-//			lstbegi = lstmp2;
-//		}
-//		else
-//			lstmp2->next = lstmp;
+		//		if (lstmp2 == NULL)
+		//		{
+		//			lstmp2 = lstmp;
+		//			lstbegi = lstmp2;
+		//		}
+		//		else
+		//			lstmp2->next = lstmp;
 		lst1 = lst1->next;
 	}
 	if (lst1 && toplist == NULL)
 	{
-			lstmp = ft_create_lsto((lst1)->content);
-				((t_rep*)(lstmp->content))->name = ft_memmove2(((t_rep*)(lst1->content))->name);
-				((t_rep*)(lstmp->content))->path = ft_memmove2(((t_rep*)(lst1->content))->path);
-				lsttopbegi = lstmp;
-				lst1 = lst1->next;
+		lstmp = ft_create_lsto((lst1)->content);
+		((t_rep*)(lstmp->content))->name = ft_memmove2(((t_rep*)(lst1->content))->name);
+		((t_rep*)(lstmp->content))->path = ft_memmove2(((t_rep*)(lst1->content))->path);
+		lsttopbegi = lstmp;
+		lst1 = lst1->next;
 		while(lst1)
 		{
 			lstmp = ft_create_lsto((lst1)->content);
-				((t_rep*)(lstmp->content))->name = ft_memmove2(((t_rep*)(lst1->content))->name);
-				((t_rep*)(lstmp->content))->path = ft_memmove2(((t_rep*)(lst1->content))->path);
-//		if (ind1 == 0)
-//		{
-//			lstmpbegi = lstmp;
-//			ind1 = 1;
-//		}
-//		if (ind1 == 1)
+			((t_rep*)(lstmp->content))->name = ft_memmove2(((t_rep*)(lst1->content))->name);
+			((t_rep*)(lstmp->content))->path = ft_memmove2(((t_rep*)(lst1->content))->path);
+			//		if (ind1 == 0)
+			//		{
+			//			lstmpbegi = lstmp;
+			//			ind1 = 1;
+			//		}
+			//		if (ind1 == 1)
 			{
 				lstmp2 = lsttopbegi;
 				while (lstmp2->next)
 					lstmp2 = lstmp2->next;
 				lstmp2->next = lstmp;
 			}
-//		if (lstmp2 == NULL)
-//		{
-//			lstmp2 = lstmp;
-//			lstbegi = lstmp2;
-//		}
-//		else
-//			lstmp2->next = lstmp;
+			//		if (lstmp2 == NULL)
+			//		{
+			//			lstmp2 = lstmp;
+			//			lstbegi = lstmp2;
+			//		}
+			//		else
+			//			lstmp2->next = lstmp;
 			lst1 = lst1->next;
 		}
 	}
@@ -173,9 +173,9 @@ t_lsto		*lst_addo_down_char(t_lsto *toplist, t_lsto *lst1)
 	}
 	if (lst1 && toplist == NULL)
 	{
-			lstmp = ft_create_lsto_char((lst1)->content);
-				lsttopbegi = lstmp;
-				lst1 = lst1->next;
+		lstmp = ft_create_lsto_char((lst1)->content);
+		lsttopbegi = lstmp;
+		lst1 = lst1->next;
 		while(lst1)
 		{
 			lstmp = ft_create_lsto_char((lst1)->content);
@@ -191,24 +191,70 @@ t_lsto		*lst_addo_down_char(t_lsto *toplist, t_lsto *lst1)
 	return (lsttopbegi);
 }
 
-/*
-void	ft_push1stback(t_lst **lstmp)
+t_lsto		*lst_addo_between(t_lsto *toplist, t_lsto *lst1)
 {
-	t_lst	*lst;
 
-	lst = NULL;
-	lst = *lstmp;
-	if ((*lstmp)->content)
+	t_lsto		*lstmp;
+	t_lsto		*lstmp2;
+	t_lsto		*lstbegi;
+	t_lsto		*lsttopbegi;
+
+	lstmp = NULL;
+	lstmp2 = NULL;
+	lstbegi = NULL;
+	lsttopbegi = toplist;
+	lstmp2 = lsttopbegi;
+	while (lst1 && toplist)
 	{
-		while (lst->next)
-		{
-			lst = lst->next;
-		}
-		lst->next = ft_create_lst((*lstmp)->content);
-		*lstmp = (*lstmp)->next;
+		lstmp = ft_create_lsto((lst1)->content);
+		((t_rep*)(lstmp->content))->name = ft_memmove2(((t_rep*)(lst1->content))->name);
+		((t_rep*)(lstmp->content))->path = ft_memmove2(((t_rep*)(lst1->content))->path);
+		lstmp->next = lstmp2->next;
+		lstmp2->next = lstmp;
+		lstmp2 = lstmp2->next;
+		lst1 = lst1->next;
 	}
+	if (lst1 && toplist == NULL)
+	{
+		lstmp = ft_create_lsto((lst1)->content);
+		((t_rep*)(lstmp->content))->name = ft_memmove2(((t_rep*)(lst1->content))->name);
+		((t_rep*)(lstmp->content))->path = ft_memmove2(((t_rep*)(lst1->content))->path);
+		lsttopbegi = lstmp;
+		lst1 = lst1->next;
+		while(lst1)
+		{
+			lstmp = ft_create_lsto((lst1)->content);
+			((t_rep*)(lstmp->content))->name = ft_memmove2(((t_rep*)(lst1->content))->name);
+			((t_rep*)(lstmp->content))->path = ft_memmove2(((t_rep*)(lst1->content))->path);
+			{
+				lstmp2 = lsttopbegi;
+				while (lstmp2->next)
+					lstmp2 = lstmp2->next;
+				lstmp2->next = lstmp;
+			}
+			lst1 = lst1->next;
+		}
+	}
+	return (lsttopbegi);
 }
-*/
+/*
+   void	ft_push1stback(t_lst **lstmp)
+   {
+   t_lst	*lst;
+
+   lst = NULL;
+   lst = *lstmp;
+   if ((*lstmp)->content)
+   {
+   while (lst->next)
+   {
+   lst = lst->next;
+   }
+   lst->next = ft_create_lst((*lstmp)->content);
+ *lstmp = (*lstmp)->next;
+ }
+ }
+ */
 
 t_lst		*ft_create_lst(void *content)
 {
@@ -230,7 +276,7 @@ t_lst		*ft_create_lst(void *content)
 	curlst->nextl = NULL;
 	curlst->nextr = NULL;
 
-//				printf("fffffff%s\n",((t_rep*)(curlst->content))->path);
+	//				printf("fffffff%s\n",((t_rep*)(curlst->content))->path);
 	return (curlst);
 }
 
