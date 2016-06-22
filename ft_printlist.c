@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 11:46:17 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/14 15:26:55 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/22 14:01:53 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -287,7 +287,7 @@ void	ft_printlist5(t_lst *lstmp)
 	lst1 = ft_lst_sort3(lst1);
 	while (lst1)
 	{
-		if ( (((t_rep*)(lst1)->content)->name)[0] != '.')
+//		if ( (((t_rep*)(lst1)->content)->name)[0] != '.')
 		{
 			ft_putstr(((t_rep*)((lst1))->content)->name);
 			ft_putstr("\n");
@@ -325,7 +325,7 @@ void	ft_printlist6(t_lst *lstmp)
 	lst1 = ft_lst_sort4(lst1);
 	while (lst1)
 	{
-		if ( (((t_rep*)(lst1)->content)->name)[0] != '.')
+//		if ( (((t_rep*)(lst1)->content)->name)[0] != '.')
 		{
 			ft_putstr(((t_rep*)((lst1))->content)->name);
 //	s1 = ft_memmove2(((t_rep*)(lst1)->content)->name);

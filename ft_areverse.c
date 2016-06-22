@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_reverse.c                                       :+:      :+:    :+:   */
+/*   ft_areverse.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/22 13:32:14 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/22 13:47:12 by syusof           ###   ########.fr       */
+/*   Created: 2016/06/22 13:46:32 by syusof            #+#    #+#             */
+/*   Updated: 2016/06/22 13:48:56 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-void	ft_reverse(char *s, t_ind *ind)
+void	ft_areverse(char *s, t_ind *ind)
 {
 	t_lst			*lst;
 
-	lst = ft_getreplist(s);
+	lst = ft_getreplist4(s);
 	ft_printlist5(lst);
 }

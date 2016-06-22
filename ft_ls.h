@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/22 13:36:28 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/22 14:04:58 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,5 +149,7 @@ void	ft_printlrdir(char *s,t_ind *ind);
 int	ft_check_string(char *s);
 void	ft_a(char *s, t_ind *ind);
 void	ft_reverse(char *s, t_ind *ind);
+void	ft_areverse(char *s, t_ind *ind);
+void ft_at(char *s, t_ind *ind);
 
 # endif
