@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/22 16:41:03 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/22 17:40:57 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,7 @@ void	ft_printlist5(t_lst *lstmp);
 void	ft_printlist6(t_lst *lstmp);
 void	ft_printlist7(t_lst *lstmp);
 t_lsto	*ft_printlist8(t_lst *lstmp);
+void	ft_printlist9(t_lst *lstmp);
 int		ft_countlevel(t_lst *lstmp);
 char	*ft_makepath(char *str1,char *str2);
 void	ft_push1stback(t_lst **lstmp);
@@ -135,6 +136,7 @@ t_lsto	*ft_getreplisto4(t_lst *lstmp);
 void	ft_init(t_ind *ind);
 t_lsto		*ft_lst_sort3(t_lsto *lst);
 int decreasing(t_lsto *lsta);
+int croissant_time(t_lsto *lsta);
 int decreasing_time(t_lsto *lsta);
 int decreasing_time_char(t_lsto *lsta);
 void ft_t(char *s, t_ind *ind);
@@ -155,5 +157,6 @@ void	ft_areverse(char *s, t_ind *ind);
 void ft_at(char *s, t_ind *ind);
 void ft_ar(char *s, t_ind *ind);
 void	ft_al(char *s,t_ind *ind);
+void ft_atreverse(char *s, t_ind *ind);
 
 # endif
