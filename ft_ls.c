@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/22 00:09:50 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/22 13:32:00 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,9 +109,17 @@ int main(int ac,char **av)
 				{
 					ft_r(av[i], ind);
 				}
+				else if (ind->inda == 1)
+				{
+					ft_a(av[i], ind);
+				}
 				else if (ind->indt == 1)
 				{
 					ft_t(av[i], ind);
+				}
+				else if (ind->indreverse == 1)
+				{
+					ft_reverse(av[i], ind);
 				}
 				else
 				{
