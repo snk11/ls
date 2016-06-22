@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/22 14:09:24 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/22 16:00:53 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,12 +81,12 @@ int main(int ac,char **av)
 				}
 				ind->indfirst++;
 				
-				if (ind->indl == 1)
-				{
+//				if (ind->indl == 1)
+//				{
 //					ft_printlreg(av[i]);
 //					ft_printldir(av[i],ind);
-					ft_printlrdir(av[i],ind);
-				}
+//					ft_printlrdir(av[i],ind);
+//				}
 			}
 			if (inderror == 0 && ft_check_string(av[i]))
 			{
@@ -113,9 +113,13 @@ int main(int ac,char **av)
 				{
 					ft_ar(av[i], ind);
 				}
+				else if (ind->inda == 1 && ind->indl == 1)
+				{
+					ft_al(av[i], ind);
+				}
 				else if (ind->indl == 1)
 				{
-//					ft_printl(av[i]);
+					ft_printldir(av[i],ind);
 				}
 				else if (ind->indr == 1)
 				{
@@ -146,6 +150,10 @@ int main(int ac,char **av)
 							}
 							lstj = ft_printlist2(lst);
 				}
+			}
+			else if(inderror == 1 && ind->indl == 1 && ft_isreg(av[i]))
+			{
+				ft_printlreg(av[i]);
 			}
 //			else if (i == 1 && inderror == 0 && (ft_strcmp(av[i], "-1") == 0 || ft_strcmp(av[i], "--") == 0))
 			{

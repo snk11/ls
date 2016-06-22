@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/22 14:13:10 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/22 15:35:50 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,6 +143,7 @@ void ft_printerror(char **av, t_ind *ind);
 void ft_scan_ind(char **av,t_ind *ind);
 void	ft_scan_option(char **av,t_ind *ind);
 void	ft_print_permission(char *s);
+void	ft_printl(char *s,t_ind *ind);
 void	ft_printlreg(char *s);
 void	ft_printldir(char *s,t_ind *ind);
 void	ft_printlrdir(char *s,t_ind *ind);
@@ -152,5 +153,6 @@ void	ft_reverse(char *s, t_ind *ind);
 void	ft_areverse(char *s, t_ind *ind);
 void ft_at(char *s, t_ind *ind);
 void ft_ar(char *s, t_ind *ind);
+void	ft_al(char *s,t_ind *ind);
 
 # endif

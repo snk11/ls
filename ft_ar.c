@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/22 13:45:07 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/22 14:26:36 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/22 15:48:31 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ void ft_ar(char *s, t_ind *ind)
 		if ( (((t_rep*)(lsti)->content)->name)[0] != '.')
 		{
 			stat(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name),&sb);
-			if((sb.st_mode & S_IRUSR))
+			if(ft_isdir(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name)) && (sb.st_mode & S_IRUSR))
 				lst = ft_getreplist4(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
-			if(lst && (sb.st_mode & S_IRUSR))
+			if(lst && ft_isdir(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name)) && (sb.st_mode & S_IRUSR))
 			{
 				lstj = ft_printlist3(lst);
 				lsti = lst_addo_down(lsti,lstj);
@@ -60,11 +60,11 @@ void ft_ar(char *s, t_ind *ind)
 			ft_putstr(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
 			ft_putstr(":\n");
 			stat(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name),&sb);
-			if((sb.st_mode & S_IRUSR))
+			if(ft_isdir(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name)) && (sb.st_mode & S_IRUSR))
 				lst = ft_getreplist4(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
 			if(lst)
 				lstj = ft_printlist2(lst);
-			else if ((sb.st_mode & S_IRUSR) == 0)
+			else if(ft_isdir(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name)) == 0 || (sb.st_mode & S_IRUSR) == 0)
 			{
 				ft_putstr_fd("ls: ", 2);
 				opendir(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
