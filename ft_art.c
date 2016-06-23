@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ar.c                                            :+:      :+:    :+:   */
+/*   ft_art.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/22 13:45:07 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/23 12:34:20 by syusof           ###   ########.fr       */
+/*   Created: 2016/06/23 12:07:14 by syusof            #+#    #+#             */
+/*   Updated: 2016/06/23 12:54:05 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-void ft_ar(char *s, t_ind *ind)
+void ft_art(char *s, t_ind *ind)
 {
 
 	struct stat		sb;
@@ -32,25 +32,27 @@ void ft_ar(char *s, t_ind *ind)
 		ft_putstr(s);
 		ft_putstr(":\n");
 	}
-	lsti = ft_printlist2(lst);
+	lsti = ft_printlist16(lst);
 	lstibegi = lsti;
 	while (lsti)
 	{
 		if (ft_strcmp((((t_rep*)(lsti)->content)->name), ".") != 0 && ft_strcmp((((t_rep*)(lsti)->content)->name), "..") != 0)
 		{
 			stat(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name),&sb);
+			//		if((sb.st_mode & S_IRUSR))
 			if(ft_isdir(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name)) && (sb.st_mode & S_IRUSR))
-				lst = ft_getreplist4(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
+				lst = ft_getreplist(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
 			if(lst && ft_isdir(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name)) && (sb.st_mode & S_IRUSR))
 			{
-				lstj = ft_printlist3(lst);
-				lsti = lst_addo_down(lsti,lstj);
+				lstj = ft_printlist11(lst);
+				lsti = lst_addo_between(lsti,lstj);
 			}
 		}
 		lsti = lsti->next;
 		lst = NULL;
 	}
-	lstibegi = ft_lst_sort(lstibegi, croissant_pathname);
+	//	lstibegi = ft_lst_sort2(lstibegi);
+	//	lstibegi = ft_lst_sort(lstibegi, decreasing_time);
 	lsti = lstibegi;
 	while (lsti)
 	{
@@ -63,7 +65,7 @@ void ft_ar(char *s, t_ind *ind)
 			if(ft_isdir(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name)) && (sb.st_mode & S_IRUSR))
 				lst = ft_getreplist4(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
 			if(lst)
-				lstj = ft_printlist2(lst);
+				lstj = ft_printlist16(lst);
 			else if(ft_isdir(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name)) == 0 || (sb.st_mode & S_IRUSR) == 0)
 			{
 				ft_putstr_fd("ls: ", 2);

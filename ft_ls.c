@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/23 11:43:38 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/23 12:06:55 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,10 @@ int main(int ac,char **av)
 				else if (ind->inda == 1 && ind->indreverse == 1 && ind->indt == 1)
 				{
 					ft_atreverse(av[i], ind);
+				}
+				else if (ind->inda == 1 && ind->indr == 1 && ind->indt == 1)
+				{
+					ft_art(av[i], ind);
 				}
 				else if (ind->inda == 1 && ind->indreverse == 1)
 				{
