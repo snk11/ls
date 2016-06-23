@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printlrreversedir.c                             :+:      :+:    :+:   */
+/*   ft_printltrreversedir.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/23 14:03:45 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/23 17:09:09 by syusof           ###   ########.fr       */
+/*   Created: 2016/06/23 17:11:51 by syusof            #+#    #+#             */
+/*   Updated: 2016/06/23 17:22:12 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-void	ft_printlrreversedir(char *s,t_ind *ind)
+void	ft_printltrreversedir(char *s,t_ind *ind)
 {
 	struct stat		sb;
 	t_lst			*lst;
@@ -31,7 +31,7 @@ void	ft_printlrreversedir(char *s,t_ind *ind)
 		ft_putstr(s);
 		ft_putstr(":\n");
 	}
-	lsti = ft_printlist18(lst);
+	lsti = ft_printlist26(lst);
 	lstibegi = lsti;
 	while (lsti)
 	{
@@ -40,7 +40,7 @@ void	ft_printlrreversedir(char *s,t_ind *ind)
 			lst = ft_getreplist(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
 		if(lst && (sb.st_mode & S_IRUSR))
 		{
-			lstj = ft_printlist19(lst);
+			lstj = ft_printlist27(lst);
 			lsti = lst_addo_between(lsti,lstj);
 		}
 		lsti = lsti->next;
@@ -56,7 +56,7 @@ void	ft_printlrreversedir(char *s,t_ind *ind)
 		if((sb.st_mode & S_IRUSR))
 			lst = ft_getreplist(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
 		if(lst)
-			lstj = ft_printlist18(lst);
+			lstj = ft_printlist26(lst);
 		else if ((sb.st_mode & S_IRUSR) == 0)
 		{
 			ft_putstr_fd("ls: ", 2);
