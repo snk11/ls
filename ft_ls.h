@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/23 13:38:55 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/23 14:38:03 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,6 +121,9 @@ void	ft_printlist14(t_lst *lstmp);
 void	ft_printlist15(t_lst *lstmp);
 t_lsto	*ft_printlist16(t_lst *lstmp);
 t_lsto	*ft_printlist17(t_lst *lstmp);
+t_lsto	*ft_printlist18(t_lst *lstmp);
+t_lsto	*ft_printlist19(t_lst *lstmp);
+t_lsto	*ft_printlist20(t_lst *lstmp);
 int		ft_countlevel(t_lst *lstmp);
 char	*ft_makepath(char *str1,char *str2);
 void	ft_push1stback(t_lst **lstmp);
@@ -134,6 +137,7 @@ void	ft_trailrep(t_lst **lst,char *str);
 int croissant(t_lsto *lsta);
 int croissant_char(t_lsto *lsta);
 int croissant_pathname(t_lsto *lsti);
+int decreasing_pathname(t_lsto *lsti);
 t_lsto		*ft_lst_sort(t_lsto *lst, int (*cmp)(t_lsto*));
 int		ft_isdir(char *s);
 int		ft_isreg(char *s);
@@ -171,7 +175,8 @@ void ft_rreverse(char *s, t_ind *ind);
 void ft_treverse(char *s, t_ind *ind);
 void ft_art(char *s, t_ind *ind);
 void	ft_printlardir(char *s,t_ind *ind);
-void	ft_printla(char *s,t_ind *ind);
+void	ft_printladir(char *s,t_ind *ind);
 void	ft_printlrtdir(char *s,t_ind *ind);
+void	ft_printlrreversedir(char *s,t_ind *ind);
 
 # endif
