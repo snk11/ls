@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_t.c                                             :+:      :+:    :+:   */
+/*   ft_treverse.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/08 07:00:10 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/23 11:45:30 by syusof           ###   ########.fr       */
+/*   Created: 2016/06/23 11:43:47 by syusof            #+#    #+#             */
+/*   Updated: 2016/06/23 11:45:56 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-void ft_t(char *s, t_ind *ind)
+void ft_treverse(char *s, t_ind *ind)
 {
 	t_lst			*lst;
 
@@ -27,5 +27,5 @@ void ft_t(char *s, t_ind *ind)
 		ft_putstr(s);
 		ft_putstr(":\n");
 	}
-	ft_printlist6(lst);
+	ft_printlist15(lst);
 }

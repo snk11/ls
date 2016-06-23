@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/23 11:29:09 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/23 11:43:38 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,6 +140,10 @@ int main(int ac,char **av)
 				else if (ind->indl == 1 && ind->indreverse == 1)
 				{
 					ft_printlreversedir(av[i], ind);
+				}
+				else if (ind->indt == 1 && ind->indreverse == 1)
+				{
+					ft_treverse(av[i], ind);
 				}
 				else if (ind->indl == 1)
 				{
