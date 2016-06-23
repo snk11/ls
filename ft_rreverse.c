@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_r.c                                             :+:      :+:    :+:   */
+/*   ft_rreverse.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/08 06:45:09 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/23 10:36:25 by syusof           ###   ########.fr       */
+/*   Created: 2016/06/23 10:33:51 by syusof            #+#    #+#             */
+/*   Updated: 2016/06/23 10:57:01 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-void ft_r(char *s, t_ind *ind)
+void ft_rreverse(char *s, t_ind *ind)
 {
 
 	struct stat		sb;
@@ -32,7 +32,7 @@ void ft_r(char *s, t_ind *ind)
 		ft_putstr(s);
 		ft_putstr(":\n");
 	}
-	lsti = ft_printlist2(lst);
+	lsti = ft_printlist12(lst);
 	lstibegi = lsti;
 	while (lsti)
 	{
@@ -43,13 +43,12 @@ void ft_r(char *s, t_ind *ind)
 		if(lst && ft_isdir(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name)) && (sb.st_mode & S_IRUSR))
 		{
 			lstj = ft_printlist3(lst);
-			lsti = lst_addo_down(lsti,lstj);
+			lsti = lst_addo_between(lsti,lstj);
 		}
 		lsti = lsti->next;
 		lst = NULL;
 	}
-//	lstibegi = ft_lst_sort2(lstibegi);
-	lstibegi = ft_lst_sort(lstibegi,croissant_pathname);
+//	lstibegi = ft_lst_sort(lstibegi, decreasing);
 	lsti = lstibegi;
 	while (lsti)
 	{
@@ -60,7 +59,7 @@ void ft_r(char *s, t_ind *ind)
 		if(ft_isdir(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name)) && (sb.st_mode & S_IRUSR))
 			lst = ft_getreplist(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
 		if(lst)
-			lstj = ft_printlist2(lst);
+			lstj = ft_printlist12(lst);
 		else if(ft_isdir(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name)) == 0 || (sb.st_mode & S_IRUSR) == 0)
 		{
 			ft_putstr_fd("ls: ", 2);

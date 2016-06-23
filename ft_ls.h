@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/22 20:30:53 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/23 10:46:16 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,6 +115,7 @@ t_lsto	*ft_printlist8(t_lst *lstmp);
 void	ft_printlist9(t_lst *lstmp);
 t_lsto	*ft_printlist10(t_lst *lstmp);
 t_lsto	*ft_printlist11(t_lst *lstmp);
+t_lsto	*ft_printlist12(t_lst *lstmp);
 int		ft_countlevel(t_lst *lstmp);
 char	*ft_makepath(char *str1,char *str2);
 void	ft_push1stback(t_lst **lstmp);
@@ -162,5 +163,6 @@ void	ft_al(char *s,t_ind *ind);
 void ft_atreverse(char *s, t_ind *ind);
 void ft_rt(char *s, t_ind *ind);
 t_lsto		*lst_addo_between(t_lsto *toplist, t_lsto *lst1);
+void ft_rreverse(char *s, t_ind *ind);
 
 # endif
