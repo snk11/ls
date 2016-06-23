@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/23 17:24:31 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/23 17:58:35 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,19 +101,23 @@ int main(int ac,char **av)
 					ft_putstr_fd("usage: ls [-ABCFGHLOPRSTUWabcdefghiklmnopqrstuwx1] [file ...]\n",2);
 				}
 
-				else if (ind->indreverse == 1 && ind->indr == 1 && ind->inda == 1 && ind->indl)
+				else if (ind->indreverse == 1 && ind->indr == 1 && ind->inda == 1 && ind->indt == 1)
+				{
+					ft_atrreverse(av[i], ind);
+				}
+				else if (ind->indreverse == 1 && ind->indr == 1 && ind->inda == 1 && ind->indl == 1)
 				{
 					ft_printlarreversedir(av[i], ind);
 				}
-				else if (ind->indreverse == 1 && ind->indr == 1 && ind->indt == 1 && ind->indl)
+				else if (ind->indreverse == 1 && ind->indr == 1 && ind->indt == 1 && ind->indl == 1)
 				{
 					ft_printltrreversedir(av[i], ind);
 				}
-				else if (ind->inda == 1 && ind->indr == 1 && ind->indt == 1 && ind->indl)
+				else if (ind->inda == 1 && ind->indr == 1 && ind->indt == 1 && ind->indl == 1)
 				{
 					ft_printlartdir(av[i], ind);
 				}
-				else if (ind->inda == 1 && ind->indreverse == 1 && ind->indt == 1 && ind->indl)
+				else if (ind->inda == 1 && ind->indreverse == 1 && ind->indt == 1 && ind->indl == 1)
 				{
 					ft_printlatreversedir(av[i], ind);
 				}

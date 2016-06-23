@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/23 17:34:19 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/23 18:03:07 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,6 +132,8 @@ t_lsto	*ft_printlist25(t_lst *lstmp);
 t_lsto	*ft_printlist26(t_lst *lstmp);
 t_lsto	*ft_printlist27(t_lst *lstmp);
 t_lsto	*ft_printlist28(t_lst *lstmp);
+t_lsto	*ft_printlist29(t_lst *lstmp);
+t_lsto	*ft_printlist30(t_lst *lstmp);
 int		ft_countlevel(t_lst *lstmp);
 char	*ft_makepath(char *str1,char *str2);
 void	ft_push1stback(t_lst **lstmp);
@@ -194,5 +196,6 @@ void	ft_printlatreversedir(char *s,t_ind *ind);
 void	ft_printlartdir(char *s,t_ind *ind);
 void	ft_printltrreversedir(char *s,t_ind *ind);
 void	ft_printlarreversedir(char *s,t_ind *ind);
+void ft_atrreverse(char *s, t_ind *ind);
 
 # endif
