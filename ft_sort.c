@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 13:51:30 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/23 14:29:32 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/23 14:40:59 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,10 +144,6 @@ int croissant_pathname(t_lsto *lsti)
 		return (ft_strcmp(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti)->content)->name),ft_makepath(((t_rep*)((lsti->next)->content))->path,((t_rep*)((lsti->next)->content))->name)) <= 0);
 }
 
-int decreasing_pathname(t_lsto *lsti)
-{
-		return (ft_strcmp(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti)->content)->name),ft_makepath(((t_rep*)((lsti->next)->content))->path,((t_rep*)((lsti->next)->content))->name)) > 0);
-}
 t_lsto		*ft_lst_sort(t_lsto *lst, int (*cmp)(t_lsto*))
 {
 	t_lsto *lstmp1;
