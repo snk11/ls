@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/23 13:19:31 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/23 13:27:48 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,10 @@ int main(int ac,char **av)
 				else if (ind->inda == 1 && ind->indr == 1 && ind->indl == 1)
 				{
 					ft_printlardir(av[i], ind);
+				}
+				else if (ind->indt == 1 && ind->indr == 1 && ind->indl == 1)
+				{
+					ft_printlrtdir(av[i], ind);
 				}
 				else if (ind->inda == 1 && ind->indreverse == 1)
 				{
