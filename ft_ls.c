@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/23 17:58:35 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/26 16:42:02 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -266,92 +266,6 @@ int main(int ac,char **av)
 						perror(av[i]);
 					}
 				}
-			}
-//			else if (i == 1 && inderror == 0 && (ft_strcmp(av[i], "-1") == 0 || ft_strcmp(av[i], "--") == 0))
-			{
-//				ind.indfirst = 1;
-//				ind->indone = 1;
-/*
-				lst = ft_getreplist(".");
-				lsti = ft_printlist2(lst);
-				lstibegi = lsti;
-				lstibegi = ft_lst_sort2(lstibegi);
-				lsti = lstibegi;
-				while (lsti)
-				{
-					ft_putstr("\n");
-					ft_putstr(((t_rep*)(lsti->content))->name);
-					ft_putstr(":\n");
-					stat(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name),&sb);
-					if((sb.st_mode & S_IRUSR))
-						lst = ft_getreplist(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
-					if(lst)
-						lstj = ft_printlist2(lst);
-					else if ((sb.st_mode & S_IRUSR) == 0)
-					{
-						ft_putstr_fd("ls: ", 2);
-						opendir(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
-					//perror(strerror(ENOENT));
-						perror(((t_rep*)(lsti->content))->name);
-					}
-					lsti = lsti->next;
-					lst = NULL;
-				}
-*/
-			}
-//			else if (i == 1 && inderror == 0 && (ft_strcmp(av[i],"-1t")) == 0)
-			{
-//				ind.indfirst = 1;
-//				ind->indt = 1;
-			}
-//			else if (i == 1 && inderror == 0 && (ft_strcmp(av[i], "-1R")== 0))
-			{
-//				ind.indfirst = 1;
-//				ind->indr = 1;
-/*
-				lst = ft_getreplist(".");
-				lsti = ft_printlist2(lst);
-				lstibegi = lsti;
-				while (lsti)
-				{
-//					ft_putstr("R ");
-//					ft_putstr(((t_rep*)(lsti->content))->name);
-//					ft_putstr("\n");
-					stat(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name),&sb);
-					if((sb.st_mode & S_IRUSR))
-						lst = ft_getreplist(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
-					if(lst && (sb.st_mode & S_IRUSR))
-					{
-						lstj = ft_printlist3(lst);
-						lsti = lst_addo_down(lsti,lstj);
-//						lsti = ft_lst_sort(lsti,croissant_pathname);
-					}
-					lsti = lsti->next;
-					lst = NULL;
-				}
-				lstibegi = ft_lst_sort2(lstibegi);
-				lsti = lstibegi;
-				while (lsti)
-				{
-					ft_putstr("\n");
-					ft_putstr(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
-					ft_putstr(":\n");
-					stat(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name),&sb);
-					if((sb.st_mode & S_IRUSR))
-						lst = ft_getreplist(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
-					if(lst)
-						lstj = ft_printlist2(lst);
-					else if ((sb.st_mode & S_IRUSR) == 0)
-					{
-						ft_putstr_fd("ls: ", 2);
-						opendir(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
-					//perror(strerror(ENOENT));
-						perror(((t_rep*)(lsti->content))->name);
-					}
-					lsti = lsti->next;
-					lst = NULL;
-				}
-*/
 			}
 			i++;
 		}

@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/12 23:31:06 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/14 07:45:53 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/26 16:40:51 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ void	ft_scan_option(char **av,t_ind *ind)
 					ind->indillegal = av[i][j];
 				j++;
 			}
-			i++;
 		}
 //		else if (ft_strcmp(s,"-1t") == 0)
 //		{
@@ -54,6 +53,6 @@ void	ft_scan_option(char **av,t_ind *ind)
 //		{
 //			ind->indr = 1;
 //		}
-//		i++;
+		i++;
 	}
 }
