@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/26 16:42:02 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/26 17:10:42 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int main(int ac,char **av)
 		while(av[i])
 		{
 			inderror = 0;
-			if (ft_check_string(av[i]))
+//			if (ft_check_string(av[i]))
 			{
 				if (!opendir(av[i]))
 				{
@@ -88,7 +88,8 @@ int main(int ac,char **av)
 //					ft_printlrdir(av[i],ind);
 //				}
 			}
-			if (inderror == 0 && ft_check_string(av[i]))
+//			if (inderror == 0 && ft_check_string(av[i]))
+			if (inderror == 0)
 			{
 //				printf("i = %d, indfirst = %d\n",i,ind.indfirst);
 				if (ind->indillegal != 0)
