@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/12 23:31:06 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/26 16:40:51 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/26 17:15:36 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_scan_option(char **av,t_ind *ind)
 	i = 1;
 	while (av[i] && av[i][0] == '-')
 	{
-		if (ft_strcmp(av[i], "-1") == 0 || ft_strcmp(av[i], "--") == 0)
+		if (ft_strcmp(av[i], "--") == 0)
 		{
 			ind->indone = 1;
 		}
@@ -40,6 +40,8 @@ void	ft_scan_option(char **av,t_ind *ind)
 					ind->indt = 1;
 				else if (av[i][j] == 'l')
 					ind->indl = 1;
+				else if (av[i][j] == '1')
+					ind->indone = 1;
 				else if (ind->indillegal == 0)
 					ind->indillegal = av[i][j];
 				j++;
