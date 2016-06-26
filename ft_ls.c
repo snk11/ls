@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/26 17:10:42 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/26 20:44:11 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int main(int ac,char **av)
 	t_lsto			*lsti;
 	t_lsto			*lstibegi;
 	t_lsto			*lstj;
+	t_lsto			*lst1;
+	t_lsto			*lst1begi;
 	int				i;
 	int				inderror;
 	t_ind			*ind;
@@ -32,10 +34,14 @@ int main(int ac,char **av)
 	ind = (t_ind*)malloc(sizeof(t_ind));
 	lst = NULL;
 	lstj = NULL;
+	lst1 = NULL;
 	lstibegi = NULL;
+	lst1begi = NULL;
 	i = 1;
 	inderror = 0;
 	ft_init(ind);
+	lst1 = ft_getprimelist(av);
+	lst1begi = lst1;
 	if (av[3])
 		ind->indav3 = 1;
 	if (!av[1])
@@ -55,9 +61,10 @@ int main(int ac,char **av)
 		ft_scan_option(av,ind);
 //		ft_printerror(av,ind);
 		j = 1;
-		while (av[j])
+
+		while (lst1)
 		{
-			if (!opendir(av[j]))
+			if (!opendir((char*)(lst1->content)))
 			{
 //					ft_putstr_fd("ls: ", 2);
 				//perror(strerror(ENOENT));
@@ -65,14 +72,16 @@ int main(int ac,char **av)
 				inderror = 1;
 				ind->inder1 = 1;
 			}
-			j++;
+			lst1 = lst1 ->next;
 		}
-		while(av[i])
+
+		lst1 = lst1begi;
+		while(lst1)
 		{
 			inderror = 0;
 //			if (ft_check_string(av[i]))
 			{
-				if (!opendir(av[i]))
+				if (!opendir((char*)(lst1->content)))
 				{
 //					ft_putstr_fd("ls: ", 2);
 				//perror(strerror(ENOENT));
@@ -104,130 +113,130 @@ int main(int ac,char **av)
 
 				else if (ind->indreverse == 1 && ind->indr == 1 && ind->inda == 1 && ind->indt == 1)
 				{
-					ft_atrreverse(av[i], ind);
+					ft_atrreverse((char*)(lst1->content), ind);
 				}
 				else if (ind->indreverse == 1 && ind->indr == 1 && ind->inda == 1 && ind->indl == 1)
 				{
-					ft_printlarreversedir(av[i], ind);
+					ft_printlarreversedir((char*)(lst1->content), ind);
 				}
 				else if (ind->indreverse == 1 && ind->indr == 1 && ind->indt == 1 && ind->indl == 1)
 				{
-					ft_printltrreversedir(av[i], ind);
+					ft_printltrreversedir((char*)(lst1->content), ind);
 				}
 				else if (ind->inda == 1 && ind->indr == 1 && ind->indt == 1 && ind->indl == 1)
 				{
-					ft_printlartdir(av[i], ind);
+					ft_printlartdir((char*)(lst1->content), ind);
 				}
 				else if (ind->inda == 1 && ind->indreverse == 1 && ind->indt == 1 && ind->indl == 1)
 				{
-					ft_printlatreversedir(av[i], ind);
+					ft_printlatreversedir((char*)(lst1->content), ind);
 				}
 				else if (ind->inda == 1 && ind->indreverse == 1 && ind->indt == 1)
 				{
-					ft_atreverse(av[i], ind);
+					ft_atreverse((char*)(lst1->content), ind);
 				}
 				else if (ind->inda == 1 && ind->indr == 1 && ind->indreverse == 1)
 				{
-					ft_arreverse(av[i], ind);
+					ft_arreverse((char*)(lst1->content), ind);
 				}
 				else if (ind->inda == 1 && ind->indr == 1 && ind->indt == 1)
 				{
-					ft_art(av[i], ind);
+					ft_art((char*)(lst1->content), ind);
 				}
 				else if (ind->indreverse == 1 && ind->indr == 1 && ind->indt == 1)
 				{
-					ft_trreverse(av[i], ind);
+					ft_trreverse((char*)(lst1->content), ind);
 				}
 				else if (ind->inda == 1 && ind->indr == 1 && ind->indl == 1)
 				{
-					ft_printlardir(av[i], ind);
+					ft_printlardir((char*)(lst1->content), ind);
 				}
 				else if (ind->indt == 1 && ind->indr == 1 && ind->indl == 1)
 				{
-					ft_printlrtdir(av[i], ind);
+					ft_printlrtdir((char*)(lst1->content), ind);
 				}
 				else if (ind->indreverse == 1 && ind->indr == 1 && ind->indl == 1)
 				{
-					ft_printlrreversedir(av[i], ind);
+					ft_printlrreversedir((char*)(lst1->content), ind);
 				}
 				else if (ind->indt == 1 && ind->inda == 1 && ind->indl == 1)
 				{
-					ft_printlatdir(av[i], ind);
+					ft_printlatdir((char*)(lst1->content), ind);
 				}
 				else if (ind->indt == 1 && ind->indreverse == 1 && ind->indl == 1)
 				{
-					ft_printltreversedir(av[i], ind);
+					ft_printltreversedir((char*)(lst1->content), ind);
 				}
 				else if (ind->inda == 1 && ind->indreverse == 1 && ind->indl == 1)
 				{
-					ft_printlareversedir(av[i], ind);
+					ft_printlareversedir((char*)(lst1->content), ind);
 				}
 				else if (ind->inda == 1 && ind->indreverse == 1)
 				{
-					ft_areverse(av[i], ind);
+					ft_areverse((char*)(lst1->content), ind);
 				}
 				else if (ind->inda == 1 && ind->indt == 1)
 				{
-					ft_at(av[i], ind);
+					ft_at((char*)(lst1->content), ind);
 				}
 				else if (ind->inda == 1 && ind->indr == 1)
 				{
-					ft_ar(av[i], ind);
+					ft_ar((char*)(lst1->content), ind);
 				}
 				else if (ind->inda == 1 && ind->indl == 1)
 				{
-					ft_printladir(av[i], ind);
+					ft_printladir((char*)(lst1->content), ind);
 				}
 				else if (ind->indr == 1 && ind->indt == 1)
 				{
-					ft_rt(av[i], ind);
+					ft_rt((char*)(lst1->content), ind);
 				}
 				else if (ind->indr == 1 && ind->indreverse == 1)
 				{
-					ft_rreverse(av[i], ind);
+					ft_rreverse((char*)(lst1->content), ind);
 				}
 				else if (ind->indl == 1 && ind->indr == 1)
 				{
-					ft_printlrdir(av[i], ind);
+					ft_printlrdir((char*)(lst1->content), ind);
 				}
 				else if (ind->indl == 1 && ind->indt == 1)
 				{
-					ft_printltdir(av[i], ind);
+					ft_printltdir((char*)(lst1->content), ind);
 				}
 				else if (ind->indl == 1 && ind->indreverse == 1)
 				{
-					ft_printlreversedir(av[i], ind);
+					ft_printlreversedir((char*)(lst1->content), ind);
 				}
 				else if (ind->indt == 1 && ind->indreverse == 1)
 				{
-					ft_treverse(av[i], ind);
+					ft_treverse((char*)(lst1->content), ind);
 				}
 				else if (ind->indl == 1)
 				{
-					ft_printldir(av[i],ind);
+					ft_printldir((char*)(lst1->content),ind);
 				}
 				else if (ind->indr == 1)
 				{
-					ft_r(av[i], ind);
+					ft_r((char*)(lst1->content), ind);
 				}
 				else if (ind->inda == 1)
 				{
-					ft_a(av[i], ind);
+					ft_a((char*)(lst1->content), ind);
 				}
 				else if (ind->indt == 1)
 				{
-					ft_t(av[i], ind);
+					ft_t((char*)(lst1->content), ind);
 				}
 				else if (ind->indreverse == 1)
 				{
-					ft_reverse(av[i], ind);
+					ft_reverse((char*)(lst1->content), ind);
 				}
 				else
 				{
 //					if ( (i > 1 && (ind.indfirst == 1 && i > 2)) || (i > 1 && ind.indfirst == 0))
 					if (ind->indfirst > 1)
 						ft_putstr("\n");
-							lst = ft_getreplist(av[i]);
+							lst = ft_getreplist((char*)(lst1->content));
 							if (av[3] || ind->indfirst > 1)
 							{
 								ft_putstr(av[i]);
@@ -238,7 +247,7 @@ int main(int ac,char **av)
 			}
 			else if(inderror == 1 && ind->indl == 1 && ft_isreg(av[i]))
 			{
-				ft_printlreg(av[i]);
+				ft_printlreg((char*)(lst1->content));
 			}
 			else if (inderror == 1)
 			{
@@ -260,15 +269,15 @@ int main(int ac,char **av)
 				}
 				else if (ind->ind1 == 0)
 				{
-					if (!opendir(av[i]) && av[i][0] != '-')
+					if (!opendir((char*)(lst1->content)) && ((char*)(lst1->content))[0] != '-')
 					{
 						ft_putstr_fd("ls: ", 2);
 						//perror(strerror(ENOENT));
-						perror(av[i]);
+						perror((char*)(lst1->content));
 					}
 				}
 			}
-			i++;
+			lst1 = lst1->next;
 		}
 	}
 	else if(av[1])
