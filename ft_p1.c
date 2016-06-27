@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/27 17:13:01 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/27 17:18:41 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/27 18:30:16 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,13 @@ void	ft_p1(t_lsto *lst1,t_ind *ind)
 	lst1 = lst1begi;
 	s1 = NULL;
 
+	lst1 = lst1begi;
+	while(lst1)
+	{
+		if (((char*)(lst1->content))[0] != '-')
+			ind->indtotal++;
+		lst1 = lst1->next;
+	}
 	lst1 = lst1begi;
 	while(lst1)
 	{
@@ -84,8 +91,6 @@ void	ft_p1(t_lsto *lst1,t_ind *ind)
 	lst1 = lst1begi;
 	while(lst1)
 	{
-		if (((char*)(lst1->content))[0] != '-')
-			ind->indfirst++;
 		inderror = 0;
 		//			if (ft_check_string(av[i]))
 		{
@@ -108,6 +113,7 @@ void	ft_p1(t_lsto *lst1,t_ind *ind)
 		if (inderror == 0)
 		{
 			//				printf("i = %d, indfirst = %d\n",i,ind.indfirst);
+			ind->indfirst++;
 			if (ind->indillegal != 0)
 			{
 			}
