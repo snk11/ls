@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/27 16:12:54 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/27 17:19:53 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,7 @@ typedef struct		s_stat
 	struct stat		stat1;
 }					t_stat;
 
+void	ft_p1(t_lsto *lst1,t_ind *ind);
 t_lst		*lst_add(t_lst *toplist, t_lst *t_lst1);
 void		lst_addo(t_lsto **toplist, t_lst *t_lst1);
 t_lsto		*lst_addo_down(t_lsto *toplist, t_lsto *lst1);
