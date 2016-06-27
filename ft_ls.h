@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/26 20:28:58 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/27 15:27:02 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,6 @@ typedef struct			s_ind
 	int					indl;
 	int					indreverse;
 	char				indillegal;
-	int					indav3;
-	int					inder1;
 	int					ind1;
 	int					ind2;
 }						t_ind;

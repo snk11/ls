@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/27 14:42:38 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/27 15:27:13 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,6 @@ int main(int ac,char **av)
 	ft_init(ind);
 	lst1 = ft_getprimelist(av);
 	lst1begi = lst1;
-	if (av[3])
-		ind->indav3 = 1;
 	if (!av[1])
 	{
 		lst = ft_getreplist(".");
@@ -74,7 +72,6 @@ int main(int ac,char **av)
 				{
 					inderror = 1;
 				}
-				ind->indfirst++;
 			}
 			if (inderror == 1)
 			{
@@ -110,7 +107,6 @@ int main(int ac,char **av)
 				{
 					inderror = 1;
 				}
-				ind->indfirst++;
 			}
 			if(inderror == 1 && ind->indl == 1 && ft_isreg((char*)(lst1->content)))
 			{
@@ -126,6 +122,8 @@ int main(int ac,char **av)
 		lst1 = lst1begi;
 		while(lst1)
 		{
+			if (((char*)(lst1->content))[0] != '-')
+				ind->indfirst++;
 			inderror = 0;
 //			if (ft_check_string(av[i]))
 			{
@@ -136,7 +134,6 @@ int main(int ac,char **av)
 //					perror(av[i]);
 					inderror = 1;
 				}
-				ind->indfirst++;
 				
 //				if (ind->indl == 1)
 //				{
