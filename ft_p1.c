@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/27 17:13:01 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/27 18:30:16 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/27 19:32:01 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	ft_p1(t_lsto *lst1,t_ind *ind)
 			}
 			else if (ind->ind1 == 0 && !ft_isreg(s1))
 			{
-				if (!opendir((char*)(lst1->content)) && ((char*)(lst1->content))[0] != '-')
+				if (!opendir((char*)(lst1->content)) && (((char*)(lst1->content))[0] != '-' || ind->indoption == 0))
 				{
 					ft_putstr_fd("ls: ", 2);
 					perror((char*)(lst1->content));
