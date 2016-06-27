@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/26 20:44:11 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/27 14:42:38 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int main(int ac,char **av)
 	int				inderror;
 	t_ind			*ind;
 	int j;
+	char 			*s1;
 
 	ind = NULL;
 	ind = (t_ind*)malloc(sizeof(t_ind));
@@ -62,19 +63,66 @@ int main(int ac,char **av)
 //		ft_printerror(av,ind);
 		j = 1;
 
-		while (lst1)
-		{
-			if (!opendir((char*)(lst1->content)))
-			{
-//					ft_putstr_fd("ls: ", 2);
-				//perror(strerror(ENOENT));
-//					perror(av[i]);
-				inderror = 1;
-				ind->inder1 = 1;
-			}
-			lst1 = lst1 ->next;
-		}
 
+		lst1 = lst1begi;
+		while(lst1)
+		{
+			inderror = 0;
+			ind->ind1 = 0;
+			{
+				if (!opendir((char*)(lst1->content)))
+				{
+					inderror = 1;
+				}
+				ind->indfirst++;
+			}
+			if (inderror == 1)
+			{
+				s1 = ft_memmove2((char*)(lst1->content));
+				if (ind->indillegal != 0 && ind->ind1 == 0)
+				{
+					
+					ft_putstr_fd("ls: ", 2);
+					ft_putstr_fd("illegal option -- ", 2);
+					ft_putchar_fd(ind->indillegal, 2);
+					ft_putstr_fd("\n", 2);
+					ft_putstr_fd("usage: ls [-ABCFGHLOPRSTUWabcdefghiklmnopqrstuwx1] [file ...]\n",2);
+					ind->ind1 = 1;
+				}
+				else if (ind->ind1 == 0 && !ft_isreg(s1))
+				{
+					if (!opendir((char*)(lst1->content)) && ((char*)(lst1->content))[0] != '-')
+					{
+						ft_putstr_fd("ls: ", 2);
+						perror((char*)(lst1->content));
+					}
+				}
+			}
+			lst1 = lst1->next;
+		}
+		lst1 = lst1begi;
+		while(lst1)
+		{
+			s1 = ft_memmove2((char*)(lst1->content));
+			inderror = 0;
+			{
+				if (!opendir((char*)(lst1->content)))
+				{
+					inderror = 1;
+				}
+				ind->indfirst++;
+			}
+			if(inderror == 1 && ind->indl == 1 && ft_isreg((char*)(lst1->content)))
+			{
+				ft_printlreg((char*)(lst1->content));
+			}
+			else if(inderror == 1 && ft_isreg(s1))
+			{
+				ft_putstr((char*)(lst1->content));
+				ft_putstr("\n");
+			}
+			lst1 = lst1->next;
+		}
 		lst1 = lst1begi;
 		while(lst1)
 		{
@@ -103,12 +151,6 @@ int main(int ac,char **av)
 //				printf("i = %d, indfirst = %d\n",i,ind.indfirst);
 				if (ind->indillegal != 0)
 				{
-					
-					ft_putstr_fd("ls: ", 2);
-					ft_putstr_fd("illegal option -- ", 2);
-					ft_putchar_fd(ind->indillegal, 2);
-					ft_putstr_fd("\n", 2);
-					ft_putstr_fd("usage: ls [-ABCFGHLOPRSTUWabcdefghiklmnopqrstuwx1] [file ...]\n",2);
 				}
 
 				else if (ind->indreverse == 1 && ind->indr == 1 && ind->inda == 1 && ind->indt == 1)
@@ -239,42 +281,10 @@ int main(int ac,char **av)
 							lst = ft_getreplist((char*)(lst1->content));
 							if (av[3] || ind->indfirst > 1)
 							{
-								ft_putstr(av[i]);
+								ft_putstr((char*)(lst1->content));
 								ft_putstr(":\n");
 							}
 							lstj = ft_printlist2(lst);
-				}
-			}
-			else if(inderror == 1 && ind->indl == 1 && ft_isreg(av[i]))
-			{
-				ft_printlreg((char*)(lst1->content));
-			}
-			else if (inderror == 1)
-			{
-//				if (!opendir(av[i]) && av[i][0] != '-')
-//				{
-//					ft_putstr_fd("ls: ", 2);
-					//perror(strerror(ENOENT));
-//					perror(av[i]);
-//				}
-				if (ind->indillegal != 0 && ind->ind1 == 0)
-				{
-					
-					ft_putstr_fd("ls: ", 2);
-					ft_putstr_fd("illegal option -- ", 2);
-					ft_putchar_fd(ind->indillegal, 2);
-					ft_putstr_fd("\n", 2);
-					ft_putstr_fd("usage: ls [-ABCFGHLOPRSTUWabcdefghiklmnopqrstuwx1] [file ...]\n",2);
-					ind->ind1 = 1;
-				}
-				else if (ind->ind1 == 0)
-				{
-					if (!opendir((char*)(lst1->content)) && ((char*)(lst1->content))[0] != '-')
-					{
-						ft_putstr_fd("ls: ", 2);
-						//perror(strerror(ENOENT));
-						perror((char*)(lst1->content));
-					}
 				}
 			}
 			lst1 = lst1->next;
