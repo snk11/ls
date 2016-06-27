@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/27 15:27:02 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/27 16:12:54 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,7 +155,9 @@ t_lsto	*ft_getreplisto4(t_lst *lstmp);
 void	ft_init(t_ind *ind);
 t_lsto		*ft_lst_sort3(t_lsto *lst);
 int decreasing(t_lsto *lsta);
+int decreasing_char(t_lsto *lsta);
 int croissant_time(t_lsto *lsta);
+int croissant_time_char(t_lsto *lsta);
 int decreasing_time(t_lsto *lsta);
 int decreasing_time_char(t_lsto *lsta);
 void ft_t(char *s, t_ind *ind);

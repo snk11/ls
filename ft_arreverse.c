@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/23 15:46:29 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/23 15:55:28 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/27 15:34:59 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,11 @@ void ft_arreverse(char *s, t_ind *ind)
 	t_lsto			*lstj;
 
 	//if ( (i > 1 && (ind.indfirst == 1 && i > 2)) || (i > 1 && ind.indfirst == 0))
-	if (ind->indfirst > 1 && ind->inder1 == 0)
+	if (ind->indfirst > 1)
 		ft_putstr("\n");
-	ind->inder1 = 0;
 	lst = ft_getreplist4(s);
 	//if (ind.indav3 || (ind.indav2  && i > 1 && (ind.indfirst == 1 && i > 2))  || (ind.indav2 && ind.indfirst == 0))
-	if (ind->indav3 || ind->indfirst > 1)
+	if (ind->indfirst > 1)
 	{
 		ft_putstr(s);
 		ft_putstr(":\n");

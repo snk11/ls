@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/27 15:27:13 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/27 16:13:04 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,14 @@ int main(int ac,char **av)
 	i = 1;
 	inderror = 0;
 	ft_init(ind);
+	ft_scan_option(av,ind);
 	lst1 = ft_getprimelist(av);
+	if (ind->indreverse == 1 && ind->indt == 1)
+		lst1 = ft_lst_sort(lst1,croissant_time_char);
+	if (ind->indreverse == 1)
+		lst1 = ft_lst_sort(lst1,decreasing_char);
+	if (ind->indt == 1)
+		lst1 = ft_lst_sort(lst1,decreasing_time_char);
 	lst1begi = lst1;
 	if (!av[1])
 	{
@@ -57,7 +64,6 @@ int main(int ac,char **av)
 	else if(av[2])
 	{
 //		ft_scan_ind(av,ind);
-		ft_scan_option(av,ind);
 //		ft_printerror(av,ind);
 		j = 1;
 
