@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/27 19:27:29 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/15 17:23:37 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,12 +150,12 @@ int croissant_pathname(t_lsto *lsti);
 t_lsto		*ft_lst_sort(t_lsto *lst, int (*cmp)(t_lsto*));
 int		ft_isdir(char *s);
 int		ft_isreg(char *s);
-t_lsto		*ft_lst_sort1(t_lsto *lst);
-t_lsto		*ft_lst_sort2(t_lsto *lst);
-t_lsto		*ft_lst_sort4(t_lsto *lst);
+//t_lsto		*ft_lst_sort1(t_lsto *lst);
+//t_lsto		*ft_lst_sort2(t_lsto *lst);
+//t_lsto		*ft_lst_sort4(t_lsto *lst);
 t_lsto	*ft_getreplisto4(t_lst *lstmp);
 void	ft_init(t_ind *ind);
-t_lsto		*ft_lst_sort3(t_lsto *lst);
+//t_lsto		*ft_lst_sort3(t_lsto *lst);
 int decreasing(t_lsto *lsta);
 int decreasing_char(t_lsto *lsta);
 int croissant_time(t_lsto *lsta);

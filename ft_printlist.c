@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 11:46:17 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/23 18:02:04 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/15 17:26:49 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,9 @@ void	ft_printlist4(t_lst *lstmp)
 			lst_addo(&lst2, lstmp);
 		lstmp = lstmp->nextr;
 	}
-	lst2 = ft_lst_sort1(lst2);
+	lst2 = ft_lst_sort(lst2,croissant);
 	lst1 = lst_addo_down(lst1,lst2);
-	lst1 = ft_lst_sort1(lst1);
+	lst1 = ft_lst_sort(lst1,croissant);
 	while (lst1)
 	{
 //		if ( (((t_rep*)(lst1)->content)->name)[0] != '.')
@@ -732,10 +732,10 @@ t_lsto	*ft_printlist16(t_lst *lstmp)
 			lst_addo(&lst2, lstmp);
 		lstmp = lstmp->nextr;
 	}
-	lst2 = ft_lst_sort1(lst2);
+	lst2 = ft_lst_sort(lst2,croissant);
 	lstbegio = lst2;
 	lst1 = lst_addo_down(lst1,lst2);
-	lst1 = ft_lst_sort1(lst1);
+	lst1 = ft_lst_sort(lst1,croissant);
 	while (lst1)
 	{
 //		if ( (((t_rep*)(lst1)->content)->name)[0] != '.')

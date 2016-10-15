@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/23 13:03:28 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/27 18:34:29 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/15 17:22:06 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	ft_printlardir(char *s,t_ind *ind)
 		lsti = lsti->next;
 		lst = NULL;
 	}
-	lstibegi = ft_lst_sort2(lstibegi);
+	lstibegi = ft_lst_sort(lstibegi,croissant_pathname);
 	lsti = lstibegi;
 	while (lsti)
 	{
