@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 11:46:17 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/15 17:26:49 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/15 17:57:48 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -315,7 +315,7 @@ void	ft_printlist7(t_lst *lstmp)
 			ft_putstr(" ");
 			ft_putstr(ft_itoa((localtime(&(sb.st_ctime)))->tm_min));
 			ft_putstr(" ");
-			ft_putstr(ft_itoa((localtime(&(sb.st_ctime)))->tm_year));
+			ft_putstr(ft_itoa((localtime(&(sb.st_ctime)))->tm_year + 1900));
 			ft_putstr(" ");
 			ft_putstr(((t_rep*)((lst1))->content)->name);
 			ft_putstr("\n");
