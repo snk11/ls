@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/27 17:13:01 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/27 19:32:01 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/15 18:51:18 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,9 @@ void	ft_p1(t_lsto *lst1,t_ind *ind)
 				inderror = 1;
 			}
 		}
+//		if(lst1)
+//			printf("lst1 = %s\n",((char*)(lst1->content)));
+//		printf("inderror = %d\n",inderror);
 		if(inderror == 1 && ind->indl == 1 && ft_isreg((char*)(lst1->content)))
 		{
 			ft_printlreg((char*)(lst1->content));
