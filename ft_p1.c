@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/27 17:13:01 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/17 18:11:15 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/17 18:24:09 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ void	ft_p1(t_lsto *lst1,t_ind *ind)
 //		printf("inderror = %d\n",inderror);
 		if(inderror == 1 && ind->indl == 1 && ft_isreg((char*)(lst1->content)))
 		{
-			ft_printlreg((char*)(lst1->content));
+			ft_printlregfile((char*)(lst1->content));
 		}
 		else if(inderror == 1 && ft_isreg(s1))
 		{
