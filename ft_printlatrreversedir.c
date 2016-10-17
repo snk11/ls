@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printlarreversedir.c                            :+:      :+:    :+:   */
+/*   ft_printlatrreversedir.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/23 17:24:45 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/17 16:30:22 by syusof           ###   ########.fr       */
+/*   Created: 2016/10/17 16:50:57 by syusof            #+#    #+#             */
+/*   Updated: 2016/10/17 17:13:06 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_ls.h"
+# include "ft_ls.h"
 
-void	ft_printlarreversedir(char *s,t_ind *ind)
+void ft_printlatrreversedir(char *s, t_ind *ind)
 {
 	struct stat		sb;
 	t_lsto			*lst;
@@ -31,24 +31,27 @@ void	ft_printlarreversedir(char *s,t_ind *ind)
 		ft_putstr(s);
 		ft_putstr(":\n");
 	}
-	lsti = ft_printlist28(lst);
+	lsti = ft_printlist31(lst);
 	lstibegi = lsti;
 	while (lsti)
 	{
 		if (ft_strcmp((((t_rep*)(lsti)->content)->name), ".") != 0 && ft_strcmp((((t_rep*)(lsti)->content)->name), "..") != 0)
 		{
 			stat(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name),&sb);
-			if((sb.st_mode & S_IRUSR))
+			//		if((sb.st_mode & S_IRUSR))
+			if(ft_isdir(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name)) && (sb.st_mode & S_IRUSR))
 				lst = ft_getreplist(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
-			if(lst && (sb.st_mode & S_IRUSR))
+			if(lst && ft_isdir(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name)) && (sb.st_mode & S_IRUSR))
 			{
-				lstj = ft_printlist19(lst);
+				lstj = ft_printlist30(lst);
 				lsti = lst_addo_between(lsti,lstj);
 			}
 		}
 		lsti = lsti->next;
 		lst = NULL;
 	}
+	//	lstibegi = ft_lst_sort2(lstibegi);
+	//	lstibegi = ft_lst_sort(lstibegi, decreasing_time);
 	lsti = lstibegi;
 	while (lsti)
 	{
@@ -58,11 +61,11 @@ void	ft_printlarreversedir(char *s,t_ind *ind)
 			ft_putstr(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
 			ft_putstr(":\n");
 			stat(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name),&sb);
-			if((sb.st_mode & S_IRUSR))
+			if(ft_isdir(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name)) && (sb.st_mode & S_IRUSR))
 				lst = ft_getreplist4(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
 			if(lst)
-				lstj = ft_printlist28(lst);
-			else if ((sb.st_mode & S_IRUSR) == 0)
+				lstj = ft_printlist31(lst);
+			else if(ft_isdir(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name)) == 0 || (sb.st_mode & S_IRUSR) == 0)
 			{
 				ft_putstr_fd("ls: ", 2);
 				opendir(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
@@ -73,3 +76,4 @@ void	ft_printlarreversedir(char *s,t_ind *ind)
 		lst = NULL;
 	}
 }
+

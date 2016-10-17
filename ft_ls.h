@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/15 18:51:29 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/17 17:13:54 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,45 +95,47 @@ typedef struct		s_stat
 
 void	ft_p1(t_lsto *lst1,t_ind *ind);
 t_lst		*lst_add(t_lst *toplist, t_lst *t_lst1);
-void		lst_addo(t_lsto **toplist, t_lst *t_lst1);
+void		lst_addo(t_lsto **toplist, t_lsto *t_lst1);
 t_lsto		*lst_addo_down(t_lsto *toplist, t_lsto *lst1);
 t_lsto		*lst_addo_down_char(t_lsto *toplist, t_lsto *lst1);
 void		lst_add_del(t_lst **toplist, t_lst **t_lst1);
 t_lst		*ft_create_lst(void *content);
 t_lsto		*ft_create_lsto(void *content);
 t_lsto		*ft_create_lsto_char(char *content);
-t_lst *ft_getreplist(char *rep);
-t_lst *ft_getreplist4(char *rep);
-void	ft_printlist(t_lst *lstmp);
-t_lsto	*ft_printlist2(t_lst *lstmp);
-t_lsto	*ft_printlist3(t_lst *lstmp);
-void	ft_printlist4(t_lst *lstmp);
-void	ft_printlist5(t_lst *lstmp);
-void	ft_printlist6(t_lst *lstmp);
-void	ft_printlist7(t_lst *lstmp);
-t_lsto	*ft_printlist8(t_lst *lstmp);
-void	ft_printlist9(t_lst *lstmp);
-t_lsto	*ft_printlist10(t_lst *lstmp);
-t_lsto	*ft_printlist11(t_lst *lstmp);
-t_lsto	*ft_printlist12(t_lst *lstmp);
-void	ft_printlist13(t_lst *lstmp);
-void	ft_printlist14(t_lst *lstmp);
-void	ft_printlist15(t_lst *lstmp);
-t_lsto	*ft_printlist16(t_lst *lstmp);
-t_lsto	*ft_printlist17(t_lst *lstmp);
-t_lsto	*ft_printlist18(t_lst *lstmp);
-t_lsto	*ft_printlist19(t_lst *lstmp);
-t_lsto	*ft_printlist20(t_lst *lstmp);
-void	ft_printlist21(t_lst *lstmp);
-t_lsto	*ft_printlist22(t_lst *lstmp);
-t_lsto	*ft_printlist23(t_lst *lstmp);
-void	ft_printlist24(t_lst *lstmp);
-t_lsto	*ft_printlist25(t_lst *lstmp);
-t_lsto	*ft_printlist26(t_lst *lstmp);
-t_lsto	*ft_printlist27(t_lst *lstmp);
-t_lsto	*ft_printlist28(t_lst *lstmp);
-t_lsto	*ft_printlist29(t_lst *lstmp);
-t_lsto	*ft_printlist30(t_lst *lstmp);
+t_lsto *ft_getreplist(char *rep);
+t_lsto *ft_getreplist4(char *rep);
+t_lsto	*ft_getreplisto4(t_lsto *lstmp);
+void	ft_printlist(t_lsto *lstmp);
+t_lsto	*ft_printlist2(t_lsto *lstmp);
+t_lsto	*ft_printlist3(t_lsto *lstmp);
+void	ft_printlist4(t_lsto *lstmp);
+void	ft_printlist5(t_lsto *lstmp);
+void	ft_printlist6(t_lsto *lstmp);
+void	ft_printlist7(t_lsto *lstmp);
+t_lsto	*ft_printlist8(t_lsto *lstmp);
+void	ft_printlist9(t_lsto *lstmp);
+t_lsto	*ft_printlist10(t_lsto *lstmp);
+t_lsto	*ft_printlist11(t_lsto *lstmp);
+t_lsto	*ft_printlist12(t_lsto *lstmp);
+void	ft_printlist13(t_lsto *lstmp);
+void	ft_printlist14(t_lsto *lstmp);
+void	ft_printlist15(t_lsto *lstmp);
+t_lsto	*ft_printlist16(t_lsto *lstmp);
+t_lsto	*ft_printlist17(t_lsto *lstmp);
+t_lsto	*ft_printlist18(t_lsto *lstmp);
+t_lsto	*ft_printlist19(t_lsto *lstmp);
+t_lsto	*ft_printlist20(t_lsto *lstmp);
+void	ft_printlist21(t_lsto *lstmp);
+t_lsto	*ft_printlist22(t_lsto *lstmp);
+t_lsto	*ft_printlist23(t_lsto *lstmp);
+void	ft_printlist24(t_lsto *lstmp);
+t_lsto	*ft_printlist25(t_lsto *lstmp);
+t_lsto	*ft_printlist26(t_lsto *lstmp);
+t_lsto	*ft_printlist27(t_lsto *lstmp);
+t_lsto	*ft_printlist28(t_lsto *lstmp);
+t_lsto	*ft_printlist29(t_lsto *lstmp);
+t_lsto	*ft_printlist30(t_lsto *lstmp);
+t_lsto	*ft_printlist31(t_lsto *lstmp);
 int		ft_countlevel(t_lst *lstmp);
 char	*ft_makepath(char *str1,char *str2);
 void	ft_push1stback(t_lst **lstmp);
@@ -153,7 +155,6 @@ int		ft_isreg(char *s);
 //t_lsto		*ft_lst_sort1(t_lsto *lst);
 //t_lsto		*ft_lst_sort2(t_lsto *lst);
 //t_lsto		*ft_lst_sort4(t_lsto *lst);
-t_lsto	*ft_getreplisto4(t_lst *lstmp);
 void	ft_init(t_ind *ind);
 //t_lsto		*ft_lst_sort3(t_lsto *lst);
 int decreasing(t_lsto *lsta);
@@ -198,6 +199,7 @@ void	ft_printlatreversedir(char *s,t_ind *ind);
 void	ft_printlartdir(char *s,t_ind *ind);
 void	ft_printltrreversedir(char *s,t_ind *ind);
 void	ft_printlarreversedir(char *s,t_ind *ind);
+void ft_printlatrreversedir(char *s, t_ind *ind);
 void ft_atrreverse(char *s, t_ind *ind);
 t_lsto		*ft_getprimelist(char **av);
 

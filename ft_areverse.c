@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/22 13:46:32 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/22 13:48:56 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/17 16:34:30 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_areverse(char *s, t_ind *ind)
 {
-	t_lst			*lst;
+	t_lsto			*lst;
 
 	lst = ft_getreplist4(s);
 	ft_printlist5(lst);

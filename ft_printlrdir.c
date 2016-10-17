@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/14 15:13:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/27 18:34:54 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/17 16:31:04 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_printlrdir(char *s,t_ind *ind)
 {
 	struct stat		sb;
-	t_lst			*lst;
+	t_lsto			*lst;
 	t_lsto			*lsti;
 	t_lsto			*lstibegi;
 	t_lsto			*lstj;

@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/27 17:13:01 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/15 18:51:18 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/17 17:15:08 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_p1(t_lsto *lst1,t_ind *ind)
 {
 	int inderror;
-	t_lst			*lst;
+	t_lsto			*lst;
 	t_lsto			*lstj;
 	t_lsto *lst1begi;
 	char *s1;
@@ -119,6 +119,10 @@ void	ft_p1(t_lsto *lst1,t_ind *ind)
 			ind->indfirst++;
 			if (ind->indillegal != 0)
 			{
+			}
+			else if (ind->indl == 1 && ind->indreverse == 1 && ind->indr == 1 && ind->inda == 1 && ind->indt == 1)
+			{
+				ft_printlatrreversedir((char*)(lst1->content), ind);
 			}
 
 			else if (ind->indreverse == 1 && ind->indr == 1 && ind->inda == 1 && ind->indt == 1)

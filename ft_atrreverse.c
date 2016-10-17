@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/23 17:57:58 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/27 18:34:12 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/17 16:35:00 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void ft_atrreverse(char *s, t_ind *ind)
 {
 
 	struct stat		sb;
-	t_lst			*lst;
+	t_lsto			*lst;
 	t_lsto			*lsti;
 	t_lsto			*lstibegi;
 	t_lsto			*lstj;

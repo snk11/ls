@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/23 11:43:47 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/27 16:17:53 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/17 16:33:22 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void ft_treverse(char *s, t_ind *ind)
 {
-	t_lst			*lst;
+	t_lsto			*lst;
 
 //	if ( (i > 1 && (ind.indfirst == 1 && i > 2)) || (i > 1 && ind.indfirst == 0))
 	if (ind->indfirst > 1)

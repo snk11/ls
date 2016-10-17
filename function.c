@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 15:43:19 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/26 20:16:51 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/17 16:33:34 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ t_lst		*lst_add(t_lst *toplist, t_lst *lst1)
 	//		*t_lst1 = (*t_lst1)->next;
 }
 
-void		lst_addo(t_lsto **toplist, t_lst *lst1)
+void		lst_addo(t_lsto **toplist, t_lsto *lst1)
 {
 
 	t_lsto		*lstmp;

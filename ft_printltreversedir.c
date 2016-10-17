@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/23 15:03:00 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/27 15:31:33 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/17 16:31:39 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_printltreversedir(char *s,t_ind *ind)
 {
-	t_lst		*lst;
+	t_lsto		*lst;
 
 	if (ind->indfirst > 1)
 		ft_putstr("\n");

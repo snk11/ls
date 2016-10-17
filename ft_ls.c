@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/15 18:07:36 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/17 16:28:30 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main(int ac,char **av)
 	struct dirent	*pdirent1;
 	DIR				*pdir1;
 	struct stat		sb;
-	t_lst			*lst;
+	t_lsto			*lst;
 	t_lsto			*lsti;
 	t_lsto			*lstibegi;
 	t_lsto			*lstj;
