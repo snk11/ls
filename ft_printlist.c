@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 11:46:17 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/17 17:11:41 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/17 18:53:37 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -247,11 +247,15 @@ void	ft_printlist7(t_lsto *lstmp)
 
 	struct stat		sb;
 	t_lsto	*lst1;
+	t_lsto	*lstmp2;
 	t_lsto	*lst2;
 	t_lsto	*lstbegi;
+	unsigned long l;
 
 	lst1 = NULL;
+	lstmp2 = NULL;
 	lst2 = NULL;
+	l = 0;
 	lstbegi = lstmp;
 	while (lstmp)
 	{
@@ -264,6 +268,16 @@ void	ft_printlist7(t_lsto *lstmp)
 	lst2 = ft_lst_sort(lst2,croissant);
 	lst1 = lst_addo_down(lst1,lst2);
 	lst1 = ft_lst_sort(lst1,croissant);
+	lstmp2 = lst1;
+	while (lstmp2)
+	{
+			stat(ft_makepath(((t_rep*)(lstmp2->content))->path,((t_rep*)(lstmp2->content))->name), &sb);
+			l = l + sb.st_blocks;
+			lstmp2 = lstmp2->next;
+	}
+	ft_putstr("total ");
+	ft_putulongnbr(l);
+	ft_putstr("\n");
 	while (lst1)
 	{
 //		if ( (((t_rep*)(lst1)->content)->name)[0] != '.')
@@ -289,6 +303,9 @@ void	ft_printlist7(t_lsto *lstmp)
 			ft_putstr(" ");
 			ft_putstr(ft_itoa((localtime(&(sb.st_ctime)))->tm_year + 1900));
 			ft_putstr(" ");
+//			ft_putulongnbr(sb.st_blocks);
+			l = l + sb.st_blocks;
+//			ft_putstr(" ");
 			ft_putstr(((t_rep*)((lst1))->content)->name);
 			ft_putstr("\n");
 		}
