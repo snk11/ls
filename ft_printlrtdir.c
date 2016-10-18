@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/23 13:28:02 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/18 16:16:45 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/18 18:08:55 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ void	ft_printlrtdir(char *s,t_ind *ind)
 	while (lsti)
 	{
 		stat(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name),&sb);
-		if((sb.st_mode & S_IRUSR))
+		if((sb.st_mode & S_IRGRP))
 			lst = ft_getreplist(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
-		if(lst && (sb.st_mode & S_IRUSR))
+		if(lst && (sb.st_mode & S_IRGRP))
 		{
 			lstj = ft_printlist11(lst);
 			lsti = lst_addo_between(lsti,lstj);
@@ -61,11 +61,11 @@ void	ft_printlrtdir(char *s,t_ind *ind)
 		ft_putstr(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
 		ft_putstr(":\n");
 		stat(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name),&sb);
-		if((sb.st_mode & S_IRUSR))
+		if((sb.st_mode & S_IRGRP))
 			lst = ft_getreplist(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
 		if(lst)
 			lstj = ft_printlist17(lst);
-		else if ((sb.st_mode & S_IRUSR) == 0)
+		else if ((sb.st_mode & S_IRGRP) == 0)
 		{
 			ft_putstr_fd("ls: ", 2);
 			opendir(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
