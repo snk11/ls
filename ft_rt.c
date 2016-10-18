@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/22 18:30:37 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/18 16:17:38 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/18 17:56:07 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void ft_rt(char *s, t_ind *ind)
 	t_lsto			*lstibegi;
 	t_lsto			*lstj;
 
-	//if ( (i > 1 && (ind.indfirst == 1 && i > 2)) || (i > 1 && ind.indfirst == 0))
 	if (ind->indfirst > 1 && ind->indregfile == 1 && ind->inderror == 1)
 		ft_putstr("\n");
 	else if (ind->indfirst > 1 && ind->indregfile == 0 && ind->inderror == 0)

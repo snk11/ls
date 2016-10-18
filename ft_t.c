@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/08 07:00:10 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/18 16:17:56 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/18 17:43:12 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@ void ft_t(char *s, t_ind *ind)
 {
 	t_lsto			*lst;
 
-//	if ( (i > 1 && (ind.indfirst == 1 && i > 2)) || (i > 1 && ind.indfirst == 0))
-	if (ind->indfirst > 1 && ind->indregfile == 1 && ind->inderror == 1)
+//				printf("char = %s,indfirst = %d,indregfile = %d,inderror = %d\n",s,ind->indfirst,ind->indregfile,ind->inderror);
+	if (ind->indregfile == 1 && ind->inderror == 1)
 		ft_putstr("\n");
 	else if (ind->indfirst > 1 && ind->indregfile == 0 && ind->inderror == 0)
 		ft_putstr("\n");
-	else if (ind->indfirst > 1 && ind->indregfile == 1 && ind->inderror == 0)
+	else if (ind->indregfile == 1 && ind->inderror == 0)
 					ft_putstr("\n");
-	else if (ind->indfirst > 1 && (ind->indregfile == 0 || ind->inderror == 0))
+	if (ind->indfirst > 1 && (ind->indregfile == 0 || ind->inderror == 0))
 	{
 		ind->inderror = 0;
 		ind->indregfile = 0;

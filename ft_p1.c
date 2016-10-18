@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/27 17:13:01 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/18 17:11:28 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/18 17:54:07 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -196,7 +196,6 @@ void	ft_p1(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 			}
 			else
 			{
-				//					if ( (i > 1 && (ind.indfirst == 1 && i > 2)) || (i > 1 && ind.indfirst == 0))
 				if (ind->indfirst > 1 && ind->indregfile == 1 && ind->inderror == 1)
 					ft_putstr("\n");
 				else if (ind->indfirst > 1 && ind->indregfile == 0 && ind->inderror == 0)
