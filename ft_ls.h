@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/17 18:35:25 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/18 13:44:05 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ typedef struct			s_rep
 
 typedef struct			s_ind
 {
+//	int					nbelem;
+	int					index1;
 	int					indfirst;
 	int					indtotal;
 	int					indone;
@@ -93,7 +95,7 @@ typedef struct		s_stat
 	struct stat		stat1;
 }					t_stat;
 
-void	ft_p1(t_lsto *lst1,t_ind *ind);
+void	ft_p1(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd);
 t_lst		*lst_add(t_lst *toplist, t_lst *t_lst1);
 void		lst_addo(t_lsto **toplist, t_lsto *t_lst1);
 t_lsto		*lst_addo_down(t_lsto *toplist, t_lsto *lst1);

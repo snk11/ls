@@ -6,20 +6,22 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/27 17:13:01 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/17 18:24:09 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/18 14:00:33 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-void	ft_p1(t_lsto *lst1,t_ind *ind)
+void	ft_p1(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 {
 	int inderror;
 	t_lsto			*lst;
+	t_lsto			*lstmp;
 	t_lsto			*lstj;
 	t_lsto *lst1begi;
 	char *s1;
 
+	lstmp = NULL;
 	lst1begi = lst1;
 	lst1 = lst1begi;
 	s1 = NULL;
@@ -57,15 +59,24 @@ void	ft_p1(t_lsto *lst1,t_ind *ind)
 			}
 			else if (ind->ind1 == 0 && !ft_isreg(s1))
 			{
-				if(ft_strcmp((char*)(lst1->content),"-") == 0)
+				if ((!opendir((char*)(lst1->content)) && ind->indoption == 0))
+//				if(ft_strcmp((char*)(lst1->content),"-") == 0)
 				{
 					ft_putstr_fd("ls: ", 2);
-					perror((char*)(lst1->content));
+					ft_putstr_fd((char*)(lst1->content), 2);
+					ft_putstr_fd(": ", 2);
+					ft_putstr_fd(strerror(errno),2);
+					ft_putstr_fd("\n", 2);
+//					perror((char*)(lst1->content));
 				}
-				else if ((!opendir((char*)(lst1->content)) && (((char*)(lst1->content))[0] != '-' || ind->indoption == 0)))
+//				else if ((!opendir((char*)(lst1->content)) && (((char*)(lst1->content))[0] != '-' || ind->indoption == 0)))
 				{
-					ft_putstr_fd("ls: ", 2);
-					perror((char*)(lst1->content));
+//					ft_putstr_fd("ls: ", 2);
+//					ft_putstr_fd((char*)(lst1->content), 2);
+//					ft_putstr_fd(": ", 2);
+//					ft_putstr_fd(strerror(errno),2);
+//					ft_putstr_fd("\n", 2);
+//					perror((char*)(lst1->content));
 				}
 			}
 		}
@@ -97,8 +108,17 @@ void	ft_p1(t_lsto *lst1,t_ind *ind)
 		lst1 = lst1->next;
 	}
 	lst1 = lst1begi;
+	ind->indfirst = 0;
 	while(lst1)
 	{
+		lstmp = lstcmd;
+		ind->index1 = 0;
+		while (lstmp && lstmp != lst1)
+		{
+			lstmp = lstmp->next;
+			ind->index1++;
+		}
+		ind->indfirst++;
 		inderror = 0;
 		//			if (ft_check_string(av[i]))
 		{
@@ -109,7 +129,6 @@ void	ft_p1(t_lsto *lst1,t_ind *ind)
 				//					perror(av[i]);
 				inderror = 1;
 			}
-
 			//				if (ind->indl == 1)
 			//				{
 			//					ft_printlreg(av[i]);
@@ -121,7 +140,6 @@ void	ft_p1(t_lsto *lst1,t_ind *ind)
 		if (inderror == 0)
 		{
 			//				printf("i = %d, indfirst = %d\n",i,ind.indfirst);
-			ind->indfirst++;
 			if (ind->indillegal != 0)
 			{
 			}
@@ -256,7 +274,7 @@ void	ft_p1(t_lsto *lst1,t_ind *ind)
 				if (ind->indfirst > 1)
 					ft_putstr("\n");
 				lst = ft_getreplist((char*)(lst1->content));
-				if (ind->indfirst > 1)
+				if (ind->index1 > 1)
 				{
 					ft_putstr((char*)(lst1->content));
 					ft_putstr(":\n");

@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/17 18:21:37 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/18 14:00:19 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int main(int ac,char **av)
 	struct dirent	*pdirent1;
 	DIR				*pdir1;
 	struct stat		sb;
+	t_lsto			*lstcmd;
 	t_lsto			*lst;
 	t_lsto			*lsti;
 	t_lsto			*lstibegi;
@@ -33,6 +34,7 @@ int main(int ac,char **av)
 	t_lsto		*lstmp;
 	t_lsto		*lsta;
 	
+	lstcmd = NULL;
 	lsta = NULL;
 	lstmp = NULL;
 	ind = NULL;
@@ -44,9 +46,18 @@ int main(int ac,char **av)
 	lst1begi = NULL;
 	i = 1;
 	inderror = 0;
+	while(av[i])
+	{
+		lstmp = ft_create_lsto_char(av[i]);
+		lstcmd = lst_addo_down_char(lstcmd,lstmp);
+		i++;
+	}
+	lstmp = NULL;
+	i = 1;
 	ft_init(ind);
 	ft_scan_option(av,ind);
 	lst1 = ft_getprimelist(av);
+	lstmp = lst1;
 	if (ind->indreverse == 1 && ind->indt == 1)
 		lst1 = ft_lst_sort(lst1,croissant_time_char);
 	if (ind->indreverse == 1)
@@ -62,12 +73,12 @@ int main(int ac,char **av)
 //	else if(av[2])
 	else
 	{
-		ft_p1(lst1,ind);
+		ft_p1(lst1,ind, lstcmd);
 		if (ind->indtotal == 0)
 		{
 			lstmp = ft_create_lsto_char(".");
 			lsta = lst_addo_down_char(lsta, lstmp);
-			ft_p1(lsta, ind);
+			ft_p1(lsta, ind,lstcmd);
 		}
 	}
 //	else if(av[1])

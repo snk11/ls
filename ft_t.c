@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/08 07:00:10 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/17 16:33:04 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/18 13:33:06 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void ft_t(char *s, t_ind *ind)
 		ft_putstr("\n");
 	lst = ft_getreplist(s);
 	//if (ind.indav3 || (ind.indav2  && i > 1 && (ind.indfirst == 1 && i > 2))  || (ind.indav2 && ind.indfirst == 0))
-	if (ind->indfirst > 1)
+	if (ind->index1 > 1)
 	{
 		ft_putstr(s);
 		ft_putstr(":\n");
