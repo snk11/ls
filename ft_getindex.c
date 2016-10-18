@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_scan_ind.c                                      :+:      :+:    :+:   */
+/*   ft_getindex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/09 05:53:39 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/18 19:47:17 by syusof           ###   ########.fr       */
+/*   Created: 2016/10/18 19:04:50 by syusof            #+#    #+#             */
+/*   Updated: 2016/10/18 19:54:22 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-void ft_scan_ind(char **av,t_ind *ind)
+int		ft_getindex(t_lsto *lst1,t_lsto *lstcmd)
 {
-	int i;
-	
-	if (ft_strcmp(av[i], "--") == 0)
+	int	cnt1;
+	t_lsto	*lstmp;
 
-	if(av[1])
+	lstmp = lstcmd;
+	cnt1 = 0;
+	while (lstmp && lstmp != lst1)
 	{
-		if (ft_strcmp(av[1], "--") == 0)
-			ind->indhyphen = 1;
-		else if (ft_strcmp(av[1], "-1") == 0)
-			ind->indone = 1;
-		else if (ft_strcmp(av[1],"-1t") == 0)
-			ind->indt = 1;
-		else if (ft_strcmp(av[1], "-1R")== 0)
-			ind->indr = 1;
+		lstmp = lstmp->next;
+		if(cnt1 == -1)
+			cnt1 = 1;
+		else
+			cnt1++;
 	}
+	return (cnt1);
 }

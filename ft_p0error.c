@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/18 15:31:27 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/18 15:40:15 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/18 18:32:03 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_p0error(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 				inderror = 1;
 			}
 		}
-		if (inderror == 1)
+		if(inderror == 1 && !ft_isreg((char*)lst1->content))
 		{
 			s1 = ft_memmove2((char*)(lst1->content));
 			if (ind->indillegal != 0 && ind->ind1 == 0)

@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/27 17:13:01 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/18 17:54:07 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/18 19:15:22 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,7 @@ void	ft_p1(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 	ind->indfirst = 0;
 	while(lst1)
 	{
-		lstmp = lstcmd;
-		ind->index1 = 0;
-		while (lstmp && lstmp != lst1)
-		{
-			lstmp = lstmp->next;
-			ind->index1++;
-		}
+		ind->index1 = ft_getindex(lst1,lstcmd);
 		ind->indfirst++;
 		inderror = 0;
 		//			if (ft_check_string(av[i]))
@@ -65,7 +59,7 @@ void	ft_p1(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 		//			if (inderror == 0 && ft_check_string(av[i]))
 		if (inderror == 0)
 		{
-			//				printf("i = %d, indfirst = %d\n",i,ind.indfirst);
+		//		printf("char = %s,index1 = %d\n",(char*)lst1->content,ind->index1);
 			if (ind->indillegal != 0)
 			{
 			}
@@ -208,17 +202,19 @@ void	ft_p1(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 					ind->indregfile = 0;
 				}
 				lst = ft_getreplist((char*)(lst1->content));
-				if (ind->index1 > 1)
 				{
-					if(ind->index1 == 2 && ind->indoption == 0)
+					if (ind->index1 > 1)
 					{
-						ft_putstr((char*)(lst1->content));
-						ft_putstr(":\n");
-					}
-					else if(ind->index1 > 2)
-					{
-						ft_putstr((char*)(lst1->content));
-						ft_putstr(":\n");
+						if(ind->index1 == 2 && ind->indoption == 0)
+						{
+							ft_putstr((char*)(lst1->content));
+							ft_putstr(":\n");
+						}
+						else if(ind->index1 > 2)
+						{
+							ft_putstr((char*)(lst1->content));
+							ft_putstr(":\n");
+						}
 					}
 				}
 				lstj = ft_printlist2(lst);

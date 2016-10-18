@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/18 15:37:10 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/18 19:47:41 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,14 +75,26 @@ int main(int ac,char **av)
 	{
 		ft_p0error(lst1,ind,lstcmd);
 		ft_p0regfile(lst1,ind,lstcmd);
-		ft_p1(lst1,ind, lstcmd);
+		ind->index1 = ft_getindex(lst1,lstcmd);
+		if(ft_strcmp((char*)lst1->content,"--") == 0 && (ind->index1 > 2 && ind->indone == 0))
+		{
+			if(ind->index1 == 1 && av[2] && ft_strcmp(av[2],".") == 0)
+			ft_p1(lst1,ind, lstcmd);
+
+		}
+		else
+			ft_p1(lst1,ind, lstcmd);
 		if (ind->indtotal == 0)
 		{
 			lstmp = ft_create_lsto_char(".");
 			lsta = lst_addo_down_char(lsta, lstmp);
 			ft_p0error(lsta,ind,lstcmd);
 			ft_p0regfile(lsta,ind,lstcmd);
-			ft_p1(lsta, ind,lstcmd);
+			if(ft_strcmp((char*)lst1->content,"--") == 0 && ft_getindex(lst1,lstcmd) <= 2)
+			{
+			}
+			else
+				ft_p1(lsta, ind,lstcmd);
 		}
 	}
 //	else if(av[1])
