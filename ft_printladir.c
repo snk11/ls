@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/22 14:35:43 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/18 12:05:05 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/18 16:14:50 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,17 @@ void	ft_printladir(char *s,t_ind *ind)
 {
 	t_lsto		*lst;
 
-	if (ind->indfirst > 1)
+	if (ind->indfirst > 1 && ind->indregfile == 1 && ind->inderror == 1)
 		ft_putstr("\n");
+	else if (ind->indfirst > 1 && ind->indregfile == 0 && ind->inderror == 0)
+		ft_putstr("\n");
+	else if (ind->indfirst > 1 && ind->indregfile == 1 && ind->inderror == 0)
+					ft_putstr("\n");
+	else if (ind->indfirst > 1 && (ind->indregfile == 0 || ind->inderror == 0))
+	{
+		ind->inderror = 0;
+		ind->indregfile = 0;
+	}
 	lst = ft_getreplist4(s);
 	ft_printlist7(lst);
 }

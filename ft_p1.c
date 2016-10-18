@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/27 17:13:01 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/18 14:00:33 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/18 16:07:23 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,80 +31,6 @@ void	ft_p1(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 	{
 		if (((char*)(lst1->content))[0] != '-' || ft_strcmp((char*)lst1->content,"-") == 0)
 			ind->indtotal++;
-		lst1 = lst1->next;
-	}
-	lst1 = lst1begi;
-	while(lst1)
-	{
-		inderror = 0;
-		ind->ind1 = 0;
-		{
-			if (!opendir((char*)(lst1->content)))
-			{
-				inderror = 1;
-			}
-		}
-		if (inderror == 1)
-		{
-			s1 = ft_memmove2((char*)(lst1->content));
-			if (ind->indillegal != 0 && ind->ind1 == 0)
-			{
-
-				ft_putstr_fd("ls: ", 2);
-				ft_putstr_fd("illegal option -- ", 2);
-				ft_putchar_fd(ind->indillegal, 2);
-				ft_putstr_fd("\n", 2);
-				ft_putstr_fd("usage: ls [-ABCFGHLOPRSTUWabcdefghiklmnopqrstuwx1] [file ...]\n",2);
-				ind->ind1 = 1;
-			}
-			else if (ind->ind1 == 0 && !ft_isreg(s1))
-			{
-				if ((!opendir((char*)(lst1->content)) && ind->indoption == 0))
-//				if(ft_strcmp((char*)(lst1->content),"-") == 0)
-				{
-					ft_putstr_fd("ls: ", 2);
-					ft_putstr_fd((char*)(lst1->content), 2);
-					ft_putstr_fd(": ", 2);
-					ft_putstr_fd(strerror(errno),2);
-					ft_putstr_fd("\n", 2);
-//					perror((char*)(lst1->content));
-				}
-//				else if ((!opendir((char*)(lst1->content)) && (((char*)(lst1->content))[0] != '-' || ind->indoption == 0)))
-				{
-//					ft_putstr_fd("ls: ", 2);
-//					ft_putstr_fd((char*)(lst1->content), 2);
-//					ft_putstr_fd(": ", 2);
-//					ft_putstr_fd(strerror(errno),2);
-//					ft_putstr_fd("\n", 2);
-//					perror((char*)(lst1->content));
-				}
-			}
-		}
-		lst1 = lst1->next;
-	}
-	lst1 = lst1begi;
-	while(lst1)
-	{
-		s1 = ft_memmove2((char*)(lst1->content));
-		inderror = 0;
-		{
-			if (!opendir((char*)(lst1->content)))
-			{
-				inderror = 1;
-			}
-		}
-//		if(lst1)
-//			printf("lst1 = %s\n",((char*)(lst1->content)));
-//		printf("inderror = %d\n",inderror);
-		if(inderror == 1 && ind->indl == 1 && ft_isreg((char*)(lst1->content)))
-		{
-			ft_printlregfile((char*)(lst1->content));
-		}
-		else if(inderror == 1 && ft_isreg(s1))
-		{
-			ft_putstr((char*)(lst1->content));
-			ft_putstr("\n");
-		}
 		lst1 = lst1->next;
 	}
 	lst1 = lst1begi;
@@ -271,8 +197,17 @@ void	ft_p1(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 			else
 			{
 				//					if ( (i > 1 && (ind.indfirst == 1 && i > 2)) || (i > 1 && ind.indfirst == 0))
-				if (ind->indfirst > 1)
+				if (ind->indfirst > 1 && ind->indregfile == 1 && ind->inderror == 1)
 					ft_putstr("\n");
+				else if (ind->indfirst > 1 && ind->indregfile == 0 && ind->inderror == 0)
+					ft_putstr("\n");
+				else if (ind->indfirst > 1 && ind->indregfile == 1 && ind->inderror == 0)
+					ft_putstr("\n");
+				else if (ind->indfirst > 1 && (ind->indregfile == 0 || ind->inderror == 0))
+				{
+					ind->inderror = 0;
+					ind->indregfile = 0;
+				}
 				lst = ft_getreplist((char*)(lst1->content));
 				if (ind->index1 > 1)
 				{

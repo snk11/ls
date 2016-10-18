@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/18 13:44:05 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/18 15:38:01 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ typedef struct			s_rep
 typedef struct			s_ind
 {
 //	int					nbelem;
+	int					indregfile;
+	int					inderror;
 	int					index1;
 	int					indfirst;
 	int					indtotal;
@@ -206,5 +208,7 @@ void ft_atrreverse(char *s, t_ind *ind);
 t_lsto		*ft_getprimelist(char **av);
 void	ft_putlongnbr(long n);
 void	ft_putulongnbr(unsigned long n);
+void	ft_p0regfile(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd);
+void	ft_p0error(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd);
 
 # endif
