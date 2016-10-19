@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 13:51:30 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/15 17:22:27 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/19 18:40:49 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -188,6 +188,69 @@ int croissant_pathname(t_lsto *lsti)
 
 t_lsto		*ft_lst_sort(t_lsto *lst, int (*cmp)(t_lsto*))
 {
+	/*
+	t_lsto *lstmp;
+	t_lsto *lstmp5;
+	t_lsto *lstmp1;
+	t_lsto *lstmp2;
+	t_lsto *lstbegi;
+	t_lsto *w;
+	int		ind;
+	int		ind1;
+	long long	count;
+	count = 0;
+	lstmp = NULL;
+	lstmp1 = NULL;
+	lstmp2 = NULL;
+	lstmp5 = NULL;
+	ind = 1;
+	ft_printlst(lst);
+	lstbegi = lst;
+	lstmp = lstbegi;
+	lstmp5 = lstbegi;
+	ind1 = 1;
+	while(ind1 == 1)
+	{
+		lstmp = lstbegi;
+		lstmp5 = lstbegi;
+		ind1 = 0;
+		while(lstmp && lstmp->next && (lstmp->next)->next)
+		{
+			if(lstmp == lstbegi)
+			{
+				if(cmp(lstbegi) == 0)
+				{
+					w = lstbegi->next;
+					lstbegi->next = (lstbegi->next)->next;
+					w->next = lstbegi;
+					lstbegi = w;
+					lstmp = lstbegi;
+					lstmp5 = lstbegi;
+					ind1 = 1;
+				}
+			}
+			else
+			{
+				if(cmp(lstmp) == 0)
+				{
+					w = lstmp->next;
+					lstmp->next = (lstmp->next)->next;
+					w->next = lstmp;
+					lstmp = w;
+					lstmp5->next = w;
+					ind1 = 1;
+				}
+			}
+			if(lstmp == lstbegi)
+			{
+			}
+			else
+				lstmp5 = lstmp5->next;
+			lstmp = lstmp->next;
+		}
+
+	}
+	*/
 	t_lsto *lstmp1;
 	t_lsto *lstmp2;
 	t_lsto *lstbegi;

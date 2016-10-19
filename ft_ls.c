@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/19 17:46:59 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/19 18:26:22 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ int main(int ac,char **av)
 	{
 
 		lst1 = ft_getprimelist(av,ind);
-		ft_printlst(lst1);
 		lstmp = lst1;
 		if (ind->indreverse == 1 && ind->indt == 1)
 			lst1 = ft_lst_sort(lst1,croissant_time_char);
