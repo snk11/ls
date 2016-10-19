@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/19 19:26:19 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/19 20:51:01 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ int main(int ac,char **av)
 				ind->index1 = ft_getindex(lst1,lstcmd);
 				ft_p1(lst1,ind, lstcmd);
 			}
-		if (((ind->indtotal == 0 && ind->indillegal == 0 && ft_checkhyphencase(lstcmd,ind) == 1) && ft_checkhyphencase_print(lstcmd,ind)) || (lst1 == NULL && lstcmd && ft_strcmp((char*)lstcmd->content,"--") == 0))
+		if (((ind->indtotal == 0 && ind->indillegal == 0 && ft_checkhyphencase(lstcmd,ind) == 1) && ft_checkhyphencase_print(lstcmd,ind)) || (lst1 == NULL && lstcmd && (ft_strcmp((char*)lstcmd->content,"--") == 0 || (ft_strcmp((char*)lstcmd->content,"-1") == 0))))
 		{
 			lstmp = ft_create_lsto_char(".");
 			lsta = lst_addo_down_char(lsta, lstmp);
