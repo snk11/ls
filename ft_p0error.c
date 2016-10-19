@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/18 15:31:27 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/18 18:32:03 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/19 13:57:58 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@ void	ft_p0error(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 {
 	int		inderror;
 	char	*s1;
+	
 
+	ind->indexyet = 0;
 	while(lst1)
 	{
 		inderror = 0;
@@ -27,7 +29,11 @@ void	ft_p0error(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 				inderror = 1;
 			}
 		}
-		if(inderror == 1 && !ft_isreg((char*)lst1->content))
+		if(ft_checkhyphencase(lst1,ind) == 1 && ind->indexyet == 0)
+		{
+			ind->indexyet = 1;
+		}
+		else if(inderror == 1 && !ft_isreg((char*)lst1->content))
 		{
 			s1 = ft_memmove2((char*)(lst1->content));
 			if (ind->indillegal != 0 && ind->ind1 == 0)
@@ -43,7 +49,7 @@ void	ft_p0error(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 			}
 			else if (ind->ind1 == 0 && !ft_isreg(s1))
 			{
-				if ((!opendir((char*)(lst1->content)) && (((char*)(lst1->content))[0] != '-' || ind->indoption == 0)))
+				if ((!opendir((char*)(lst1->content)) && (((char*)(lst1->content))[0] != '-' || ind->indoption == 0 || ft_strcmp((char*)lst1->content,"--") == 0)))
 //				if ((!opendir((char*)(lst1->content)) && ind->indoption == 0))
 //				if(ft_strcmp((char*)(lst1->content),"-") == 0)
 				{

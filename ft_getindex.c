@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/18 19:04:50 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/18 19:54:22 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/19 13:25:59 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,10 @@ int		ft_getindex(t_lsto *lst1,t_lsto *lstcmd)
 
 	lstmp = lstcmd;
 	cnt1 = 0;
-	while (lstmp && lstmp != lst1)
+	while (lstmp && ft_strcmp((char*)lst1->content,(char*)lstmp->content) != 0)
 	{
 		lstmp = lstmp->next;
-		if(cnt1 == -1)
-			cnt1 = 1;
-		else
-			cnt1++;
+		cnt1++;
 	}
 	return (cnt1);
 }

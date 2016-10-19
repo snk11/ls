@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/27 17:13:01 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/18 19:15:22 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/19 13:28:02 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,37 +27,28 @@ void	ft_p1(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 	s1 = NULL;
 
 	lst1 = lst1begi;
-	while(lst1)
-	{
-		if (((char*)(lst1->content))[0] != '-' || ft_strcmp((char*)lst1->content,"-") == 0)
-			ind->indtotal++;
-		lst1 = lst1->next;
-	}
+//	while(lst1)
+//	{
+//		if (((char*)(lst1->content))[0] != '-' || ft_strcmp((char*)lst1->content,"-") == 0)
+//			ind->indtotal++;
+//		lst1 = lst1->next;
+//	}
 	lst1 = lst1begi;
 	ind->indfirst = 0;
+	ind->indexyet = 0;
 	while(lst1)
 	{
 		ind->index1 = ft_getindex(lst1,lstcmd);
 		ind->indfirst++;
 		inderror = 0;
-		//			if (ft_check_string(av[i]))
+		if (!opendir((char*)(lst1->content)))
 		{
-			if (!opendir((char*)(lst1->content)))
-			{
-				//					ft_putstr_fd("ls: ", 2);
-				//perror(strerror(ENOENT));
-				//					perror(av[i]);
-				inderror = 1;
-			}
-			//				if (ind->indl == 1)
-			//				{
-			//					ft_printlreg(av[i]);
-			//					ft_printldir(av[i],ind);
-			//					ft_printlrdir(av[i],ind);
-			//				}
+			//					ft_putstr_fd("ls: ", 2);
+			//perror(strerror(ENOENT));
+			//					perror(av[i]);
+			inderror = 1;
 		}
-		//			if (inderror == 0 && ft_check_string(av[i]))
-		if (inderror == 0)
+		if (inderror == 0 && ft_checkhyphen(lst1,lstcmd,ind) == 0)
 		{
 		//		printf("char = %s,index1 = %d\n",(char*)lst1->content,ind->index1);
 			if (ind->indillegal != 0)
@@ -203,14 +194,15 @@ void	ft_p1(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 				}
 				lst = ft_getreplist((char*)(lst1->content));
 				{
-					if (ind->index1 > 1)
+					if (ind->index1 > 0)
 					{
-						if(ind->index1 == 2 && ind->indoption == 0)
+						if((ind->index1 == 1 && ind->indoption == 0) || ind->indexyet == 1)
 						{
 							ft_putstr((char*)(lst1->content));
 							ft_putstr(":\n");
+							ind->indexyet = 1;
 						}
-						else if(ind->index1 > 2)
+						else if(ind->index1 > 1)
 						{
 							ft_putstr((char*)(lst1->content));
 							ft_putstr(":\n");
