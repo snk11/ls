@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_getprimelist.c                                  :+:      :+:    :+:   */
+/*   ft_p_illegal.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/26 20:01:33 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/19 17:33:18 by syusof           ###   ########.fr       */
+/*   Created: 2016/10/19 17:38:49 by syusof            #+#    #+#             */
+/*   Updated: 2016/10/19 17:46:39 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-t_lsto		*ft_getprimelist(char **av,t_ind *ind)
+int	ft_p_illegal(t_ind *ind)
 {
-	int j;
-	t_lsto		*lstmp;
-	t_lsto		*lsta;
-	lsta = NULL;
-	lstmp = NULL;
-	j = 1;
-	if(ind->indoption == 1)
-		j++;
-	while (av[j])
+	if (ind->indillegal != 0)
 	{
-		lstmp = ft_create_lsto_char(av[j]);
-		lsta = lst_addo_down_char(lsta, lstmp);
-		j++;
+
+		ft_putstr_fd("ls: ", 2);
+		ft_putstr_fd("illegal option -- ", 2);
+		ft_putchar_fd(ind->indillegal, 2);
+		ft_putstr_fd("\n", 2);
+		ft_putstr_fd("usage: ls [-ABCFGHLOPRSTUWabcdefghiklmnopqrstuwx1] [file ...]\n",2);
+		ind->ind1 = 1;
+		ind->inderror = 1;
+		return (0);
 	}
-	lsta = ft_lst_sort(lsta, croissant_char);
-	return (lsta);
+	return (1);
+
 }

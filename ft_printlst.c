@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_getprimelist.c                                  :+:      :+:    :+:   */
+/*   ft_printlst.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/26 20:01:33 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/19 17:33:18 by syusof           ###   ########.fr       */
+/*   Created: 2016/10/19 16:03:20 by syusof            #+#    #+#             */
+/*   Updated: 2016/10/19 16:04:13 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-t_lsto		*ft_getprimelist(char **av,t_ind *ind)
+void	ft_printlst(t_lsto *lstmp)
 {
-	int j;
-	t_lsto		*lstmp;
-	t_lsto		*lsta;
-	lsta = NULL;
-	lstmp = NULL;
-	j = 1;
-	if(ind->indoption == 1)
-		j++;
-	while (av[j])
+
+	while(lstmp)
 	{
-		lstmp = ft_create_lsto_char(av[j]);
-		lsta = lst_addo_down_char(lsta, lstmp);
-		j++;
+		printf("lstmp =%s\n",(char*)lstmp->content);
+			lstmp = lstmp->next;
 	}
-	lsta = ft_lst_sort(lsta, croissant_char);
-	return (lsta);
 }

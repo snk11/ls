@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/19 13:46:32 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/19 17:45:43 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,7 @@ typedef struct		s_stat
 	struct stat		stat1;
 }					t_stat;
 
+int			ft_p_illegal(t_ind *ind);
 void	ft_p1(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd);
 t_lst		*lst_add(t_lst *toplist, t_lst *t_lst1);
 void		lst_addo(t_lsto **toplist, t_lsto *t_lst1);
@@ -108,6 +109,7 @@ void		lst_add_del(t_lst **toplist, t_lst **t_lst1);
 t_lst		*ft_create_lst(void *content);
 t_lsto		*ft_create_lsto(void *content);
 t_lsto		*ft_create_lsto_char(char *content);
+t_lsto		*ft_getprimelist(char **av,t_ind *ind);
 t_lsto *ft_getreplist(char *rep);
 t_lsto *ft_getreplist4(char *rep);
 t_lsto	*ft_getreplisto4(t_lsto *lstmp);
@@ -207,7 +209,6 @@ void	ft_printltrreversedir(char *s,t_ind *ind);
 void	ft_printlarreversedir(char *s,t_ind *ind);
 void ft_printlatrreversedir(char *s, t_ind *ind);
 void ft_atrreverse(char *s, t_ind *ind);
-t_lsto		*ft_getprimelist(char **av);
 void	ft_putlongnbr(long n);
 void	ft_putulongnbr(unsigned long n);
 void	ft_p0regfile(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd);
@@ -215,5 +216,6 @@ void	ft_p0error(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd);
 int		ft_getindex(t_lsto *lst1,t_lsto *lstcmd);
 int	ft_checkhyphen(t_lsto *lst1,t_lsto *lstcmd,t_ind *ind);
 int		ft_checkhyphencase(t_lsto *lst1,t_ind *ind);
+void	ft_printlst(t_lsto *lstmp);
 
 # endif

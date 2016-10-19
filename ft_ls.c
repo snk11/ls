@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/19 12:47:40 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/19 17:46:59 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int main(int ac,char **av)
 	char 			*s1;
 	t_lsto		*lstmp;
 	t_lsto		*lsta;
-	
+
 	lstcmd = NULL;
 	lsta = NULL;
 	lstmp = NULL;
@@ -56,42 +56,47 @@ int main(int ac,char **av)
 	i = 1;
 	ft_init(ind);
 	ft_scan_option(av,ind);
-	lst1 = ft_getprimelist(av);
-	lstmp = lst1;
-	if (ind->indreverse == 1 && ind->indt == 1)
-		lst1 = ft_lst_sort(lst1,croissant_time_char);
-	if (ind->indreverse == 1)
-		lst1 = ft_lst_sort(lst1,decreasing_char);
-	if (ind->indt == 1)
-		lst1 = ft_lst_sort(lst1,decreasing_time_char);
-	lst1begi = lst1;
-	if (!av[1])
+	if (ft_p_illegal(ind))
 	{
-		lst = ft_getreplist(".");
-		ft_printlist(lst);
+
+		lst1 = ft_getprimelist(av,ind);
+		ft_printlst(lst1);
+		lstmp = lst1;
+		if (ind->indreverse == 1 && ind->indt == 1)
+			lst1 = ft_lst_sort(lst1,croissant_time_char);
+		else if (ind->indreverse == 1)
+			lst1 = ft_lst_sort(lst1,decreasing_char);
+		else if (ind->indt == 1)
+			lst1 = ft_lst_sort(lst1,decreasing_time_char);
+		lst1begi = lst1;
+		if (!av[1])
+		{
+			lst = ft_getreplist(".");
+			ft_printlist(lst);
+		}
+		//	else if(av[2])
+		else
+		{
+			ft_p0error(lst1,ind,lstcmd);
+			ft_p0regfile(lst1,ind,lstcmd);
+			ind->index1 = ft_getindex(lst1,lstcmd);
+			ft_p1(lst1,ind, lstcmd);
+			//		if (ft_checkpointcase())
+			//		if (ind->indtotal == 0)
+			//		{
+			//			lstmp = ft_create_lsto_char(".");
+			//			lsta = lst_addo_down_char(lsta, lstmp);
+			//			ft_p0error(lsta,ind,lstcmd);
+			//			ft_p0regfile(lsta,ind,lstcmd);
+			//			ft_p1(lsta, ind,lstcmd);
+			//		}
+		}
+		//	else if(av[1])
+		//	{
+		//		lstmp = ft_create_lsto_char(".");
+		//		lsta = lst_addo_down_char(lsta, lstmp);
+		//		ft_p1(lsta,ind);
+		//	}
 	}
-//	else if(av[2])
-	else
-	{
-		ft_p0error(lst1,ind,lstcmd);
-		ft_p0regfile(lst1,ind,lstcmd);
-		ind->index1 = ft_getindex(lst1,lstcmd);
-		ft_p1(lst1,ind, lstcmd);
-//		if (ft_checkpointcase())
-//		if (ind->indtotal == 0)
-//		{
-//			lstmp = ft_create_lsto_char(".");
-//			lsta = lst_addo_down_char(lsta, lstmp);
-//			ft_p0error(lsta,ind,lstcmd);
-//			ft_p0regfile(lsta,ind,lstcmd);
-//			ft_p1(lsta, ind,lstcmd);
-//		}
-	}
-//	else if(av[1])
-//	{
-//		lstmp = ft_create_lsto_char(".");
-//		lsta = lst_addo_down_char(lsta, lstmp);
-//		ft_p1(lsta,ind);
-//	}
 	return (0);
 }
