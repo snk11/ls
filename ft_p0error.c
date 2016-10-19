@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/18 15:31:27 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/19 17:42:29 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/19 19:13:42 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	ft_p0error(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 	int		inderror;
 	char	*s1;
 	
-
 	ind->indexyet = 0;
 	while(lst1)
 	{
@@ -29,7 +28,7 @@ void	ft_p0error(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 				inderror = 1;
 			}
 		}
-		if(ft_checkhyphencase(lst1,ind) == 1 && ind->indexyet == 0)
+		if(ft_checkhyphencase(lstcmd,ind) == 1 &&  ind->indoption == 1 && ind->indexyet == 0)
 		{
 			ind->indexyet = 1;
 		}
