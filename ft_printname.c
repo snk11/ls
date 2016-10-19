@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/20 00:06:32 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/20 00:55:09 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/20 01:37:38 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,20 @@ void	ft_printname(char *s,t_lsto *lstcmd,t_ind *ind)
 		lstmp = lstmp->next;
 		cnt++;
 	}
-
+//	printf("char s = %s,index = %d\n",s,ind->index1);
 	if (ft_checkhyphencase(lstcmd,ind) == 1)
 	{
 		if(ft_checkhyphencase_print(lstcmd,ind) == 1)
 		{
 		}
+
 		else if((ind->index1 == 1 && ind->indoption == 0) || ind->indexyet == 1)
 		{
 			ft_putstr(s);
 			ft_putstr(":\n");
 			ind->indexyet = 1;
 		}
-		else if(ind->index1 > 2)
+		else if(ind->index1 >= 2)
 		{
 			ft_putstr(s);
 			ft_putstr(":\n");
@@ -69,7 +70,7 @@ void	ft_printname(char *s,t_lsto *lstcmd,t_ind *ind)
 			ft_putstr(":\n");
 			ind->indexyet4 = 1;
 		}
-		else if(ind->index1 > 2)
+		else if(ind->index1 >= 2)
 		{
 			ft_putstr(s);
 			ft_putstr(":\n");
