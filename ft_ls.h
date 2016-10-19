@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/19 17:45:43 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/19 18:45:08 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -216,6 +216,7 @@ void	ft_p0error(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd);
 int		ft_getindex(t_lsto *lst1,t_lsto *lstcmd);
 int	ft_checkhyphen(t_lsto *lst1,t_lsto *lstcmd,t_ind *ind);
 int		ft_checkhyphencase(t_lsto *lst1,t_ind *ind);
+int		ft_checkhyphencase_print(t_lsto *lst1,t_ind *ind);
 void	ft_printlst(t_lsto *lstmp);
 
 # endif
