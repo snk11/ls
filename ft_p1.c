@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/27 17:13:01 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/19 18:47:50 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/19 19:59:56 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void	ft_p1(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 	lst1 = lst1begi;
 	ind->indfirst = 0;
 	ind->indexyet = 0;
+	ind->indexyet2 = 0;
 	while(lst1)
 	{
 		ind->index1 = ft_getindex(lst1,lstcmd);
@@ -181,7 +182,9 @@ void	ft_p1(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 			}
 			else
 			{
-				if (ind->indfirst > 1 && ind->indregfile == 1 && ind->inderror == 1)
+				if((ind->index1 == 2 && ft_checkhyphencase(lstcmd,ind) == 1) && ind->indexyet2 == 0)
+					ind->indexyet2 = 1;
+				else if (ind->indfirst > 1 && ind->indregfile == 1 && ind->inderror == 1)
 					ft_putstr("\n");
 				else if (ind->indfirst > 1 && ind->indregfile == 0 && ind->inderror == 0)
 					ft_putstr("\n");
@@ -202,7 +205,13 @@ void	ft_p1(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 							ft_putstr(":\n");
 							ind->indexyet = 1;
 						}
-						else if(ind->index1 > 1)
+						else if((ind->index1 == 2 && ft_checkhyphencase(lstcmd,ind) == 0) || ind->indexyet == 1)
+						{
+							ft_putstr((char*)(lst1->content));
+							ft_putstr(":\n");
+							ind->indexyet = 1;
+						}
+						else if(ind->index1 > 2)
 						{
 							ft_putstr((char*)(lst1->content));
 							ft_putstr(":\n");

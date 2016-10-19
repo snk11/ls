@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/19 18:45:08 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/19 19:59:36 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ typedef struct			s_ind
 {
 //	int					nbelem;
 	int					indexyet;
+	int					indexyet2;
 	int					indhyphen;
 	int					indregfile;
 	int					inderror;
