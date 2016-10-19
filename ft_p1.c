@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/27 17:13:01 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/19 21:43:46 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/20 00:34:55 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -168,7 +168,7 @@ void	ft_p1(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 			}
 			else if (ind->indr == 1)
 			{
-				ft_r((char*)(lst1->content), ind);
+				ft_r((char*)(lst1->content),lstcmd, ind);
 			}
 			else if (ind->inda == 1)
 			{
@@ -184,54 +184,10 @@ void	ft_p1(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 			}
 			else
 			{
-				if((ind->index1 <= 2 && ft_checkhyphencase(lstcmd,ind) == 1) && ind->indexyet2 < 2 && ft_strcmp((char*)lst1->content,"--") == 0)
-					ind->indexyet2++;
-				else if((ind->index1 == 2 && ft_checkhyphencase(lstcmd,ind) == 1) && ind->indexyet3 == 0)
-					ind->indexyet3 = 1;
-				else if (ind->indfirst > 1 && ind->indregfile == 1 && ind->inderror == 1)
-					ft_putstr("\n");
-				else if (ind->indfirst > 1 && ind->indregfile == 0 && ind->inderror == 0)
-					ft_putstr("\n");
-				else if (ind->indfirst > 1 && ind->indregfile == 1 && ind->inderror == 0)
-					ft_putstr("\n");
-				else if (ind->indfirst > 1 && (ind->indregfile == 0 || ind->inderror == 0))
-				{
-					ind->inderror = 0;
-					ind->indregfile = 0;
-				}
+				ft_print_n((char*)lst1->content,lstcmd,ind);
 				lst = ft_getreplist((char*)(lst1->content));
-				{
 	//	printf("char = %s,option = %d,yet = %d,hyphen = %d\n",(char*)lst1->content,ind->indoption,ind->indexyet4,ft_checkhyphencase(lstcmd,ind));
-					if (ind->index1 > 0)
-					{
-						if(ft_checkhyphencase_print(lstcmd,ind) == 1)
-						{
-						}
-						else if((ind->index1 == 1 && ind->indoption == 0) || ind->indexyet == 1)
-						{
-							ft_putstr((char*)(lst1->content));
-							ft_putstr(":\n");
-							ind->indexyet = 1;
-						}
-						else if(((ind->index1 == 2 && ft_checkhyphencase(lstcmd,ind) == 1) || ind->indexyet == 1) && ft_strcmp((char*)lst1->content,"--") == 1)
-						{
-							ft_putstr((char*)(lst1->content));
-							ft_putstr(":\n");
-							ind->indexyet = 1;
-						}
-						else if(((ind->index1 == 2 && ft_checkhyphencase(lstcmd,ind) == 1) || ind->indexyet4 == 1))
-						{
-							ft_putstr((char*)(lst1->content));
-							ft_putstr(":\n");
-							ind->indexyet4 = 1;
-						}
-						else if(ind->index1 > 2)
-						{
-							ft_putstr((char*)(lst1->content));
-							ft_putstr(":\n");
-						}
-					}
-				}
+					ft_printname((char*)lst1->content,lstcmd,ind);
 				lstj = ft_printlist2(lst);
 			}
 		}

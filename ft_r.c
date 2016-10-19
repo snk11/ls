@@ -6,13 +6,13 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/08 06:45:09 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/18 16:08:45 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/20 00:34:07 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-void ft_r(char *s, t_ind *ind)
+void ft_r(char *s, t_lsto *lstcmd,t_ind *ind)
 {
 
 	struct stat		sb;
@@ -21,25 +21,16 @@ void ft_r(char *s, t_ind *ind)
 	t_lsto			*lstibegi;
 	t_lsto			*lstj;
 
-	//if ( (i > 1 && (ind.indfirst == 1 && i > 2)) || (i > 1 && ind.indfirst == 0))
-	if (ind->indfirst > 1 && ind->indregfile == 1 && ind->inderror == 1)
-		ft_putstr("\n");
-	else if (ind->indfirst > 1 && ind->indregfile == 0 && ind->inderror == 0)
-		ft_putstr("\n");
-	else if (ind->indfirst > 1 && ind->indregfile == 1 && ind->inderror == 0)
-					ft_putstr("\n");
-	else if (ind->indfirst > 1 && (ind->indregfile == 0 || ind->inderror == 0))
-	{
-		ind->inderror = 0;
-		ind->indregfile = 0;
-	}
+	ft_print_n(s,lstcmd,ind);
 	lst = ft_getreplist(s);
-	//	if (ind->indfirst > 1)
+	ft_printname(s,lstcmd,ind);
+/*
 	if (ind->indtotal != 1)
 	{
 		ft_putstr(s);
 		ft_putstr(":\n");
 	}
+	*/
 	lsti = ft_printlist2(lst);
 	lstibegi = lsti;
 	while (lsti)

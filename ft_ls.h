@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/19 21:20:53 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/20 00:20:28 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -175,7 +175,7 @@ int croissant_time_char(t_lsto *lsta);
 int decreasing_time(t_lsto *lsta);
 int decreasing_time_char(t_lsto *lsta);
 void ft_t(char *s, t_ind *ind);
-void ft_r(char *s, t_ind *ind);
+void ft_r(char *s, t_lsto *lstcmd, t_ind *ind);
 void ft_printerror(char **av, t_ind *ind);
 void ft_scan_ind(char **av,t_ind *ind);
 void	ft_scan_option(char **av,t_ind *ind);
@@ -221,5 +221,7 @@ int	ft_checkhyphen(t_lsto *lst1,t_lsto *lstcmd,t_ind *ind);
 int		ft_checkhyphencase(t_lsto *lst1,t_ind *ind);
 int		ft_checkhyphencase_print(t_lsto *lst1,t_ind *ind);
 void	ft_printlst(t_lsto *lstmp);
+void	ft_printname(char *s,t_lsto *lstcmd,t_ind *ind);
+void	ft_print_n(char *s,t_lsto *lstcmd,t_ind *ind);
 
 # endif
