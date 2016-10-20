@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/27 17:13:01 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/20 02:27:23 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/20 03:06:09 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,7 +132,7 @@ void	ft_p1(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 			}
 			else if (ind->inda == 1 && ind->indr == 1)
 			{
-				ft_ar((char*)(lst1->content), ind);
+				ft_ar((char*)(lst1->content), lstcmd,ind);
 			}
 			else if (ind->inda == 1 && ind->indl == 1)
 			{
@@ -140,11 +140,11 @@ void	ft_p1(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 			}
 			else if (ind->indr == 1 && ind->indt == 1)
 			{
-				ft_rt((char*)(lst1->content), ind);
+				ft_rt((char*)(lst1->content), lstcmd,ind);
 			}
 			else if (ind->indr == 1 && ind->indreverse == 1)
 			{
-				ft_rreverse((char*)(lst1->content), ind);
+				ft_rreverse((char*)(lst1->content), lstcmd,ind);
 			}
 			else if (ind->indl == 1 && ind->indr == 1)
 			{
@@ -176,7 +176,7 @@ void	ft_p1(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 			}
 			else if (ind->indt == 1)
 			{
-				ft_t((char*)(lst1->content), ind);
+				ft_t((char*)(lst1->content),lstcmd, ind);
 			}
 			else if (ind->indreverse == 1)
 			{

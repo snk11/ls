@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/20 02:26:48 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/20 03:05:56 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -175,7 +175,7 @@ int croissant_time(t_lsto *lsta);
 int croissant_time_char(t_lsto *lsta);
 int decreasing_time(t_lsto *lsta);
 int decreasing_time_char(t_lsto *lsta);
-void ft_t(char *s, t_ind *ind);
+void ft_t(char *s, t_lsto *lstcmd,t_ind *ind);
 void ft_r(char *s, t_lsto *lstcmd, t_ind *ind);
 void ft_printerror(char **av, t_ind *ind);
 void ft_scan_ind(char **av,t_ind *ind);
@@ -191,11 +191,11 @@ void	ft_a(char *s, t_ind *ind);
 void	ft_reverse(char *s, t_ind *ind);
 void	ft_areverse(char *s, t_ind *ind);
 void ft_at(char *s, t_ind *ind);
-void ft_ar(char *s, t_ind *ind);
+void ft_ar(char *s, t_lsto *lstcmd,t_ind *ind);
 void ft_atreverse(char *s, t_ind *ind);
-void ft_rt(char *s, t_ind *ind);
+void ft_rt(char *s, t_lsto *lstcmd,t_ind *ind);
 t_lsto		*lst_addo_between(t_lsto *toplist, t_lsto *lst1);
-void ft_rreverse(char *s, t_ind *ind);
+void ft_rreverse(char *s,t_lsto *lstcmd, t_ind *ind);
 void ft_treverse(char *s, t_ind *ind);
 void ft_art(char *s, t_ind *ind);
 void	ft_printlardir(char *s,t_ind *ind);
