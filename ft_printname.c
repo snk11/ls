@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/20 00:06:32 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/20 02:50:49 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/20 04:41:25 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_printname(char *s,t_lsto *lstcmd,t_ind *ind)
 		lstmp = lstmp->next;
 		cnt++;
 	}
-//	printf("char s = %s,index = %di,position = %d\n",s,ind->index1,ind->indposition);
+//	printf("char s = %s,index = %d,position = %d\n",s,ind->index1,ind->indposition);
 	if (ft_checkhyphencase(lstcmd,ind) == 1)
 	{
 		if(ft_checkhyphencase_print(lstcmd,ind) == 1)
@@ -35,6 +35,12 @@ void	ft_printname(char *s,t_lsto *lstcmd,t_ind *ind)
 		else if(ind->indposition == 1 && cnt < 4)
 		{
 		}
+		else if(ind->indposition == 1 && cnt >= 4)
+		{
+			ft_putstr(s);
+			ft_putstr(":\n");
+		}
+		/*
 		else if((ind->index1 == 1 && ind->indoption == 0) || ind->indexyet == 1)
 		{
 			ft_putstr(s);
@@ -46,7 +52,8 @@ void	ft_printname(char *s,t_lsto *lstcmd,t_ind *ind)
 			ft_putstr(s);
 			ft_putstr(":\n");
 		}
-		else if(ind->index1 >= 2)
+		*/
+		else if(ind->indposition >= 2)
 		{
 			ft_putstr(s);
 			ft_putstr(":\n");
