@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/27 17:13:01 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/20 03:06:09 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/20 04:08:25 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,40 +59,40 @@ void	ft_p1(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 			}
 			else if (ind->indl == 1 && ind->indreverse == 1 && ind->indr == 1 && ind->inda == 1 && ind->indt == 1)
 			{
-				ft_printlatrreversedir((char*)(lst1->content), ind);
+				ft_printlatrreversedir((char*)(lst1->content), lstcmd,ind);
 			}
 
 			else if (ind->indreverse == 1 && ind->indr == 1 && ind->inda == 1 && ind->indt == 1)
 			{
-				ft_atrreverse((char*)(lst1->content), ind);
+				ft_atrreverse((char*)(lst1->content), lstcmd,ind);
 			}
 			else if (ind->indreverse == 1 && ind->indr == 1 && ind->inda == 1 && ind->indl == 1)
 			{
-				ft_printlarreversedir((char*)(lst1->content), ind);
+				ft_printlarreversedir((char*)(lst1->content), lstcmd,ind);
 			}
 			else if (ind->indreverse == 1 && ind->indr == 1 && ind->indt == 1 && ind->indl == 1)
 			{
-				ft_printltrreversedir((char*)(lst1->content), ind);
+				ft_printltrreversedir((char*)(lst1->content), lstcmd,ind);
 			}
 			else if (ind->inda == 1 && ind->indr == 1 && ind->indt == 1 && ind->indl == 1)
 			{
-				ft_printlartdir((char*)(lst1->content), ind);
+				ft_printlartdir((char*)(lst1->content), lstcmd,ind);
 			}
 			else if (ind->inda == 1 && ind->indreverse == 1 && ind->indt == 1 && ind->indl == 1)
 			{
-				ft_printlatreversedir((char*)(lst1->content), ind);
+				ft_printlatreversedir((char*)(lst1->content), lstcmd,ind);
 			}
 			else if (ind->inda == 1 && ind->indreverse == 1 && ind->indt == 1)
 			{
-				ft_atreverse((char*)(lst1->content), ind);
+				ft_atreverse((char*)(lst1->content), lstcmd,ind);
 			}
 			else if (ind->inda == 1 && ind->indr == 1 && ind->indreverse == 1)
 			{
-				ft_arreverse((char*)(lst1->content), ind);
+				ft_arreverse((char*)(lst1->content), lstcmd,ind);
 			}
 			else if (ind->inda == 1 && ind->indr == 1 && ind->indt == 1)
 			{
-				ft_art((char*)(lst1->content), ind);
+				ft_art((char*)(lst1->content), lstcmd,ind);
 			}
 			else if (ind->indreverse == 1 && ind->indr == 1 && ind->indt == 1)
 			{
@@ -100,27 +100,27 @@ void	ft_p1(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 			}
 			else if (ind->inda == 1 && ind->indr == 1 && ind->indl == 1)
 			{
-				ft_printlardir((char*)(lst1->content), ind);
+				ft_printlardir((char*)(lst1->content), lstcmd,ind);
 			}
 			else if (ind->indt == 1 && ind->indr == 1 && ind->indl == 1)
 			{
-				ft_printlrtdir((char*)(lst1->content), ind);
+				ft_printlrtdir((char*)(lst1->content), lstcmd,ind);
 			}
 			else if (ind->indreverse == 1 && ind->indr == 1 && ind->indl == 1)
 			{
-				ft_printlrreversedir((char*)(lst1->content), ind);
+				ft_printlrreversedir((char*)(lst1->content), lstcmd,ind);
 			}
 			else if (ind->indt == 1 && ind->inda == 1 && ind->indl == 1)
 			{
-				ft_printlatdir((char*)(lst1->content), ind);
+				ft_printlatdir((char*)(lst1->content), lstcmd,ind);
 			}
 			else if (ind->indt == 1 && ind->indreverse == 1 && ind->indl == 1)
 			{
-				ft_printltreversedir((char*)(lst1->content), ind);
+				ft_printltreversedir((char*)(lst1->content), lstcmd,ind);
 			}
 			else if (ind->inda == 1 && ind->indreverse == 1 && ind->indl == 1)
 			{
-				ft_printlareversedir((char*)(lst1->content), ind);
+				ft_printlareversedir((char*)(lst1->content), lstcmd,ind);
 			}
 			else if (ind->inda == 1 && ind->indreverse == 1)
 			{
@@ -128,7 +128,7 @@ void	ft_p1(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 			}
 			else if (ind->inda == 1 && ind->indt == 1)
 			{
-				ft_at((char*)(lst1->content), ind);
+				ft_at((char*)(lst1->content), lstcmd,ind);
 			}
 			else if (ind->inda == 1 && ind->indr == 1)
 			{
@@ -136,7 +136,7 @@ void	ft_p1(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 			}
 			else if (ind->inda == 1 && ind->indl == 1)
 			{
-				ft_printladir((char*)(lst1->content), ind);
+				ft_printladir((char*)(lst1->content), lstcmd,ind);
 			}
 			else if (ind->indr == 1 && ind->indt == 1)
 			{
@@ -148,15 +148,15 @@ void	ft_p1(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 			}
 			else if (ind->indl == 1 && ind->indr == 1)
 			{
-				ft_printlrdir((char*)(lst1->content), ind);
+				ft_printlrdir((char*)(lst1->content), lstcmd,ind);
 			}
 			else if (ind->indl == 1 && ind->indt == 1)
 			{
-				ft_printltdir((char*)(lst1->content), ind);
+				ft_printltdir((char*)(lst1->content), lstcmd,ind);
 			}
 			else if (ind->indl == 1 && ind->indreverse == 1)
 			{
-				ft_printlreversedir((char*)(lst1->content), ind);
+				ft_printlreversedir((char*)(lst1->content), lstcmd,ind);
 			}
 			else if (ind->indt == 1 && ind->indreverse == 1)
 			{
@@ -164,7 +164,7 @@ void	ft_p1(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 			}
 			else if (ind->indl == 1)
 			{
-				ft_printldir((char*)(lst1->content),ind);
+				ft_printldir((char*)(lst1->content),lstcmd,ind);
 			}
 			else if (ind->indr == 1)
 			{

@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/20 03:05:56 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/20 04:06:12 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -182,37 +182,37 @@ void ft_scan_ind(char **av,t_ind *ind);
 void	ft_scan_option(char **av,t_ind *ind);
 void	ft_print_permission(char *s);
 void	ft_printlregfile(char *s);
-void	ft_printldir(char *s,t_ind *ind);
-void	ft_printlrdir(char *s,t_ind *ind);
-void	ft_printltdir(char *s,t_ind *ind);
-void	ft_printlreversedir(char *s,t_ind *ind);
+void	ft_printldir(char *s,t_lsto *lstcmd,t_ind *ind);
+void	ft_printlrdir(char *s,t_lsto *lstcmd,t_ind *ind);
+void	ft_printltdir(char *s,t_lsto *lstcmd,t_ind *ind);
+void	ft_printlreversedir(char *s,t_lsto *lstcmd,t_ind *ind);
 int	ft_check_string(char *s);
 void	ft_a(char *s, t_ind *ind);
 void	ft_reverse(char *s, t_ind *ind);
 void	ft_areverse(char *s, t_ind *ind);
-void ft_at(char *s, t_ind *ind);
+void ft_at(char *s,t_lsto *lstcmd ,t_ind *ind);
 void ft_ar(char *s, t_lsto *lstcmd,t_ind *ind);
-void ft_atreverse(char *s, t_ind *ind);
+void ft_atreverse(char *s,t_lsto *lstcmd ,t_ind *ind);
 void ft_rt(char *s, t_lsto *lstcmd,t_ind *ind);
 t_lsto		*lst_addo_between(t_lsto *toplist, t_lsto *lst1);
 void ft_rreverse(char *s,t_lsto *lstcmd, t_ind *ind);
 void ft_treverse(char *s, t_ind *ind);
-void ft_art(char *s, t_ind *ind);
-void	ft_printlardir(char *s,t_ind *ind);
-void	ft_printladir(char *s,t_ind *ind);
-void	ft_printlrtdir(char *s,t_ind *ind);
-void	ft_printlrreversedir(char *s,t_ind *ind);
-void	ft_printlatdir(char *s,t_ind *ind);
-void	ft_printltreversedir(char *s,t_ind *ind);
-void	ft_printlareversedir(char *s,t_ind *ind);
+void ft_art(char *s, t_lsto *lstcmd,t_ind *ind);
+void	ft_printlardir(char *s,t_lsto *lstcmd,t_ind *ind);
+void	ft_printladir(char *s,t_lsto *lstcmd,t_ind *ind);
+void	ft_printlrtdir(char *s,t_lsto *lstcmd,t_ind *ind);
+void	ft_printlrreversedir(char *s,t_lsto *lstcmd,t_ind *ind);
+void	ft_printlatdir(char *s,t_lsto *lstcmd,t_ind *ind);
+void	ft_printltreversedir(char *s,t_lsto *lstcmd,t_ind *ind);
+void	ft_printlareversedir(char *s,t_lsto *lstcmd,t_ind *ind);
 void ft_trreverse(char *s, t_ind *ind);
-void ft_arreverse(char *s, t_ind *ind);
-void	ft_printlatreversedir(char *s,t_ind *ind);
-void	ft_printlartdir(char *s,t_ind *ind);
-void	ft_printltrreversedir(char *s,t_ind *ind);
-void	ft_printlarreversedir(char *s,t_ind *ind);
-void ft_printlatrreversedir(char *s, t_ind *ind);
-void ft_atrreverse(char *s, t_ind *ind);
+void ft_arreverse(char *s,t_lsto *lstcmd,t_ind *ind);
+void	ft_printlatreversedir(char *s,t_lsto *lstcmd,t_ind *ind);
+void	ft_printlartdir(char *s,t_lsto *lstcmd,t_ind *ind);
+void	ft_printltrreversedir(char *s,t_lsto *lstcmd,t_ind *ind);
+void	ft_printlarreversedir(char *s,t_lsto *lstcmd,t_ind *ind);
+void ft_printlatrreversedir(char *s, t_lsto *lstcmd,t_ind *ind);
+void ft_atrreverse(char *s,t_lsto *lstcmd ,t_ind *ind);
 void	ft_putlongnbr(long n);
 void	ft_putulongnbr(unsigned long n);
 void	ft_p0regfile(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd);
