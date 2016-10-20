@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/12 23:31:06 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/19 12:30:23 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/20 07:06:18 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	ft_scan_option(char **av,t_ind *ind)
 					ind->indl = 1;
 				else if (av[i][j] == '1')
 					ind->indone = 1;
-				else if (av[i][j] == '-')
+				else if (av[i][j] == '-' && j == 1)
 					ind->indhyphen = 1;
 				else if (ind->indillegal == 0)
 					ind->indillegal = av[i][j];
