@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/14 07:25:15 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/20 05:59:41 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/20 06:51:46 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,10 @@ void	ft_print_permission(char *s)
 {
 	struct stat		sb;
 
-	stat(s, &sb);
-	if(S_ISDIR(sb.st_mode))
+	lstat(s, &sb);
+	if(S_ISLNK(sb.st_mode))
+		ft_putchar('l');
+	else if(S_ISDIR(sb.st_mode))
 		ft_putchar('d');
 	else if(S_ISSOCK(sb.st_mode))
 		ft_putchar('s');
@@ -27,8 +29,6 @@ void	ft_print_permission(char *s)
 		ft_putchar('c');
 	else if(S_ISFIFO(sb.st_mode))
 		ft_putchar('p');
-	else if(S_ISLNK(sb.st_mode))
-		ft_putchar('l');
 	else if(S_ISREG(sb.st_mode))
 		ft_putchar('-');
 	if(sb.st_mode & S_IRUSR)

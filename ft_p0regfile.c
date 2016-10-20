@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/18 15:14:46 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/20 02:06:25 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/20 06:52:56 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,13 @@ void	ft_p0regfile(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 		ind->index1 = ft_getindex(lst1,lstcmd);
 		if(ft_checkhyphencase(lstcmd,ind) == 1)
 		{
-			if(inderror == 1 && ind->indl == 1 && ft_isreg((char*)(lst1->content)))
+			if(inderror == 1 && ind->indl == 1 && (ft_isreg((char*)(lst1->content)) || ft_islnk((char*)lst1->content)))
 			{
 				ft_printlregfile((char*)(lst1->content));
 				ind->indregfile = 1;
 			}
-			else if(inderror == 1 && ft_isreg(s1))
-			{
+			else if(inderror == 1 && (ft_isreg(s1) || ft_islnk(s1))
+				   )			{
 				ft_putstr((char*)(lst1->content));
 				ft_putstr("\n");
 				ind->indregfile = 1;
@@ -49,23 +49,23 @@ void	ft_p0regfile(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 		}
 		else if(ft_checkhyphencase(lstcmd,ind) == 0)
 		{
-			if(ind->index1 > 1 && inderror == 1 && ind->indl == 1 && ft_isreg((char*)(lst1->content)))
+			if(ind->index1 > 1 && inderror == 1 && ind->indl == 1 && (ft_isreg((char*)(lst1->content)) || ft_islnk(s1)))
 			{
 				ft_printlregfile((char*)(lst1->content));
 				ind->indregfile = 1;
 			}
-			else if(ind->index1 > 1 && inderror == 1 && ft_isreg(s1))
+			else if(ind->index1 > 1 && inderror == 1 && (ft_isreg(s1) || ft_islnk(s1)))
 			{
 				ft_putstr((char*)(lst1->content));
 				ft_putstr("\n");
 				ind->indregfile = 1;
 			}
-			else if(inderror == 1 && ind->indl == 1 && ft_isreg((char*)(lst1->content)))
+			else if(inderror == 1 && ind->indl == 1 && (ft_isreg((char*)(lst1->content)) || ft_islnk(s1)))
 			{
 				ft_printlregfile((char*)(lst1->content));
 				ind->indregfile = 1;
 			}
-			else if(inderror == 1 && ft_isreg(s1))
+			else if(inderror == 1 && (ft_isreg(s1) || ft_islnk(s1)))
 			{
 				ft_putstr((char*)(lst1->content));
 				ft_putstr("\n");

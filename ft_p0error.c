@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/18 15:31:27 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/19 20:44:51 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/20 06:55:24 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ void	ft_p0error(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 		{
 			ind->indexyet = 1;
 		}
-		else if(inderror == 1 && !ft_isreg((char*)lst1->content))
+		else if(inderror == 1 && !ft_isreg((char*)lst1->content) && !ft_islnk((char*)lst1->content))
 		{
 			s1 = ft_memmove2((char*)(lst1->content));
-			if (ind->ind1 == 0 && !ft_isreg(s1))
+			if (ind->ind1 == 0 && !ft_isreg(s1) && !ft_islnk(s1))
 			{
 				if ((!opendir((char*)(lst1->content)) && (((char*)(lst1->content))[0] != '-' || ind->indoption == 0 || ft_strcmp((char*)lst1->content,"--") == 0)))
 //				if ((!opendir((char*)(lst1->content)) && ind->indoption == 0))

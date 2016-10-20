@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdir.c                                         :+:      :+:    :+:   */
+/*   ft_islnk.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/15 12:07:58 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/20 06:53:21 by syusof           ###   ########.fr       */
+/*   Created: 2016/10/20 06:11:03 by syusof            #+#    #+#             */
+/*   Updated: 2016/10/20 06:49:28 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_ls.h"
+# include "ft_ls.h"
 
-int		ft_isdir(char *s)
+int		ft_islnk(char *s)
 {
 	struct stat		sb;
 
 	lstat(s, &sb);
-	if(S_ISDIR(sb.st_mode))
+	if(S_ISLNK(sb.st_mode))
 		return (1);
 	return (0);
+
 }
