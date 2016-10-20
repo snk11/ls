@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/20 00:06:32 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/20 02:20:37 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/20 02:50:49 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,13 @@ void	ft_printname(char *s,t_lsto *lstcmd,t_ind *ind)
 		lstmp = lstmp->next;
 		cnt++;
 	}
-	printf("char s = %s,index = %d\n",s,ind->index1);
+//	printf("char s = %s,index = %di,position = %d\n",s,ind->index1,ind->indposition);
 	if (ft_checkhyphencase(lstcmd,ind) == 1)
 	{
 		if(ft_checkhyphencase_print(lstcmd,ind) == 1)
+		{
+		}
+		else if(ind->indposition == 1 && cnt < 4)
 		{
 		}
 		else if((ind->index1 == 1 && ind->indoption == 0) || ind->indexyet == 1)
