@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/23 15:34:44 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/18 18:11:02 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/20 02:35:42 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ void ft_trreverse(char *s, t_ind *ind)
 	t_lsto			*lstj;
 
 	//if ( (i > 1 && (ind.indfirst == 1 && i > 2)) || (i > 1 && ind.indfirst == 0))
-	if (ind->indfirst > 1 && ind->indregfile == 1 && ind->inderror == 1)
+	if (ind->indposition > 1 && ind->indregfile == 1 && ind->inderror == 1)
 		ft_putstr("\n");
-	else if (ind->indfirst > 1 && ind->indregfile == 0 && ind->inderror == 0)
+	else if (ind->indposition > 1 && ind->indregfile == 0 && ind->inderror == 0)
 		ft_putstr("\n");
-	else if (ind->indfirst > 1 && ind->indregfile == 1 && ind->inderror == 0)
+	else if (ind->indposition > 1 && ind->indregfile == 1 && ind->inderror == 0)
 					ft_putstr("\n");
-	else if (ind->indfirst > 1 && (ind->indregfile == 0 || ind->inderror == 0))
+	else if (ind->indposition > 1 && (ind->indregfile == 0 || ind->inderror == 0))
 	{
 		ind->inderror = 0;
 		ind->indregfile = 0;

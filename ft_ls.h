@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/20 00:20:28 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/20 02:26:48 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ typedef struct			s_ind
 	int					indregfile;
 	int					inderror;
 	int					index1;
-	int					indfirst;
+	int					indposition;
 	int					indtotal;
 	int					indone;
 	int					indr;
@@ -113,6 +113,7 @@ t_lst		*ft_create_lst(void *content);
 t_lsto		*ft_create_lsto(void *content);
 t_lsto		*ft_create_lsto_char(char *content);
 t_lsto		*ft_getprimelist(char **av,t_ind *ind);
+t_lsto		*ft_getprimelist2(char **av,t_ind *ind);
 t_lsto *ft_getreplist(char *rep);
 t_lsto *ft_getreplist4(char *rep);
 t_lsto	*ft_getreplisto4(t_lsto *lstmp);

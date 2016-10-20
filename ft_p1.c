@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/27 17:13:01 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/20 00:34:55 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/20 02:27:23 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	ft_p1(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 //		lst1 = lst1->next;
 //	}
 	lst1 = lst1begi;
-	ind->indfirst = 0;
+	ind->indposition = 0;
 	ind->indexyet = 0;
 	ind->indexyet2 = 0;
 	ind->indexyet3 = 0;
@@ -42,7 +42,7 @@ void	ft_p1(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 	while(lst1)
 	{
 		ind->index1 = ft_getindex(lst1,lstcmd);
-		ind->indfirst++;
+		ind->indposition++;
 		inderror = 0;
 		if (!opendir((char*)(lst1->content)))
 		{

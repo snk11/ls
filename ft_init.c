@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/30 16:00:49 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/19 21:21:06 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/20 02:27:02 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_init(t_ind *ind)
 	ind->inderror = 0;
 	ind->indregfile = 0;
 	ind->index1 = 0;
-	ind->indfirst = 0;
+	ind->indposition = 0;
 	ind->indtotal = 0;
 	ind->indone = 0;
 	ind->indr = 0;

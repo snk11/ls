@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/20 01:00:50 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/20 02:06:35 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,17 @@ int main(int ac,char **av)
 		lst1 = ft_getprimelist(av,ind);
 //		if(lst1)
 //			ft_printlst(lst1);
-		if(lst1)
+		if(ind->indillegal == 0 && ft_checkhyphencase(lstcmd,ind) && ft_checkhyphencase_print(lstcmd,ind) )
 		{
+			lstmp = ft_create_lsto_char(".");
+			lsta = lst_addo_down_char(lsta, lstmp);
+			ft_p0error(lsta,ind,lstcmd);
+			ft_p0regfile(lsta,ind,lstcmd);
+			ft_p1(lsta, ind,lstcmd);
+		}
+		else if(ind->indillegal == 0 && ft_checkhyphencase(lstcmd,ind))
+		{
+			lst1 = ft_getprimelist2(av,ind);
 			if (ind->indreverse == 1 && ind->indt == 1)
 				lst1 = ft_lst_sort(lst1,croissant_time_char);
 			else if (ind->indreverse == 1)
@@ -81,13 +90,19 @@ int main(int ac,char **av)
 				ind->index1 = ft_getindex(lst1,lstcmd);
 				ft_p1(lst1,ind, lstcmd);
 		}
-		else if(((ind->indtotal == 0 && ind->indillegal == 0 && ft_checkhyphencase(lstcmd,ind) == 1) && ft_checkhyphencase_print(lstcmd,ind)) )
+		else if(lst1)
 		{
-			lstmp = ft_create_lsto_char(".");
-			lsta = lst_addo_down_char(lsta, lstmp);
-			ft_p0error(lsta,ind,lstcmd);
-			ft_p0regfile(lsta,ind,lstcmd);
-			ft_p1(lsta, ind,lstcmd);
+			if (ind->indreverse == 1 && ind->indt == 1)
+				lst1 = ft_lst_sort(lst1,croissant_time_char);
+			else if (ind->indreverse == 1)
+				lst1 = ft_lst_sort(lst1,decreasing_char);
+			else if (ind->indt == 1)
+				lst1 = ft_lst_sort(lst1,decreasing_time_char);
+				
+			ft_p0error(lst1,ind,lstcmd);
+				ft_p0regfile(lst1,ind,lstcmd);
+				ind->index1 = ft_getindex(lst1,lstcmd);
+				ft_p1(lst1,ind, lstcmd);
 		}
 		else
 		{
