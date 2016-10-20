@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/18 15:31:27 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/20 06:55:24 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/20 07:35:55 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	ft_p0error(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 	ind->indexyet = 0;
 	while(lst1)
 	{
+		printf("islnk = %d ,isreg = %d,inderror = %d,lst1 = %s\n",ft_islnk((char*)lst1->content),ft_isreg((char*)lst1->content),ind->inderror,(char*)lst1->content);
 		inderror = 0;
 		ind->ind1 = 0;
 		{
