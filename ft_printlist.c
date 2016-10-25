@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 11:46:17 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/18 11:22:11 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/25 10:47:31 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -251,6 +251,7 @@ void	ft_printlist7(t_lsto *lstmp)
 	t_lsto	*lst2;
 	t_lsto	*lstbegi;
 	unsigned long l;
+	char	*linkname;
 
 	lst1 = NULL;
 	lstmp2 = NULL;
@@ -307,6 +308,12 @@ void	ft_printlist7(t_lsto *lstmp)
 			l = l + sb.st_blocks;
 //			ft_putstr(" ");
 			ft_putstr(((t_rep*)((lst1))->content)->name);
+			if(ft_islnk(ft_makepath(((t_rep*)(lst1->content))->path,((t_rep*)(lst1->content))->name))  )
+			{
+				ft_putstr(" -> ");
+				readlink(ft_makepath(((t_rep*)(lst1->content))->path,((t_rep*)(lst1->content))->name),linkname,PATH_MAX);
+				ft_putstr(linkname);
+			}
 			ft_putstr("\n");
 		}
 		lst1 = lst1->next;
