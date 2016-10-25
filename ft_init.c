@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/30 16:00:49 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/20 02:27:02 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/25 12:44:02 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	ft_init(t_ind *ind)
 {
+	ind->indfts = 0;
 	ind->indexyet = 0;
 	ind->indexyet2 = 0;
 	ind->indexyet3 = 0;

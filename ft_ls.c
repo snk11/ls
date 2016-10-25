@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/25 10:07:45 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/25 12:50:08 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,11 @@ int main(int ac,char **av)
 			lstmp = ft_create_lsto_char(".");
 			lsta = lst_addo_down_char(lsta, lstmp);
 			ft_p0error(lsta,ind,lstcmd);
+			if(ind->indfts == 0)
+			{
 			ft_p0regfile(lsta,ind,lstcmd);
 			ft_p1(lsta, ind,lstcmd);
+			}
 		}
 		else if(ind->indillegal == 0 && ft_checkhyphencase(lstcmd,ind))
 		{
@@ -87,9 +90,12 @@ int main(int ac,char **av)
 				lst1 = ft_lst_sort(lst1,decreasing_time_char);
 				
 			ft_p0error(lst1,ind,lstcmd);
+			if(ind->indfts == 0)
+			{
 				ft_p0regfile(lst1,ind,lstcmd);
 				ind->index1 = ft_getindex(lst1,lstcmd);
 				ft_p1(lst1,ind, lstcmd);
+			}
 		}
 		else if(lst1)
 		{
@@ -101,17 +107,24 @@ int main(int ac,char **av)
 				lst1 = ft_lst_sort(lst1,decreasing_time_char);
 				
 			ft_p0error(lst1,ind,lstcmd);
+
+			if(ind->indfts == 0)
+			{
 				ft_p0regfile(lst1,ind,lstcmd);
 				ind->index1 = ft_getindex(lst1,lstcmd);
 				ft_p1(lst1,ind, lstcmd);
+			}
 		}
 		else
 		{
 			lstmp = ft_create_lsto_char(".");
 			lsta = lst_addo_down_char(lsta, lstmp);
 			ft_p0error(lsta,ind,lstcmd);
+			if(ind->indfts == 0)
+			{
 			ft_p0regfile(lsta,ind,lstcmd);
 			ft_p1(lsta, ind,lstcmd);
+			}
 		}
 		/*
 		else if (lst1 == NULL && ((ft_strcmp((char*)lstcmd->content,"--") == 0 || ft_strcmp((char*)lstcmd->content,"-1") == 0) || ft_strcmp((char*)lstcmd->content,"--") == 0 || ft_strcmp((char*)lstcmd->content,"-1") == 0) )

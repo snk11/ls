@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/18 15:14:46 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/20 06:52:56 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/25 12:32:31 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	ft_p0regfile(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 		ind->index1 = ft_getindex(lst1,lstcmd);
 		if(ft_checkhyphencase(lstcmd,ind) == 1)
 		{
-			if(inderror == 1 && ind->indl == 1 && (ft_isreg((char*)(lst1->content)) || ft_islnk((char*)lst1->content)))
+			if(inderror == 1 && ind->indl == 1 && (ft_isreg(ft_makepath("./",(char*)(lst1->content))) || ft_islnk(ft_makepath("./",(char*)lst1->content))))
 			{
 				ft_printlregfile((char*)(lst1->content));
 				ind->indregfile = 1;
@@ -49,7 +49,7 @@ void	ft_p0regfile(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 		}
 		else if(ft_checkhyphencase(lstcmd,ind) == 0)
 		{
-			if(ind->index1 > 1 && inderror == 1 && ind->indl == 1 && (ft_isreg((char*)(lst1->content)) || ft_islnk(s1)))
+			if(ind->index1 > 1 && inderror == 1 && ind->indl == 1 && (ft_isreg(ft_makepath("./",(char*)(lst1->content))) || ft_islnk(ft_makepath("./",s1))))
 			{
 				ft_printlregfile((char*)(lst1->content));
 				ind->indregfile = 1;
