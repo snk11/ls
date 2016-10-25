@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 11:46:17 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/25 14:23:46 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/25 15:45:29 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -253,6 +253,7 @@ void	ft_printlist7(t_lsto *lstmp)
 	unsigned long l;
 	char	*linkname;
 	t_loption	loption;
+	ssize_t		r;
 
 	lst1 = NULL;
 	lstmp2 = NULL;
@@ -283,45 +284,7 @@ void	ft_printlist7(t_lsto *lstmp)
 	ft_init2(&loption);
 	ft_width(lst1,&loption);
 //	printf("gname = %d\n",loption.gname);
-	while (lst1)
-	{
-//		if ( (((t_rep*)(lst1)->content)->name)[0] != '.')
-		{
-			stat(ft_makepath(((t_rep*)(lst1->content))->path,((t_rep*)(lst1->content))->name), &sb);
-			ft_print_permission(ft_makepath(((t_rep*)(lst1->content))->path,((t_rep*)(lst1->content))->name));
-			ft_putstr("  ");
-			ft_putstr(ft_ustoa(sb.st_nlink));
-			ft_putstr(" ");
-			ft_putstr(getpwuid(sb.st_uid)->pw_name);
-			ft_putstr("  ");
-			ft_putstr(getgrgid(sb.st_gid)->gr_name);
-			ft_putstr("  ");
-			ft_putstr(ft_lldtoa(sb.st_size));
-			ft_putstr(" ");
-			ft_putstr(ft_itoa((localtime(&(sb.st_ctime)))->tm_mon));
-			ft_putstr(" ");
-			ft_putstr(ft_itoa((localtime(&(sb.st_ctime)))->tm_mday));
-			ft_putstr(" ");
-			ft_putstr(ft_itoa((localtime(&(sb.st_ctime)))->tm_hour));
-			ft_putstr(" ");
-			ft_putstr(ft_itoa((localtime(&(sb.st_ctime)))->tm_min));
-			ft_putstr(" ");
-			ft_putstr(ft_itoa((localtime(&(sb.st_ctime)))->tm_year + 1900));
-			ft_putstr(" ");
-//			ft_putulongnbr(sb.st_blocks);
-			l = l + sb.st_blocks;
-//			ft_putstr(" ");
-			ft_putstr(((t_rep*)((lst1))->content)->name);
-			if(ft_islnk(ft_makepath(((t_rep*)(lst1->content))->path,((t_rep*)(lst1->content))->name))  )
-			{
-				ft_putstr(" -> ");
-				readlink(ft_makepath(((t_rep*)(lst1->content))->path,((t_rep*)(lst1->content))->name),linkname,PATH_MAX);
-				ft_putstr(linkname);
-			}
-			ft_putstr("\n");
-		}
-		lst1 = lst1->next;
-	}
+	ft_wl(lst1,loption);
 }
 
 t_lsto	*ft_printlist8(t_lsto *lstmp)
