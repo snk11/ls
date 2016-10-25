@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/12 23:31:06 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/20 07:18:27 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/25 08:45:49 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ void	ft_scan_option(char **av,t_ind *ind)
 	i = 1;
 	hyphenillegal = 0;
 //	while (av[i] && av[i][0] == '-' && ft_strcmp(av[i],"-") != 0)
-	if(av[i] && av[i][0] == '-')
+	while(av[i] && av[i][0] == '-' && ind->indillegal == 0 && ind->indhyphen == 0)
 	{
-		ind->indoption = 1;
+		ind->indoption++;
 //		if (ft_strcmp(av[i], "--") == 0)
 //		{
 //			ind->indone = 1;
@@ -57,6 +57,64 @@ void	ft_scan_option(char **av,t_ind *ind)
 				j++;
 			}
 		}
-//		i++;
+		i++;
 	}
+}
+
+
+int		ft_scan_option2(char *av)
+{
+
+	int j;
+	int	m;
+	char	l;
+
+	m = 0;
+	l = 0;
+	if(av && av[0] == '-' && l == 0 && m == 0)
+	{
+//		if (ft_strcmp(av[i], "--") == 0)
+//		{
+//			ind->indone = 1;
+//		}
+//		else
+		{
+			j = 1;
+			while (av[j])
+			{
+				if (av[j] == 'R')
+				{
+				}
+				else if (av[j] == 'a')
+				{
+				}
+				else if (av[j] == 'r')
+				{
+				}
+				else if (av[j] == 't')
+				{
+				}
+				else if (av[j] == 'l')
+				{
+				}
+				else if (av[j] == '1')
+				{
+				}
+				else if (av[j] == '-' && j == 1)
+				{
+					if(av[2])
+						l = '-';
+					m = 1;
+				}
+				else if (l == 0)
+					l = av[j];
+				j++;
+			}
+		}
+	}
+	else
+		return (0);
+	if(l != 0)
+		return (0);
+	return (1);
 }

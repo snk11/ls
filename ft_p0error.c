@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/18 15:31:27 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/20 07:35:55 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/25 08:46:38 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_p0error(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 	ind->indexyet = 0;
 	while(lst1)
 	{
-		printf("islnk = %d ,isreg = %d,inderror = %d,lst1 = %s\n",ft_islnk((char*)lst1->content),ft_isreg((char*)lst1->content),ind->inderror,(char*)lst1->content);
+//		printf("islnk = %d ,isreg = %d,inderror = %d,lst1 = %s\n",ft_islnk((char*)lst1->content),ft_isreg((char*)lst1->content),ind->inderror,(char*)lst1->content);
 		inderror = 0;
 		ind->ind1 = 0;
 		{
@@ -29,7 +29,15 @@ void	ft_p0error(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 				inderror = 1;
 			}
 		}
-		if(ft_checkhyphencase(lstcmd,ind) == 1 &&  ind->indoption == 1 && ind->indexyet == 0 && ft_strcmp((char*)lst1->content,"--") == 0)
+		if(ft_scan_option2((char*)lst1->content))
+		{
+					ft_putstr_fd("ls: ", 2);
+					ft_putstr_fd((char*)(lst1->content), 2);
+					ft_putstr_fd(": ", 2);
+					ft_putstr_fd(strerror(errno),2);
+					ft_putstr_fd("\n", 2);
+		}
+		else if(ft_checkhyphencase(lstcmd,ind) == 1 &&  ind->indoption > 0 && ind->indexyet == 0 && ft_strcmp((char*)lst1->content,"--") == 0)
 		{
 			ind->indexyet = 1;
 		}
