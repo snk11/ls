@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 11:46:17 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/25 10:47:31 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/25 14:23:46 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -252,6 +252,7 @@ void	ft_printlist7(t_lsto *lstmp)
 	t_lsto	*lstbegi;
 	unsigned long l;
 	char	*linkname;
+	t_loption	loption;
 
 	lst1 = NULL;
 	lstmp2 = NULL;
@@ -279,6 +280,9 @@ void	ft_printlist7(t_lsto *lstmp)
 	ft_putstr("total ");
 	ft_putulongnbr(l);
 	ft_putstr("\n");
+	ft_init2(&loption);
+	ft_width(lst1,&loption);
+//	printf("gname = %d\n",loption.gname);
 	while (lst1)
 	{
 //		if ( (((t_rep*)(lst1)->content)->name)[0] != '.')

@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/25 12:43:50 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/25 14:20:00 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,19 @@ typedef struct			s_ind
 	int					ind1;
 	int					ind2;
 }						t_ind;
+
+typedef	struct			s_loption
+{
+	int					link;
+	int					uname;
+	int					gname;
+	int					fsize;
+	int					month;
+	int					day;
+	int					hour;
+	int					minute;
+	int					year;
+}						t_loption;
 
 typedef struct			s_numb
 {
@@ -227,5 +240,7 @@ void	ft_printlst(t_lsto *lstmp);
 void	ft_printname(char *s,t_lsto *lstcmd,t_ind *ind);
 void	ft_print_n(char *s,t_lsto *lstcmd,t_ind *ind);
 int		ft_scan_option2(char *av);
+void	ft_init2(t_loption *loption);
+void	ft_width(t_lsto *lst1,t_loption *loption);
 
 # endif
