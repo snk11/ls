@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/25 14:27:40 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/25 18:51:56 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/25 19:21:10 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	ft_wl(t_lsto *lst1,t_loption loption)
 	int		l;
 	ssize_t		r;
 	time_t		curtime;
+	int	i;
 
 	l = 0;
 	curtime = time(NULL);
@@ -39,27 +40,60 @@ void	ft_wl(t_lsto *lst1,t_loption loption)
 			ft_putstr(" ");
 			ft_putmonth((localtime(&(sb.st_mtime)))->tm_mon);
 			ft_putstr(" ");
-			ft_putwidth(ft_itoa((localtime(&(sb.st_mtime)))->tm_mday),loption.day);
-			ft_putstr(" ");
+
+			if(curtime - sb.st_mtime >= 0)
+			{
+				ft_putwidth(ft_itoa((localtime(&(sb.st_mtime)))->tm_mday),loption.day);
+				ft_putstr(" ");
+			}
 //			printf("time = %ld\n",curtime);
 //			printf("time2 = %ld\n",sb.st_ctime);
 //			printf("time3 = %ld\n",curtime-sb.st_ctime);
 			if(curtime - sb.st_mtime > 15778458)
 			{
-				if(loption.year == 0)
+				if(loption.year > 4)
 					ft_putstr(ft_itoa((localtime(&(sb.st_mtime)))->tm_year + 1900));
 				else
 				{
-					ft_putstr(" ");
+					i = 4 - loption.year;
+					while (i > 0)
+					{
+						ft_putstr(" ");
+						i--;
+					}
 					ft_putstr(ft_itoa((localtime(&(sb.st_mtime)))->tm_year + 1900));
 				}
 				ft_putstr(" ");
 			}
+			else if(curtime - sb.st_mtime < 0)
+			{
+				ft_putstr(" ");
+				ft_putwidth(ft_itoa((localtime(&(sb.st_mtime)))->tm_mday),loption.day);
+				ft_putstr(" ");
+				ft_putstr(" ");
+				ft_putstr(ft_itoa((localtime(&(sb.st_mtime)))->tm_year + 1900));
+				ft_putstr(" ");
+			}
 			else
 			{
-				ft_putwidth2(ft_itoa((localtime(&(sb.st_mtime)))->tm_hour),loption.hour);
-				ft_putstr(":");
-				ft_putwidth2(ft_itoa((localtime(&(sb.st_mtime)))->tm_min),loption.minute);
+				if (loption.year > 4)
+				{
+					i = loption.year - 4;
+					while(i > 0)
+					{
+						ft_putstr(" ");
+						i--;
+					}
+					ft_putwidth2(ft_itoa((localtime(&(sb.st_mtime)))->tm_hour),loption.hour);
+					ft_putstr(":");
+					ft_putwidth2(ft_itoa((localtime(&(sb.st_mtime)))->tm_min),loption.minute);
+				}
+				else
+				{
+					ft_putwidth2(ft_itoa((localtime(&(sb.st_mtime)))->tm_hour),loption.hour);
+					ft_putstr(":");
+					ft_putwidth2(ft_itoa((localtime(&(sb.st_mtime)))->tm_min),loption.minute);
+				}
 				ft_putstr(" ");
 			}
 //			ft_putulongnbr(sb.st_blocks);
