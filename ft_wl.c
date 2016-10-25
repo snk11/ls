@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/25 14:27:40 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/25 18:22:37 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/25 18:51:56 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_wl(t_lsto *lst1,t_loption loption)
 	{
 //		if ( (((t_rep*)(lst1)->content)->name)[0] != '.')
 		{
-			stat(ft_makepath(((t_rep*)(lst1->content))->path,((t_rep*)(lst1->content))->name), &sb);
+			lstat(ft_makepath(((t_rep*)(lst1->content))->path,((t_rep*)(lst1->content))->name), &sb);
 			ft_print_permission(ft_makepath(((t_rep*)(lst1->content))->path,((t_rep*)(lst1->content))->name));
 			ft_putstr("  ");
 			ft_putwidth(ft_ustoa(sb.st_nlink),loption.link);
@@ -37,7 +37,7 @@ void	ft_wl(t_lsto *lst1,t_loption loption)
 			ft_putstr("  ");
 			ft_putwidth(ft_lldtoa(sb.st_size),loption.fsize);
 			ft_putstr(" ");
-			ft_putwidth(ft_itoa((localtime(&(sb.st_mtime)))->tm_mon),loption.month);
+			ft_putmonth((localtime(&(sb.st_mtime)))->tm_mon);
 			ft_putstr(" ");
 			ft_putwidth(ft_itoa((localtime(&(sb.st_mtime)))->tm_mday),loption.day);
 			ft_putstr(" ");
@@ -46,7 +46,13 @@ void	ft_wl(t_lsto *lst1,t_loption loption)
 //			printf("time3 = %ld\n",curtime-sb.st_ctime);
 			if(curtime - sb.st_mtime > 15778458)
 			{
-				ft_putwidth(ft_itoa((localtime(&(sb.st_mtime)))->tm_year + 1900),loption.year);
+				if(loption.year == 0)
+					ft_putstr(ft_itoa((localtime(&(sb.st_mtime)))->tm_year + 1900));
+				else
+				{
+					ft_putstr(" ");
+					ft_putstr(ft_itoa((localtime(&(sb.st_mtime)))->tm_year + 1900));
+				}
 				ft_putstr(" ");
 			}
 			else

@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/25 13:44:58 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/25 14:23:13 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/25 18:51:49 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,13 @@
 void	ft_width(t_lsto *lst1,t_loption *loption)
 {
 	struct stat		sb;
+	time_t		curtime;
 
 	while (lst1)
 	{
 //		if ( (((t_rep*)(lst1)->content)->name)[0] != '.')
 		{
-			stat(ft_makepath(((t_rep*)(lst1->content))->path,((t_rep*)(lst1->content))->name), &sb);
+			lstat(ft_makepath(((t_rep*)(lst1->content))->path,((t_rep*)(lst1->content))->name), &sb);
 			if(ft_strlen(ft_ustoa(sb.st_nlink)) > loption->link)
 				loption->link = ft_strlen(ft_ustoa(sb.st_nlink));
 			if(ft_strlen(getpwuid(sb.st_uid)->pw_name) > loption->uname)
@@ -29,16 +30,23 @@ void	ft_width(t_lsto *lst1,t_loption *loption)
 				loption->gname = ft_strlen(getgrgid(sb.st_gid)->gr_name);
 			if(ft_strlen(ft_lldtoa(sb.st_size)) > loption->fsize)
 				loption->fsize = ft_strlen(ft_lldtoa(sb.st_size));
-			if(ft_strlen(ft_itoa((localtime(&(sb.st_ctime)))->tm_mon)) > loption->month)
-				loption->month = ft_strlen(ft_itoa((localtime(&(sb.st_ctime)))->tm_mon));
-			if(ft_strlen(ft_itoa((localtime(&(sb.st_ctime)))->tm_mday)) > loption->day)
-				loption->day = ft_strlen(ft_itoa((localtime(&(sb.st_ctime)))->tm_mday));
-			if(ft_strlen(ft_itoa((localtime(&(sb.st_ctime)))->tm_hour)) > loption->hour)
-				loption->hour = ft_strlen(ft_itoa((localtime(&(sb.st_ctime)))->tm_hour));
-			if(ft_strlen(ft_itoa((localtime(&(sb.st_ctime)))->tm_min)) > loption->minute)
-				loption->minute = ft_strlen(ft_itoa((localtime(&(sb.st_ctime)))->tm_min));
-			if(ft_strlen(ft_itoa((localtime(&(sb.st_ctime)))->tm_year + 1900)) > loption->year)
-				loption->year = ft_strlen(ft_itoa((localtime(&(sb.st_ctime)))->tm_year + 1900));
+//			if(ft_strlen(ft_itoa((localtime(&(sb.st_mtime)))->tm_mon)) > loption->month)
+//				loption->month = ft_strlen(ft_itoa((localtime(&(sb.st_mtime)))->tm_mon));
+			if(ft_strlen(ft_itoa((localtime(&(sb.st_mtime)))->tm_mday)) > loption->day)
+				loption->day = ft_strlen(ft_itoa((localtime(&(sb.st_mtime)))->tm_mday));
+			if(curtime - sb.st_mtime > 15778458)
+			{
+			}
+			else
+			{
+				loption->year = 1;
+			}
+//			if(ft_strlen(ft_itoa((localtime(&(sb.st_mtime)))->tm_hour)) > loption->hour)
+//				loption->hour = ft_strlen(ft_itoa((localtime(&(sb.st_mtime)))->tm_hour));
+//			if(ft_strlen(ft_itoa((localtime(&(sb.st_mtime)))->tm_min)) > loption->minute)
+//				loption->minute = ft_strlen(ft_itoa((localtime(&(sb.st_mtime)))->tm_min));
+//			if(ft_strlen(ft_itoa((localtime(&(sb.st_mtime)))->tm_year + 1900)) > loption->year)
+//				loption->year = ft_strlen(ft_itoa((localtime(&(sb.st_mtime)))->tm_year + 1900));
 //			ft_putulongnbr(sb.st_blocks);
 //			l = l + sb.st_blocks;
 //			ft_putstr(" ");

@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/25 16:58:31 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/25 18:48:32 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ typedef	struct			s_loption
 	int					uname;
 	int					gname;
 	int					fsize;
-	int					month;
+//	int					month;
 	int					day;
 	int					hour;
 	int					minute;
@@ -246,5 +246,6 @@ void	ft_width(t_lsto *lst1,t_loption *loption);
 void	ft_wl(t_lsto *lst1,t_loption loption);
 void	ft_putwidth(char *s,int p);
 void	ft_putwidth2(char *s,int p);
+void		ft_putmonth(int d);
 
 # endif

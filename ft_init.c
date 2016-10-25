@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/30 16:00:49 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/25 14:10:54 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/25 18:41:23 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	ft_init2(t_loption *loption)
 	loption->uname = 0;
 	loption->gname = 0;
 	loption->fsize = 0;
-	loption->month = 0;
+//	loption->month = 0;
 	loption->day = 0;
 	loption->hour = 0;
 	loption->minute = 0;
