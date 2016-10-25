@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/25 14:27:40 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/25 15:43:37 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/25 16:01:04 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,26 +28,26 @@ void	ft_wl(t_lsto *lst1,t_loption loption)
 			stat(ft_makepath(((t_rep*)(lst1->content))->path,((t_rep*)(lst1->content))->name), &sb);
 			ft_print_permission(ft_makepath(((t_rep*)(lst1->content))->path,((t_rep*)(lst1->content))->name));
 			ft_putstr("  ");
-			ft_putstr(ft_ustoa(sb.st_nlink));
+			ft_putwidth(ft_ustoa(sb.st_nlink),loption.link);
 			ft_putstr(" ");
-			ft_putstr(getpwuid(sb.st_uid)->pw_name);
+			ft_putwidth(getpwuid(sb.st_uid)->pw_name,loption.uname);
 			ft_putstr("  ");
-			ft_putstr(getgrgid(sb.st_gid)->gr_name);
+			ft_putwidth(getgrgid(sb.st_gid)->gr_name,loption.gname);
 			ft_putstr("  ");
-			ft_putstr(ft_lldtoa(sb.st_size));
+			ft_putwidth(ft_lldtoa(sb.st_size),loption.fsize);
 			ft_putstr(" ");
-			ft_putstr(ft_itoa((localtime(&(sb.st_ctime)))->tm_mon));
+			ft_putwidth(ft_itoa((localtime(&(sb.st_ctime)))->tm_mon),loption.month);
 			ft_putstr(" ");
-			ft_putstr(ft_itoa((localtime(&(sb.st_ctime)))->tm_mday));
+			ft_putwidth(ft_itoa((localtime(&(sb.st_ctime)))->tm_mday),loption.day);
 			ft_putstr(" ");
-			ft_putstr(ft_itoa((localtime(&(sb.st_ctime)))->tm_hour));
+			ft_putwidth(ft_itoa((localtime(&(sb.st_ctime)))->tm_hour),loption.hour);
 			ft_putstr(" ");
-			ft_putstr(ft_itoa((localtime(&(sb.st_ctime)))->tm_min));
+			ft_putwidth(ft_itoa((localtime(&(sb.st_ctime)))->tm_min),loption.minute);
 			ft_putstr(" ");
-			ft_putstr(ft_itoa((localtime(&(sb.st_ctime)))->tm_year + 1900));
+			ft_putwidth(ft_itoa((localtime(&(sb.st_ctime)))->tm_year + 1900),loption.year);
 			ft_putstr(" ");
 //			ft_putulongnbr(sb.st_blocks);
-			l = l + sb.st_blocks;
+//			l = l + sb.st_blocks;
 //			ft_putstr(" ");
 			ft_putstr(((t_rep*)((lst1))->content)->name);
 			linkname = malloc(sb.st_size + 1);
