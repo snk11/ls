@@ -6,12 +6,13 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 15:43:19 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/19 11:41:02 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/25 11:42:35 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "ft_ls.h"
 
+/*
 t_lst		*lst_add(t_lst *toplist, t_lst *lst1)
 {
 	t_lst	*lstmp;
@@ -50,7 +51,7 @@ t_lst		*lst_add(t_lst *toplist, t_lst *lst1)
 	return (toplist);
 	//		*t_lst1 = (*t_lst1)->next;
 }
-
+*/
 void		lst_addo(t_lsto **toplist, t_lsto *lst1)
 {
 
@@ -255,7 +256,7 @@ t_lsto		*lst_addo_between(t_lsto *toplist, t_lsto *lst1)
  }
  }
  */
-
+/*
 t_lst		*ft_create_lst(void *content)
 {
 	t_lst	*curlst;
@@ -279,7 +280,7 @@ t_lst		*ft_create_lst(void *content)
 	//				printf("fffffff%s\n",((t_rep*)(curlst->content))->path);
 	return (curlst);
 }
-
+*/
 t_lsto		*ft_create_lsto(void *content)
 {
 	t_lsto	*curlst;
