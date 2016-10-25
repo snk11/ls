@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/20 00:06:32 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/20 04:41:25 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/25 09:15:00 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	ft_printname(char *s,t_lsto *lstcmd,t_ind *ind)
 	}
 	else if(ft_checkhyphencase(lstcmd,ind) == 0)
 	{
-		if(ind->indoption == 1 && cnt >= 3)
+		if(ind->indoption > 0 && cnt >= 3)
 		{
 			ft_putstr(s);
 			ft_putstr(":\n");
