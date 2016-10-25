@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/25 15:55:05 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/25 16:58:31 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 # include <pwd.h>
 # include <grp.h>
 # include <time.h>
+# include <sys/time.h>
 #include <errno.h>
 #include <string.h>
 
@@ -244,5 +245,6 @@ void	ft_init2(t_loption *loption);
 void	ft_width(t_lsto *lst1,t_loption *loption);
 void	ft_wl(t_lsto *lst1,t_loption loption);
 void	ft_putwidth(char *s,int p);
+void	ft_putwidth2(char *s,int p);
 
 # endif

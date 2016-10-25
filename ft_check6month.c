@@ -1,43 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putwidth.c                                      :+:      :+:    :+:   */
+/*   ft_check6month.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/25 15:47:43 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/25 16:11:11 by syusof           ###   ########.fr       */
+/*   Created: 2016/10/25 16:21:11 by syusof            #+#    #+#             */
+/*   Updated: 2016/10/25 16:40:57 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "ft_ls.h"
 
-void	ft_putwidth(char *s,int p)
+int		ft_check6month(int y1, int m1,int d1, int y2, int m2,  int d2)
 {
-	int		r;
-	int		len;
-
-	len = ft_strlen(s);
-	r = p - len;
-	while( r > 0)
+	if(y1 < y2)
 	{
-		ft_putstr(" ");
-		r--;
+		if(m1 > 6 && m2 <= 6)
+		{
+			m1 = m1 - 6;
+			m2 = m2 + 6;
+			if(m2 - m1 == 6)
+			{
+			}
+		}
 	}
-		ft_putstr(s);
-}
-
-void	ft_putwidth2(char *s,int p)
-{
-	int		r;
-	int		len;
-
-	len = ft_strlen(s);
-	r = p - len;
-	while( r > 0)
-	{
-		ft_putstr("0");
-		r--;
-	}
-		ft_putstr(s);
+	return(0);
 }

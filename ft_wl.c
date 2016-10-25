@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/25 14:27:40 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/25 16:01:04 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/25 18:22:37 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,10 @@ void	ft_wl(t_lsto *lst1,t_loption loption)
 	char	*linkname;
 	int		l;
 	ssize_t		r;
+	time_t		curtime;
 
 	l = 0;
-	
+	curtime = time(NULL);
 	while (lst1)
 	{
 //		if ( (((t_rep*)(lst1)->content)->name)[0] != '.')
@@ -36,16 +37,25 @@ void	ft_wl(t_lsto *lst1,t_loption loption)
 			ft_putstr("  ");
 			ft_putwidth(ft_lldtoa(sb.st_size),loption.fsize);
 			ft_putstr(" ");
-			ft_putwidth(ft_itoa((localtime(&(sb.st_ctime)))->tm_mon),loption.month);
+			ft_putwidth(ft_itoa((localtime(&(sb.st_mtime)))->tm_mon),loption.month);
 			ft_putstr(" ");
-			ft_putwidth(ft_itoa((localtime(&(sb.st_ctime)))->tm_mday),loption.day);
+			ft_putwidth(ft_itoa((localtime(&(sb.st_mtime)))->tm_mday),loption.day);
 			ft_putstr(" ");
-			ft_putwidth(ft_itoa((localtime(&(sb.st_ctime)))->tm_hour),loption.hour);
-			ft_putstr(" ");
-			ft_putwidth(ft_itoa((localtime(&(sb.st_ctime)))->tm_min),loption.minute);
-			ft_putstr(" ");
-			ft_putwidth(ft_itoa((localtime(&(sb.st_ctime)))->tm_year + 1900),loption.year);
-			ft_putstr(" ");
+//			printf("time = %ld\n",curtime);
+//			printf("time2 = %ld\n",sb.st_ctime);
+//			printf("time3 = %ld\n",curtime-sb.st_ctime);
+			if(curtime - sb.st_mtime > 15778458)
+			{
+				ft_putwidth(ft_itoa((localtime(&(sb.st_mtime)))->tm_year + 1900),loption.year);
+				ft_putstr(" ");
+			}
+			else
+			{
+				ft_putwidth2(ft_itoa((localtime(&(sb.st_mtime)))->tm_hour),loption.hour);
+				ft_putstr(":");
+				ft_putwidth2(ft_itoa((localtime(&(sb.st_mtime)))->tm_min),loption.minute);
+				ft_putstr(" ");
+			}
 //			ft_putulongnbr(sb.st_blocks);
 //			l = l + sb.st_blocks;
 //			ft_putstr(" ");
