@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/25 14:27:40 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/26 08:23:57 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/26 09:22:41 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	ft_wl(t_lsto *lst1,t_loption loption)
 
 	l = 0;
 	curtime = time(NULL);
+	linkname = NULL;
 	while (lst1)
 	{
 //		if ( (((t_rep*)(lst1)->content)->name)[0] != '.')
@@ -99,14 +100,12 @@ void	ft_wl(t_lsto *lst1,t_loption loption)
 //			ft_putulongnbr(sb.st_blocks);
 //			l = l + sb.st_blocks;
 //			ft_putstr(" ");
-			ft_putstr(((t_rep*)((lst1))->content)->name);
-			linkname = malloc(sb.st_size + 1);
-			r = readlink(ft_makepath(((t_rep*)lst1->content)->path,((t_rep*)lst1->content)->name),linkname,sb.st_size + 1);
+			ft_putstr(((t_rep*)lst1->content)->name);
 			if(ft_islnk(ft_makepath(((t_rep*)lst1->content)->path,((t_rep*)lst1->content)->name )))
 			{
 				ft_putstr(" -> ");
-				//readlink("f",linkname,PATH_MAX);
-//				readlink(ft_makepath(((t_rep*)lst1->content)->path,((t_rep*)lst1->content)->name),linkname,);
+//			linkname = (char*)malloc(sb.st_size + 1);
+//			readlink(ft_makepath(((t_rep*)lst1->content)->path,((t_rep*)lst1->content)->name),linkname,sb.st_size + 1);
 				if(linkname)
 					ft_putstr(linkname);
 			}

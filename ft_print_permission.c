@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/14 07:25:15 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/25 12:33:13 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/26 08:55:08 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,9 @@ void	ft_print_permission(char *s)
 		ft_putchar('w');
 	else
 		ft_putchar('-');
-	if(sb.st_mode & S_IXUSR)
+	if((sb.st_mode & S_ISUID) && (sb.st_mode & S_IXUSR))
+		ft_putchar('s');
+	else if(sb.st_mode & S_IXUSR)
 		ft_putchar('x');
 	else if(sb.st_mode & S_ISUID)
 		ft_putchar('S');
