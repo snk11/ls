@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/25 14:27:40 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/26 08:15:45 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/26 08:23:57 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,7 @@ void	ft_wl(t_lsto *lst1,t_loption loption)
 
 }
 
-
+/*
 void	ft_wl2(t_lsto *lstmp,t_loption loption)
 {
 struct stat		sb;
@@ -212,3 +212,4 @@ struct stat		sb;
 			}
 			ft_putstr("\n");
 }
+*/

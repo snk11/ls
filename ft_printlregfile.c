@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/14 12:31:45 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/26 08:22:44 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/26 08:33:07 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	ft_printlregfile(t_lsto *lst1)
 {
 	struct stat		sb;
-	char	*linkname;
 	t_loption	loption;
 	ssize_t		r;
 	t_rep	*e;
