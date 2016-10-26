@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 11:46:17 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/26 09:26:26 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/26 09:40:58 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -251,7 +251,6 @@ void	ft_printlist7(t_lsto *lstmp)
 	t_lsto	*lst2;
 	t_lsto	*lstbegi;
 	unsigned long l;
-	char	*linkname;
 	t_loption	loption;
 	ssize_t		r;
 
@@ -260,7 +259,6 @@ void	ft_printlist7(t_lsto *lstmp)
 	lst2 = NULL;
 	l = 0;
 	lstbegi = lstmp;
-	linkname = NULL;
 	while (lstmp)
 	{
 		if(ft_isdir(ft_makepath(((t_rep*)(lstmp->content))->path,((t_rep*)(lstmp->content))->name)) == 0)
@@ -296,7 +294,6 @@ t_lsto	*ft_printlist8(t_lsto *lstmp)
 	t_lsto	*lstbegi;
 	t_lsto	*lstmp2;
 	unsigned long l;
-	char	*linkname;
 	t_loption	loption;
 	ssize_t		r;
 
@@ -304,7 +301,6 @@ t_lsto	*ft_printlist8(t_lsto *lstmp)
 	lstmp2 = NULL;
 	lst2 = NULL;
 	l = 0;
-	linkname = NULL;
 	lstbegi = lstmp;
 	while (lstmp)
 	{
@@ -486,7 +482,6 @@ void	ft_printlist13(t_lsto *lstmp)
 	t_lsto	*lstbegi;
 	t_lsto	*lstmp2;
 	unsigned long l;
-	char	*linkname;
 	t_loption	loption;
 	ssize_t		r;
 
@@ -494,7 +489,6 @@ void	ft_printlist13(t_lsto *lstmp)
 	lst2 = NULL;
 	lstmp2 = NULL;
 	lstbegi = lstmp;
-	linkname = NULL;
 	l = 0;
 	while (lstmp)
 	{
@@ -531,7 +525,6 @@ void	ft_printlist14(t_lsto *lstmp)
 	t_lsto	*lstbegi;
 	t_lsto	*lstmp2;
 	unsigned long l;
-	char	*linkname;
 	t_loption	loption;
 	ssize_t		r;
 
@@ -539,7 +532,6 @@ void	ft_printlist14(t_lsto *lstmp)
 	lst2 = NULL;
 	lstmp2 = NULL;
 	lstbegi = lstmp;
-	linkname = NULL;
 	l = 0;
 
 	while (lstmp)
@@ -615,7 +607,6 @@ t_lsto	*ft_printlist16(t_lsto *lstmp)
 	t_lsto	*lstbegi;
 	t_lsto	*lstmp2;
 	unsigned long l;
-	char	*linkname;
 	t_loption	loption;
 	ssize_t		r;
 
@@ -623,7 +614,6 @@ t_lsto	*ft_printlist16(t_lsto *lstmp)
 	lst2 = NULL;
 	lstbegi = lstmp;
 	lstmp2 = NULL;
-	linkname = NULL;
 	l = 0;
 	while (lstmp)
 	{
@@ -663,7 +653,6 @@ t_lsto	*ft_printlist17(t_lsto *lstmp)
 	t_lsto	*lstbegi;
 	t_lsto	*lstmp2;
 	unsigned long l;
-	char	*linkname;
 	t_loption	loption;
 	ssize_t		r;
 
@@ -671,7 +660,6 @@ t_lsto	*ft_printlist17(t_lsto *lstmp)
 	lst2 = NULL;
 	lstbegi = lstmp;
 	lstmp2 = NULL;
-	linkname = NULL;
 	l = 0;
 
 	while (lstmp)
@@ -713,7 +701,6 @@ t_lsto	*ft_printlist18(t_lsto *lstmp)
 	t_lsto	*lstbegi;
 	t_lsto	*lstmp2;
 	unsigned long l;
-	char	*linkname;
 	t_loption	loption;
 	ssize_t		r;
 
@@ -721,7 +708,6 @@ t_lsto	*ft_printlist18(t_lsto *lstmp)
 	lst2 = NULL;
 	lstbegi = lstmp;
 	lstmp2 = NULL;
-	linkname = NULL;
 	l = 0;
 
 	while (lstmp)
@@ -809,7 +795,6 @@ void	ft_printlist21(t_lsto *lstmp)
 	t_lsto	*lstbegi;
 	t_lsto	*lstmp2;
 	unsigned long l;
-	char	*linkname;
 	t_loption	loption;
 	ssize_t		r;
 
@@ -817,7 +802,6 @@ void	ft_printlist21(t_lsto *lstmp)
 	lst2 = NULL;
 	lstmp2 = NULL;
 	lstbegi = lstmp;
-	linkname = NULL;
 	l = 0;
 
 	while (lstmp)
@@ -924,7 +908,6 @@ void	ft_printlist24(t_lsto *lstmp)
 	t_lsto	*lstbegi;
 	t_lsto	*lstmp2;
 	unsigned long l;
-	char	*linkname;
 	t_loption	loption;
 	ssize_t		r;
 
@@ -932,7 +915,6 @@ void	ft_printlist24(t_lsto *lstmp)
 	lst2 = NULL;
 	lstmp2 = NULL;
 	lstbegi = lstmp;
-	linkname = NULL;
 	l = 0;
 
 	while (lstmp)
@@ -972,7 +954,6 @@ t_lsto	*ft_printlist25(t_lsto *lstmp)
 	t_lsto	*lstbegi;
 	t_lsto	*lstmp2;
 	unsigned long l;
-	char	*linkname;
 	t_loption	loption;
 	ssize_t		r;
 
@@ -980,7 +961,6 @@ t_lsto	*ft_printlist25(t_lsto *lstmp)
 	lst2 = NULL;
 	lstbegi = lstmp;
 	lstmp2 = NULL;
-	linkname = NULL;
 	l = 0;
 
 	while (lstmp)
@@ -1022,7 +1002,6 @@ t_lsto	*ft_printlist26(t_lsto *lstmp)
 	t_lsto	*lstbegi;
 	t_lsto	*lstmp2;
 	unsigned long l;
-	char	*linkname;
 	t_loption	loption;
 	ssize_t		r;
 
@@ -1030,7 +1009,6 @@ t_lsto	*ft_printlist26(t_lsto *lstmp)
 	lst2 = NULL;
 	lstbegi = lstmp;
 	lstmp2 = NULL;
-	linkname = NULL;
 	l = 0;
 
 	while (lstmp)
@@ -1094,7 +1072,6 @@ t_lsto	*ft_printlist28(t_lsto *lstmp)
 	t_lsto	*lstbegi;
 	t_lsto	*lstmp2;
 	unsigned long l;
-	char	*linkname;
 	t_loption	loption;
 	ssize_t		r;
 
@@ -1102,7 +1079,6 @@ t_lsto	*ft_printlist28(t_lsto *lstmp)
 	lst2 = NULL;
 	lstbegi = lstmp;
 	lstmp2 = NULL;
-	linkname = NULL;
 	l = 0;
 
 	while (lstmp)
@@ -1213,7 +1189,6 @@ t_lsto	*ft_printlist31(t_lsto *lstmp)
 	t_lsto	*lstbegi;
 	t_lsto	*lstmp2;
 	unsigned long l;
-	char	*linkname;
 	t_loption	loption;
 	ssize_t		r;
 
@@ -1221,7 +1196,6 @@ t_lsto	*ft_printlist31(t_lsto *lstmp)
 	lst2 = NULL;
 	lstbegi = lstmp;
 	lstmp2 = NULL;
-	linkname = NULL;
 	l = 0;
 
 	while (lstmp)

@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/25 14:27:40 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/26 09:22:41 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/26 09:36:51 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,10 +104,14 @@ void	ft_wl(t_lsto *lst1,t_loption loption)
 			if(ft_islnk(ft_makepath(((t_rep*)lst1->content)->path,((t_rep*)lst1->content)->name )))
 			{
 				ft_putstr(" -> ");
-//			linkname = (char*)malloc(sb.st_size + 1);
-//			readlink(ft_makepath(((t_rep*)lst1->content)->path,((t_rep*)lst1->content)->name),linkname,sb.st_size + 1);
+			linkname = (char*)malloc(sb.st_size + 1);
+			r = readlink(ft_makepath(((t_rep*)lst1->content)->path,((t_rep*)lst1->content)->name),linkname,sb.st_size);
+
 				if(linkname)
+				{
+					linkname[r] = 0;
 					ft_putstr(linkname);
+				}
 			}
 			ft_putstr("\n");
 		}
