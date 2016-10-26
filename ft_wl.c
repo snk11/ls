@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/25 14:27:40 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/25 20:58:30 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/26 08:15:45 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,11 @@ void	ft_wl(t_lsto *lst1,t_loption loption)
 //			printf("time3 = %ld\n",curtime-sb.st_ctime);
 			if(curtime - sb.st_mtime > 15778458)
 			{
-				if(loption.year > 4)
+				if(loption.year > 5)
 					ft_putstr(ft_itoa((localtime(&(sb.st_mtime)))->tm_year + 1900));
 				else
 				{
-					i = 4 - loption.year;
+					i = 5 - loption.year;
 					while (i > 0)
 					{
 						ft_putstr(" ");
@@ -76,9 +76,9 @@ void	ft_wl(t_lsto *lst1,t_loption loption)
 			}
 			else
 			{
-				if (loption.year > 4)
+				if (loption.year > 5)
 				{
-					i = loption.year - 4;
+					i = loption.year - 5;
 					while(i > 0)
 					{
 						ft_putstr(" ");
@@ -154,11 +154,11 @@ struct stat		sb;
 //			printf("time3 = %ld\n",curtime-sb.st_ctime);
 			if(curtime - sb.st_mtime > 15778458)
 			{
-				if(loption.year > 4)
+				if(loption.year > 5)
 					ft_putstr(ft_itoa((localtime(&(sb.st_mtime)))->tm_year + 1900));
 				else
 				{
-					i = 4 - loption.year;
+					i = 5 - loption.year;
 					while (i > 0)
 					{
 						ft_putstr(" ");
@@ -179,9 +179,9 @@ struct stat		sb;
 			}
 			else
 			{
-				if (loption.year > 4)
+				if (loption.year > 5)
 				{
-					i = loption.year - 4;
+					i = loption.year - 5;
 					while(i > 0)
 					{
 						ft_putstr(" ");

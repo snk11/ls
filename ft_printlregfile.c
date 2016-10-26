@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/14 12:31:45 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/25 20:46:09 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/26 08:22:44 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ void	ft_printlregfile(t_lsto *lst1)
 			((t_rep*)(lstmp->content))->path = ft_memmove2(".");
 		}
 
-//	ft_width(lstmp,&loption);
-//	ft_wl(lstmp,loption);
-	ft_wl2(lstmp,loption);
+	ft_width(lstmp,&loption);
+	ft_wl(lstmp,loption);
+//	ft_wl2(lstmp,loption);
 
 
 		/*
