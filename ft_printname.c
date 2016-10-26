@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/20 00:06:32 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/25 09:15:00 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/26 09:56:48 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,30 +61,30 @@ void	ft_printname(char *s,t_lsto *lstcmd,t_ind *ind)
 	}
 	else if(ft_checkhyphencase(lstcmd,ind) == 0)
 	{
-		if(ind->indoption > 0 && cnt >= 3)
-		{
-			ft_putstr(s);
-			ft_putstr(":\n");
-		}
-		else if((ind->index1 == 1 && ind->indoption == 0) || ind->indexyet == 1)
-		{
-			ft_putstr(s);
-			ft_putstr(":\n");
-			ind->indexyet = 1;
-		}
-		else if(((ind->index1 == 2 && ft_checkhyphencase(lstcmd,ind) == 0) || ind->indexyet == 1) && ft_strcmp(s,"--") == 1)
+//		if(ind->indoption > 0 && cnt >= 3)
+//		{
+//			ft_putstr(s);
+//			ft_putstr(":\n");
+//		}
+		if((ind->index1 == 1 && ind->indoption == 0) || ind->indexyet == 1)
 		{
 			ft_putstr(s);
 			ft_putstr(":\n");
 			ind->indexyet = 1;
 		}
-		else if(((ind->index1 == 2 && ft_checkhyphencase(lstcmd,ind) == 0) || ind->indexyet4 == 1))
+		else if(((ind->index1 == (2 + ind->indoption) && ft_checkhyphencase(lstcmd,ind) == 0) || ind->indexyet == 1) && ft_strcmp(s,"--") == 1)
+		{
+			ft_putstr(s);
+			ft_putstr(":\n");
+			ind->indexyet = 1;
+		}
+		else if(((ind->index1 == (2 + ind->indoption) && ft_checkhyphencase(lstcmd,ind) == 0) || ind->indexyet4 == 1))
 		{
 			ft_putstr(s);
 			ft_putstr(":\n");
 			ind->indexyet4 = 1;
 		}
-		else if(ind->index1 >= 2)
+		else if(ind->index1 >= (2 + ind->indoption) )
 		{
 			ft_putstr(s);
 			ft_putstr(":\n");
