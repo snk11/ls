@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 11:46:17 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/26 08:32:43 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/26 08:38:22 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -260,6 +260,7 @@ void	ft_printlist7(t_lsto *lstmp)
 	lst2 = NULL;
 	l = 0;
 	lstbegi = lstmp;
+	linkname = NULL;
 	while (lstmp)
 	{
 		if(ft_isdir(ft_makepath(((t_rep*)(lstmp->content))->path,((t_rep*)(lstmp->content))->name)) == 0)
@@ -283,7 +284,6 @@ void	ft_printlist7(t_lsto *lstmp)
 	ft_putstr("\n");
 	ft_init2(&loption);
 	ft_width(lst1,&loption);
-//	printf("gname = %d\n",loption.gname);
 	ft_wl(lst1,loption);
 }
 
@@ -294,9 +294,17 @@ t_lsto	*ft_printlist8(t_lsto *lstmp)
 	t_lsto	*lst2;
 	t_lsto	*lstbegio;
 	t_lsto	*lstbegi;
+	t_lsto	*lstmp2;
+	unsigned long l;
+	char	*linkname;
+	t_loption	loption;
+	ssize_t		r;
 
 	lst1 = NULL;
+	lstmp2 = NULL;
 	lst2 = NULL;
+	l = 0;
+	linkname = NULL;
 	lstbegi = lstmp;
 	while (lstmp)
 	{
@@ -310,36 +318,21 @@ t_lsto	*ft_printlist8(t_lsto *lstmp)
 	lstbegio = lst2;
 	lst1 = lst_addo_down(lst1,lst2);
 	lst1 = ft_lst_sort(lst1, croissant);
-	while (lst1)
+
+	lstmp2 = lst1;
+	while (lstmp2)
 	{
-		if ( (((t_rep*)(lst1)->content)->name)[0] != '.')
-		{
-			stat(ft_makepath(((t_rep*)(lst1->content))->path,((t_rep*)(lst1->content))->name), &sb);
-			ft_print_permission(ft_makepath(((t_rep*)(lst1->content))->path,((t_rep*)(lst1->content))->name));
-			ft_putstr("  ");
-			ft_putstr(ft_ustoa(sb.st_nlink));
-			ft_putstr(" ");
-			ft_putstr(getpwuid(sb.st_uid)->pw_name);
-			ft_putstr("  ");
-			ft_putstr(getgrgid(sb.st_gid)->gr_name);
-			ft_putstr("  ");
-			ft_putstr(ft_lldtoa(sb.st_size));
-			ft_putstr(" ");
-			ft_putstr(ft_itoa((localtime(&(sb.st_ctime)))->tm_mon));
-			ft_putstr(" ");
-			ft_putstr(ft_itoa((localtime(&(sb.st_ctime)))->tm_mday));
-			ft_putstr(" ");
-			ft_putstr(ft_itoa((localtime(&(sb.st_ctime)))->tm_hour));
-			ft_putstr(" ");
-			ft_putstr(ft_itoa((localtime(&(sb.st_ctime)))->tm_min));
-			ft_putstr(" ");
-			ft_putstr(ft_itoa((localtime(&(sb.st_ctime)))->tm_year));
-			ft_putstr(" ");
-			ft_putstr(((t_rep*)((lst1))->content)->name);
-			ft_putstr("\n");
-		}
-		lst1 = lst1->next;
+			lstat(ft_makepath(((t_rep*)(lstmp2->content))->path,((t_rep*)(lstmp2->content))->name), &sb);
+			l = l + sb.st_blocks;
+			lstmp2 = lstmp2->next;
 	}
+	ft_putstr("total ");
+	ft_putulongnbr(l);
+	ft_putstr("\n");
+	ft_init2(&loption);
+	ft_width(lst1,&loption);
+	ft_wl(lst1,loption);
+
 	return (lstbegio);
 }
 
