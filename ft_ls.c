@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/25 19:41:11 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/30 23:23:07 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,12 +128,9 @@ int main(int ac,char **av)
 			ft_p1(lsta, ind,lstcmd);
 			}
 		}
-		/*
-		else if (lst1 == NULL && ((ft_strcmp((char*)lstcmd->content,"--") == 0 || ft_strcmp((char*)lstcmd->content,"-1") == 0) || ft_strcmp((char*)lstcmd->content,"--") == 0 || ft_strcmp((char*)lstcmd->content,"-1") == 0) )
-		{
-
-		}
-		*/
 	}
+//		while(42)
+//		{
+//		}
 	return (0);
 }
