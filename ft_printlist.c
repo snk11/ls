@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 11:46:17 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/31 22:24:37 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/31 22:58:49 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	ft_printlist(t_lsto *lstmp)
 		s1 = ft_makepath(s2,s3);
 		if(ft_isdir(s1) == 0)
 		{
-//			lst_addo(&lst1, lstmp);
+			lst_addo(&lst1, lstmp);
 			free(s2);
 			s2 = NULL;
 			free(s3);
