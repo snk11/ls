@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 11:00:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/31 17:05:38 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/31 18:02:05 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,12 @@ t_lsto *ft_getreplist(char *rep)
 			((t_rep*)(lstmp->content))->name = ft_memmove2(pdirent1->d_name);
 			((t_rep*)(lstmp->content))->path = ft_memmove2(rep);
 			lst_addo(&lsta, lstmp);
+			ft_freelst(&lstmp);
+		}
+		if(e)
+		{
+			free(e);
+			e = NULL;
 		}
 	}
 //	push_swap(&lsta);

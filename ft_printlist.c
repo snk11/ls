@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 11:46:17 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/31 13:25:21 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/31 20:21:30 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,23 +17,75 @@ void	ft_printlist(t_lsto *lstmp)
 	t_lsto	*lst1;
 	t_lsto	*lst2;
 	t_lsto	*lstbegi;
+	t_lsto	*lstmp2;
 	char	*s1;
+	char	*s2;
+	char	*s3;
+
 
 	s1 = NULL;
+	s2 = NULL;
+	s3 = NULL;
 	lst1 = NULL;
 	lst2 = NULL;
+	lstmp2 = NULL;
 	lstbegi = lstmp;
 	while (lstmp)
 	{
-		s1 = ft_makepath(((t_rep*)(lstmp->content))->path,((t_rep*)(lstmp->content))->name);
+		s2 = ((t_rep*)(lstmp->content))->path;
+		s3 = ((t_rep*)(lstmp->content))->name;
+		s1 = ft_makepath(s2,s3);
 		if(ft_isdir(s1) == 0)
-			lst_addo(&lst1, lstmp);
+		{
+//			lst_addo(&lst1, lstmp);
+			free(s2);
+			s2 = NULL;
+			free(s3);
+			s3 = NULL;
+			if((lstmp)->content)
+			{
+				free((lstmp)->content);
+				(lstmp)->content = NULL;
+			}
+		}
 		else if(ft_isdir(s1) == 1)
-			lst_addo(&lst2, lstmp);
+		{
+//			lst_addo(&lst2, lstmp);
+			free(s2);
+			s2 = NULL;
+			free(s3);
+			s3 = NULL;
+			if((lstmp)->content)
+			{
+				free((lstmp)->content);
+				(lstmp)->content = NULL;
+			}
+		}
+//		ft_putstr(s1);
+//		ft_putstr("\n");
 		free(s1);
 		s1 = NULL;
+//		ft_freelst2(&lstmp);
 		lstmp = lstmp->next;
 	}
+	lstmp = lstbegi;
+	while(lstmp && lstmp->next)
+	{
+		lstmp2 = lstmp;
+		lstmp = lstmp->next;
+//		free(lstmp2->content);
+//		lstmp2->content = NULL;
+		free(lstmp2);
+		lstmp2 = NULL;
+	}
+	if(lstmp)
+	{
+//		free(lstmp->content);
+//		lstmp->content = NULL;
+		free(lstmp);
+		lstmp = NULL;
+	}
+	/*
 	lst2 = ft_lst_sort(lst2,croissant);
 	lst1 = lst_addo_down(lst1,lst2);
 	lst1 = ft_lst_sort(lst1,croissant);
@@ -46,6 +98,7 @@ void	ft_printlist(t_lsto *lstmp)
 		}
 		lst1 = lst1->next;
 	}
+	*/
 }
 
 void	ft_printlist4(t_lsto *lstmp)
