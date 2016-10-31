@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 15:43:19 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/25 11:42:35 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/31 23:53:18 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,15 @@ void		lst_addo(t_lsto **toplist, t_lsto *lst1)
 {
 
 	t_lsto		*lstmp;
+	char		*s1;
+	char		*s2;
 
+	s1 = NULL;
+	s2 = NULL;
 	lstmp = NULL;
-	lstmp = ft_create_lsto((lst1)->content);
-	((t_rep*)(lstmp->content))->name = ft_memmove2(((t_rep*)(lst1->content))->name);
-	((t_rep*)(lstmp->content))->path = ft_memmove2(((t_rep*)(lst1->content))->path);
+	s1= ((t_rep*)(lst1->content))->name;
+	s2= ((t_rep*)(lst1->content))->path;
+	lstmp = ft_create_lsto((lst1)->content,s1,s2);
 	if (*toplist == NULL)
 	{
 		*toplist = lstmp;
@@ -80,6 +84,11 @@ t_lsto		*lst_addo_down(t_lsto *toplist, t_lsto *lst1)
 	t_lsto		*lstmp2;
 	t_lsto		*lstbegi;
 	t_lsto		*lsttopbegi;
+	char		*s1;
+	char		*s2;
+
+	s1 = NULL;
+	s2 = NULL;
 
 	lstmp = NULL;
 	lstmp2 = NULL;
@@ -87,9 +96,9 @@ t_lsto		*lst_addo_down(t_lsto *toplist, t_lsto *lst1)
 	lsttopbegi = toplist;
 	while (lst1 && toplist)
 	{
-		lstmp = ft_create_lsto((lst1)->content);
-		((t_rep*)(lstmp->content))->name = ft_memmove2(((t_rep*)(lst1->content))->name);
-		((t_rep*)(lstmp->content))->path = ft_memmove2(((t_rep*)(lst1->content))->path);
+		s1= ((t_rep*)(lst1->content))->name;
+		s2= ((t_rep*)(lst1->content))->path;
+		lstmp = ft_create_lsto((lst1)->content,s1,s2);
 		//		if (ind1 == 0)
 		//		{
 		//			lstmpbegi = lstmp;
@@ -113,16 +122,16 @@ t_lsto		*lst_addo_down(t_lsto *toplist, t_lsto *lst1)
 	}
 	if (lst1 && toplist == NULL)
 	{
-		lstmp = ft_create_lsto((lst1)->content);
-		((t_rep*)(lstmp->content))->name = ft_memmove2(((t_rep*)(lst1->content))->name);
-		((t_rep*)(lstmp->content))->path = ft_memmove2(((t_rep*)(lst1->content))->path);
+		s1= ((t_rep*)(lst1->content))->name;
+		s2= ((t_rep*)(lst1->content))->path;
+		lstmp = ft_create_lsto((lst1)->content,s1,s2);
 		lsttopbegi = lstmp;
 		lst1 = lst1->next;
 		while(lst1)
 		{
-			lstmp = ft_create_lsto((lst1)->content);
-			((t_rep*)(lstmp->content))->name = ft_memmove2(((t_rep*)(lst1->content))->name);
-			((t_rep*)(lstmp->content))->path = ft_memmove2(((t_rep*)(lst1->content))->path);
+			s1= ((t_rep*)(lst1->content))->name;
+			s2= ((t_rep*)(lst1->content))->path;
+			lstmp = ft_create_lsto((lst1)->content,s1,s2);
 			//		if (ind1 == 0)
 			//		{
 			//			lstmpbegi = lstmp;
@@ -199,6 +208,11 @@ t_lsto		*lst_addo_between(t_lsto *toplist, t_lsto *lst1)
 	t_lsto		*lstmp2;
 	t_lsto		*lstbegi;
 	t_lsto		*lsttopbegi;
+	char		*s1;
+	char		*s2;
+
+	s1 = NULL;
+	s2 = NULL;
 
 	lstmp = NULL;
 	lstmp2 = NULL;
@@ -207,9 +221,9 @@ t_lsto		*lst_addo_between(t_lsto *toplist, t_lsto *lst1)
 	lstmp2 = lsttopbegi;
 	while (lst1 && toplist)
 	{
-		lstmp = ft_create_lsto((lst1)->content);
-		((t_rep*)(lstmp->content))->name = ft_memmove2(((t_rep*)(lst1->content))->name);
-		((t_rep*)(lstmp->content))->path = ft_memmove2(((t_rep*)(lst1->content))->path);
+		s1= ((t_rep*)(lst1->content))->name;
+		s2= ((t_rep*)(lst1->content))->path;
+		lstmp = ft_create_lsto((lst1)->content,s1,s2);
 		lstmp->next = lstmp2->next;
 		lstmp2->next = lstmp;
 		lstmp2 = lstmp2->next;
@@ -217,16 +231,16 @@ t_lsto		*lst_addo_between(t_lsto *toplist, t_lsto *lst1)
 	}
 	if (lst1 && toplist == NULL)
 	{
-		lstmp = ft_create_lsto((lst1)->content);
-		((t_rep*)(lstmp->content))->name = ft_memmove2(((t_rep*)(lst1->content))->name);
-		((t_rep*)(lstmp->content))->path = ft_memmove2(((t_rep*)(lst1->content))->path);
+		s1= ((t_rep*)(lst1->content))->name;
+		s2= ((t_rep*)(lst1->content))->path;
+		lstmp = ft_create_lsto((lst1)->content,s1,s2);
 		lsttopbegi = lstmp;
 		lst1 = lst1->next;
 		while(lst1)
 		{
-			lstmp = ft_create_lsto((lst1)->content);
-			((t_rep*)(lstmp->content))->name = ft_memmove2(((t_rep*)(lst1->content))->name);
-			((t_rep*)(lstmp->content))->path = ft_memmove2(((t_rep*)(lst1->content))->path);
+			s1= ((t_rep*)(lst1->content))->name;
+			s2= ((t_rep*)(lst1->content))->path;
+			lstmp = ft_create_lsto((lst1)->content,s1,s2);
 			{
 				lstmp2 = lsttopbegi;
 				while (lstmp2->next)
@@ -281,7 +295,7 @@ t_lst		*ft_create_lst(void *content)
 	return (curlst);
 }
 */
-t_lsto		*ft_create_lsto(void *content)
+t_lsto		*ft_create_lsto(void *content, char *s1, char *s2)
 {
 	t_lsto	*curlst;
 
@@ -296,7 +310,8 @@ t_lsto		*ft_create_lsto(void *content)
 	{
 		if (!(curlst->content = malloc(sizeof(content))))
 			return (NULL);
-		curlst->content = ft_memmove(curlst->content, content, sizeof(content));
+		((t_rep*)(curlst->content))->name = ft_memmove2(s1);
+		((t_rep*)(curlst->content))->path = ft_memmove2(s2);
 	}
 	curlst->next = NULL;
 	return (curlst);

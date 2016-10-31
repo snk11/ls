@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 11:00:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/17 16:35:09 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/31 23:54:25 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,11 @@ t_lsto *ft_getreplist(char *rep)
 	t_lsto			*lsta;
 	t_lsto			*lstb;
 	int i;
+	char			*s1;
+	char			*s2;
 
+	s1 = NULL;
+	s2 = NULL;
 	lsta = NULL;
 	lstb = NULL;
 	lstmp = NULL;
@@ -48,9 +52,9 @@ t_lsto *ft_getreplist(char *rep)
 
 		if (pdirent1->d_name[0] != '.')
 		{
-			lstmp = ft_create_lsto(e);
-			((t_rep*)(lstmp->content))->name = ft_memmove2(pdirent1->d_name);
-			((t_rep*)(lstmp->content))->path = ft_memmove2(rep);
+			s1 = pdirent1->d_name;
+			s2 = rep;
+			lstmp = ft_create_lsto(e,s1,s2);
 			lst_addo(&lsta, lstmp);
 		}
 	}
@@ -74,7 +78,11 @@ t_lsto *ft_getreplist4(char *rep)
 	t_lsto			*lsta;
 	t_lsto			*lstb;
 	int i;
+	char			*s1;
+	char			*s2;
 
+	s1 = NULL;
+	s2 = NULL;
 	lsta = NULL;
 	lstb = NULL;
 	lstmp = NULL;
@@ -96,9 +104,9 @@ t_lsto *ft_getreplist4(char *rep)
 
 //		if (pdirent1->d_name[0] != '.')
 		{
-			lstmp = ft_create_lsto(e);
-			((t_rep*)(lstmp->content))->name = ft_memmove2(pdirent1->d_name);
-			((t_rep*)(lstmp->content))->path = ft_memmove2(rep);
+			s1 = pdirent1->d_name;
+			s2 = rep;
+			lstmp = ft_create_lsto(e,s1,s2);
 			lst_addo(&lsta, lstmp);
 		}
 	}

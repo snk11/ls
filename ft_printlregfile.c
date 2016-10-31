@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/14 12:31:45 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/26 08:33:07 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/31 23:56:57 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,11 @@ void	ft_printlregfile(t_lsto *lst1)
 	ssize_t		r;
 	t_rep	*e;
 	t_lsto	*lstmp;
+	char			*s1;
+	char			*s2;
+
+	s1 = NULL;
+	s2 = NULL;
 
 	lstmp = NULL;
 	//			lstat(ft_makepath("./",(char*)(lstmp1->content)), &sb);
@@ -29,7 +34,9 @@ void	ft_printlregfile(t_lsto *lst1)
 //		e->path = rep;
 
 		{
-			lstmp = ft_create_lsto(e);
+			s1 = ((char*)lst1->content);
+			s2 = ".";
+			lstmp = ft_create_lsto(e,s1,s2);
 			((t_rep*)(lstmp->content))->name = ft_memmove2((char*)lst1->content);
 			((t_rep*)(lstmp->content))->path = ft_memmove2(".");
 		}
