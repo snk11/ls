@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 15:43:19 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/25 11:42:35 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/31 17:08:13 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void		lst_addo(t_lsto **toplist, t_lsto *lst1)
 	t_lsto		*lstmp;
 
 	lstmp = NULL;
-	lstmp = ft_create_lsto((lst1)->content);
+	ft_create_lsto(&lstmp,(lst1)->content);
 	((t_rep*)(lstmp->content))->name = ft_memmove2(((t_rep*)(lst1->content))->name);
 	((t_rep*)(lstmp->content))->path = ft_memmove2(((t_rep*)(lst1->content))->path);
 	if (*toplist == NULL)
@@ -87,7 +87,7 @@ t_lsto		*lst_addo_down(t_lsto *toplist, t_lsto *lst1)
 	lsttopbegi = toplist;
 	while (lst1 && toplist)
 	{
-		lstmp = ft_create_lsto((lst1)->content);
+		ft_create_lsto(&lstmp,(lst1)->content);
 		((t_rep*)(lstmp->content))->name = ft_memmove2(((t_rep*)(lst1->content))->name);
 		((t_rep*)(lstmp->content))->path = ft_memmove2(((t_rep*)(lst1->content))->path);
 		//		if (ind1 == 0)
@@ -113,14 +113,14 @@ t_lsto		*lst_addo_down(t_lsto *toplist, t_lsto *lst1)
 	}
 	if (lst1 && toplist == NULL)
 	{
-		lstmp = ft_create_lsto((lst1)->content);
+		ft_create_lsto(&lstmp,(lst1)->content);
 		((t_rep*)(lstmp->content))->name = ft_memmove2(((t_rep*)(lst1->content))->name);
 		((t_rep*)(lstmp->content))->path = ft_memmove2(((t_rep*)(lst1->content))->path);
 		lsttopbegi = lstmp;
 		lst1 = lst1->next;
 		while(lst1)
 		{
-			lstmp = ft_create_lsto((lst1)->content);
+			ft_create_lsto(&lstmp,(lst1)->content);
 			((t_rep*)(lstmp->content))->name = ft_memmove2(((t_rep*)(lst1->content))->name);
 			((t_rep*)(lstmp->content))->path = ft_memmove2(((t_rep*)(lst1->content))->path);
 			//		if (ind1 == 0)
@@ -207,7 +207,7 @@ t_lsto		*lst_addo_between(t_lsto *toplist, t_lsto *lst1)
 	lstmp2 = lsttopbegi;
 	while (lst1 && toplist)
 	{
-		lstmp = ft_create_lsto((lst1)->content);
+		ft_create_lsto(&lstmp,(lst1)->content);
 		((t_rep*)(lstmp->content))->name = ft_memmove2(((t_rep*)(lst1->content))->name);
 		((t_rep*)(lstmp->content))->path = ft_memmove2(((t_rep*)(lst1->content))->path);
 		lstmp->next = lstmp2->next;
@@ -217,14 +217,14 @@ t_lsto		*lst_addo_between(t_lsto *toplist, t_lsto *lst1)
 	}
 	if (lst1 && toplist == NULL)
 	{
-		lstmp = ft_create_lsto((lst1)->content);
+		ft_create_lsto(&lstmp,(lst1)->content);
 		((t_rep*)(lstmp->content))->name = ft_memmove2(((t_rep*)(lst1->content))->name);
 		((t_rep*)(lstmp->content))->path = ft_memmove2(((t_rep*)(lst1->content))->path);
 		lsttopbegi = lstmp;
 		lst1 = lst1->next;
 		while(lst1)
 		{
-			lstmp = ft_create_lsto((lst1)->content);
+			ft_create_lsto(&lstmp,(lst1)->content);
 			((t_rep*)(lstmp->content))->name = ft_memmove2(((t_rep*)(lst1->content))->name);
 			((t_rep*)(lstmp->content))->path = ft_memmove2(((t_rep*)(lst1->content))->path);
 			{
@@ -281,25 +281,21 @@ t_lst		*ft_create_lst(void *content)
 	return (curlst);
 }
 */
-t_lsto		*ft_create_lsto(void *content)
+void		ft_create_lsto(t_lsto **curlst,void *content)
 {
-	t_lsto	*curlst;
 
-	curlst = NULL;
-	if (!(curlst = (t_lsto*)malloc(sizeof(t_lsto))))
-		return (NULL);
+	*curlst = NULL;
+	*curlst = (t_lsto*)malloc(sizeof(t_lsto));
 	if (content == NULL)
 	{
-		curlst->content = NULL;
+		(*curlst)->content = NULL;
 	}
 	else
 	{
-		if (!(curlst->content = malloc(sizeof(content))))
-			return (NULL);
-		curlst->content = ft_memmove(curlst->content, content, sizeof(content));
+		(*curlst)->content = malloc(sizeof(content));
+		(*curlst)->content = ft_memmove((*curlst)->content, content, sizeof(content));
 	}
-	curlst->next = NULL;
-	return (curlst);
+	(*curlst)->next = NULL;
 }
 
 t_lsto		*ft_create_lsto_char(char *content)
