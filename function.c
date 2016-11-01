@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 15:43:19 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/25 11:42:35 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/01 01:56:59 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -296,7 +296,7 @@ t_lsto		*ft_create_lsto(void *content)
 	{
 		if (!(curlst->content = malloc(sizeof(content))))
 			return (NULL);
-		curlst->content = ft_memmove(curlst->content, content, sizeof(content));
+//		curlst->content = ft_memmove(curlst->content, content, sizeof(content));
 	}
 	curlst->next = NULL;
 	return (curlst);
