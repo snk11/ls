@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/24 00:45:57 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/23 21:53:24 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/01 02:10:30 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 
 char	*ft_makepath(char *str1,char *str2)
 {
-	char*str;
+	char	*str;
+	char	*str3;
 	int len;
 	int	i;
 
+	str3 = NULL;
 	len = ft_strlen(str1);
 	str = ft_strnew(len + 1 + 1);
 	i = 0;
@@ -29,6 +31,8 @@ char	*ft_makepath(char *str1,char *str2)
 	str[i] = '/';
 	i++;
 	str[i] = 0;
-	str = ft_strjoin(str,str2);
-	return (str);
+	str3 = ft_strjoin(str,str2);
+	free(str);
+	str = NULL;
+	return (str3);
 }

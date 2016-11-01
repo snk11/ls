@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 11:46:17 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/30 23:15:56 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/01 02:56:13 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ void	ft_printlist(t_lsto *lstmp)
 		}
 		lst1 = lst1->next;
 	}
+
 }
 
 void	ft_printlist4(t_lsto *lstmp)
