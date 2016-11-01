@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/27 17:13:01 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/25 19:38:56 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/01 17:54:51 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,33 +27,39 @@ void	ft_p1(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 	s1 = NULL;
 
 	lst1 = lst1begi;
-//	while(lst1)
-//	{
-//		if (((char*)(lst1->content))[0] != '-' || ft_strcmp((char*)lst1->content,"-") == 0)
-//			ind->indtotal++;
-//		lst1 = lst1->next;
-//	}
+	//	while(lst1)
+	//	{
+	//		if (((char*)(lst1->content))[0] != '-' || ft_strcmp((char*)lst1->content,"-") == 0)
+	//			ind->indtotal++;
+	//		lst1 = lst1->next;
+	//	}
 	lst1 = lst1begi;
 	ind->indposition = 0;
 	ind->indexyet = 0;
 	ind->indexyet2 = 0;
 	ind->indexyet3 = 0;
 	ind->indexyet4 = 0;
+	struct stat		sb;
+
 	while(lst1)
 	{
+//		lstat(ft_makepath(((t_rep*)(lst1->content))->path,((t_rep*)(lst1->content))->name), &sb);
 		ind->index1 = ft_getindex(lst1,lstcmd);
 		ind->indposition++;
 		inderror = 0;
+//		if (ft_strcmp(getpwuid(sb.st_uid)->pw_name,"wheel") != 0 && ft_strcmp(getpwuid(sb.st_uid)->pw_name,"admin") != 0)
+//		{
+//		}
 		if (!opendir((char*)(lst1->content)))
 		{
-			//					ft_putstr_fd("ls: ", 2);
-			//perror(strerror(ENOENT));
-			//					perror(av[i]);
-			inderror = 1;
+				//					ft_putstr_fd("ls: ", 2);
+				//perror(strerror(ENOENT));
+				//					perror(av[i]);
+				inderror = 1;
 		}
 		if (inderror == 0 && ft_checkhyphen(lst1,lstcmd,ind) == 0)
 		{
-		//		printf("char = %s,index1 = %d\n",(char*)lst1->content,ind->index1);
+			//		printf("char = %s,index1 = %d\n",(char*)lst1->content,ind->index1);
 			if (ind->indillegal != 0)
 			{
 			}
@@ -186,8 +192,8 @@ void	ft_p1(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 			{
 				ft_print_n((char*)lst1->content,lstcmd,ind);
 				lst = ft_getreplist((char*)(lst1->content));
-	//	printf("char = %s,option = %d,yet = %d,hyphen = %d\n",(char*)lst1->content,ind->indoption,ind->indexyet4,ft_checkhyphencase(lstcmd,ind));
-					ft_printname((char*)lst1->content,lstcmd,ind);
+				//	printf("char = %s,option = %d,yet = %d,hyphen = %d\n",(char*)lst1->content,ind->indoption,ind->indexyet4,ft_checkhyphencase(lstcmd,ind));
+				ft_printname((char*)lst1->content,lstcmd,ind);
 				lstj = ft_printlist2(lst);
 			}
 		}

@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/14 12:31:45 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/01 01:49:10 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/01 19:14:27 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,11 @@ void	ft_printlregfile(t_lsto *lst1)
 			((t_rep*)(lstmp->content))->name = (char*)lst1->content;
 			((t_rep*)(lstmp->content))->path = ".";
 		}
+//	lst = ft_getreplist(s);
+//		ft_printlist7(lstmp);
 
-	ft_width(lstmp,&loption);
-	ft_wl(lstmp,loption);
+	ft_width2(lstmp,&loption);
+	ft_wl2(lstmp,loption);
 //	ft_wl2(lstmp,loption);
 
 

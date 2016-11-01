@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/18 15:14:46 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/25 20:19:02 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/01 19:23:46 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,16 @@ void	ft_p0regfile(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 {
 	int	inderror;
 	char	*s1;
+	//	struct stat		sb;
+
 
 	ind->indexyet = 0;
 
 	s1 = NULL;
 	while(lst1)
 	{
+		//		lstat(((t_rep*)(lst1->content))->name, &sb);
+		//		if(sb.st_mode & S_IRUSR)
 		s1 = ft_memmove2((char*)(lst1->content));
 		inderror = 0;
 		{

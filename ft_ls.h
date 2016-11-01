@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/01 02:50:06 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/01 21:04:13 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -250,5 +250,10 @@ void	ft_putwidth2(char *s,int p);
 void		ft_putmonth(int d);
 void		ft_freelst(t_lsto **lstmp);
 void		ft_freelst2(t_lsto **lstmp);
+void	ft_wl2(t_lsto *lst1,t_loption loption);
+void	ft_width2(t_lsto *lst1,t_loption *loption);
+int		ft_checkpermission(char *s);
+int		ft_checkslash(char *s);
+int		ft_checkokfile(char *s);
 
 # endif
