@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/18 15:31:27 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/02 13:38:09 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/02 13:42:24 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	ft_p0error(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 							inderror = 1;
 						}
 					}
-					//printf("islnk = %d ,isreg = %d,inderror = %d,lst1 = %s\n",ft_islnk(ft_makepath("./",(char*)lst1->content)),ft_isreg(ft_makepath("./",(char*)lst1->content)),inderror,(char*)lst1->content);
+//					printf("islnk = %d ,isreg = %d,inderror = %d,lst1 = %s\n",ft_islnk(ft_makepath("./",(char*)lst1->content)),ft_isreg(ft_makepath("./",(char*)lst1->content)),inderror,(char*)lst1->content);
 					//if(ft_scan_option2((char*)lst1->content) && inderror == 1 && !ft_isreg((char*)lst1->content) && !ft_islnk((char*)lst1->content))
 			
 //					if(ind1 == 1 && ft_strcmp(uid->pw_name,"syusof") != 0)
