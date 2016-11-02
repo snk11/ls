@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/18 15:31:27 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/02 13:42:24 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/02 13:49:10 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,15 @@ void	ft_p0error(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 		while(lst1 && ind->indfts == 0)
 		{	
 //			if(ft_checkslash((char*)(lst1->content)) == 1)
-			if(ft_checkokfile((char*)lst1->content))
-			{
-				if(lstat((char*)(lst1->content), &sb) == 0)
-				{
-					if((uid = getpwuid(sb.st_uid)) != NULL)
-						ind1 = 1;
-				}
-			}
-//			else
-//				lstat(ft_makepath(((t_rep*)(lst1->content))->path,((t_rep*)(lst1->content))->name), &sb);
+//			if(ft_checkokfile((char*)lst1->content))
+//			{
+//				if(lstat((char*)(lst1->content), &sb) == 0)
+//				{
+//					if((uid = getpwuid(sb.st_uid)) != NULL)
+//						ind1 = 1;
+//				}
+//			}
+//
 //			if(ft_strcmp(getpwuid(sb.st_uid)->pw_name,"root") != 0)
 			{
 				if(ft_strcmp(((char*)lst1->content),"") == 0)
