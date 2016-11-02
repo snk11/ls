@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 05:08:20 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/25 18:53:07 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/02 11:12:26 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,12 @@ int		ft_isreg(char *s)
 {
 	struct stat		sb;
 
-	lstat(s, &sb);
-	if(S_ISREG(sb.st_mode))
-		return (1);
+	if(lstat(s, &sb) == 0)
+	{
+		if(S_ISREG(sb.st_mode))
+			return (1);
+	}
+	else
+		return (-1);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/25 14:27:40 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/02 09:36:12 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/02 13:17:28 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,26 +20,36 @@ void	ft_wl(t_lsto *lst1,t_loption loption)
 	ssize_t		r;
 	time_t		curtime;
 	int	i;
+	struct passwd	*uid;
+	struct group	*gid;
 
 	l = 0;
 	curtime = time(NULL);
 	linkname = NULL;
 	while (lst1)
 	{
-		//		if ( (((t_rep*)(lst1)->content)->name)[0] != '.')
+//		if(ft_checkokfile(((t_rep*)(lst1->content))->name))
+//			ft_wl2(lst1,loption);
+//		else
 		{
-			//			if(ft_checkpermission(((t_rep*)lst1->content)->name))
-			//				printf("lll\n");
 			if (lstat(ft_makepath(((t_rep*)(lst1->content))->path,((t_rep*)(lst1->content))->name), &sb) == 0)
 			{
+				uid = getpwuid(sb.st_uid);
+				gid = getgrgid(sb.st_gid);
 				ft_print_permission(ft_makepath(((t_rep*)(lst1->content))->path,((t_rep*)(lst1->content))->name));
 				ft_putstr("  ");
 				ft_putwidth(ft_ustoa(sb.st_nlink),loption.link);
 				ft_putstr(" ");
-				ft_putwidth(getpwuid(sb.st_uid)->pw_name,loption.uname);
+				if((uid = getpwuid(sb.st_uid)) != NULL)
+				{
+				ft_putwidth(uid->pw_name,loption.uname);
 				ft_putstr("  ");
-				ft_putwidth(getgrgid(sb.st_gid)->gr_name,loption.gname);
+				}
+				if((gid = getgrgid(sb.st_gid)) != NULL)
+				{
+				ft_putwidth(gid->gr_name,loption.gname);
 				ft_putstr("  ");
+				}
 				ft_putwidth(ft_lldtoa(sb.st_size),loption.fsize);
 				ft_putstr(" ");
 				ft_putmonth((localtime(&(sb.st_mtime)))->tm_mon);
@@ -124,7 +134,6 @@ void	ft_wl(t_lsto *lst1,t_loption loption)
 		}
 		lst1 = lst1->next;
 	}
-
 }
 
 void	ft_wl2(t_lsto *lst1,t_loption loption)
@@ -135,27 +144,36 @@ void	ft_wl2(t_lsto *lst1,t_loption loption)
 	ssize_t		r;
 	time_t		curtime;
 	int	i;
+	struct passwd *uid;
+	struct group	*gid;
 
 	l = 0;
 	curtime = time(NULL);
 	linkname = NULL;
 	while (lst1)
 	{
-		//		if ( (((t_rep*)(lst1)->content)->name)[0] != '.')
+//		if(ft_checkokfile(((t_rep*)(lst1->content))->name) == 0)
+//			ft_wl(lst1,loption);
+//		else
 		{
-			//			if(ft_checkpermission(((t_rep*)lst1->content)->name))
-			//				printf("lll\n");
-
 			if (lstat(((t_rep*)(lst1->content))->name, &sb) == 0)
 			{
+				uid = getpwuid(sb.st_uid);
+				gid = getgrgid(sb.st_gid);
 				ft_print_permission(((t_rep*)(lst1->content))->name);
 				ft_putstr("  ");
 				ft_putwidth(ft_ustoa(sb.st_nlink),loption.link);
 				ft_putstr(" ");
-				ft_putwidth(getpwuid(sb.st_uid)->pw_name,loption.uname);
+				if((uid = getpwuid(sb.st_uid)) != NULL)
+				{
+				ft_putwidth(uid->pw_name,loption.uname);
 				ft_putstr("  ");
-				ft_putwidth(getgrgid(sb.st_gid)->gr_name,loption.gname);
+				}
+				if((gid = getgrgid(sb.st_gid)) != NULL)
+				{
+				ft_putwidth(gid->gr_name,loption.gname);
 				ft_putstr("  ");
+				}
 				ft_putwidth(ft_lldtoa(sb.st_size),loption.fsize);
 				ft_putstr(" ");
 				ft_putmonth((localtime(&(sb.st_mtime)))->tm_mon);

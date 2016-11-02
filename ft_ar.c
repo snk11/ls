@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/22 13:45:07 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/30 23:22:40 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/02 10:43:02 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,15 @@ void ft_ar(char *s, t_lsto *lstcmd,t_ind *ind)
 		s1 = ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name);
 		if (ft_strcmp((((t_rep*)(lsti)->content)->name), ".") != 0 && ft_strcmp((((t_rep*)(lsti)->content)->name), "..") != 0)
 		{
-			stat(s1,&sb);
-			if(ft_isdir(s1) && (sb.st_mode & S_IRGRP))
-				lst = ft_getreplist4(s1);
-			if(lst && ft_isdir(s1) && (sb.st_mode & S_IRGRP))
+			if(stat(s1,&sb) == 0)
 			{
-				lstj = ft_printlist3(lst);
-				lsti = lst_addo_down(lsti,lstj);
+				if(ft_isdir(s1) && (sb.st_mode & S_IRGRP))
+					lst = ft_getreplist4(s1);
+				if(lst && ft_isdir(s1) && (sb.st_mode & S_IRGRP))
+				{
+					lstj = ft_printlist3(lst);
+					lsti = lst_addo_down(lsti,lstj);
+				}
 			}
 		}
 		free(s1);
@@ -57,16 +59,18 @@ void ft_ar(char *s, t_lsto *lstcmd,t_ind *ind)
 			ft_putstr("\n");
 			ft_putstr(s1);
 			ft_putstr(":\n");
-			stat(s1,&sb);
-			if(ft_isdir(s1) && (sb.st_mode & S_IRGRP))
-				lst = ft_getreplist4(s1);
-			if(lst)
-				lstj = ft_printlist2(lst);
-			else if(ft_isdir(s1) == 0 || (sb.st_mode & S_IRGRP) == 0)
+			if(stat(s1,&sb) == 0)
 			{
-				ft_putstr_fd("ls: ", 2);
-				opendir(s1);
-				perror(((t_rep*)(lsti->content))->name);
+				if(ft_isdir(s1) && (sb.st_mode & S_IRGRP))
+					lst = ft_getreplist4(s1);
+				if(lst)
+					lstj = ft_printlist2(lst);
+				else if(ft_isdir(s1) == 0 || (sb.st_mode & S_IRGRP) == 0)
+				{
+					ft_putstr_fd("ls: ", 2);
+					opendir(s1);
+					perror(((t_rep*)(lsti->content))->name);
+				}
 			}
 		}
 		free(s1);

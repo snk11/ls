@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 11:46:17 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/01 20:25:54 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/02 11:15:34 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -266,8 +266,8 @@ void	ft_printlist7(t_lsto *lstmp)
 	lstmp2 = lst1;
 	while (lstmp2)
 	{
-			lstat(ft_makepath(((t_rep*)(lstmp2->content))->path,((t_rep*)(lstmp2->content))->name), &sb);
-			l = l + sb.st_blocks;
+			if(lstat(ft_makepath(((t_rep*)(lstmp2->content))->path,((t_rep*)(lstmp2->content))->name), &sb) == 0)
+				l = l + sb.st_blocks;
 			lstmp2 = lstmp2->next;
 	}
 	ft_putstr("total ");
@@ -357,8 +357,8 @@ t_lsto	*ft_printlist8(t_lsto *lstmp)
 	lstmp2 = lst1;
 	while (lstmp2)
 	{
-			lstat(ft_makepath(((t_rep*)(lstmp2->content))->path,((t_rep*)(lstmp2->content))->name), &sb);
-			l = l + sb.st_blocks;
+			if(lstat(ft_makepath(((t_rep*)(lstmp2->content))->path,((t_rep*)(lstmp2->content))->name), &sb) == 0)
+				l = l + sb.st_blocks;
 			lstmp2 = lstmp2->next;
 	}
 	ft_putstr("total ");
@@ -544,8 +544,8 @@ void	ft_printlist13(t_lsto *lstmp)
 	lstmp2 = lst1;
 	while (lstmp2)
 	{
-			lstat(ft_makepath(((t_rep*)(lstmp2->content))->path,((t_rep*)(lstmp2->content))->name), &sb);
-			l = l + sb.st_blocks;
+			if(lstat(ft_makepath(((t_rep*)(lstmp2->content))->path,((t_rep*)(lstmp2->content))->name), &sb) == 0)
+				l = l + sb.st_blocks;
 			lstmp2 = lstmp2->next;
 	}
 	ft_putstr("total ");
@@ -588,8 +588,8 @@ void	ft_printlist14(t_lsto *lstmp)
 	lstmp2 = lst1;
 	while (lstmp2)
 	{
-			lstat(ft_makepath(((t_rep*)(lstmp2->content))->path,((t_rep*)(lstmp2->content))->name), &sb);
-			l = l + sb.st_blocks;
+			if(lstat(ft_makepath(((t_rep*)(lstmp2->content))->path,((t_rep*)(lstmp2->content))->name), &sb) == 0)
+				l = l + sb.st_blocks;
 			lstmp2 = lstmp2->next;
 	}
 	ft_putstr("total ");
@@ -670,8 +670,8 @@ t_lsto	*ft_printlist16(t_lsto *lstmp)
 	lstmp2 = lst1;
 	while (lstmp2)
 	{
-			lstat(ft_makepath(((t_rep*)(lstmp2->content))->path,((t_rep*)(lstmp2->content))->name), &sb);
-			l = l + sb.st_blocks;
+			if(lstat(ft_makepath(((t_rep*)(lstmp2->content))->path,((t_rep*)(lstmp2->content))->name), &sb) == 0)
+				l = l + sb.st_blocks;
 			lstmp2 = lstmp2->next;
 	}
 	ft_putstr("total ");
@@ -717,8 +717,8 @@ t_lsto	*ft_printlist17(t_lsto *lstmp)
 	lstmp2 = lst1;
 	while (lstmp2)
 	{
-			lstat(ft_makepath(((t_rep*)(lstmp2->content))->path,((t_rep*)(lstmp2->content))->name), &sb);
-			l = l + sb.st_blocks;
+			if(lstat(ft_makepath(((t_rep*)(lstmp2->content))->path,((t_rep*)(lstmp2->content))->name), &sb) == 0)
+				l = l + sb.st_blocks;
 			lstmp2 = lstmp2->next;
 	}
 	ft_putstr("total ");
@@ -765,8 +765,8 @@ t_lsto	*ft_printlist18(t_lsto *lstmp)
 	lstmp2 = lst1;
 	while (lstmp2)
 	{
-			lstat(ft_makepath(((t_rep*)(lstmp2->content))->path,((t_rep*)(lstmp2->content))->name), &sb);
-			l = l + sb.st_blocks;
+			if(lstat(ft_makepath(((t_rep*)(lstmp2->content))->path,((t_rep*)(lstmp2->content))->name), &sb) == 0)
+				l = l + sb.st_blocks;
 			lstmp2 = lstmp2->next;
 	}
 	ft_putstr("total ");
@@ -858,8 +858,8 @@ void	ft_printlist21(t_lsto *lstmp)
 	lstmp2 = lst1;
 	while (lstmp2)
 	{
-			lstat(ft_makepath(((t_rep*)(lstmp2->content))->path,((t_rep*)(lstmp2->content))->name), &sb);
-			l = l + sb.st_blocks;
+			if(lstat(ft_makepath(((t_rep*)(lstmp2->content))->path,((t_rep*)(lstmp2->content))->name), &sb) == 0)
+				l = l + sb.st_blocks;
 			lstmp2 = lstmp2->next;
 	}
 	ft_putstr("total ");
@@ -971,8 +971,8 @@ void	ft_printlist24(t_lsto *lstmp)
 	lstmp2 = lst1;
 	while (lstmp2)
 	{
-			lstat(ft_makepath(((t_rep*)(lstmp2->content))->path,((t_rep*)(lstmp2->content))->name), &sb);
-			l = l + sb.st_blocks;
+			if(lstat(ft_makepath(((t_rep*)(lstmp2->content))->path,((t_rep*)(lstmp2->content))->name), &sb) == 0)
+				l = l + sb.st_blocks;
 			lstmp2 = lstmp2->next;
 	}
 	ft_putstr("total ");
@@ -1017,8 +1017,8 @@ t_lsto	*ft_printlist25(t_lsto *lstmp)
 	lstmp2 = lst1;
 	while (lstmp2)
 	{
-			lstat(ft_makepath(((t_rep*)(lstmp2->content))->path,((t_rep*)(lstmp2->content))->name), &sb);
-			l = l + sb.st_blocks;
+			if(lstat(ft_makepath(((t_rep*)(lstmp2->content))->path,((t_rep*)(lstmp2->content))->name), &sb) == 0)
+				l = l + sb.st_blocks;
 			lstmp2 = lstmp2->next;
 	}
 	ft_putstr("total ");
@@ -1065,8 +1065,8 @@ t_lsto	*ft_printlist26(t_lsto *lstmp)
 	lstmp2 = lst1;
 	while (lstmp2)
 	{
-			lstat(ft_makepath(((t_rep*)(lstmp2->content))->path,((t_rep*)(lstmp2->content))->name), &sb);
-			l = l + sb.st_blocks;
+			if(lstat(ft_makepath(((t_rep*)(lstmp2->content))->path,((t_rep*)(lstmp2->content))->name), &sb) == 0)
+				l = l + sb.st_blocks;
 			lstmp2 = lstmp2->next;
 	}
 	ft_putstr("total ");
@@ -1135,8 +1135,8 @@ t_lsto	*ft_printlist28(t_lsto *lstmp)
 	lstmp2 = lst1;
 	while (lstmp2)
 	{
-			lstat(ft_makepath(((t_rep*)(lstmp2->content))->path,((t_rep*)(lstmp2->content))->name), &sb);
-			l = l + sb.st_blocks;
+			if(lstat(ft_makepath(((t_rep*)(lstmp2->content))->path,((t_rep*)(lstmp2->content))->name), &sb) == 0)
+				l = l + sb.st_blocks;
 			lstmp2 = lstmp2->next;
 	}
 	ft_putstr("total ");
@@ -1255,8 +1255,8 @@ t_lsto	*ft_printlist31(t_lsto *lstmp)
 	lstmp2 = lst1;
 	while (lstmp2)
 	{
-			lstat(ft_makepath(((t_rep*)(lstmp2->content))->path,((t_rep*)(lstmp2->content))->name), &sb);
-			l = l + sb.st_blocks;
+			if(lstat(ft_makepath(((t_rep*)(lstmp2->content))->path,((t_rep*)(lstmp2->content))->name), &sb) == 0)
+				l = l + sb.st_blocks;
 			lstmp2 = lstmp2->next;
 	}
 	ft_putstr("total ");

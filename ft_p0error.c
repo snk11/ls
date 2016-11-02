@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/18 15:31:27 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/01 21:28:05 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/02 13:38:09 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	ft_p0error(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 	int		inderror;
 	char	*s1;
 	int		ind1;
+	struct passwd	*uid;
 
 	ind1 = 0;
 	{
@@ -27,8 +28,11 @@ void	ft_p0error(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 //			if(ft_checkslash((char*)(lst1->content)) == 1)
 			if(ft_checkokfile((char*)lst1->content))
 			{
-				lstat((char*)(lst1->content), &sb);
-				ind1 = 1;
+				if(lstat((char*)(lst1->content), &sb) == 0)
+				{
+					if((uid = getpwuid(sb.st_uid)) != NULL)
+						ind1 = 1;
+				}
 			}
 //			else
 //				lstat(ft_makepath(((t_rep*)(lst1->content))->path,((t_rep*)(lst1->content))->name), &sb);
@@ -56,10 +60,10 @@ void	ft_p0error(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 					//printf("islnk = %d ,isreg = %d,inderror = %d,lst1 = %s\n",ft_islnk(ft_makepath("./",(char*)lst1->content)),ft_isreg(ft_makepath("./",(char*)lst1->content)),inderror,(char*)lst1->content);
 					//if(ft_scan_option2((char*)lst1->content) && inderror == 1 && !ft_isreg((char*)lst1->content) && !ft_islnk((char*)lst1->content))
 			
-					if(ind1 == 1 && ft_strcmp(getpwuid(sb.st_uid)->pw_name,"syusof") != 0)
+//					if(ind1 == 1 && ft_strcmp(uid->pw_name,"syusof") != 0)
 					{
 					}
-					else if(inderror == 1 && !ft_isreg(ft_makepath(".",(char*)lst1->content)) && !ft_islnk(ft_makepath(".",(char*)lst1->content)))
+					if(inderror == 1 && !ft_isreg(ft_makepath(".",(char*)lst1->content)) && !ft_islnk(ft_makepath(".",(char*)lst1->content)))
 					{
 						ft_putstr_fd("ls: ", 2);
 						ft_putstr_fd((char*)(lst1->content), 2);
