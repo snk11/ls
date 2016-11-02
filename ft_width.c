@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/25 13:44:58 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/01 19:10:55 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/02 10:04:52 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ void	ft_width(t_lsto *lst1,t_loption *loption)
 				loption->fsize = ft_strlen(ft_lldtoa(sb.st_size));
 //			if(ft_strlen(ft_itoa((localtime(&(sb.st_mtime)))->tm_mon)) > loption->month)
 //				loption->month = ft_strlen(ft_itoa((localtime(&(sb.st_mtime)))->tm_mon));
-			if(ft_strlen(ft_itoa((localtime(&(sb.st_mtime)))->tm_mday)) > loption->day)
-				loption->day = ft_strlen(ft_itoa((localtime(&(sb.st_mtime)))->tm_mday));
+//			if(ft_strlen(ft_itoa((localtime(&(sb.st_mtime)))->tm_mday)) > loption->day)
+//				loption->day = ft_strlen(ft_itoa((localtime(&(sb.st_mtime)))->tm_mday));
 			if(curtime - sb.st_mtime > 15778458)
 			{
 				loption->year = ft_strlen(ft_itoa((localtime(&(sb.st_mtime)))->tm_year + 1900));
