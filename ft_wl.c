@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/25 14:27:40 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/01 21:41:49 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/02 09:36:12 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,10 @@ void	ft_wl(t_lsto *lst1,t_loption loption)
 				ft_putwidth(ft_lldtoa(sb.st_size),loption.fsize);
 				ft_putstr(" ");
 				ft_putmonth((localtime(&(sb.st_mtime)))->tm_mon);
-				//			if(ft_strcmp(getgrgid(sb.st_gid)->gr_name,"wheel") == 0)
-				ft_putstr("  ");
-				//			else
-				//				ft_putstr("  ");
+//				if(ft_strcmp(getgrgid(sb.st_gid)->gr_name,"syusof") != 0)
+					ft_putstr(" ");
+//				else
+//					ft_putstr("  ");
 
 				if(curtime - sb.st_mtime >= 0)
 				{
@@ -74,7 +74,7 @@ void	ft_wl(t_lsto *lst1,t_loption loption)
 				}
 				else if(curtime - sb.st_mtime < 0)
 				{
-					ft_putstr(" ");
+					//ft_putstr(" ");
 					ft_putwidth(ft_itoa((localtime(&(sb.st_mtime)))->tm_mday),loption.day);
 					ft_putstr(" ");
 					ft_putstr(" ");
@@ -159,10 +159,10 @@ void	ft_wl2(t_lsto *lst1,t_loption loption)
 				ft_putwidth(ft_lldtoa(sb.st_size),loption.fsize);
 				ft_putstr(" ");
 				ft_putmonth((localtime(&(sb.st_mtime)))->tm_mon);
-				//			if(ft_strcmp(getgrgid(sb.st_gid)->gr_name,"wheel") == 0)
-				ft_putstr("  ");
-				//			else
-				//				ft_putstr("  ");
+//				if(ft_strcmp(getgrgid(sb.st_gid)->gr_name,"syusof") != 0)
+					ft_putstr(" ");
+//				else
+//					ft_putstr("  ");
 
 				if(curtime - sb.st_mtime >= 0)
 				{
@@ -190,7 +190,7 @@ void	ft_wl2(t_lsto *lst1,t_loption loption)
 				}
 				else if(curtime - sb.st_mtime < 0)
 				{
-					ft_putstr(" ");
+				//	ft_putstr(" ");
 					ft_putwidth(ft_itoa((localtime(&(sb.st_mtime)))->tm_mday),loption.day);
 					ft_putstr(" ");
 					ft_putstr(" ");
