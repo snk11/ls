@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/10 19:47:21 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/10 19:55:39 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,6 +123,7 @@ void			ft_ls_p1(char **av,t_lsto *lstcmd, t_ind *ind);
 void			ft_ls_p1_p1(t_lsto *lstcmd, t_ind *ind);
 void			ft_ls_p1_p2(t_lsto *lst1, t_lsto *lstcmd, t_ind *ind);
 void			ft_ls_p1_p3(t_lsto *lstcmd, t_ind *ind);
+void			ft_ls_p2(char **av,t_lsto **lstcmd);
 void		ft_printlist7_p1(t_lsto *lstmp2);
 void	ft_printlist_p1(t_lsto *lstmp,t_lsto **lst1,t_lsto **lst2);
 int			ft_p_illegal(t_ind *ind);
