@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/20 00:06:32 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/10 12:35:53 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/10 14:12:49 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,11 @@ void	ft_printname(char *s,t_lsto *lstcmd,t_ind *ind)
 			ind->indexyet4 = 1;
 		}
 		else if(ind->index1 >= (2 + ind->indoption) )
+		{
+			ft_putstr(s);
+			ft_putstr(":\n");
+		}
+		else if(ind->inderror == 1)
 		{
 			ft_putstr(s);
 			ft_putstr(":\n");
