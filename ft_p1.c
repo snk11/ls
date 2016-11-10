@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/27 17:13:01 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/02 11:05:34 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/10 11:03:42 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,9 @@ void	ft_p1(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 	ind->indexyet3 = 0;
 	ind->indexyet4 = 0;
 //	struct stat		sb;
+//
+	if (ft_strcmp((char*)lst1->content,"--") == 0)
+		ind->indhyphsolo = 1;
 
 	while(lst1)
 	{

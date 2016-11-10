@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/01 21:04:13 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/10 11:15:05 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,11 +59,13 @@ typedef struct			s_rep
 typedef struct			s_ind
 {
 //	int					nbelem;
+	int					indhyphsolo;
 	int					indfts;
 	int					indexyet;
 	int					indexyet2;
 	int					indexyet3;
 	int					indexyet4;
+//	int					indexyet5;
 	int					indhyphen;
 	int					indregfile;
 	int					inderror;

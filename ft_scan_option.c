@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/12 23:31:06 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/25 09:09:20 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/10 11:09:40 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ void	ft_scan_option(char **av,t_ind *ind)
 		}
 		i++;
 	}
+	if (ind->indoption > 0 && ft_strcmp(av[i-1],"--") == 0)
+		ind->indhyphsolo = 1;
 }
 
 
