@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/10 17:48:02 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/10 17:53:24 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,7 +122,7 @@ typedef struct		s_stat
 void		ft_printlist7_p1(t_lsto *lstmp2);
 void	ft_printlist_p1(t_lsto *lstmp,t_lsto **lst1,t_lsto **lst2);
 int			ft_p_illegal(t_ind *ind);
-void	ft_p1(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd);
+void	ft_ls_p1(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd);
 t_lst		*lst_add(t_lst *toplist, t_lst *t_lst1);
 void		lst_addo(t_lsto **toplist, t_lsto *t_lst1);
 void		lst_addo1(t_lsto ***toplist, t_lsto *lst1);

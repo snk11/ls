@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/10 12:28:10 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/10 17:55:11 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,31 +78,9 @@ int main(int ac,char **av)
 			if(ind->indfts == 0)
 			{
 			ft_p0regfile(lsta,ind,lstcmd);
-			ft_p1(lsta, ind,lstcmd);
+			ft_ls_p1(lsta, ind,lstcmd);
 			}
 		}
-		/*
-		else if(ind->indillegal == 0 && ft_checkhyphencase(lstcmd,ind) == 1)
-		{
-			printf("1111\n");
-			lst1 = ft_lst_sort(lst1,croissant_char);
-			ft_p0error(lst1,ind,lstcmd);
-			lst1 = ft_getprimelist2(av,ind);
-			if (ind->indreverse == 1 && ind->indt == 1)
-				lst1 = ft_lst_sort(lst1,croissant_time_char);
-			else if (ind->indreverse == 1)
-				lst1 = ft_lst_sort(lst1,decreasing_char);
-			else if (ind->indt == 1)
-				lst1 = ft_lst_sort(lst1,decreasing_time_char);
-			
-			if(ind->indfts == 0)
-			{
-				ft_p0regfile(lst1,ind,lstcmd);
-				ind->index1 = ft_getindex(lst1,lstcmd);
-				ft_p1(lst1,ind, lstcmd);
-			}
-		}
-		*/
 		else if(lst1)
 		{
 			lst1 = ft_lst_sort(lst1,croissant_char);
@@ -117,7 +95,7 @@ int main(int ac,char **av)
 			{
 				ft_p0regfile(lst1,ind,lstcmd);
 				ind->index1 = ft_getindex(lst1,lstcmd);
-				ft_p1(lst1,ind, lstcmd);
+				ft_ls_p1(lst1,ind, lstcmd);
 			}
 		}
 		else
@@ -129,7 +107,7 @@ int main(int ac,char **av)
 			if(ind->indfts == 0)
 			{
 			ft_p0regfile(lsta,ind,lstcmd);
-			ft_p1(lsta, ind,lstcmd);
+			ft_ls_p1(lsta, ind,lstcmd);
 			}
 		}
 	}
