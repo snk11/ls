@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/27 17:13:01 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/10 17:56:09 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/10 18:19:47 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,10 @@ void	ft_ls_p1(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 {
 	int inderror;
 	t_lsto			*lst;
-	t_lsto			*lstmp;
 	t_lsto			*lstj;
-	t_lsto *lst1begi;
-	char *s1;
 
-	lstmp = NULL;
-	lst1begi = lst1;
-	lst1 = lst1begi;
-	s1 = NULL;
-
-	lst1 = lst1begi;
-	lst1 = lst1begi;
+	lst = NULL;
+	lstj = NULL;
 	ind->indposition = 0;
 	ind->indexyet = 0;
 	ind->indexyet2 = 0;
@@ -43,29 +35,8 @@ void	ft_ls_p1(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 				inderror = 1;
 		if (inderror == 0 && ft_checkhyphen(lst1,lstcmd,ind) == 0)
 		{
-			if (ind->indillegal != 0)
+			if(ft_ls_p1_p1(lst1, lstcmd, ind))
 			{
-			}
-			else if (ind->indl == 1 && ind->indreverse == 1 && ind->indr == 1 && ind->inda == 1 && ind->indt == 1)
-			{
-				ft_printlatrreversedir((char*)(lst1->content), lstcmd,ind);
-			}
-
-			else if (ind->indreverse == 1 && ind->indr == 1 && ind->inda == 1 && ind->indt == 1)
-			{
-				ft_atrreverse((char*)(lst1->content), lstcmd,ind);
-			}
-			else if (ind->indreverse == 1 && ind->indr == 1 && ind->inda == 1 && ind->indl == 1)
-			{
-				ft_printlarreversedir((char*)(lst1->content), lstcmd,ind);
-			}
-			else if (ind->indreverse == 1 && ind->indr == 1 && ind->indt == 1 && ind->indl == 1)
-			{
-				ft_printltrreversedir((char*)(lst1->content), lstcmd,ind);
-			}
-			else if (ind->inda == 1 && ind->indr == 1 && ind->indt == 1 && ind->indl == 1)
-			{
-				ft_printlartdir((char*)(lst1->content), lstcmd,ind);
 			}
 			else if (ind->inda == 1 && ind->indreverse == 1 && ind->indt == 1 && ind->indl == 1)
 			{
