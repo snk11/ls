@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/19 14:22:31 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/25 09:31:34 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/10 20:14:00 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,14 @@
 
 int		ft_checkhyphencase_print(t_lsto *lst1,t_ind *ind)
 {
-	t_lsto	*lstbegi;
 	int	cnt;
 	int	cnt2;
 	int	c1;
-	int	c3;
 
 	c1 = 0;
-	c3 = 0;
 	cnt = 0;
 	cnt2 = 0;
-	lstbegi = NULL;
-	lstbegi = lst1;
-	while(lst1)
-	{
-		if (ft_strcmp((char*)lst1->content,"--") == 0 && cnt == 1)
-			c3 = 1;
-		lst1 = lst1->next;
-		cnt2++;
-	}
-	lst1 = lstbegi;
+	cnt2 = ft_countelem(lst1);
 	if (cnt2 == 2)
 	{
 		while(lst1)
@@ -47,7 +35,7 @@ int		ft_checkhyphencase_print(t_lsto *lst1,t_ind *ind)
 			lst1 = lst1->next;
 		}
 	}
-	else if(cnt2 == 1 && c3 == 1)
+	else if(cnt2 == 1)
 		return (1);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/10 19:55:39 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/10 20:10:57 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -282,5 +282,6 @@ void	ft_width2(t_lsto *lst1,t_loption *loption);
 int		ft_checkpermission(char *s);
 int		ft_checkslash(char *s);
 int		ft_checkokfile(char *s);
+int			ft_countelem(t_lsto *lst1);
 
 # endif
