@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/25 14:27:40 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/10 13:30:42 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/10 13:44:13 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,20 @@ void	ft_wl(t_lsto *lst1,t_loption loption)
 						ft_putwidth(uid->pw_name,loption.uname);
 					ft_putstr("  ");
 				}
+				else if(!(sb.st_uid))
+				{
+					ft_putwidth("root",loption.uname);
+					ft_putstr("  ");
+				}
 				if(sb.st_gid && (gid = getgrgid(sb.st_gid)) != NULL)
 				{
 //					if(gid)
 						ft_putwidth(gid->gr_name,loption.gname);
+					ft_putstr("  ");
+				}
+				else if(!(sb.st_gid))
+				{
+					ft_putwidth("wheel",loption.gname);
 					ft_putstr("  ");
 				}
 				ft_putwidth(ft_lldtoa(sb.st_size),loption.fsize);
