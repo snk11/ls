@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/10 19:06:40 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/10 19:23:50 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,12 @@
 
 int main(int ac,char **av)
 {
-	struct dirent	*pdirent1;
-	DIR				*pdir1;
-	struct stat		sb;
 	t_lsto			*lstcmd;
 	t_lsto			*lst;
-	t_lsto			*lsti;
-	t_lsto			*lstibegi;
-	t_lsto			*lstj;
 	t_lsto			*lst1;
-	t_lsto			*lst1begi;
 	int				i;
-	int				inderror;
 	t_ind			*ind;
 	int j;
-	char 			*s1;
 	t_lsto		*lstmp;
 	t_lsto		*lsta;
 
@@ -40,12 +31,8 @@ int main(int ac,char **av)
 	ind = NULL;
 	ind = (t_ind*)malloc(sizeof(t_ind));
 	lst = NULL;
-	lstj = NULL;
 	lst1 = NULL;
-	lstibegi = NULL;
-	lst1begi = NULL;
 	i = 1;
-	inderror = 0;
 	while(av[i])
 	{
 		lstmp = ft_create_lsto_char(av[i]);
