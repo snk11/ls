@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/19 12:48:47 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/10 12:23:20 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/10 16:03:57 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int		ft_checkhyphencase(t_lsto *lst1,t_ind *ind)
 	cnt = 0;
 	while(lst1)
 	{
-//		printf("cnt = %d,ind->indoption = %d,ind->indillegal = %c, c1 = %d\n",cnt,ind->indoption,ind->indillegal,c1);
 		if (cnt == 1 && ind->indoption > 0 && ind->indillegal == 0 && ft_strcmp((char*)lst1->content,"--") == 0 && c1 == 0)
 			return (1);
 		if (ft_strcmp((char*)lst1->content,"--") == 0 && cnt == 0)
