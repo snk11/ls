@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/10 18:52:43 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/10 18:57:51 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,6 +132,7 @@ int		ft_ls_run_p1_p5(t_lsto *lst1, t_lsto *lstcmd,t_ind *ind);
 int		ft_ls_run_p1_p6(t_lsto *lst1, t_lsto *lstcmd,t_ind *ind);
 int		ft_ls_run_p1_p7(t_lsto *lst1, t_lsto *lstcmd,t_ind *ind);
 int		ft_ls_run_p1_p8(t_lsto *lst1, t_lsto *lstcmd,t_ind *ind);
+void		ft_ls_run_p2(t_lsto *lst1, t_lsto *lstcmd,t_ind *ind);
 t_lst		*lst_add(t_lst *toplist, t_lst *t_lst1);
 void		lst_addo(t_lsto **toplist, t_lsto *t_lst1);
 void		lst_addo1(t_lsto ***toplist, t_lsto *lst1);
