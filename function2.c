@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 17:07:41 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/10 17:10:45 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/10 17:17:15 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 t_lsto		*lst_addo_down_char(t_lsto *toplist, t_lsto *lst1)
 {
-
 	t_lsto		*lstmp;
 	t_lsto		*lstmp2;
 	t_lsto		*lstbegi;
@@ -24,35 +23,53 @@ t_lsto		*lst_addo_down_char(t_lsto *toplist, t_lsto *lst1)
 	lstmp2 = NULL;
 	lstbegi = NULL;
 	lsttopbegi = toplist;
-	while (lst1 && toplist)
+	lsttopbegi = lst_addo_down_char_p1(&lst1, &lsttopbegi);
+	lsttopbegi = lst_addo_down_char_p2(&lst1, &lsttopbegi);
+	return (lsttopbegi);
+}
+
+t_lsto		*lst_addo_down_char_p1(t_lsto **lst1, t_lsto **lsttopbegi)
+{
+	t_lsto		*lstmp;
+	t_lsto		*lstmp2;
+
+	lstmp = NULL;
+	lstmp2 = NULL;
+	while (*lst1 && *lsttopbegi)
 	{
-		lstmp = ft_create_lsto_char((lst1)->content);
-		{
-			lstmp2 = lsttopbegi;
+		lstmp = ft_create_lsto_char((*lst1)->content);
+			lstmp2 = *lsttopbegi;
 			while (lstmp2->next)
 				lstmp2 = lstmp2->next;
 			lstmp2->next = lstmp;
-		}
-		lst1 = lst1->next;
+		*lst1 = (*lst1)->next;
 	}
-	if (lst1 && toplist == NULL)
+	return (*lsttopbegi);
+}
+
+t_lsto		*lst_addo_down_char_p2(t_lsto **lst1, t_lsto **lsttopbegi)
+{
+	t_lsto		*lstmp;
+	t_lsto		*lstmp2;
+
+	lstmp = NULL;
+	lstmp2 = NULL;
+	if (*lst1 && *lsttopbegi == NULL)
 	{
-		lstmp = ft_create_lsto_char((lst1)->content);
-		lsttopbegi = lstmp;
-		lst1 = lst1->next;
-		while(lst1)
+		lstmp = ft_create_lsto_char((*lst1)->content);
+		*lsttopbegi = lstmp;
+		*lst1 = (*lst1)->next;
+		while(*lst1)
 		{
-			lstmp = ft_create_lsto_char((lst1)->content);
-			{
-				lstmp2 = lsttopbegi;
+			lstmp = ft_create_lsto((*lst1)->content);
+				lstmp2 = *lsttopbegi;
 				while (lstmp2->next)
 					lstmp2 = lstmp2->next;
 				lstmp2->next = lstmp;
-			}
-			lst1 = lst1->next;
+			*lst1 = (*lst1)->next;
 		}
 	}
-	return (lsttopbegi);
+	return (*lsttopbegi);
 }
 
 t_lsto		*lst_addo_between(t_lsto *toplist, t_lsto *lst1)
