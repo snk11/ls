@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/10 18:28:34 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/10 19:06:40 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ int main(int ac,char **av)
 	i = 1;
 	ft_init(ind);
 	ft_scan_option(av,ind);
-//	printf("illegal = %c,hyphencase = %d,hyphencaseprint = %d\n",ind->indillegal,ft_checkhyphencase(lstcmd,ind),ft_checkhyphencase_print(lstcmd,ind));
 	if (!av[1] || (ac == 2 && ft_strcmp(av[1],"--") == 0))
 	{
 		lst = ft_getreplist(".");
@@ -64,11 +63,7 @@ int main(int ac,char **av)
 	}
 	else if (ft_p_illegal(ind))
 	{
-
 		lst1 = ft_getprimelist(av,ind);
-//		printf("lst1 = %s\n",(char*)lst1->content);
-//		if(lst1)
-//			ft_printlst(lst1);
 		if(ind->indillegal == 0 && ft_checkhyphencase(lstcmd,ind) && ft_checkhyphencase_print(lstcmd,ind) )
 		{
 			lstmp = ft_create_lsto_char(".");
@@ -111,10 +106,5 @@ int main(int ac,char **av)
 			}
 		}
 	}
-	/*
-		while(42)
-		{
-		}
-		*/
 	return (0);
 }
