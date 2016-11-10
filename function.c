@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 15:43:19 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/01 01:56:59 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/10 14:45:41 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ t_lst		*lst_add(t_lst *toplist, t_lst *lst1)
 */
 void		lst_addo(t_lsto **toplist, t_lsto *lst1)
 {
-
 	t_lsto		*lstmp;
 
 	lstmp = NULL;
@@ -70,7 +69,25 @@ void		lst_addo(t_lsto **toplist, t_lsto *lst1)
 		lstmp->next = *toplist;
 		*toplist = lstmp;
 	}
-	//		*t_lst1 = (*t_lst1)->next;
+}
+
+void		lst_addo1(t_lsto ***toplist, t_lsto *lst1)
+{
+	t_lsto		*lstmp;
+
+	lstmp = NULL;
+	lstmp = ft_create_lsto((lst1)->content);
+	((t_rep*)(lstmp->content))->name = ft_memmove2(((t_rep*)(lst1->content))->name);
+	((t_rep*)(lstmp->content))->path = ft_memmove2(((t_rep*)(lst1->content))->path);
+	if (*toplist == NULL)
+	{
+		**toplist = lstmp;
+	}
+	else
+	{
+		lstmp->next = **toplist;
+		**toplist = lstmp;
+	}
 }
 
 t_lsto		*lst_addo_down(t_lsto *toplist, t_lsto *lst1)

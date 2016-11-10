@@ -6,48 +6,11 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 11:46:17 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/10 12:55:41 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/10 14:39:06 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "ft_ls.h"
-
-void	ft_printlist(t_lsto *lstmp)
-{
-	t_lsto	*lst1;
-	t_lsto	*lst2;
-	t_lsto	*lstbegi;
-	char	*s1;
-
-	s1 = NULL;
-	lst1 = NULL;
-	lst2 = NULL;
-	lstbegi = lstmp;
-	while (lstmp)
-	{
-		s1 = ft_makepath(((t_rep*)(lstmp->content))->path,((t_rep*)(lstmp->content))->name);
-		if(ft_isdir(s1) == 0)
-			lst_addo(&lst1, lstmp);
-		else if(ft_isdir(s1) == 1)
-			lst_addo(&lst2, lstmp);
-		free(s1);
-		s1 = NULL;
-		lstmp = lstmp->next;
-	}
-	lst2 = ft_lst_sort(lst2,croissant);
-	lst1 = lst_addo_down(lst1,lst2);
-	lst1 = ft_lst_sort(lst1,croissant);
-	while (lst1)
-	{
-		if ( (((t_rep*)(lst1)->content)->name)[0] != '.')
-		{
-			ft_putstr(((t_rep*)((lst1))->content)->name);
-			ft_putstr("\n");
-		}
-		lst1 = lst1->next;
-	}
-
-}
 
 void	ft_printlist4(t_lsto *lstmp)
 {
@@ -90,48 +53,6 @@ void	ft_printlist4(t_lsto *lstmp)
 	}
 }
 
-t_lsto	*ft_printlist2(t_lsto *lstmp)
-{
-	t_lsto	*lst1;
-	t_lsto	*lst2;
-	t_lsto	*lstbegio;
-	t_lsto	*lstbegi;
-
-	lst1 = NULL;
-	lst2 = NULL;
-	lstbegi = lstmp;
-	while (lstmp)
-	{
-		if(ft_isdir(ft_makepath(((t_rep*)(lstmp->content))->path,((t_rep*)(lstmp->content))->name)) == 0)
-			lst_addo(&lst1, lstmp);
-		else if(ft_isdir(ft_makepath(((t_rep*)(lstmp->content))->path,((t_rep*)(lstmp->content))->name)) == 1)
-			lst_addo(&lst2, lstmp);
-		lstmp = lstmp->next;
-	}
-	/*
-	lstmp = lstbegi;
-	while (lstmp)
-	{
-		if(ft_isdir(ft_makepath(((t_rep*)(lstmp->content))->path,((t_rep*)(lstmp->content))->name)) == 1)
-			lst_addo(&lst2, lstmp);
-		lstmp = lstmp->nextr;
-	}
-	*/
-	lst2 = ft_lst_sort(lst2, croissant);
-	lstbegio = lst2;
-	lst1 = lst_addo_down(lst1,lst2);
-	lst1 = ft_lst_sort(lst1, croissant);
-	while (lst1)
-	{
-//		if ( (((t_rep*)(lst1)->content)->name)[0] != '.')
-		{
-			ft_putstr(((t_rep*)((lst1))->content)->name);
-			ft_putstr("\n");
-		}
-		lst1 = lst1->next;
-	}
-	return (lstbegio);
-}
 
 
 t_lsto	*ft_printlist3(t_lsto *lstmp)
