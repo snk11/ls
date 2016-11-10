@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/10 10:12:46 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/10 12:28:10 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,17 +57,16 @@ int main(int ac,char **av)
 	ft_init(ind);
 	ft_scan_option(av,ind);
 //	printf("illegal = %c,hyphencase = %d,hyphencaseprint = %d\n",ind->indillegal,ft_checkhyphencase(lstcmd,ind),ft_checkhyphencase_print(lstcmd,ind));
-//	if (!av[1] || (ac == 2 && ft_strcmp(av[1],"--") == 0))
-	if (!av[1])
+	if (!av[1] || (ac == 2 && ft_strcmp(av[1],"--") == 0))
 	{
 		lst = ft_getreplist(".");
 		ft_printlist(lst);
 	}
 	else if (ft_p_illegal(ind))
 	{
-			lstcmd = lstcmd->next;
 
 		lst1 = ft_getprimelist(av,ind);
+//		printf("lst1 = %s\n",(char*)lst1->content);
 //		if(lst1)
 //			ft_printlst(lst1);
 		if(ind->indillegal == 0 && ft_checkhyphencase(lstcmd,ind) && ft_checkhyphencase_print(lstcmd,ind) )
@@ -82,8 +81,10 @@ int main(int ac,char **av)
 			ft_p1(lsta, ind,lstcmd);
 			}
 		}
-		else if(ind->indillegal == 0 && ft_checkhyphencase(lstcmd,ind))
+		/*
+		else if(ind->indillegal == 0 && ft_checkhyphencase(lstcmd,ind) == 1)
 		{
+			printf("1111\n");
 			lst1 = ft_lst_sort(lst1,croissant_char);
 			ft_p0error(lst1,ind,lstcmd);
 			lst1 = ft_getprimelist2(av,ind);
@@ -101,6 +102,7 @@ int main(int ac,char **av)
 				ft_p1(lst1,ind, lstcmd);
 			}
 		}
+		*/
 		else if(lst1)
 		{
 			lst1 = ft_lst_sort(lst1,croissant_char);

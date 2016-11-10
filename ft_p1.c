@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/27 17:13:01 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/10 11:16:13 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/10 12:17:20 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void	ft_p1(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 	while(lst1)
 	{
 //		lstat(ft_makepath(((t_rep*)(lst1->content))->path,((t_rep*)(lst1->content))->name), &sb);
+//		printf("lst1 = %s\n",(char*)lst1->content);
 		ind->index1 = ft_getindex(lst1,lstcmd);
 		ind->indposition++;
 		inderror = 0;
