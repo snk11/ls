@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/30 16:00:49 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/10 11:14:51 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/10 16:09:23 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void	ft_init(t_ind *ind)
 	ind->indexyet2 = 0;
 	ind->indexyet3 = 0;
 	ind->indexyet4 = 0;
-//	ind->indexyet5 = 0;
 	ind->indhyphen = 0;
 	ind->inderror = 0;
 	ind->indregfile = 0;
@@ -43,7 +42,6 @@ void	ft_init2(t_loption *loption)
 	loption->uname = 0;
 	loption->gname = 0;
 	loption->fsize = 0;
-//	loption->month = 0;
 	loption->day = 2;
 	loption->hour = 2;
 	loption->minute = 2;

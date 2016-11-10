@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/18 15:14:46 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/02 13:35:47 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/10 16:11:52 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ void	ft_p0regfile(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 	s1 = NULL;
 	while(lst1)
 	{
-		//		lstat(((t_rep*)(lst1->content))->name, &sb);
-		//		if(sb.st_mode & S_IRUSR)
 		s1 = ft_memmove2((char*)(lst1->content));
 		inderror = 0;
 		{
@@ -35,7 +33,6 @@ void	ft_p0regfile(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 				inderror = 1;
 			}
 		}
-//			printf("char = %s,option = %d,yet = %d\n,inderror = %d",(char*)lst1->content,ind->indoption,ind->indexyet,inderror);
 		ind->index1 = ft_getindex(lst1,lstcmd);
 		if(ft_checkhyphencase(lstcmd,ind) == 1)
 		{

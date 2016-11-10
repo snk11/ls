@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 11:00:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/01 02:58:43 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/10 16:08:51 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,21 +31,11 @@ t_lsto *ft_getreplist(char *rep)
 	lstb = NULL;
 	lstmp = NULL;
 	lstmp2 = NULL;
-
 	pdir1 = opendir(rep);
-
-
-
 	while ((pdirent1 = readdir(pdir1)))
 	{
-//		if ((strncmp(pdirent1->d_name,".",1)) && (strncmp(pdirent1->d_name,"..",2)))
-//			printf("%s\n",pdirent1->d_name);
-		
 		if (!(e = (t_rep*)malloc(sizeof(t_rep))))
 			return (0);
-//		e->name = pdirent1->d_name;
-//		e->path = rep;
-
 		if (pdirent1->d_name[0] != '.')
 		{
 			lstmp = ft_create_lsto(e);
@@ -59,11 +49,7 @@ t_lsto *ft_getreplist(char *rep)
 			e = NULL;
 		}
 	}
-//	push_swap(&lsta);
-//	lsta = lst_sort(lsta, croissant);
-//	lstmp = lsta;
 	closedir(pdir1);
-
 	return (lsta);
 }
 
@@ -84,32 +70,16 @@ t_lsto *ft_getreplist4(char *rep)
 	lstb = NULL;
 	lstmp = NULL;
 	lstmp2 = NULL;
-
 	pdir1 = opendir(rep);
-
-
-
 	while ((pdirent1 = readdir(pdir1)))
 	{
-//		if ((strncmp(pdirent1->d_name,".",1)) && (strncmp(pdirent1->d_name,"..",2)))
-//			printf("%s\n",pdirent1->d_name);
-		
 		if (!(e = (t_rep*)malloc(sizeof(t_rep))))
 			return (0);
-//		e->name = pdirent1->d_name;
-//		e->path = rep;
-
-//		if (pdirent1->d_name[0] != '.')
-		{
-			lstmp = ft_create_lsto(e);
-			((t_rep*)(lstmp->content))->name = ft_memmove2(pdirent1->d_name);
-			((t_rep*)(lstmp->content))->path = ft_memmove2(rep);
-			lst_addo(&lsta, lstmp);
-		}
+		lstmp = ft_create_lsto(e);
+		((t_rep*)(lstmp->content))->name = ft_memmove2(pdirent1->d_name);
+		((t_rep*)(lstmp->content))->path = ft_memmove2(rep);
+		lst_addo(&lsta, lstmp);
 	}
-//	push_swap(&lsta);
-//	lsta = lst_sort(lsta, croissant);
-//	lstmp = lsta;
 	closedir(pdir1);
 
 	return (lsta);
@@ -137,4 +107,3 @@ t_lsto	*ft_getreplisto4(t_lsto *lstmp)
 	lstbegio = lst2;
 	return (lstbegio);
 }
-
