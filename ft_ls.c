@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/10 17:55:11 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/10 18:28:34 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int main(int ac,char **av)
 			if(ind->indfts == 0)
 			{
 			ft_p0regfile(lsta,ind,lstcmd);
-			ft_ls_p1(lsta, ind,lstcmd);
+			ft_ls_run(lsta, ind,lstcmd);
 			}
 		}
 		else if(lst1)
@@ -95,7 +95,7 @@ int main(int ac,char **av)
 			{
 				ft_p0regfile(lst1,ind,lstcmd);
 				ind->index1 = ft_getindex(lst1,lstcmd);
-				ft_ls_p1(lst1,ind, lstcmd);
+				ft_ls_run(lst1,ind, lstcmd);
 			}
 		}
 		else
@@ -107,7 +107,7 @@ int main(int ac,char **av)
 			if(ind->indfts == 0)
 			{
 			ft_p0regfile(lsta,ind,lstcmd);
-			ft_ls_p1(lsta, ind,lstcmd);
+			ft_ls_run(lsta, ind,lstcmd);
 			}
 		}
 	}
