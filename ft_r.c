@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/08 06:45:09 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/02 10:56:11 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/10 16:16:28 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,6 @@ void ft_r(char *s, t_lsto *lstcmd,t_ind *ind)
 	ft_print_n(s,lstcmd,ind);
 	lst = ft_getreplist(s);
 	ft_printname(s,lstcmd,ind);
-	/*
-	   if (ind->indtotal != 1)
-	   {
-	   ft_putstr(s);
-	   ft_putstr(":\n");
-	   }
-	   */
 	lsti = ft_printlist2(lst);
 	lstibegi = lsti;
 	while (lsti)
@@ -48,7 +41,6 @@ void ft_r(char *s, t_lsto *lstcmd,t_ind *ind)
 		lsti = lsti->next;
 		lst = NULL;
 	}
-	//	lstibegi = ft_lst_sort2(lstibegi);
 	lstibegi = ft_lst_sort(lstibegi,croissant_pathname);
 	lsti = lstibegi;
 	while (lsti)

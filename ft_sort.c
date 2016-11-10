@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 13:51:30 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/19 18:40:49 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/10 16:19:48 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,25 +35,18 @@ int decreasing_char(t_lsto *lsta)
 
 int decreasing_time(t_lsto *lsta)
 {
-//	time_t	timestamp;
 	struct stat		sa;
 	struct stat		sb;
 	char			*s1;
 	char			*s2;
 
-
 	s1 = ft_memmove2(ft_makepath(((t_rep*)(lsta->content))->path,((t_rep*)(lsta->content))->name));
 	s2 = ft_memmove2(ft_makepath(((t_rep*)((lsta->next)->content))->path,((t_rep*)((lsta->next)->content))->name));
-//	s1 = ft_memmove2(((t_rep*)(lsta)->content)->name);
-//	s2 = ft_memmove2(((t_rep*)((lsta)->next)->content)->name);
 	lstat(s1, &sa);
 	lstat(s2, &sb);
-//	printf("s1 = %ld, s2 = %ld\n",sa.st_atime,sb.st_atime);
-//	printf("s1 = %s s2 = %s\n",ctime(&(sa.st_atime)),ctime(&(sb.st_atime)));
 	if (sa.st_mtime >= sb.st_mtime)
 	{
-//		printf("1\n");
- 		if (sa.st_mtime > sb.st_mtime)
+		if (sa.st_mtime > sb.st_mtime)
 			return (1);
 		if (sa.st_mtime == sb.st_mtime && sa.st_mtimespec.tv_nsec >= sb.st_mtimespec.tv_nsec)
 		{
@@ -72,7 +65,6 @@ int decreasing_time(t_lsto *lsta)
 
 int croissant_time(t_lsto *lsta)
 {
-//	time_t	timestamp;
 	struct stat		sa;
 	struct stat		sb;
 	char			*s1;
@@ -81,16 +73,11 @@ int croissant_time(t_lsto *lsta)
 
 	s1 = ft_memmove2(ft_makepath(((t_rep*)(lsta->content))->path,((t_rep*)(lsta->content))->name));
 	s2 = ft_memmove2(ft_makepath(((t_rep*)((lsta->next)->content))->path,((t_rep*)((lsta->next)->content))->name));
-//	s1 = ft_memmove2(((t_rep*)(lsta)->content)->name);
-//	s2 = ft_memmove2(((t_rep*)((lsta)->next)->content)->name);
 	lstat(s1, &sa);
 	lstat(s2, &sb);
-//	printf("s1 = %ld, s2 = %ld\n",sa.st_atime,sb.st_atime);
-//	printf("s1 = %s s2 = %s\n",ctime(&(sa.st_atime)),ctime(&(sb.st_atime)));
 	if (sa.st_mtime <= sb.st_mtime)
 	{
-//		printf("1\n");
- 		if (sa.st_mtime < sb.st_mtime)
+		if (sa.st_mtime < sb.st_mtime)
 			return (1);
 		if (sa.st_mtime == sb.st_mtime && sa.st_mtimespec.tv_nsec <= sb.st_mtimespec.tv_nsec)
 		{
@@ -109,24 +96,17 @@ int croissant_time(t_lsto *lsta)
 
 int croissant_time_char(t_lsto *lsta)
 {
-//	time_t	timestamp;
 	struct stat		sa;
 	struct stat		sb;
 	char			*s1;
 	char			*s2;
 
-
 	s1 = ft_memmove2(lsta->content);
 	s2 = ft_memmove2((lsta->next)->content);
-//	s1 = ft_memmove2(((t_rep*)(lsta)->content)->name);
-//	s2 = ft_memmove2(((t_rep*)((lsta)->next)->content)->name);
 	lstat(s1, &sa);
 	lstat(s2, &sb);
-//	printf("s1 = %ld, s2 = %ld\n",sa.st_atime,sb.st_atime);
-//	printf("s1 = %s s2 = %s\n",ctime(&(sa.st_atime)),ctime(&(sb.st_atime)));
 	if (sa.st_mtime <= sb.st_mtime)
 	{
-//		printf("1\n");
  		if (sa.st_mtime < sb.st_mtime)
 			return (1);
 		if (sa.st_mtime == sb.st_mtime && sa.st_mtimespec.tv_nsec <= sb.st_mtimespec.tv_nsec)
@@ -146,24 +126,17 @@ int croissant_time_char(t_lsto *lsta)
 
 int decreasing_time_char(t_lsto *lsta)
 {
-//	time_t	timestamp;
 	struct stat		sa;
 	struct stat		sb;
 	char			*s1;
 	char			*s2;
 
-
 	s1 = ft_memmove2(lsta->content);
 	s2 = ft_memmove2((lsta->next)->content);
-//	s1 = ft_memmove2(((t_rep*)(lsta)->content)->name);
-//	s2 = ft_memmove2(((t_rep*)((lsta)->next)->content)->name);
 	lstat(s1, &sa);
 	lstat(s2, &sb);
-//	printf("s1 = %ld, s2 = %ld\n",sa.st_atime,sb.st_atime);
-//	printf("s1 = %s s2 = %s\n",ctime(&(sa.st_atime)),ctime(&(sb.st_atime)));
 	if (sa.st_mtime >= sb.st_mtime)
 	{
-//		printf("1\n");
  		if (sa.st_mtime > sb.st_mtime)
 			return (1);
 		if (sa.st_mtime == sb.st_mtime && sa.st_mtimespec.tv_nsec >= sb.st_mtimespec.tv_nsec)
@@ -188,74 +161,12 @@ int croissant_pathname(t_lsto *lsti)
 
 t_lsto		*ft_lst_sort(t_lsto *lst, int (*cmp)(t_lsto*))
 {
-	/*
-	t_lsto *lstmp;
-	t_lsto *lstmp5;
 	t_lsto *lstmp1;
 	t_lsto *lstmp2;
 	t_lsto *lstbegi;
-	t_lsto *w;
 	int		ind;
-	int		ind1;
 	long long	count;
-	count = 0;
-	lstmp = NULL;
-	lstmp1 = NULL;
-	lstmp2 = NULL;
-	lstmp5 = NULL;
-	ind = 1;
-	ft_printlst(lst);
-	lstbegi = lst;
-	lstmp = lstbegi;
-	lstmp5 = lstbegi;
-	ind1 = 1;
-	while(ind1 == 1)
-	{
-		lstmp = lstbegi;
-		lstmp5 = lstbegi;
-		ind1 = 0;
-		while(lstmp && lstmp->next && (lstmp->next)->next)
-		{
-			if(lstmp == lstbegi)
-			{
-				if(cmp(lstbegi) == 0)
-				{
-					w = lstbegi->next;
-					lstbegi->next = (lstbegi->next)->next;
-					w->next = lstbegi;
-					lstbegi = w;
-					lstmp = lstbegi;
-					lstmp5 = lstbegi;
-					ind1 = 1;
-				}
-			}
-			else
-			{
-				if(cmp(lstmp) == 0)
-				{
-					w = lstmp->next;
-					lstmp->next = (lstmp->next)->next;
-					w->next = lstmp;
-					lstmp = w;
-					lstmp5->next = w;
-					ind1 = 1;
-				}
-			}
-			if(lstmp == lstbegi)
-			{
-			}
-			else
-				lstmp5 = lstmp5->next;
-			lstmp = lstmp->next;
-		}
 
-	}
-	*/
-	t_lsto *lstmp1;
-	t_lsto *lstmp2;
-	t_lsto *lstbegi;
-	int		ind;
-	long long	count;
 	count = 0;
 	lstbegi = lst;
 	lstmp1 = NULL;
@@ -282,7 +193,6 @@ t_lsto		*ft_lst_sort(t_lsto *lst, int (*cmp)(t_lsto*))
 			lst = lstbegi;
 			lst = lst->next;
 		}
-//		while(lst->next != NULL && count < 999999)
 		while(lst->next != NULL)
 		{
 			if ((cmp)(lst) == 0)
@@ -302,95 +212,3 @@ t_lsto		*ft_lst_sort(t_lsto *lst, int (*cmp)(t_lsto*))
 	}
 	return (lstbegi);
 }
-
-/*
-t_lsto		*ft_lst_sort1(t_lsto *lst)
-{
-	t_lsto	*lst1;
-
-	lst1 = ft_lst_sort(lst,croissant);
-	lst1 = ft_lst_sort(lst1,croissant);
-	lst1 = ft_lst_sort(lst1,croissant);
-	lst1 = ft_lst_sort(lst1,croissant);
-	lst1 = ft_lst_sort(lst1,croissant);
-	lst1 = ft_lst_sort(lst1,croissant);
-	lst1 = ft_lst_sort(lst1,croissant);
-	lst1 = ft_lst_sort(lst1,croissant);
-	lst1 = ft_lst_sort(lst1,croissant);
-	lst1 = ft_lst_sort(lst1,croissant);
-	lst1 = ft_lst_sort(lst1,croissant);
-	lst1 = ft_lst_sort(lst1,croissant);
-	lst1 = ft_lst_sort(lst1,croissant);
-	lst1 = ft_lst_sort(lst1,croissant);
-	lst1 = ft_lst_sort(lst1,croissant);
-	lst1 = ft_lst_sort(lst1,croissant);
-	return (lst1);
-}
-
-
-
-t_lsto		*ft_lst_sort2(t_lsto *lst)
-{
-	t_lsto	*lst1;
-
-	lst1 = ft_lst_sort(lst,croissant_pathname);
-	lst1 = ft_lst_sort(lst1,croissant_pathname);
-	lst1 = ft_lst_sort(lst1,croissant_pathname);
-	lst1 = ft_lst_sort(lst1,croissant_pathname);
-	lst1 = ft_lst_sort(lst1,croissant_pathname);
-	lst1 = ft_lst_sort(lst1,croissant_pathname);
-	lst1 = ft_lst_sort(lst1,croissant_pathname);
-	lst1 = ft_lst_sort(lst1,croissant_pathname);
-	lst1 = ft_lst_sort(lst1,croissant_pathname);
-	lst1 = ft_lst_sort(lst1,croissant_pathname);
-	lst1 = ft_lst_sort(lst1,croissant_pathname);
-	lst1 = ft_lst_sort(lst1,croissant_pathname);
-	lst1 = ft_lst_sort(lst1,croissant_pathname);
-	lst1 = ft_lst_sort(lst1,croissant_pathname);
-	lst1 = ft_lst_sort(lst1,croissant_pathname);
-	lst1 = ft_lst_sort(lst1,croissant_pathname);
-	lst1 = ft_lst_sort(lst1,croissant_pathname);
-	lst1 = ft_lst_sort(lst1,croissant_pathname);
-	lst1 = ft_lst_sort(lst1,croissant_pathname);
-	lst1 = ft_lst_sort(lst1,croissant_pathname);
-	return (lst1);
-}
-
-t_lsto		*ft_lst_sort3(t_lsto *lst)
-{
-	t_lsto	*lst1;
-
-	lst1 = ft_lst_sort(lst,decreasing);
-	lst1 = ft_lst_sort(lst1,decreasing);
-	lst1 = ft_lst_sort(lst1,decreasing);
-	lst1 = ft_lst_sort(lst1,decreasing);
-	lst1 = ft_lst_sort(lst1,decreasing);
-	lst1 = ft_lst_sort(lst1,decreasing);
-	lst1 = ft_lst_sort(lst1,decreasing);
-	lst1 = ft_lst_sort(lst1,decreasing);
-	lst1 = ft_lst_sort(lst1,decreasing);
-	lst1 = ft_lst_sort(lst1,decreasing);
-	lst1 = ft_lst_sort(lst1,decreasing);
-	lst1 = ft_lst_sort(lst1,decreasing);
-	lst1 = ft_lst_sort(lst1,decreasing);
-	lst1 = ft_lst_sort(lst1,decreasing);
-	lst1 = ft_lst_sort(lst1,decreasing);
-	lst1 = ft_lst_sort(lst1,decreasing);
-	lst1 = ft_lst_sort(lst1,decreasing);
-	lst1 = ft_lst_sort(lst1,decreasing);
-	lst1 = ft_lst_sort(lst1,decreasing);
-	lst1 = ft_lst_sort(lst1,decreasing);
-	lst1 = ft_lst_sort(lst1,decreasing);
-	lst1 = ft_lst_sort(lst1,decreasing);
-	return (lst1);
-}
-
-t_lsto		*ft_lst_sort4(t_lsto *lst)
-{
-	t_lsto	*lst1;
-
-	lst1 = ft_lst_sort(lst,decreasing_time);
-//	lst1 = ft_lst_sort(lst1,decreasing_time);
-	return (lst1);
-}
-*/

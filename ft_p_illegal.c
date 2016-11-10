@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/19 17:38:49 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/19 17:46:39 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/10 16:14:02 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int	ft_p_illegal(t_ind *ind)
 {
 	if (ind->indillegal != 0)
 	{
-
 		ft_putstr_fd("ls: ", 2);
 		ft_putstr_fd("illegal option -- ", 2);
 		ft_putchar_fd(ind->indillegal, 2);
