@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/25 13:44:58 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/02 13:17:48 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/10 13:30:33 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,27 +19,37 @@ void	ft_width(t_lsto *lst1,t_loption *loption)
 	struct passwd	*uid;
 	struct group	*gid;
 
+	uid = NULL;
+	gid = NULL;
 	while (lst1)
 	{
 //		if(ft_checkokfile(((t_rep*)(lst1->content))->name) == 1)
 //			ft_width2(lst1,loption);
 //		else
+	uid = NULL;
+	gid = NULL;
 		{
 			if (lstat(ft_makepath(((t_rep*)(lst1->content))->path,((t_rep*)(lst1->content))->name), &sb) == 0)
 			{
-					uid = getpwuid(sb.st_uid);
-					gid = getgrgid(sb.st_gid);
+					//uid = getpwuid(sb.st_uid);
+					//gid = getgrgid(sb.st_gid);
 				if(ft_strlen(ft_ustoa(sb.st_nlink)) > loption->link)
 					loption->link = ft_strlen(ft_ustoa(sb.st_nlink));
-				if((uid = getpwuid(sb.st_uid)) != NULL)
+				if(sb.st_uid && (uid = getpwuid(sb.st_uid)) != NULL)
 				{
-				if(ft_strlen(uid->pw_name) > loption->uname)
-					loption->uname = ft_strlen(uid->pw_name);
+//					if(uid)
+					{
+						if(ft_strlen(uid->pw_name) > loption->uname)
+							loption->uname = ft_strlen(uid->pw_name);
+					}
 				}
-				if((gid = getgrgid(sb.st_gid)) != NULL)
+				if(sb.st_gid && (gid = getgrgid(sb.st_gid)) != NULL)
 				{
-				if(ft_strlen(gid->gr_name) > loption->gname)
-					loption->gname = ft_strlen(gid->gr_name);
+//					if(gid)
+					{
+						if(ft_strlen(gid->gr_name) > loption->gname)
+							loption->gname = ft_strlen(gid->gr_name);
+					}
 				}
 				if(ft_strlen(ft_lldtoa(sb.st_size)) > loption->fsize)
 					loption->fsize = ft_strlen(ft_lldtoa(sb.st_size));

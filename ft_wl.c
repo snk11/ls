@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/25 14:27:40 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/02 13:17:28 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/10 13:30:42 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,32 +23,38 @@ void	ft_wl(t_lsto *lst1,t_loption loption)
 	struct passwd	*uid;
 	struct group	*gid;
 
+	uid = NULL;
+	gid = NULL;
 	l = 0;
 	curtime = time(NULL);
 	linkname = NULL;
 	while (lst1)
 	{
+	uid = NULL;
+	gid = NULL;
 //		if(ft_checkokfile(((t_rep*)(lst1->content))->name))
 //			ft_wl2(lst1,loption);
 //		else
 		{
 			if (lstat(ft_makepath(((t_rep*)(lst1->content))->path,((t_rep*)(lst1->content))->name), &sb) == 0)
 			{
-				uid = getpwuid(sb.st_uid);
-				gid = getgrgid(sb.st_gid);
+				//uid = getpwuid(sb.st_uid);
+				//gid = getgrgid(sb.st_gid);
 				ft_print_permission(ft_makepath(((t_rep*)(lst1->content))->path,((t_rep*)(lst1->content))->name));
 				ft_putstr("  ");
 				ft_putwidth(ft_ustoa(sb.st_nlink),loption.link);
 				ft_putstr(" ");
-				if((uid = getpwuid(sb.st_uid)) != NULL)
+				if(sb.st_uid && (uid = getpwuid(sb.st_uid)) != NULL)
 				{
-				ft_putwidth(uid->pw_name,loption.uname);
-				ft_putstr("  ");
+//					if(uid)
+						ft_putwidth(uid->pw_name,loption.uname);
+					ft_putstr("  ");
 				}
-				if((gid = getgrgid(sb.st_gid)) != NULL)
+				if(sb.st_gid && (gid = getgrgid(sb.st_gid)) != NULL)
 				{
-				ft_putwidth(gid->gr_name,loption.gname);
-				ft_putstr("  ");
+//					if(gid)
+						ft_putwidth(gid->gr_name,loption.gname);
+					ft_putstr("  ");
 				}
 				ft_putwidth(ft_lldtoa(sb.st_size),loption.fsize);
 				ft_putstr(" ");
