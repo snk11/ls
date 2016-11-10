@@ -6,52 +6,12 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 15:43:19 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/10 14:45:41 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/10 16:32:53 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "ft_ls.h"
 
-/*
-t_lst		*lst_add(t_lst *toplist, t_lst *lst1)
-{
-	t_lst	*lstmp;
-	t_lst	*lst11;
-
-	lst11 = NULL;
-	if (toplist == NULL)
-	{
-		lst11 = ft_create_lst(lst1->content);
-		((t_rep*)(lst11->content))->name = ft_memmove2(((t_rep*)(lst1->content))->name);
-		((t_rep*)(lst11->content))->path = ft_memmove2(((t_rep*)(lst1->content))->path);
-		toplist = lst11;
-	}
-	else
-	{
-		lstmp = toplist;
-		if(ft_isdir(ft_makepath(((t_rep*)(lst1->content))->path,((t_rep*)(lst1->content))->name)) == 1)
-		{
-			while(lstmp->nextr)
-				lstmp = lstmp->nextr;
-			lst11 = ft_create_lst(lst1->content);
-			((t_rep*)(lst11->content))->name = ft_memmove2(((t_rep*)(lst1->content))->name);
-			((t_rep*)(lst11->content))->path = ft_memmove2(((t_rep*)(lst1->content))->path);
-			lstmp->nextr = lst11;
-		}
-		else
-		{
-			while(lstmp->nextl)
-				lstmp = lstmp->nextl;
-			lst11 = ft_create_lst(lst1->content);
-			((t_rep*)(lst11->content))->name = ft_memmove2(((t_rep*)(lst1->content))->name);
-			((t_rep*)(lst11->content))->path = ft_memmove2(((t_rep*)(lst1->content))->path);
-			lstmp->nextl = lst11;
-		}
-	}
-	return (toplist);
-	//		*t_lst1 = (*t_lst1)->next;
-}
-*/
 void		lst_addo(t_lsto **toplist, t_lsto *lst1)
 {
 	t_lsto		*lstmp;
@@ -107,25 +67,10 @@ t_lsto		*lst_addo_down(t_lsto *toplist, t_lsto *lst1)
 		lstmp = ft_create_lsto((lst1)->content);
 		((t_rep*)(lstmp->content))->name = ft_memmove2(((t_rep*)(lst1->content))->name);
 		((t_rep*)(lstmp->content))->path = ft_memmove2(((t_rep*)(lst1->content))->path);
-		//		if (ind1 == 0)
-		//		{
-		//			lstmpbegi = lstmp;
-		//			ind1 = 1;
-		//		}
-		//		if (ind1 == 1)
-		{
 			lstmp2 = lsttopbegi;
 			while (lstmp2->next)
 				lstmp2 = lstmp2->next;
 			lstmp2->next = lstmp;
-		}
-		//		if (lstmp2 == NULL)
-		//		{
-		//			lstmp2 = lstmp;
-		//			lstbegi = lstmp2;
-		//		}
-		//		else
-		//			lstmp2->next = lstmp;
 		lst1 = lst1->next;
 	}
 	if (lst1 && toplist == NULL)
@@ -140,30 +85,14 @@ t_lsto		*lst_addo_down(t_lsto *toplist, t_lsto *lst1)
 			lstmp = ft_create_lsto((lst1)->content);
 			((t_rep*)(lstmp->content))->name = ft_memmove2(((t_rep*)(lst1->content))->name);
 			((t_rep*)(lstmp->content))->path = ft_memmove2(((t_rep*)(lst1->content))->path);
-			//		if (ind1 == 0)
-			//		{
-			//			lstmpbegi = lstmp;
-			//			ind1 = 1;
-			//		}
-			//		if (ind1 == 1)
-			{
 				lstmp2 = lsttopbegi;
 				while (lstmp2->next)
 					lstmp2 = lstmp2->next;
 				lstmp2->next = lstmp;
-			}
-			//		if (lstmp2 == NULL)
-			//		{
-			//			lstmp2 = lstmp;
-			//			lstbegi = lstmp2;
-			//		}
-			//		else
-			//			lstmp2->next = lstmp;
 			lst1 = lst1->next;
 		}
 	}
 	return (lsttopbegi);
-	//		*t_lst1 = (*t_lst1)->next;
 }
 
 t_lsto		*lst_addo_down_char(t_lsto *toplist, t_lsto *lst1)
@@ -255,49 +184,7 @@ t_lsto		*lst_addo_between(t_lsto *toplist, t_lsto *lst1)
 	}
 	return (lsttopbegi);
 }
-/*
-   void	ft_push1stback(t_lst **lstmp)
-   {
-   t_lst	*lst;
 
-   lst = NULL;
-   lst = *lstmp;
-   if ((*lstmp)->content)
-   {
-   while (lst->next)
-   {
-   lst = lst->next;
-   }
-   lst->next = ft_create_lst((*lstmp)->content);
- *lstmp = (*lstmp)->next;
- }
- }
- */
-/*
-t_lst		*ft_create_lst(void *content)
-{
-	t_lst	*curlst;
-
-	curlst = NULL;
-	if (!(curlst = (t_lst*)malloc(sizeof(t_lst))))
-		return (NULL);
-	if (content == NULL)
-	{
-		curlst->content = NULL;
-	}
-	else
-	{
-		if (!(curlst->content = malloc(sizeof(content))))
-			return (NULL);
-		curlst->content = ft_memmove(curlst->content, content, sizeof(content));
-	}
-	curlst->nextl = NULL;
-	curlst->nextr = NULL;
-
-	//				printf("fffffff%s\n",((t_rep*)(curlst->content))->path);
-	return (curlst);
-}
-*/
 t_lsto		*ft_create_lsto(void *content)
 {
 	t_lsto	*curlst;
@@ -313,7 +200,6 @@ t_lsto		*ft_create_lsto(void *content)
 	{
 		if (!(curlst->content = malloc(sizeof(content))))
 			return (NULL);
-//		curlst->content = ft_memmove(curlst->content, content, sizeof(content));
 	}
 	curlst->next = NULL;
 	return (curlst);
