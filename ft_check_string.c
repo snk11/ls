@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/21 23:28:41 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/27 15:36:03 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/11 17:44:27 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 
 int	ft_check_string(char *s)
 {
-	
-	if (ft_strcmp(s, "-1") != 0 && ft_strcmp(s, "--") != 0 && ft_strcmp(s, "-1R") != 0 && ft_strcmp(s,"-1a") != 0 && ft_strcmp(s,"-1r") != 0 && ft_strcmp(s,"-1t") != 0 && ft_strcmp(s,"-l") != 0)
+	if (ft_strcmp(s, "-1") != 0 && ft_strcmp(s, "--") != 0
+			&& ft_strcmp(s, "-1R") != 0 && ft_strcmp(s, "-1a") != 0
+			&& ft_strcmp(s, "-1r") != 0 && ft_strcmp(s, "-1t") != 0
+			&& ft_strcmp(s, "-l") != 0)
 		return (1);
 	return (0);
 }

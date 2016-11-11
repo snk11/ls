@@ -6,21 +6,21 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/23 17:57:58 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/11 15:16:07 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/11 17:42:48 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-void ft_atrreverse(char *s,t_lsto *lstcmd ,t_ind *ind)
+void	ft_atrreverse(char *s, t_lsto *lstcmd, t_ind *ind)
 {
 	t_lsto			*lst;
 	t_lsto			*lsti;
 	t_lsto			*lstibegi;
 
-	ft_print_n(s,lstcmd,ind);
+	ft_print_n(s, lstcmd, ind);
 	lst = ft_getreplist4(s);
-	ft_printname(s,lstcmd,ind);
+	ft_printname(s, lstcmd, ind);
 	lsti = ft_printlist29(lst);
 	lstibegi = lsti;
 	while (lsti)

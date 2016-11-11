@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 20:09:11 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/10 20:10:40 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/11 17:48:56 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int			ft_countelem(t_lsto *lst1)
 	int		cnt2;
 
 	cnt2 = 0;
-	while(lst1)
+	while (lst1)
 	{
 		lst1 = lst1->next;
 		cnt2++;
