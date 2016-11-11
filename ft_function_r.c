@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 14:21:34 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/11 15:51:53 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/11 16:39:12 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,3 +94,28 @@ void	ft_function_r4(t_lsto **lsti, t_lsto *lst, t_lsto* (*f1)(char *), t_lsto* (
 		(*lsti) = (*lsti)->next;
 }
 
+void	ft_function_r5(t_lsto **lsti, t_lsto *lst, t_lsto* (*f1)(char *), t_lsto* (*f2)(t_lsto *))
+{
+	char	*s1;
+	t_lsto	*lstj;
+	struct stat		sb;
+		
+	ft_putstr("\n");
+		ft_putstr(ft_makepath(((t_rep*)((*lsti)->content))->path,((t_rep*)((*lsti)->content))->name));
+		ft_putstr(":\n");
+		if(stat(ft_makepath(((t_rep*)((*lsti)->content))->path,((t_rep*)((*lsti)->content))->name),&sb) == 0)
+		{
+			if(ft_isdir(ft_makepath(((t_rep*)((*lsti)->content))->path,((t_rep*)((*lsti)->content))->name)) && (sb.st_mode & S_IRGRP))
+				lst = ft_getreplist(ft_makepath(((t_rep*)((*lsti)->content))->path,((t_rep*)((*lsti)->content))->name));
+			if(lst)
+				lstj = ft_printlist2(lst);
+			else if(ft_isdir(ft_makepath(((t_rep*)((*lsti)->content))->path,((t_rep*)((*lsti)->content))->name)) == 0 || (sb.st_mode & S_IRGRP) == 0)
+			{
+				ft_putstr_fd("ls: ", 2);
+				opendir(ft_makepath(((t_rep*)((*lsti)->content))->path,((t_rep*)((*lsti)->content))->name));
+				perror(((t_rep*)((*lsti)->content))->name);
+			}
+		}
+		*lsti = (*lsti)->next;
+		lst = NULL;
+}

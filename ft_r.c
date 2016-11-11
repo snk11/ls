@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/08 06:45:09 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/10 16:16:28 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/11 16:39:47 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,23 +27,11 @@ void ft_r(char *s, t_lsto *lstcmd,t_ind *ind)
 	lsti = ft_printlist2(lst);
 	lstibegi = lsti;
 	while (lsti)
-	{
-		if(stat(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name),&sb) == 0)
-		{
-			if(ft_isdir(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name)) && (sb.st_mode & S_IRGRP))
-				lst = ft_getreplist(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
-			if(lst && ft_isdir(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name)) && (sb.st_mode & S_IRGRP))
-			{
-				lstj = ft_printlist3(lst);
-				lsti = lst_addo_down(lsti,lstj);
-			}
-		}
-		lsti = lsti->next;
-		lst = NULL;
-	}
+		ft_function_r(&lsti, lst, ft_getreplist, ft_printlist3);
 	lstibegi = ft_lst_sort(lstibegi,croissant_pathname);
 	lsti = lstibegi;
 	while (lsti)
+//		ft_function_r5(&lsti, lst, ft_getreplist, ft_printlist2);
 	{
 		ft_putstr("\n");
 		ft_putstr(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
