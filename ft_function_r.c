@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 14:21:34 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/11 15:02:15 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/11 15:07:24 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,28 +45,32 @@ void	ft_function_r2(t_lsto **lsti, t_lsto *lst, t_lsto* (*f1)(char *), t_lsto* (
 	t_lsto	*lstj;
 	struct stat		sb;
 
-	s1 = ft_makepath(((t_rep*)((*lsti)->content))->path,((t_rep*)((*lsti)->content))->name);
-		if (ft_strcmp((((t_rep*)(*lsti)->content)->name), ".") != 0 && ft_strcmp((((t_rep*)(*lsti)->content)->name), "..") != 0)
+	s1 = ft_makepath(((t_rep*)((*lsti)->content))->path,
+			((t_rep*)((*lsti)->content))->name);
+	if (ft_strcmp((((t_rep*)(*lsti)->content)->name), ".") != 0
+			&& ft_strcmp((((t_rep*)(*lsti)->content)->name), "..") != 0)
+	{
+		ft_function_r2_p1(s1);
+		if(stat(s1,&sb) == 0)
 		{
-			ft_putstr("\n");
-			ft_putstr(s1);
-			ft_putstr(":\n");
-			if(stat(s1,&sb) == 0)
+			if(ft_isdir(s1) && (sb.st_mode & S_IRGRP))
+				lst = ft_getreplist4(s1);
+			if(lst)
+				lstj = ft_printlist2(lst);
+			else if(ft_isdir(s1) == 0 || (sb.st_mode & S_IRGRP) == 0)
 			{
-				if(ft_isdir(s1) && (sb.st_mode & S_IRGRP))
-					lst = ft_getreplist4(s1);
-				if(lst)
-					lstj = ft_printlist2(lst);
-				else if(ft_isdir(s1) == 0 || (sb.st_mode & S_IRGRP) == 0)
-				{
-					ft_putstr_fd("ls: ", 2);
-					opendir(s1);
-					perror(((t_rep*)((*lsti)->content))->name);
-				}
+				ft_putstr_fd("ls: ", 2);
+				opendir(s1);
+				perror(((t_rep*)((*lsti)->content))->name);
 			}
 		}
-		free(s1);
-		s1 = NULL;
-		(*lsti) = (*lsti)->next;
-		lst = NULL;
+	}
+	(*lsti) = (*lsti)->next;
+}
+
+void		ft_function_r2_p1(char *s1)
+{
+	ft_putstr("\n");
+	ft_putstr(s1);
+	ft_putstr(":\n");
 }
