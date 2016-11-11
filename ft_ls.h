@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/11 10:19:45 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/11 10:32:02 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -259,6 +259,7 @@ void ft_atrreverse(char *s,t_lsto *lstcmd ,t_ind *ind);
 void	ft_putlongnbr(long n);
 void	ft_putulongnbr(unsigned long n);
 void	ft_p0regfile(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd);
+void	ft_p0regfile_p1(t_lsto *lst1, t_ind *ind, char *s1,int inderror);
 void	ft_p0error(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd);
 void	ft_p0error_p1(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd);
 void	ft_p0error_p1_p1(t_lsto *lst1,t_ind *ind);
