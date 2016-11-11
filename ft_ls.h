@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/11 11:20:49 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/11 12:20:44 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -158,6 +158,7 @@ t_lsto		*ft_create_lsto_char(char *content);
 t_lsto		*ft_getprimelist(char **av,t_ind *ind);
 t_lsto		*ft_getprimelist2(char **av,t_ind *ind);
 t_lsto *ft_getreplist(char *rep);
+void		ft_getreplist_p1(t_rep **e);
 t_lsto *ft_getreplist4(char *rep);
 t_lsto	*ft_getreplisto4(t_lsto *lstmp);
 void	ft_printlist(t_lsto *lstmp);
@@ -271,12 +272,15 @@ int		ft_checkhyphencase(t_lsto *lst1,t_ind *ind);
 int		ft_checkhyphencase_print(t_lsto *lst1,t_ind *ind);
 void	ft_printlst(t_lsto *lstmp);
 void	ft_printname(char *s,t_lsto *lstcmd,t_ind *ind);
+void		ft_printname_p1(char *s,t_lsto *lstcmd,t_ind *ind, int cnt);
+int		ft_printname_p2(char *s,t_lsto *lstcmd,t_ind *ind, int cnt);
+void		ft_printname_p3(char *s,t_lsto *lstcmd,t_ind *ind);
 void	ft_print_n(char *s,t_lsto *lstcmd,t_ind *ind);
 int		ft_scan_option2(char *av);
 void	ft_init2(t_loption *loption);
 void	ft_width(t_lsto *lst1,t_loption *loption);
 void	ft_width_p1(t_loption *loption, struct stat sb);
-void	ft_width_p2(t_loption *loption, struct stat sb);
+void	ft_width_p2(t_loption *loption, struct stat sb, time_t curtime);
 void	ft_wl(t_lsto *lst1,t_loption loption);
 void	ft_wl_p0(t_lsto *lst1, t_loption loption, struct stat sb);
 void	ft_wl_p1(t_loption loption, struct stat sb);
@@ -285,6 +289,7 @@ void	ft_wl_p3(t_loption loption, struct stat sb, time_t curtime);
 void	ft_wl_p4(t_loption loption, struct stat sb, time_t curtime);
 void	ft_wl_p5(t_loption loption, struct stat sb, time_t curtime);
 void	ft_wl_p6(t_lsto *lst1, t_loption loption, struct stat sb, time_t curtime);
+//void	ft_wl2(t_lsto *lstmp,t_loption loption);
 void	ft_putwidth(char *s,int p);
 void	ft_putwidth2(char *s,int p);
 void		ft_putmonth(int d);
@@ -296,6 +301,7 @@ int		ft_checkpermission(char *s);
 int		ft_checkslash(char *s);
 int		ft_checkokfile(char *s);
 int			ft_countelem(t_lsto *lst1);
-void		ft_getreplist_p1(t_rep **e);
+void		ft_mem1(char **s1, char **s2, t_lsto *lsta);
+void		ft_mem1_char(char **s1, char **s2, t_lsto *lsta);
 
 # endif

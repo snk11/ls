@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/25 13:44:58 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/11 11:21:49 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/11 11:27:09 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_width(t_lsto *lst1,t_loption *loption)
 			if(ft_strlen(ft_ustoa(sb.st_nlink)) > loption->link)
 				loption->link = ft_strlen(ft_ustoa(sb.st_nlink));
 			ft_width_p1(loption, sb);
-			ft_width_p2(loption, sb);
+			ft_width_p2(loption, sb, curtime);
 		}
 		lst1 = lst1->next;
 	}
@@ -61,10 +61,8 @@ void	ft_width_p1(t_loption *loption, struct stat sb)
 	}
 }
 
-void	ft_width_p2(t_loption *loption, struct stat sb)
+void	ft_width_p2(t_loption *loption, struct stat sb, time_t curtime)
 {
-	time_t		curtime;
-
 	if(ft_strlen(ft_lldtoa(sb.st_size)) > loption->fsize)
 		loption->fsize = ft_strlen(ft_lldtoa(sb.st_size));
 	if(curtime - sb.st_mtime > 15778458)

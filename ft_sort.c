@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 13:51:30 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/10 16:19:48 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/11 12:25:03 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,8 @@ int decreasing_time(t_lsto *lsta)
 	char			*s1;
 	char			*s2;
 
-	s1 = ft_memmove2(ft_makepath(((t_rep*)(lsta->content))->path,((t_rep*)(lsta->content))->name));
-	s2 = ft_memmove2(ft_makepath(((t_rep*)((lsta->next)->content))->path,((t_rep*)((lsta->next)->content))->name));
-	lstat(s1, &sa);
-	lstat(s2, &sb);
-	if (sa.st_mtime >= sb.st_mtime)
+	ft_mem1(&s1, &s2, lsta);
+	if(lstat(s1, &sa) == 0 && lstat(s2, &sb) == 0 && sa.st_mtime >= sb.st_mtime)
 	{
 		if (sa.st_mtime > sb.st_mtime)
 			return (1);
@@ -62,103 +59,6 @@ int decreasing_time(t_lsto *lsta)
 	}
 	return (0);
 }
-
-int croissant_time(t_lsto *lsta)
-{
-	struct stat		sa;
-	struct stat		sb;
-	char			*s1;
-	char			*s2;
-
-
-	s1 = ft_memmove2(ft_makepath(((t_rep*)(lsta->content))->path,((t_rep*)(lsta->content))->name));
-	s2 = ft_memmove2(ft_makepath(((t_rep*)((lsta->next)->content))->path,((t_rep*)((lsta->next)->content))->name));
-	lstat(s1, &sa);
-	lstat(s2, &sb);
-	if (sa.st_mtime <= sb.st_mtime)
-	{
-		if (sa.st_mtime < sb.st_mtime)
-			return (1);
-		if (sa.st_mtime == sb.st_mtime && sa.st_mtimespec.tv_nsec <= sb.st_mtimespec.tv_nsec)
-		{
-			if (sa.st_mtimespec.tv_nsec < sb.st_mtimespec.tv_nsec)
-				return (1);
-			if (sa.st_mtimespec.tv_nsec == sb.st_mtimespec.tv_nsec && ft_strcmp(s1,s2) >= 0)
-				return (1);
-			else
-				return (0);
-		}
-		else
-			return (0);
-	}
-	return (0);
-}
-
-int croissant_time_char(t_lsto *lsta)
-{
-	struct stat		sa;
-	struct stat		sb;
-	char			*s1;
-	char			*s2;
-
-	s1 = ft_memmove2(lsta->content);
-	s2 = ft_memmove2((lsta->next)->content);
-	lstat(s1, &sa);
-	lstat(s2, &sb);
-	if (sa.st_mtime <= sb.st_mtime)
-	{
- 		if (sa.st_mtime < sb.st_mtime)
-			return (1);
-		if (sa.st_mtime == sb.st_mtime && sa.st_mtimespec.tv_nsec <= sb.st_mtimespec.tv_nsec)
-		{
-			if (sa.st_mtimespec.tv_nsec < sb.st_mtimespec.tv_nsec)
-				return (1);
-			if (sa.st_mtimespec.tv_nsec == sb.st_mtimespec.tv_nsec && ft_strcmp(s1,s2) >= 0)
-				return (1);
-			else
-				return (0);
-		}
-		else
-			return (0);
-	}
-	return (0);
-}
-
-int decreasing_time_char(t_lsto *lsta)
-{
-	struct stat		sa;
-	struct stat		sb;
-	char			*s1;
-	char			*s2;
-
-	s1 = ft_memmove2(lsta->content);
-	s2 = ft_memmove2((lsta->next)->content);
-	lstat(s1, &sa);
-	lstat(s2, &sb);
-	if (sa.st_mtime >= sb.st_mtime)
-	{
- 		if (sa.st_mtime > sb.st_mtime)
-			return (1);
-		if (sa.st_mtime == sb.st_mtime && sa.st_mtimespec.tv_nsec >= sb.st_mtimespec.tv_nsec)
-		{
-			if (sa.st_mtimespec.tv_nsec > sb.st_mtimespec.tv_nsec)
-				return (1);
-			if (sa.st_mtimespec.tv_nsec == sb.st_mtimespec.tv_nsec && ft_strcmp(s1,s2) <= 0)
-				return (1);
-			else
-				return (0);
-		}
-		else
-			return (0);
-	}
-	return (0);
-}
-
-int croissant_pathname(t_lsto *lsti)
-{
-		return (ft_strcmp(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti)->content)->name),ft_makepath(((t_rep*)((lsti->next)->content))->path,((t_rep*)((lsti->next)->content))->name)) <= 0);
-}
-
 t_lsto		*ft_lst_sort(t_lsto *lst, int (*cmp)(t_lsto*))
 {
 	t_lsto *lstmp1;

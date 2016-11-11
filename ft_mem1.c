@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_width2.c                                        :+:      :+:    :+:   */
+/*   ft_mem1.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/11 10:37:44 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/11 11:28:24 by syusof           ###   ########.fr       */
+/*   Created: 2016/11/11 12:08:40 by syusof            #+#    #+#             */
+/*   Updated: 2016/11/11 12:19:48 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-void	ft_width2(t_lsto *lst1,t_loption *loption)
+void		ft_mem1(char **s1, char **s2, t_lsto *lsta)
 {
-	struct stat		sb;
-	time_t		curtime;
+	*s1 = ft_memmove2(ft_makepath(((t_rep*)(lsta->content))->path,((t_rep*)(lsta->content))->name));
+	*s2 = ft_memmove2(ft_makepath(((t_rep*)((lsta->next)->content))->path,((t_rep*)((lsta->next)->content))->name));
+}
 
-	curtime = time(NULL);
-	while (lst1)
-	{
-		if(lstat(((t_rep*)(lst1->content))->name, &sb) == 0)
-		{
-			if(ft_strlen(ft_ustoa(sb.st_nlink)) > loption->link)
-				loption->link = ft_strlen(ft_ustoa(sb.st_nlink));
-			ft_width_p1(loption, sb);
-			ft_width_p2(loption, sb, curtime);
-		}
-		lst1 = lst1->next;
-	}
+void		ft_mem1_char(char **s1, char **s2, t_lsto *lsta)
+{
+	*s1 = ft_memmove2(lsta->content);
+	*s2 = ft_memmove2((lsta->next)->content);
 }
