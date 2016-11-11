@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 15:47:28 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/11 17:10:28 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/11 17:18:20 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	ft_function_r2(t_lsto **lsti, t_lsto *lst, t_lsto* (*f1)(char *), t_lsto* (
 		{
 			if(ft_isdir(s1) && (sb.st_mode & S_IRGRP))
 				lst = ft_getreplist4(s1);
-//			if(lst)
 			if(lst && (sb.st_mode & S_IRGRP))
 				lstj = ft_printlist2(lst);
 			else if(ft_isdir(s1) == 0 || (sb.st_mode & S_IRGRP) == 0)

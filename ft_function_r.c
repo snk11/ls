@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 14:21:34 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/11 17:10:14 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/11 17:18:11 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ void	ft_function_r4(t_lsto **lsti, t_lsto *lst, t_lsto* (*f1)(char *), t_lsto* (
 			{
 				if((sb.st_mode & S_IRGRP))
 					lst = f1(s1);
-			//	if(lst)
 				if(lst && (sb.st_mode & S_IRGRP))
 					lstj = f2(lst);
 				else if ((sb.st_mode & S_IRGRP) == 0)
