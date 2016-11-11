@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/11 14:03:39 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/11 14:11:16 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -303,6 +303,6 @@ int			ft_countelem(t_lsto *lst1);
 void		ft_mem1(char **s1, char **s2, t_lsto *lsta);
 void		ft_mem1_char(char **s1, char **s2, t_lsto *lsta);
 t_lsto		*ft_lst_sort(t_lsto *lst, int (*cmp)(t_lsto*));
-t_lsto		*ft_lst_sort_p1(t_lsto **lst, t_lsto **lstbegi,int *ind ,int (*cmp)(t_lsto*));
+t_lsto		*ft_lst_sort_p1(t_lsto **lst, t_lsto **lstbegi, t_lsto **lstmp1, int *ind ,int (*cmp)(t_lsto*));
 
 # endif
