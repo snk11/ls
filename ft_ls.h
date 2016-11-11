@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/11 10:35:27 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/11 10:47:02 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -275,6 +275,8 @@ void	ft_print_n(char *s,t_lsto *lstcmd,t_ind *ind);
 int		ft_scan_option2(char *av);
 void	ft_init2(t_loption *loption);
 void	ft_width(t_lsto *lst1,t_loption *loption);
+void	ft_width_p1(t_loption *loption, struct stat sb);
+void	ft_width_p2(t_loption *loption, struct stat sb);
 void	ft_wl(t_lsto *lst1,t_loption loption);
 //void	ft_wl2(t_lsto *lstmp,t_loption loption);
 void	ft_putwidth(char *s,int p);

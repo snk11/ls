@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_wl.c                                            :+:      :+:    :+:   */
+/*   ft_wl2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/25 14:27:40 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/11 10:39:48 by syusof           ###   ########.fr       */
+/*   Created: 2016/11/11 10:39:04 by syusof            #+#    #+#             */
+/*   Updated: 2016/11/11 10:39:54 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-void	ft_wl(t_lsto *lst1,t_loption loption)
+void	ft_wl2(t_lsto *lst1,t_loption loption)
 {
 	struct stat		sb;
 	char	*linkname;
@@ -20,21 +20,19 @@ void	ft_wl(t_lsto *lst1,t_loption loption)
 	ssize_t		r;
 	time_t		curtime;
 	int	i;
-	struct passwd	*uid;
+	struct passwd *uid;
 	struct group	*gid;
 
-	uid = NULL;
-	gid = NULL;
 	l = 0;
 	curtime = time(NULL);
 	linkname = NULL;
 	while (lst1)
 	{
-		uid = NULL;
-		gid = NULL;
-		if (lstat(ft_makepath(((t_rep*)(lst1->content))->path,((t_rep*)(lst1->content))->name), &sb) == 0)
+		if (lstat(((t_rep*)(lst1->content))->name, &sb) == 0)
 		{
-			ft_print_permission(ft_makepath(((t_rep*)(lst1->content))->path,((t_rep*)(lst1->content))->name));
+			uid = getpwuid(sb.st_uid);
+			gid = getgrgid(sb.st_gid);
+			ft_print_permission(((t_rep*)(lst1->content))->name);
 			ft_putstr("  ");
 			ft_putwidth(ft_ustoa(sb.st_nlink),loption.link);
 			ft_putstr(" ");
@@ -119,6 +117,7 @@ void	ft_wl(t_lsto *lst1,t_loption loption)
 				ft_putstr(" -> ");
 				linkname = (char*)malloc(sb.st_size + 1);
 				r = readlink(ft_makepath(((t_rep*)lst1->content)->path,((t_rep*)lst1->content)->name),linkname,sb.st_size);
+
 				if(linkname)
 				{
 					linkname[r] = 0;
@@ -129,5 +128,5 @@ void	ft_wl(t_lsto *lst1,t_loption loption)
 		}
 		lst1 = lst1->next;
 	}
-}
 
+}
