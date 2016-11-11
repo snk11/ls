@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 12:33:08 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/11 13:42:35 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/11 14:03:49 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ t_lsto		*ft_lst_sort(t_lsto *lst, int (*cmp)(t_lsto*))
 	{
 		ind = 0;
 		lst = lstbegi;
+		lstbegi = ft_lst_sort_p1(&lst, &lstbegi,&ind,cmp);
 		lstmp1 = lst;
 		if (lstbegi->next)
 		{
@@ -63,3 +64,27 @@ t_lsto		*ft_lst_sort(t_lsto *lst, int (*cmp)(t_lsto*))
 	return (lstbegi);
 }
 
+t_lsto		*ft_lst_sort_p1(t_lsto **lst, t_lsto **lstbegi,int *ind ,int (*cmp)(t_lsto*))
+{
+	t_lsto	*lstmp1;
+	t_lsto	*lstmp2;
+
+	*lstbegi = *lst;
+	/*
+	if ((*lstbegi)->next)
+		{
+			if ((cmp)(*lstbegi) == 0)
+			{
+				lstmp2 = ((*lstbegi)->next)->next;
+				lstmp1 = (*lstbegi)->next;
+				((*lstbegi)->next)->next = *lstbegi;
+				(*lstbegi)->next = lstmp2;
+				*lstbegi = lstmp1;
+				*ind = 1;
+			}
+			lst = *lstbegi;
+			lst = lst->next;
+		}
+	*/
+	return (*lstbegi);
+}
