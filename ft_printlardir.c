@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/23 13:03:28 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/11 15:19:19 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/11 15:37:31 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,27 +27,12 @@ void	ft_printlardir(char *s,t_lsto *lstcmd,t_ind *ind)
 	lsti = ft_printlist16(lst);
 	lstibegi = lsti;
 	while (lsti)
-	{
-		if (ft_strcmp((((t_rep*)(lsti)->content)->name), ".") != 0 && ft_strcmp((((t_rep*)(lsti)->content)->name), "..") != 0)
-		{
-			if(stat(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name),&sb) == 0)
-			{
-				if((sb.st_mode & S_IRGRP))
-					lst = ft_getreplist(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
-				if(lst && (sb.st_mode & S_IRGRP))
-				{
-					lstj = ft_printlist3(lst);
-					lsti = lst_addo_down(lsti,lstj);
-				}
-			}
-		}
-		lsti = lsti->next;
-		lst = NULL;
-	}
+		ft_function_rl(&lsti, lst, ft_getreplist, ft_printlist3);
 	lstibegi = ft_lst_sort(lstibegi,croissant_pathname);
 	lsti = lstibegi;
 	while (lsti)
-	{
+		ft_function_r4(&lsti, lst, ft_getreplist4, ft_printlist16);
+/*	{
 		if (ft_strcmp((((t_rep*)(lsti)->content)->name), ".") != 0 && ft_strcmp((((t_rep*)(lsti)->content)->name), "..") != 0)
 		{
 			ft_putstr("\n");
@@ -69,5 +54,5 @@ void	ft_printlardir(char *s,t_lsto *lstcmd,t_ind *ind)
 		}
 		lsti = lsti->next;
 		lst = NULL;
-	}
+	}*/
 }

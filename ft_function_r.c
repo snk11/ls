@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 14:21:34 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/11 15:25:05 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/11 15:40:46 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,4 +100,32 @@ void	ft_function_rl(t_lsto **lsti, t_lsto *lst, t_lsto* (*f1)(char *), t_lsto* (
 	s1 = NULL;
 	*lsti = (*lsti)->next;
 	lst = NULL;
+}
+
+void	ft_function_r4(t_lsto **lsti, t_lsto *lst, t_lsto* (*f1)(char *), t_lsto* (*f2)(t_lsto *))
+{
+	char	*s1;
+	t_lsto	*lstj;
+	struct stat		sb;
+
+	s1 = ft_makepath(((t_rep*)((*lsti)->content))->path,((t_rep*)((*lsti)->content))->name);
+		if (ft_strcmp((((t_rep*)(*lsti)->content)->name), ".") != 0 && ft_strcmp((((t_rep*)(*lsti)->content)->name), "..") != 0)
+		{
+			ft_function_r2_p1(s1);
+			if(stat(s1,&sb) == 0)
+			{
+				if((sb.st_mode & S_IRGRP))
+					lst = f1(s1);
+				if(lst)
+					lstj = f2(lst);
+				else if ((sb.st_mode & S_IRGRP) == 0)
+				{
+					ft_putstr_fd("ls: ", 2);
+					opendir(s1);
+					perror(((t_rep*)((*lsti)->content))->name);
+				}
+			}
+		}
+		(*lsti) = (*lsti)->next;
+		lst = NULL;
 }

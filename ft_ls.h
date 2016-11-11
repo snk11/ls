@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/11 15:25:19 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/11 15:39:36 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -309,5 +309,6 @@ void	ft_function_r(t_lsto **lsti, t_lsto *lst, t_lsto* (*f1)(char *), t_lsto* (*
 void	ft_function_r2(t_lsto **lsti, t_lsto *lst, t_lsto* (*f1)(char *), t_lsto* (*f2)(t_lsto *));
 void		ft_function_r2_p1(char *s1);
 void	ft_function_rl(t_lsto **lsti, t_lsto *lst, t_lsto* (*f1)(char *), t_lsto* (*f2)(t_lsto *));
+void	ft_function_r4(t_lsto **lsti, t_lsto *lst, t_lsto* (*f1)(char *), t_lsto* (*f2)(t_lsto *));
 
 # endif
