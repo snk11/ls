@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/11 14:16:38 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/11 14:31:22 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -305,5 +305,6 @@ void		ft_mem1_char(char **s1, char **s2, t_lsto *lsta);
 t_lsto		*ft_lst_sort(t_lsto *lst, int (*cmp)(t_lsto*));
 void		ft_lst_sort_p1(t_lsto **lst, t_lsto **lstbegi, t_lsto **lstmp1,int *ind ,int (*cmp)(t_lsto*));
 void		ft_lst_sort_p2(t_lsto **lst, t_lsto **lstbegi, t_lsto **lstmp1,int *ind ,int (*cmp)(t_lsto*));
+void	ft_function_r(t_lsto **lsti, t_lsto **lst, t_lsto* (*f1)(char *), t_lsto* (*f2)(t_lsto *));
 
 # endif

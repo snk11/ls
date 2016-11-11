@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/22 13:45:07 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/02 10:43:02 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/11 14:33:24 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void ft_ar(char *s, t_lsto *lstcmd,t_ind *ind)
 {
-
 	struct stat		sb;
 	t_lsto			*lst;
 	t_lsto			*lsti;
@@ -29,6 +28,8 @@ void ft_ar(char *s, t_lsto *lstcmd,t_ind *ind)
 	lsti = ft_printlist2(lst);
 	lstibegi = lsti;
 	while (lsti)
+		ft_function_r(&lsti, &lst, ft_getreplist4, ft_printlist3);
+	/*
 	{
 		s1 = ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name);
 		if (ft_strcmp((((t_rep*)(lsti)->content)->name), ".") != 0 && ft_strcmp((((t_rep*)(lsti)->content)->name), "..") != 0)
@@ -49,6 +50,7 @@ void ft_ar(char *s, t_lsto *lstcmd,t_ind *ind)
 		lsti = lsti->next;
 		lst = NULL;
 	}
+	*/
 	lstibegi = ft_lst_sort(lstibegi, croissant_pathname);
 	lsti = lstibegi;
 	while (lsti)
