@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/25 13:44:58 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/11 10:49:10 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/11 11:21:49 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 void	ft_width(t_lsto *lst1,t_loption *loption)
 {
 	struct stat		sb;
+	time_t		curtime;
 
+	curtime = time(NULL);
 	while (lst1)
 	{
 		if (lstat(ft_makepath(((t_rep*)(lst1->content))->path,((t_rep*)(lst1->content))->name), &sb) == 0)

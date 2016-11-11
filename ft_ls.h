@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/11 10:47:02 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/11 11:20:49 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -278,7 +278,13 @@ void	ft_width(t_lsto *lst1,t_loption *loption);
 void	ft_width_p1(t_loption *loption, struct stat sb);
 void	ft_width_p2(t_loption *loption, struct stat sb);
 void	ft_wl(t_lsto *lst1,t_loption loption);
-//void	ft_wl2(t_lsto *lstmp,t_loption loption);
+void	ft_wl_p0(t_lsto *lst1, t_loption loption, struct stat sb);
+void	ft_wl_p1(t_loption loption, struct stat sb);
+void	ft_wl_p2(t_loption loption, struct stat sb, time_t curtime);
+void	ft_wl_p3(t_loption loption, struct stat sb, time_t curtime);
+void	ft_wl_p4(t_loption loption, struct stat sb, time_t curtime);
+void	ft_wl_p5(t_loption loption, struct stat sb, time_t curtime);
+void	ft_wl_p6(t_lsto *lst1, t_loption loption, struct stat sb, time_t curtime);
 void	ft_putwidth(char *s,int p);
 void	ft_putwidth2(char *s,int p);
 void		ft_putmonth(int d);

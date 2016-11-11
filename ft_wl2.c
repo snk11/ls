@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 10:39:04 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/11 10:39:54 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/11 10:53:53 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void	ft_wl2(t_lsto *lst1,t_loption loption)
 	struct group	*gid;
 
 	l = 0;
-	curtime = time(NULL);
 	linkname = NULL;
 	while (lst1)
 	{
