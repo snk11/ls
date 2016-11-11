@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/18 15:14:46 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/11 10:32:18 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/11 10:35:41 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,30 +32,7 @@ void	ft_p0regfile(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 		if(ft_checkhyphencase(lstcmd,ind) == 1)
 			ft_p0regfile_p1(lst1, ind, s1, inderror);
 		else if(ft_checkhyphencase(lstcmd,ind) == 0)
-		{
-			if(ind->index1 > 1 && inderror == 1 && ind->indl == 1 && (ft_isreg(ft_makepath(".",(char*)(lst1->content))) || ft_islnk(ft_makepath(".",s1))))
-			{
-				ft_printlregfile(lst1);
-				ind->indregfile = 1;
-			}
-			else if(ind->index1 > 1 && inderror == 1 && (ft_isreg(s1) || ft_islnk(s1)))
-			{
-				ft_putstr((char*)(lst1->content));
-				ft_putstr("\n");
-				ind->indregfile = 1;
-			}
-			else if(inderror == 1 && ind->indl == 1 && (ft_isreg((char*)(lst1->content)) || ft_islnk(s1)))
-			{
-				ft_printlregfile(lst1);
-				ind->indregfile = 1;
-			}
-			else if(inderror == 1 && (ft_isreg(s1) || ft_islnk(s1)))
-			{
-				ft_putstr((char*)(lst1->content));
-				ft_putstr("\n");
-				ind->indregfile = 1;
-			}
-		}
+			ft_p0regfile_p2(lst1, ind, s1, inderror);
 		lst1 = lst1->next;
 	}
 
@@ -65,7 +42,6 @@ void	ft_p0regfile(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd)
 
 void	ft_p0regfile_p1(t_lsto *lst1, t_ind *ind, char *s1,int inderror)
 {
-
 	if(inderror == 1 && ind->indl == 1 && (ft_isreg(ft_makepath(".",(char*)(lst1->content))) || ft_islnk(ft_makepath(".",(char*)lst1->content))))
 	{
 		ft_printlregfile(lst1);
@@ -77,4 +53,32 @@ void	ft_p0regfile_p1(t_lsto *lst1, t_ind *ind, char *s1,int inderror)
 		ft_putstr("\n");
 		ind->indregfile = 1;
 	}
+}
+
+
+void	ft_p0regfile_p2(t_lsto *lst1, t_ind *ind, char *s1,int inderror)
+{
+	if(ind->index1 > 1 && inderror == 1 && ind->indl == 1 && (ft_isreg(ft_makepath(".",(char*)(lst1->content))) || ft_islnk(ft_makepath(".",s1))))
+	{
+		ft_printlregfile(lst1);
+		ind->indregfile = 1;
+	}
+	else if(ind->index1 > 1 && inderror == 1 && (ft_isreg(s1) || ft_islnk(s1)))
+	{
+		ft_putstr((char*)(lst1->content));
+		ft_putstr("\n");
+		ind->indregfile = 1;
+	}
+	else if(inderror == 1 && ind->indl == 1 && (ft_isreg((char*)(lst1->content)) || ft_islnk(s1)))
+	{
+		ft_printlregfile(lst1);
+		ind->indregfile = 1;
+	}
+	else if(inderror == 1 && (ft_isreg(s1) || ft_islnk(s1)))
+	{
+		ft_putstr((char*)(lst1->content));
+		ft_putstr("\n");
+		ind->indregfile = 1;
+	}
+
 }
