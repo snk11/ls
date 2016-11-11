@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/25 13:44:58 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/11 10:46:41 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/11 10:49:10 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,15 @@
 void	ft_width(t_lsto *lst1,t_loption *loption)
 {
 	struct stat		sb;
-	struct passwd	*uid;
-	struct group	*gid;
 
-	uid = NULL;
-	gid = NULL;
 	while (lst1)
 	{
-		uid = NULL;
-		gid = NULL;
+		if (lstat(ft_makepath(((t_rep*)(lst1->content))->path,((t_rep*)(lst1->content))->name), &sb) == 0)
 		{
-			if (lstat(ft_makepath(((t_rep*)(lst1->content))->path,((t_rep*)(lst1->content))->name), &sb) == 0)
-			{
-				if(ft_strlen(ft_ustoa(sb.st_nlink)) > loption->link)
-					loption->link = ft_strlen(ft_ustoa(sb.st_nlink));
-				ft_width_p1(loption, sb);
-				ft_width_p2(loption, sb);
-			}
+			if(ft_strlen(ft_ustoa(sb.st_nlink)) > loption->link)
+				loption->link = ft_strlen(ft_ustoa(sb.st_nlink));
+			ft_width_p1(loption, sb);
+			ft_width_p2(loption, sb);
 		}
 		lst1 = lst1->next;
 	}
