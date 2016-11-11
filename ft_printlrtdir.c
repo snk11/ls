@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/23 13:28:02 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/11 16:01:53 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/11 17:26:54 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,9 @@
 
 void	ft_printlrtdir(char *s,t_lsto *lstcmd,t_ind *ind)
 {
-	struct stat		sb;
 	t_lsto			*lst;
 	t_lsto			*lsti;
 	t_lsto			*lstibegi;
-	t_lsto			*lstj;
-
 
 	ft_print_n(s,lstcmd,ind);
 	lst = ft_getreplist(s);

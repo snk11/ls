@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/23 10:33:51 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/11 16:43:10 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/11 17:26:16 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,10 @@
 
 void ft_rreverse(char *s,t_lsto *lstcmd, t_ind *ind)
 {
-
-	struct stat		sb;
 	t_lsto			*lst;
 	t_lsto			*lsti;
 	t_lsto			*lstibegi;
-	t_lsto			*lstj;
 
-	//if ( (i > 1 && (ind.indfirst == 1 && i > 2)) || (i > 1 && ind.indfirst == 0))
 	ft_print_n(s,lstcmd,ind);
 	lst = ft_getreplist(s);
 	ft_printname(s,lstcmd,ind);
