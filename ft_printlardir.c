@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/23 13:03:28 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/11 15:37:31 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/11 15:42:42 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,9 @@
 
 void	ft_printlardir(char *s,t_lsto *lstcmd,t_ind *ind)
 {
-	struct stat		sb;
 	t_lsto			*lst;
 	t_lsto			*lsti;
 	t_lsto			*lstibegi;
-	t_lsto			*lstj;
-
 
 	ft_print_n(s,lstcmd,ind);
 	lst = ft_getreplist4(s);
@@ -32,27 +29,4 @@ void	ft_printlardir(char *s,t_lsto *lstcmd,t_ind *ind)
 	lsti = lstibegi;
 	while (lsti)
 		ft_function_r4(&lsti, lst, ft_getreplist4, ft_printlist16);
-/*	{
-		if (ft_strcmp((((t_rep*)(lsti)->content)->name), ".") != 0 && ft_strcmp((((t_rep*)(lsti)->content)->name), "..") != 0)
-		{
-			ft_putstr("\n");
-			ft_putstr(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
-			ft_putstr(":\n");
-			if(stat(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name),&sb) == 0)
-			{
-				if((sb.st_mode & S_IRGRP))
-					lst = ft_getreplist4(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
-				if(lst)
-					lstj = ft_printlist16(lst);
-				else if ((sb.st_mode & S_IRGRP) == 0)
-				{
-					ft_putstr_fd("ls: ", 2);
-					opendir(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
-					perror(((t_rep*)(lsti->content))->name);
-				}
-			}
-		}
-		lsti = lsti->next;
-		lst = NULL;
-	}*/
 }

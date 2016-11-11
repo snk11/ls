@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/23 17:24:45 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/02 10:46:56 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/11 15:44:23 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 void	ft_printlarreversedir(char *s,t_lsto *lstcmd,t_ind *ind)
 {
-	struct stat		sb;
 	t_lsto			*lst;
 	t_lsto			*lsti;
 	t_lsto			*lstibegi;
-	t_lsto			*lstj;
 
 	ft_print_n(s,lstcmd,ind);
 	lst = ft_getreplist4(s);
@@ -26,46 +24,8 @@ void	ft_printlarreversedir(char *s,t_lsto *lstcmd,t_ind *ind)
 	lsti = ft_printlist28(lst);
 	lstibegi = lsti;
 	while (lsti)
-	{
-		if (ft_strcmp((((t_rep*)(lsti)->content)->name), ".") != 0 && ft_strcmp((((t_rep*)(lsti)->content)->name), "..") != 0)
-		{
-			if(stat(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name),&sb) == 0)
-			{
-				if((sb.st_mode & S_IRGRP))
-					lst = ft_getreplist(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
-				if(lst && (sb.st_mode & S_IRGRP))
-				{
-					lstj = ft_printlist19(lst);
-					lsti = lst_addo_between(lsti,lstj);
-				}
-			}
-		}
-		lsti = lsti->next;
-		lst = NULL;
-	}
+		ft_function_rl(&lsti, lst, ft_getreplist, ft_printlist19);
 	lsti = lstibegi;
 	while (lsti)
-	{
-		if (ft_strcmp((((t_rep*)(lsti)->content)->name), ".") != 0 && ft_strcmp((((t_rep*)(lsti)->content)->name), "..") != 0)
-		{
-			ft_putstr("\n");
-			ft_putstr(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
-			ft_putstr(":\n");
-			if(stat(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name),&sb) == 0)
-			{
-				if((sb.st_mode & S_IRGRP))
-					lst = ft_getreplist4(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
-				if(lst)
-					lstj = ft_printlist28(lst);
-				else if ((sb.st_mode & S_IRGRP) == 0)
-				{
-					ft_putstr_fd("ls: ", 2);
-					opendir(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti->content))->name));
-					perror(((t_rep*)(lsti->content))->name);
-				}
-			}
-		}
-		lsti = lsti->next;
-		lst = NULL;
-	}
+		ft_function_r4(&lsti, lst, ft_getreplist4, ft_printlist28);
 }
