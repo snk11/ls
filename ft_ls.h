@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/13 06:49:50 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/13 07:42:14 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -226,6 +226,10 @@ void ft_printerror_p1(char **av, t_ind *ind,t_lsto **lst1, t_lsto **lst2);
 void ft_scan_ind(char **av,t_ind *ind);
 void	ft_scan_option(char **av,t_ind *ind);
 void	ft_print_permission(char *s);
+void	ft_print_permission_p1(struct stat sb);
+void	ft_print_permission_p2(struct stat sb);
+void	ft_print_permission_p3(struct stat sb);
+void	ft_print_permission_p4(struct stat sb);
 void	ft_printlregfile(t_lsto *lst1);
 void	ft_printldir(char *s,t_lsto *lstcmd,t_ind *ind);
 void	ft_printlrdir(char *s,t_lsto *lstcmd,t_ind *ind);
