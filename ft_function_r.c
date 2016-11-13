@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 14:21:34 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/13 06:49:18 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/13 06:53:08 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	ft_function_r4(t_lsto **lsti, t_lsto *lst,
 	(*lsti) = (*lsti)->next;
 }
 
-void		ft_function_r4_p1(char *s1)
+void	ft_function_r4_p1(char *s1)
 {
 	ft_putstr("\n");
 	ft_putstr(s1);

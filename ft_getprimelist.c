@@ -6,24 +6,25 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/26 20:01:33 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/10 12:18:37 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/13 06:55:52 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-t_lsto		*ft_getprimelist(char **av,t_ind *ind)
+t_lsto		*ft_getprimelist(char **av, t_ind *ind)
 {
-	int j;
-	int	k;
+	int			j;
+	int			k;
 	t_lsto		*lstmp;
 	t_lsto		*lsta;
+
 	lsta = NULL;
 	lstmp = NULL;
 	k = 0;
 	j = 1;
 	k = ind->indoption;
-	while(k > 0)
+	while (k > 0)
 	{
 		k--;
 		j++;
@@ -34,16 +35,17 @@ t_lsto		*ft_getprimelist(char **av,t_ind *ind)
 		lsta = lst_addo_down_char(lsta, lstmp);
 		j++;
 	}
-	if(lsta)
+	if (lsta)
 		lsta = ft_lst_sort(lsta, croissant_char);
 	return (lsta);
 }
 
-t_lsto		*ft_getprimelist2(char **av,t_ind *ind)
+t_lsto		*ft_getprimelist2(char **av, t_ind *ind)
 {
-	int j;
+	int			j;
 	t_lsto		*lstmp;
 	t_lsto		*lsta;
+
 	lsta = NULL;
 	lstmp = NULL;
 	j = 3;
@@ -53,7 +55,7 @@ t_lsto		*ft_getprimelist2(char **av,t_ind *ind)
 		lsta = lst_addo_down_char(lsta, lstmp);
 		j++;
 	}
-	if(lsta)
+	if (lsta)
 		lsta = ft_lst_sort(lsta, croissant_char);
 	return (lsta);
 }
