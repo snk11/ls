@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/13 11:05:59 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/13 11:21:35 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,6 +150,7 @@ void		lst_addo1(t_lsto ***toplist, t_lsto *lst1);
 t_lsto		*lst_addo_down(t_lsto *toplist, t_lsto *lst1);
 t_lsto		*lst_addo_down_p1(t_lsto **lst1, t_lsto **lsttopbegi);
 t_lsto		*lst_addo_down_p2(t_lsto **lst1, t_lsto **lsttopbegi);
+void		lst_addo_down_p2_p1(t_lsto *lst1, t_lsto **lstmp);
 t_lsto		*lst_addo_down_char(t_lsto *toplist, t_lsto *lst1);
 t_lsto		*lst_addo_down_char_p1(t_lsto **lst1, t_lsto **lsttopbegi);
 t_lsto		*lst_addo_down_char_p2(t_lsto **lst1, t_lsto **lsttopbegi);

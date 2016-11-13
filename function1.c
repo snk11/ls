@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 16:38:40 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/10 17:04:15 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/13 11:34:45 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@ void		lst_addo(t_lsto **toplist, t_lsto *lst1)
 
 	lstmp = NULL;
 	lstmp = ft_create_lsto((lst1)->content);
-	((t_rep*)(lstmp->content))->name = ft_memmove2(((t_rep*)(lst1->content))->name);
-	((t_rep*)(lstmp->content))->path = ft_memmove2(((t_rep*)(lst1->content))->path);
+	((t_rep*)(lstmp->content))->name
+		= ft_memmove2(((t_rep*)(lst1->content))->name);
+	((t_rep*)(lstmp->content))->path
+		= ft_memmove2(((t_rep*)(lst1->content))->path);
 	if (*toplist == NULL)
 		*toplist = lstmp;
 	else
@@ -35,8 +37,10 @@ void		lst_addo1(t_lsto ***toplist, t_lsto *lst1)
 
 	lstmp = NULL;
 	lstmp = ft_create_lsto((lst1)->content);
-	((t_rep*)(lstmp->content))->name = ft_memmove2(((t_rep*)(lst1->content))->name);
-	((t_rep*)(lstmp->content))->path = ft_memmove2(((t_rep*)(lst1->content))->path);
+	((t_rep*)(lstmp->content))->name
+		= ft_memmove2(((t_rep*)(lst1->content))->name);
+	((t_rep*)(lstmp->content))->path
+		= ft_memmove2(((t_rep*)(lst1->content))->path);
 	if (*toplist == NULL)
 		**toplist = lstmp;
 	else
@@ -72,12 +76,14 @@ t_lsto		*lst_addo_down_p1(t_lsto **lst1, t_lsto **lsttopbegi)
 	while (*lst1 && *lsttopbegi)
 	{
 		lstmp = ft_create_lsto((*lst1)->content);
-		((t_rep*)(lstmp->content))->name = ft_memmove2(((t_rep*)((*lst1)->content))->name);
-		((t_rep*)(lstmp->content))->path = ft_memmove2(((t_rep*)((*lst1)->content))->path);
-			lstmp2 = *lsttopbegi;
-			while (lstmp2->next)
-				lstmp2 = lstmp2->next;
-			lstmp2->next = lstmp;
+		((t_rep*)(lstmp->content))->name
+			= ft_memmove2(((t_rep*)((*lst1)->content))->name);
+		((t_rep*)(lstmp->content))->path
+			= ft_memmove2(((t_rep*)((*lst1)->content))->path);
+		lstmp2 = *lsttopbegi;
+		while (lstmp2->next)
+			lstmp2 = lstmp2->next;
+		lstmp2->next = lstmp;
 		*lst1 = (*lst1)->next;
 	}
 	return (*lsttopbegi);
@@ -93,21 +99,27 @@ t_lsto		*lst_addo_down_p2(t_lsto **lst1, t_lsto **lsttopbegi)
 	if (*lst1 && *lsttopbegi == NULL)
 	{
 		lstmp = ft_create_lsto((*lst1)->content);
-		((t_rep*)(lstmp->content))->name = ft_memmove2(((t_rep*)((*lst1)->content))->name);
-		((t_rep*)(lstmp->content))->path = ft_memmove2(((t_rep*)((*lst1)->content))->path);
+		lst_addo_down_p2_p1(*lst1, &lstmp);
 		*lsttopbegi = lstmp;
 		*lst1 = (*lst1)->next;
 		while(*lst1)
 		{
 			lstmp = ft_create_lsto((*lst1)->content);
-			((t_rep*)(lstmp->content))->name = ft_memmove2(((t_rep*)((*lst1)->content))->name);
-			((t_rep*)(lstmp->content))->path = ft_memmove2(((t_rep*)((*lst1)->content))->path);
-				lstmp2 = *lsttopbegi;
-				while (lstmp2->next)
-					lstmp2 = lstmp2->next;
-				lstmp2->next = lstmp;
+			lst_addo_down_p2_p1(*lst1, &lstmp);
+			lstmp2 = *lsttopbegi;
+			while (lstmp2->next)
+				lstmp2 = lstmp2->next;
+			lstmp2->next = lstmp;
 			*lst1 = (*lst1)->next;
 		}
 	}
 	return (*lsttopbegi);
+}
+
+void		lst_addo_down_p2_p1(t_lsto *lst1, t_lsto **lstmp)
+{
+	((t_rep*)((*lstmp)->content))->name
+		= ft_memmove2(((t_rep*)((lst1)->content))->name);
+	((t_rep*)((*lstmp)->content))->path
+		= ft_memmove2(((t_rep*)((lst1)->content))->path);
 }
