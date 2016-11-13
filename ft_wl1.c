@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/13 11:07:37 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/13 16:04:08 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/13 16:42:59 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,14 @@ void	ft_wl_p3(t_loption loption, struct stat sb, time_t curtime)
 
 void	ft_wl_p4(t_loption loption, struct stat sb, time_t curtime)
 {
-	ft_putday(ctime(&(sb.st_mtime)));
+	ft_putwidth(ft_itoa((localtime(&(sb.st_mtime)))->tm_mday), loption.day);
+//	ft_putwidth(ft_getday_str(ctime(&(sb.st_mtime))), loption.day);
+//	ft_putstr(ft_getday_str(ctime(&(sb.st_mtime))));
 	ft_putstr(" ");
 	ft_putstr(" ");
 //	ft_putstr(ctime(&(sb.st_mtime)));
 //	ft_putstr("\n");
-	ft_putstr(ft_getyear(ctime(&(sb.st_mtime))));
+	ft_putstr(ft_getyear_str(ctime(&(sb.st_mtime))));
 	ft_putstr(" ");
 }
 

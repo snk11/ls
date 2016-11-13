@@ -1,33 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putday.c                                        :+:      :+:    :+:   */
+/*   ft_getday_str.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/13 15:01:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/13 16:35:26 by syusof           ###   ########.fr       */
+/*   Created: 2016/11/13 16:21:57 by syusof            #+#    #+#             */
+/*   Updated: 2016/11/13 16:23:53 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-void		ft_putday(char *s)
+char		*ft_getday_str(char *s)
 {
 	int		cnt;
+	char	*sbegi;
+	int		i;
+	char	*str;
 
 	cnt = 0;
 	while (*s && cnt < 2)
 	{
 		while (*s && *s != ' ')
 			s++;
-		while (*s && *s == ' ')
+		while(*s && *s == ' ')
 			s++;
 		cnt++;
 	}
-	while (*s && ft_isalpha(*s))
+	sbegi = s;
+	i = 0;
+	while (*s && *s != ' ')
 	{
-		write(1, s, 1);
 		s++;
+		i++;
 	}
+	str = (char*)malloc(sizeof(char) * i + 1);
+	s = sbegi;
+	i = 0;
+	while (*s && ft_isdigit(*s))
+	{
+		str[i] = *s;
+		s++;
+		i++;
+	}
+	str[i] = 0;
+	return (str);
 }

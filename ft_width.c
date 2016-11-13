@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/25 13:44:58 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/13 10:32:47 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/13 16:19:47 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,7 @@ void	ft_width_p2(t_loption *loption, struct stat sb, time_t curtime)
 	if (ft_strlen(ft_lldtoa(sb.st_size)) > loption->fsize)
 		loption->fsize = ft_strlen(ft_lldtoa(sb.st_size));
 	if (curtime - sb.st_mtime > 15778458)
-		loption->year = ft_strlen(ft_itoa((localtime(&(sb.st_mtime)))->tm_year
-					+ 1900));
+		loption->year = ft_strlen(ft_getyear_str(ctime(&(sb.st_mtime))));
 	else if (curtime - sb.st_mtime < 0)
-		loption->year = ft_strlen(ft_itoa((localtime(&(sb.st_mtime)))->tm_year
-					+ 1900));
+		loption->year = ft_strlen(ft_getyear_str(ctime(&(sb.st_mtime))));
 }

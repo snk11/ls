@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/13 15:49:31 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/13 16:50:51 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -319,6 +319,8 @@ void				ft_putmonth1(char *s);
 void				ft_putyear(char *s);
 void				ft_puttime(char *s);
 void				ft_putday(char *s);
-char		*ft_getyear(char *s);
+char				*ft_getday_str(char *s);
+char				*ft_getyear_str(char *s);
+void				ft_putwidth3(char *s, int p);
 
 #endif
