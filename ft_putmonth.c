@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/25 18:42:33 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/13 09:03:01 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/13 16:02:45 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,18 @@ void		ft_putmonth(int d)
 		ft_putstr("Nov");
 	else if (d == 11)
 		ft_putstr("Dec");
+}
+
+
+void		ft_putmonth1(char *s)
+{
+	while (*s && *s != ' ')
+		s++;
+	while (*s && *s == ' ')
+		s++;
+	while (*s && *s != ' ')
+	{
+		write(1, s, 1);
+		s++;
+	}
 }

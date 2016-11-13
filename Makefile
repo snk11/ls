@@ -6,7 +6,7 @@
 #    By: syusof <syusof@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/10/15 21:10:44 by syusof            #+#    #+#              #
-#    Updated: 2016/11/13 13:13:55 by syusof           ###   ########.fr        #
+#    Updated: 2016/11/13 15:06:00 by syusof           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,10 +23,10 @@ ft_p0error2.c ft_p_illegal.c ft_print_n.c ft_p0regfile.c \
 ft_print_permission.c ft_printladir.c ft_printlardir.c \
 ft_printlareversedir.c ft_printlarreversedir.c ft_ls_run2.c ft_printlatdir.c \
 ft_printerror.c ft_printlatreversedir.c ft_printldir.c ft_printlartdir.c \
-ft_printlatrreversedir.c ft_printlist1.c ft_printlist2.c \
+ft_printlatrreversedir.c ft_printlist1.c ft_printlist2.c ft_putday.c \
 ft_printlist3.c ft_printlist4.c ft_printlrdir.c ft_printlregfile.c \
-ft_printlreversedir.c ft_printlrreversedir.c ft_printlrtdir.c \
-ft_printltdir.c ft_printltreversedir.c ft_printlist7.c \
+ft_printlreversedir.c ft_printlrreversedir.c ft_puttime.c ft_printlrtdir.c \
+ft_printltdir.c ft_printltreversedir.c ft_putyear.c ft_printlist7.c \
 ft_printltrreversedir.c ft_putlongnbr.c ft_printlist5.c ft_putmonth.c \
 ft_putwidth.c ft_r.c ft_reverse.c ft_rreverse.c ft_rt.c ft_scan_ind.c \
 ft_sort.c ft_printname.c ft_printlist6.c ft_t.c ft_treverse.c \
@@ -44,10 +44,10 @@ ft_p0error2.o ft_p_illegal.o ft_print_n.o ft_p0regfile.o \
 ft_print_permission.o ft_printladir.o ft_printlardir.o \
 ft_printlareversedir.o ft_printlarreversedir.o ft_ls_run2.o ft_printlatdir.o \
 ft_printerror.o ft_printlatreversedir.o ft_printldir.o ft_printlartdir.o \
-ft_printlatrreversedir.o ft_printlist1.o ft_printlist2.o \
+ft_printlatrreversedir.o ft_printlist1.o ft_printlist2.o ft_putday.o \
 ft_printlist3.o ft_printlist4.o ft_printlrdir.o ft_printlregfile.o \
-ft_printlreversedir.o ft_printlrreversedir.o ft_printlrtdir.o \
-ft_printltdir.o ft_printltreversedir.o ft_printlist7.o \
+ft_printlreversedir.o ft_printlrreversedir.o ft_puttime.o ft_printlrtdir.o \
+ft_printltdir.o ft_printltreversedir.o ft_putyear.o ft_printlist7.o \
 ft_printltrreversedir.o ft_putlongnbr.o ft_printlist5.o ft_putmonth.o \
 ft_putwidth.o ft_r.o ft_reverse.o ft_rreverse.o ft_rt.o ft_scan_ind.o \
 ft_sort.o ft_printname.o ft_printlist6.o ft_t.o ft_treverse.o \

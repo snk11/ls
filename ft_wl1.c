@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/13 11:07:37 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/13 11:10:58 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/13 16:04:08 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ void	ft_wl_p3(t_loption loption, struct stat sb, time_t curtime)
 	int i;
 
 	if (loption.year > 5)
-		ft_putstr(ft_itoa((localtime(&(sb.st_mtime)))->tm_year + 1900));
+	{
+		ft_putyear(ctime(&(sb.st_mtime)));
+	}
 	else
 	{
 		i = 5 - loption.year;
@@ -26,17 +28,19 @@ void	ft_wl_p3(t_loption loption, struct stat sb, time_t curtime)
 			ft_putstr(" ");
 			i--;
 		}
-		ft_putstr(ft_itoa((localtime(&(sb.st_mtime)))->tm_year + 1900));
+		ft_puttime(ctime(&(sb.st_mtime)));
 	}
 	ft_putstr(" ");
 }
 
 void	ft_wl_p4(t_loption loption, struct stat sb, time_t curtime)
 {
-	ft_putwidth(ft_itoa((localtime(&(sb.st_mtime)))->tm_mday), loption.day);
+	ft_putday(ctime(&(sb.st_mtime)));
 	ft_putstr(" ");
 	ft_putstr(" ");
-	ft_putstr(ft_itoa((localtime(&(sb.st_mtime)))->tm_year + 1900));
+//	ft_putstr(ctime(&(sb.st_mtime)));
+//	ft_putstr("\n");
+	ft_putstr(ft_getyear(ctime(&(sb.st_mtime))));
 	ft_putstr(" ");
 }
 
@@ -52,19 +56,9 @@ void	ft_wl_p5(t_loption loption, struct stat sb, time_t curtime)
 			ft_putstr(" ");
 			i--;
 		}
-		ft_putwidth2(ft_itoa((localtime(&(sb.st_mtime)))->tm_hour),
-				loption.hour);
-		ft_putstr(":");
-		ft_putwidth2(ft_itoa((localtime(&(sb.st_mtime)))->tm_min),
-				loption.minute);
+		ft_puttime(ctime(&(sb.st_mtime)));
 	}
 	else
-	{
-		ft_putwidth2(ft_itoa((localtime(&(sb.st_mtime)))->tm_hour),
-				loption.hour);
-		ft_putstr(":");
-		ft_putwidth2(ft_itoa((localtime(&(sb.st_mtime)))->tm_min),
-				loption.minute);
-	}
+		ft_puttime(ctime(&(sb.st_mtime)));
 	ft_putstr(" ");
 }

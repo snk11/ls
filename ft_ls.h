@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/13 12:33:03 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/13 15:49:31 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -315,5 +315,10 @@ void				ft_function_r4(t_lsto **lsti, t_lsto *lst,
 		t_lsto *(*f1)(char *), t_lsto *(*f2)(t_lsto *));
 void				ft_function_r4_p1(char *s1);
 void				ft_lst_fullfield(t_lsto *lst1, t_lsto **lstmp);
+void				ft_putmonth1(char *s);
+void				ft_putyear(char *s);
+void				ft_puttime(char *s);
+void				ft_putday(char *s);
+char		*ft_getyear(char *s);
 
 #endif

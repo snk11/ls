@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/25 14:27:40 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/13 11:09:44 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/13 15:30:13 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	ft_wl_p1(t_loption loption, struct stat sb)
 	}
 	if (sb.st_gid && (gid = getgrgid(sb.st_gid)) != NULL)
 	{
-		ft_putwidth(gid->gr_name, loption.gname);
+	ft_putwidth(gid->gr_name, loption.gname);
 		ft_putstr("  ");
 	}
 	else if (!(sb.st_gid))
@@ -89,7 +89,7 @@ void	ft_wl_p2(t_loption loption, struct stat sb, time_t curtime)
 {
 	ft_putwidth(ft_lldtoa(sb.st_size), loption.fsize);
 	ft_putstr(" ");
-	ft_putmonth((localtime(&(sb.st_mtime)))->tm_mon);
+	ft_putmonth1((ctime(&(sb.st_mtime))));
 	ft_putstr(" ");
 	if (curtime - sb.st_mtime >= 0)
 	{

@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/04 13:00:41 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/13 11:56:01 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/13 14:01:47 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@
 # include <fcntl.h>
 # include <limits.h>
 
-char			*ft_lldtoa(long long int n);
-char			*ft_ustoa(unsigned short n);
-int		ft_strcmp2(const char *s1, const char *s2);
-char	*ft_memmove2(char *src);
+char				*ft_lldtoa(long long int n);
+char				*ft_ustoa(unsigned short n);
+int					ft_strcmp2(const char *s1, const char *s2);
+char				*ft_memmove2(char *src);
 size_t				ft_strlen(const char *s);
 char				*ft_strcpy(char *s1, const char *s2);
 char				*ft_strdup(const char *str);
