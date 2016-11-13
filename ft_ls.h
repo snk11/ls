@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/13 12:30:29 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/13 12:33:03 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,8 @@ void				ft_ls_p1_p2(t_lsto *lst1, t_lsto *lstcmd, t_ind *ind);
 void				ft_ls_p1_p3(t_lsto *lstcmd, t_ind *ind);
 void				ft_ls_p2(char **av, t_lsto **lstcmd);
 void				ft_printlist7_p1(t_lsto *lstmp2);
-void				ft_printlist_p1(t_lsto *lstmp, t_lsto **lst1, t_lsto **lst2);
+void				ft_printlist_p1(t_lsto *lstmp, t_lsto **lst1,
+		t_lsto **lst2);
 int					ft_p_illegal(t_ind *ind);
 void				ft_ls_run(t_lsto *lst1, t_ind *ind, t_lsto *lstcmd);
 int					ft_ls_run_p1(t_lsto *lst1, t_lsto *lstcmd, t_ind *ind);
@@ -138,7 +139,8 @@ t_lsto				*lst_addo_down_char_p2(t_lsto **lst1, t_lsto **lsttopbegi);
 t_lsto				*lst_addo_between(t_lsto *toplist, t_lsto *lst1);
 void				lst_addo_between_p1(t_lsto *toplist, t_lsto **lst1);
 t_lsto				*lst_addo_between_p2(t_lsto **lsttopbegi, t_lsto **lst1);
-void				lst_addo_between_p2_p1(t_lsto ***lsttopbegi, t_lsto ***lst1);
+void				lst_addo_between_p2_p1(t_lsto ***lsttopbegi,
+		t_lsto ***lst1);
 void				lst_add_del(t_lst **toplist, t_lst **t_lst1);
 t_lst				*ft_create_lst(void *content);
 t_lsto				*ft_create_lsto(void *content);
@@ -249,8 +251,10 @@ void				ft_atrreverse(char *s, t_lsto *lstcmd, t_ind *ind);
 void				ft_putlongnbr(long n);
 void				ft_putulongnbr(unsigned long n);
 void				ft_p0regfile(t_lsto *lst1, t_ind *ind, t_lsto *lstcmd);
-void				ft_p0regfile_p1(t_lsto *lst1, t_ind *ind, char *s1, int inderror);
-void				ft_p0regfile_p2(t_lsto *lst1, t_ind *ind, char *s1, int inderror);
+void				ft_p0regfile_p1(t_lsto *lst1, t_ind *ind, char *s1,
+		int inderror);
+void				ft_p0regfile_p2(t_lsto *lst1, t_ind *ind, char *s1,
+		int inderror);
 void				ft_p0error(t_lsto *lst1, t_ind *ind, t_lsto *lstcmd);
 void				ft_p0error_p1(t_lsto *lst1, t_ind *ind, t_lsto *lstcmd);
 void				ft_p0error_p1_p1(t_lsto *lst1, t_ind *ind);
@@ -261,8 +265,10 @@ int					ft_checkhyphencase(t_lsto *lst1, t_ind *ind);
 int					ft_checkhyphencase_print(t_lsto *lst1, t_ind *ind);
 void				ft_printlst(t_lsto *lstmp);
 void				ft_printname(char *s, t_lsto *lstcmd, t_ind *ind);
-void				ft_printname_p1(char *s, t_lsto *lstcmd, t_ind *ind, int cnt);
-int					ft_printname_p2(char *s, t_lsto *lstcmd, t_ind *ind, int cnt);
+void				ft_printname_p1(char *s, t_lsto *lstcmd, t_ind *ind,
+		int cnt);
+int					ft_printname_p2(char *s, t_lsto *lstcmd, t_ind *ind,
+		int cnt);
 void				ft_printname_p3(char *s, t_lsto *lstcmd, t_ind *ind);
 void				ft_print_n(char *s, t_lsto *lstcmd, t_ind *ind);
 void				ft_scan_option(char **av, t_ind *ind);
@@ -272,7 +278,8 @@ int					ft_scan_option2_p1(char *av, char *l, int j);
 void				ft_init2(t_loption *loption);
 void				ft_width(t_lsto *lst1, t_loption *loption);
 void				ft_width_p1(t_loption *loption, struct stat sb);
-void				ft_width_p2(t_loption *loption, struct stat sb, time_t curtime);
+void				ft_width_p2(t_loption *loption, struct stat sb,
+		time_t curtime);
 void				ft_wl(t_lsto *lst1, t_loption loption);
 void				ft_wl_p(t_lsto *lst1, t_loption loption, struct stat sb,
 		time_t curtime);
@@ -298,14 +305,14 @@ int					ft_countelem(t_lsto *lst1);
 void				ft_mem1(char **s1, char **s2, t_lsto *lsta);
 void				ft_mem1_char(char **s1, char **s2, t_lsto *lsta);
 t_lsto				*ft_lst_sort(t_lsto *lst, int (*cmp)(t_lsto*));
-void				ft_lst_sort_p1(t_lsto **lst, t_lsto **lstbegi, t_lsto **lstmp1,
-		t_sort *s);
-void				ft_lst_sort_p2(t_lsto **lst, t_lsto **lstbegi, t_lsto **lstmp1,
-		t_sort *s);
-void				ft_function_rl(t_lsto **lsti, t_lsto *lst, t_lsto *(*f1)(char *),
-		t_lsto *(*f2)(t_lsto *));
-void				ft_function_r4(t_lsto **lsti, t_lsto *lst, t_lsto *(*f1)(char *),
-		t_lsto *(*f2)(t_lsto *));
+void				ft_lst_sort_p1(t_lsto **lst, t_lsto **lstbegi,
+		t_lsto **lstmp1, t_sort *s);
+void				ft_lst_sort_p2(t_lsto **lst, t_lsto **lstbegi,
+		t_lsto **lstmp1, t_sort *s);
+void				ft_function_rl(t_lsto **lsti, t_lsto *lst,
+		t_lsto *(*f1)(char *), t_lsto *(*f2)(t_lsto *));
+void				ft_function_r4(t_lsto **lsti, t_lsto *lst,
+		t_lsto *(*f1)(char *), t_lsto *(*f2)(t_lsto *));
 void				ft_function_r4_p1(char *s1);
 void				ft_lst_fullfield(t_lsto *lst1, t_lsto **lstmp);
 
