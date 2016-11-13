@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/13 07:02:50 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/13 13:35:01 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,5 @@ int		main(int ac, char **av)
 	}
 	else if (ft_p_illegal(ind))
 		ft_ls_p1(av, lstcmd, ind);
-	return (0);
+	return (1);
 }
