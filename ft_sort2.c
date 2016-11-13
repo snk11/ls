@@ -6,13 +6,13 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 12:00:35 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/11 12:26:29 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/13 09:51:17 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-int croissant_time(t_lsto *lsta)
+int		croissant_time(t_lsto *lsta)
 {
 	struct stat		sa;
 	struct stat		sb;
@@ -20,17 +20,17 @@ int croissant_time(t_lsto *lsta)
 	char			*s2;
 
 	ft_mem1(&s1, &s2, lsta);
-	if(lstat(s1, &sa) == 0 && lstat(s2, &sb) == 0 && sa.st_mtime <= sb.st_mtime)
+	if (lstat(s1, &sa) == 0 && lstat(s2, &sb) == 0
+			&& sa.st_mtime <= sb.st_mtime)
 	{
 		if (sa.st_mtime < sb.st_mtime)
 			return (1);
-		if (sa.st_mtime == sb.st_mtime
-				&& sa.st_mtimespec.tv_nsec <= sb.st_mtimespec.tv_nsec)
+		if (croissant_time_p1(sa, sb))
 		{
 			if (sa.st_mtimespec.tv_nsec < sb.st_mtimespec.tv_nsec)
 				return (1);
 			if (sa.st_mtimespec.tv_nsec == sb.st_mtimespec.tv_nsec
-					&& ft_strcmp(s1,s2) >= 0)
+					&& ft_strcmp(s1, s2) >= 0)
 				return (1);
 			else
 				return (0);
@@ -41,7 +41,15 @@ int croissant_time(t_lsto *lsta)
 	return (0);
 }
 
-int croissant_time_char(t_lsto *lsta)
+int		croissant_time_p1(struct stat sa, struct stat sb)
+{
+	if (sa.st_mtime == sb.st_mtime
+			&& sa.st_mtimespec.tv_nsec <= sb.st_mtimespec.tv_nsec)
+		return (1);
+	return (0);
+}
+
+int		croissant_time_char(t_lsto *lsta)
 {
 	struct stat		sa;
 	struct stat		sb;
@@ -49,17 +57,17 @@ int croissant_time_char(t_lsto *lsta)
 	char			*s2;
 
 	ft_mem1(&s1, &s2, lsta);
-	if(lstat(s1, &sa) == 0 && lstat(s2, &sb) == 0 && sa.st_mtime <= sb.st_mtime)
+	if (lstat(s1, &sa) == 0 && lstat(s2, &sb) == 0
+			&& sa.st_mtime <= sb.st_mtime)
 	{
- 		if (sa.st_mtime < sb.st_mtime)
+		if (sa.st_mtime < sb.st_mtime)
 			return (1);
-		if (sa.st_mtime == sb.st_mtime
-				&& sa.st_mtimespec.tv_nsec <= sb.st_mtimespec.tv_nsec)
+		if (croissant_time_p1(sa, sb))
 		{
 			if (sa.st_mtimespec.tv_nsec < sb.st_mtimespec.tv_nsec)
 				return (1);
 			if (sa.st_mtimespec.tv_nsec == sb.st_mtimespec.tv_nsec
-					&& ft_strcmp(s1,s2) >= 0)
+					&& ft_strcmp(s1, s2) >= 0)
 				return (1);
 			else
 				return (0);
@@ -70,7 +78,7 @@ int croissant_time_char(t_lsto *lsta)
 	return (0);
 }
 
-int decreasing_time_char(t_lsto *lsta)
+int		decreasing_time_char(t_lsto *lsta)
 {
 	struct stat		sa;
 	struct stat		sb;
@@ -78,17 +86,17 @@ int decreasing_time_char(t_lsto *lsta)
 	char			*s2;
 
 	ft_mem1_char(&s1, &s2, lsta);
-	if(lstat(s1, &sa) == 0 && lstat(s2, &sb) == 0 && sa.st_mtime >= sb.st_mtime)
+	if (lstat(s1, &sa) == 0 && lstat(s2, &sb) == 0
+			&& sa.st_mtime >= sb.st_mtime)
 	{
- 		if (sa.st_mtime > sb.st_mtime)
+		if (sa.st_mtime > sb.st_mtime)
 			return (1);
-		if (sa.st_mtime == sb.st_mtime
-				&& sa.st_mtimespec.tv_nsec >= sb.st_mtimespec.tv_nsec)
+		if (decreasing_time_p1(sa, sb))
 		{
 			if (sa.st_mtimespec.tv_nsec > sb.st_mtimespec.tv_nsec)
 				return (1);
 			if (sa.st_mtimespec.tv_nsec == sb.st_mtimespec.tv_nsec
-					&& ft_strcmp(s1,s2) <= 0)
+					&& ft_strcmp(s1, s2) <= 0)
 				return (1);
 			else
 				return (0);
@@ -99,9 +107,10 @@ int decreasing_time_char(t_lsto *lsta)
 	return (0);
 }
 
-int croissant_pathname(t_lsto *lsti)
+int		croissant_pathname(t_lsto *lsti)
 {
-		return (ft_strcmp(ft_makepath(((t_rep*)(lsti->content))->path,((t_rep*)(lsti)->content)->name),ft_makepath(((t_rep*)((lsti->next)->content))->path,((t_rep*)((lsti->next)->content))->name)) <= 0);
+	return (ft_strcmp(ft_makepath(((t_rep*)(lsti->content))->path,
+					((t_rep*)(lsti)->content)->name),
+				ft_makepath(((t_rep*)((lsti->next)->content))->path,
+					((t_rep*)((lsti->next)->content))->name)) <= 0);
 }
-
-

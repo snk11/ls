@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/13 09:27:32 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/13 09:47:46 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -216,8 +216,10 @@ void	ft_init(t_ind *ind);
 int decreasing(t_lsto *lsta);
 int decreasing_char(t_lsto *lsta);
 int croissant_time(t_lsto *lsta);
+int		croissant_time_p1(struct stat sa, struct stat sb);
 int croissant_time_char(t_lsto *lsta);
 int decreasing_time(t_lsto *lsta);
+int decreasing_time_p1(struct stat sa, struct stat sb);
 int decreasing_time_char(t_lsto *lsta);
 void ft_t(char *s, t_lsto *lstcmd,t_ind *ind);
 void ft_r(char *s, t_lsto *lstcmd, t_ind *ind);
