@@ -6,13 +6,13 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/23 15:34:44 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/13 06:40:33 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/13 10:30:27 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-void ft_trreverse(char *s, t_ind *ind)
+void		ft_trreverse(char *s, t_ind *ind)
 {
 	t_lsto			*lst;
 	t_lsto			*lsti;
@@ -34,7 +34,7 @@ void ft_trreverse(char *s, t_ind *ind)
 		ft_function_r4(&lsti, lst, ft_getreplist, ft_printlist22);
 }
 
-void ft_trreverse_p1(t_ind *ind)
+void		ft_trreverse_p1(t_ind *ind)
 {
 	if (ind->indposition > 1 && ind->indregfile == 1 && ind->inderror == 1)
 		ft_putstr("\n");
@@ -42,7 +42,8 @@ void ft_trreverse_p1(t_ind *ind)
 		ft_putstr("\n");
 	else if (ind->indposition > 1 && ind->indregfile == 1 && ind->inderror == 0)
 		ft_putstr("\n");
-	else if (ind->indposition > 1 && (ind->indregfile == 0 || ind->inderror == 0))
+	else if (ind->indposition > 1 && (ind->indregfile == 0
+				|| ind->inderror == 0))
 	{
 		ind->inderror = 0;
 		ind->indregfile = 0;
