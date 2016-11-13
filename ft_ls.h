@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/13 11:43:15 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/13 11:55:35 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,6 @@
 # include <sys/time.h>
 #include <errno.h>
 #include <string.h>
-
-/*
-typedef struct		s_lst
-{
-	void			*content;
-	struct s_lst	*next;
-}					t_lst;
-*/
 
 typedef struct			s_lst
 {
@@ -58,7 +50,6 @@ typedef struct			s_rep
 
 typedef struct			s_ind
 {
-//	int					nbelem;
 	int					indhyphsolo;
 	int					indfts;
 	int					indexyet;
@@ -96,7 +87,6 @@ typedef	struct			s_loption
 	int					uname;
 	int					gname;
 	int					fsize;
-//	int					month;
 	int					day;
 	int					hour;
 	int					minute;

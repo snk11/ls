@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/23 04:10:20 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/23 04:23:19 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/13 11:54:04 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ char	*ft_memmove2(char *src)
 	char	*temp;
 
 	n = ft_strlen(src);
-
 	temp = (char*)malloc(sizeof(char) * n + 1);
 	i = 0;
 	while (i <= n)

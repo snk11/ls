@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/14 07:42:27 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/14 08:00:56 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/13 11:55:07 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ static void		itoa_pos(char *str, int n, int i)
 		i--;
 	}
 }
-
 
 char			*ft_ustoa(unsigned short n)
 {
