@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/25 14:27:40 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/13 16:48:53 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/13 17:20:44 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ void	ft_wl_p2(t_loption loption, struct stat sb, time_t curtime)
 	ft_putstr(" ");
 	if (curtime - sb.st_mtime >= 0)
 	{
-		ft_putwidth3(ft_getday_str(ctime(&(sb.st_mtime))), loption.day);
+		ft_putwidth(ft_getday_str(ctime(&(sb.st_mtime))), loption.day);
 		ft_putstr(" ");
 	}
 }
