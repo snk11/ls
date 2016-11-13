@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/23 17:57:58 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/11 17:42:48 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/13 06:46:56 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ void	ft_atrreverse(char *s, t_lsto *lstcmd, t_ind *ind)
 	lsti = ft_printlist29(lst);
 	lstibegi = lsti;
 	while (lsti)
-		ft_function_r(&lsti, lst, ft_getreplist, ft_printlist30);
+		ft_function_rl(&lsti, lst, ft_getreplist, ft_printlist30);
 	lsti = lstibegi;
 	while (lsti)
-		ft_function_r2(&lsti, lst, ft_getreplist4, ft_printlist29);
+		ft_function_r4(&lsti, lst, ft_getreplist4, ft_printlist29);
 }
