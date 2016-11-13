@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 17:19:47 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/10 17:48:25 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/13 11:51:49 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_lsto		*lst_addo_between(t_lsto *toplist, t_lsto *lst1)
 	lstbegi = NULL;
 	lsttopbegi = toplist;
 	lstmp2 = lsttopbegi;
-	lst_addo_between_p1(toplist,&lst1);
+	lst_addo_between_p1(toplist, &lst1);
 	lsttopbegi = lst_addo_between_p2(&lsttopbegi, &lst1);
 	return (lsttopbegi);
 }
@@ -39,15 +39,13 @@ void		lst_addo_between_p1(t_lsto *toplist, t_lsto **lst1)
 	while (*lst1 && toplist)
 	{
 		lstmp = ft_create_lsto((*lst1)->content);
-		((t_rep*)(lstmp->content))->name = ft_memmove2(((t_rep*)((*lst1)->content))->name);
-		((t_rep*)(lstmp->content))->path = ft_memmove2(((t_rep*)((*lst1)->content))->path);
+		ft_lst_fullfield(*lst1, &lstmp);
 		lstmp->next = lstmp2->next;
 		lstmp2->next = lstmp;
 		lstmp2 = lstmp2->next;
 		*lst1 = (*lst1)->next;
 	}
 }
-
 
 t_lsto		*lst_addo_between_p2(t_lsto **lsttopbegi, t_lsto **lst1)
 {
@@ -59,11 +57,10 @@ t_lsto		*lst_addo_between_p2(t_lsto **lsttopbegi, t_lsto **lst1)
 	if (*lst1 && *lsttopbegi == NULL)
 	{
 		lstmp = ft_create_lsto((*lst1)->content);
-		((t_rep*)(lstmp->content))->name = ft_memmove2(((t_rep*)((*lst1)->content))->name);
-		((t_rep*)(lstmp->content))->path = ft_memmove2(((t_rep*)((*lst1)->content))->path);
+		ft_lst_fullfield(*lst1, &lstmp);
 		*lsttopbegi = lstmp;
 		*lst1 = (*lst1)->next;
-		lst_addo_between_p2_p1(&lsttopbegi,&lst1);
+		lst_addo_between_p2_p1(&lsttopbegi, &lst1);
 	}
 	return (*lsttopbegi);
 }
@@ -75,11 +72,10 @@ void		lst_addo_between_p2_p1(t_lsto ***lsttopbegi, t_lsto ***lst1)
 
 	lstmp = NULL;
 	lstmp2 = **lsttopbegi;
-	while(**lst1)
+	while (**lst1)
 	{
 		lstmp = ft_create_lsto((**lst1)->content);
-		((t_rep*)(lstmp->content))->name = ft_memmove2(((t_rep*)((**lst1)->content))->name);
-		((t_rep*)(lstmp->content))->path = ft_memmove2(((t_rep*)((**lst1)->content))->path);
+		ft_lst_fullfield(**lst1, &lstmp);
 		{
 			lstmp2 = **lsttopbegi;
 			while (lstmp2->next)

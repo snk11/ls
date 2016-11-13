@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/13 11:21:35 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/13 11:43:15 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,7 +150,6 @@ void		lst_addo1(t_lsto ***toplist, t_lsto *lst1);
 t_lsto		*lst_addo_down(t_lsto *toplist, t_lsto *lst1);
 t_lsto		*lst_addo_down_p1(t_lsto **lst1, t_lsto **lsttopbegi);
 t_lsto		*lst_addo_down_p2(t_lsto **lst1, t_lsto **lsttopbegi);
-void		lst_addo_down_p2_p1(t_lsto *lst1, t_lsto **lstmp);
 t_lsto		*lst_addo_down_char(t_lsto *toplist, t_lsto *lst1);
 t_lsto		*lst_addo_down_char_p1(t_lsto **lst1, t_lsto **lsttopbegi);
 t_lsto		*lst_addo_down_char_p2(t_lsto **lst1, t_lsto **lsttopbegi);
@@ -327,5 +326,6 @@ void		ft_lst_sort_p2(t_lsto **lst, t_lsto **lstbegi, t_lsto **lstmp1,t_sort *s);
 void	ft_function_rl(t_lsto **lsti, t_lsto *lst, t_lsto* (*f1)(char *), t_lsto* (*f2)(t_lsto *));
 void	ft_function_r4(t_lsto **lsti, t_lsto *lst, t_lsto* (*f1)(char *), t_lsto* (*f2)(t_lsto *));
 void		ft_function_r4_p1(char *s1);
+void		ft_lst_fullfield(t_lsto *lst1, t_lsto **lstmp);
 
 # endif
