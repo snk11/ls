@@ -6,21 +6,21 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/17 16:50:57 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/13 06:45:39 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/13 07:57:43 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "ft_ls.h"
+#include "ft_ls.h"
 
-void ft_printlatrreversedir(char *s, t_lsto *lstcmd,t_ind *ind)
+void	ft_printlatrreversedir(char *s, t_lsto *lstcmd, t_ind *ind)
 {
 	t_lsto			*lst;
 	t_lsto			*lsti;
 	t_lsto			*lstibegi;
 
-	ft_print_n(s,lstcmd,ind);
+	ft_print_n(s, lstcmd, ind);
 	lst = ft_getreplist4(s);
-	ft_printname(s,lstcmd,ind);
+	ft_printname(s, lstcmd, ind);
 	if (ind->indtotal != 1)
 	{
 		ft_putstr(s);
@@ -34,4 +34,3 @@ void ft_printlatrreversedir(char *s, t_lsto *lstcmd,t_ind *ind)
 	while (lsti)
 		ft_function_r4(&lsti, lst, ft_getreplist4, ft_printlist31);
 }
-
