@@ -6,13 +6,12 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/13 12:04:27 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/13 12:12:58 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef FT_LS_H
+#ifndef FT_LS_H
 # define FT_LS_H
-
 
 # include "libft/libft.h"
 # include <sys/stat.h>
@@ -25,8 +24,8 @@
 # include <grp.h>
 # include <time.h>
 # include <sys/time.h>
-#include <errno.h>
-#include <string.h>
+# include <errno.h>
+# include <string.h>
 
 typedef struct			s_lst
 {
@@ -43,8 +42,8 @@ typedef struct			s_lsto
 
 typedef struct			s_rep
 {
-	char			*name;
-	char			*path;
+	char				*name;
+	char				*path;
 	int					val;
 }						t_rep;
 
@@ -56,7 +55,6 @@ typedef struct			s_ind
 	int					indexyet2;
 	int					indexyet3;
 	int					indexyet4;
-//	int					indexyet5;
 	int					indhyphen;
 	int					indregfile;
 	int					inderror;
@@ -149,7 +147,7 @@ t_lsto		*ft_getprimelist(char **av,t_ind *ind);
 t_lsto		*ft_getprimelist2(char **av,t_ind *ind);
 t_lsto		*ft_getreplist(char *rep);
 void		ft_getreplist_p1(t_rep **e);
-t_lsto 		*ft_getreplist4(char *rep);
+t_lsto		*ft_getreplist4(char *rep);
 t_lsto		*ft_getreplisto4(t_lsto *lstmp);
 void		ft_printlist(t_lsto *lstmp);
 t_lsto		*ft_printlist2(t_lsto *lstmp);
@@ -225,9 +223,9 @@ int			ft_check_string(char *s);
 void		ft_a(char *s, t_ind *ind);
 void		ft_reverse(char *s, t_ind *ind);
 void		ft_areverse(char *s, t_ind *ind);
-void		ft_at(char *s,t_lsto *lstcmd ,t_ind *ind);
+void		ft_at(char *s, t_lsto *lstcmd, t_ind *ind);
 void		ft_ar(char *s, t_lsto *lstcmd,t_ind *ind);
-void		ft_atreverse(char *s,t_lsto *lstcmd ,t_ind *ind);
+void		ft_atreverse(char *s, t_lsto *lstcmd, t_ind *ind);
 void		ft_rt(char *s, t_lsto *lstcmd,t_ind *ind);
 void		ft_rreverse(char *s,t_lsto *lstcmd, t_ind *ind);
 void		ft_treverse(char *s, t_ind *ind);
@@ -247,7 +245,7 @@ void		ft_printlartdir(char *s,t_lsto *lstcmd,t_ind *ind);
 void		ft_printltrreversedir(char *s,t_lsto *lstcmd,t_ind *ind);
 void		ft_printlarreversedir(char *s,t_lsto *lstcmd,t_ind *ind);
 void		ft_printlatrreversedir(char *s, t_lsto *lstcmd,t_ind *ind);
-void		ft_atrreverse(char *s,t_lsto *lstcmd ,t_ind *ind);
+void		ft_atrreverse(char *s, t_lsto *lstcmd, t_ind *ind);
 void		ft_putlongnbr(long n);
 void		ft_putulongnbr(unsigned long n);
 void		ft_p0regfile(t_lsto *lst1,t_ind *ind,t_lsto *lstcmd);
@@ -304,11 +302,11 @@ void		ft_lst_sort_p1(t_lsto **lst, t_lsto **lstbegi, t_lsto **lstmp1,
 		t_sort *s);
 void		ft_lst_sort_p2(t_lsto **lst, t_lsto **lstbegi, t_lsto **lstmp1,
 		t_sort *s);
-void		ft_function_rl(t_lsto **lsti, t_lsto *lst, t_lsto* (*f1)(char *),
-		t_lsto* (*f2)(t_lsto *));
-void		ft_function_r4(t_lsto **lsti, t_lsto *lst, t_lsto* (*f1)(char *),
-		t_lsto* (*f2)(t_lsto *));
+void		ft_function_rl(t_lsto **lsti, t_lsto *lst, t_lsto *(*f1)(char *),
+		t_lsto *(*f2)(t_lsto *));
+void		ft_function_r4(t_lsto **lsti, t_lsto *lst, t_lsto *(*f1)(char *),
+		t_lsto *(*f2)(t_lsto *));
 void		ft_function_r4_p1(char *s1);
 void		ft_lst_fullfield(t_lsto *lst1, t_lsto **lstmp);
 
-# endif
+#endif
