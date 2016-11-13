@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/13 09:47:46 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/13 10:19:22 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,12 @@ typedef struct			s_ind
 	int					ind1;
 	int					ind2;
 }						t_ind;
+
+typedef	struct			s_sort
+{
+	int					ind;
+	int					(*f)(t_lsto*);
+}						t_sort;
 
 typedef	struct			s_loption
 {
@@ -314,8 +320,8 @@ int			ft_countelem(t_lsto *lst1);
 void		ft_mem1(char **s1, char **s2, t_lsto *lsta);
 void		ft_mem1_char(char **s1, char **s2, t_lsto *lsta);
 t_lsto		*ft_lst_sort(t_lsto *lst, int (*cmp)(t_lsto*));
-void		ft_lst_sort_p1(t_lsto **lst, t_lsto **lstbegi, t_lsto **lstmp1,int *ind ,int (*cmp)(t_lsto*));
-void		ft_lst_sort_p2(t_lsto **lst, t_lsto **lstbegi, t_lsto **lstmp1,int *ind ,int (*cmp)(t_lsto*));
+void		ft_lst_sort_p1(t_lsto **lst, t_lsto **lstbegi, t_lsto **lstmp1,t_sort *s);
+void		ft_lst_sort_p2(t_lsto **lst, t_lsto **lstbegi, t_lsto **lstmp1,t_sort *s);
 void	ft_function_rl(t_lsto **lsti, t_lsto *lst, t_lsto* (*f1)(char *), t_lsto* (*f2)(t_lsto *));
 void	ft_function_r4(t_lsto **lsti, t_lsto *lst, t_lsto* (*f1)(char *), t_lsto* (*f2)(t_lsto *));
 void		ft_function_r4_p1(char *s1);
