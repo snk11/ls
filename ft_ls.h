@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/13 17:20:33 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/13 17:46:48 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -293,7 +293,6 @@ void				ft_wl_p6(t_lsto *lst1, t_loption loption, struct stat sb,
 		time_t curtime);
 void				ft_putwidth(char *s, int p);
 void				ft_putwidth2(char *s, int p);
-void				ft_putmonth(int d);
 void				ft_freelst(t_lsto **lstmp);
 void				ft_freelst2(t_lsto **lstmp);
 void				ft_wl2(t_lsto *lst1, t_loption loption);
@@ -315,11 +314,11 @@ void				ft_function_r4(t_lsto **lsti, t_lsto *lst,
 		t_lsto *(*f1)(char *), t_lsto *(*f2)(t_lsto *));
 void				ft_function_r4_p1(char *s1);
 void				ft_lst_fullfield(t_lsto *lst1, t_lsto **lstmp);
-void				ft_putmonth1(char *s);
-//void				ft_putyear(char *s);
+void				ft_putmonth(char *s);
 void				ft_puttime(char *s);
-//void				ft_putday(char *s);
 char				*ft_getday_str(char *s);
+void				ft_getday_str_p1(char **s, int *cnt);
 char				*ft_getyear_str(char *s);
+void				ft_getyear_str_p1(char **s, int *cnt);
 
 #endif

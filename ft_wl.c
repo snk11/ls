@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/25 14:27:40 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/13 17:26:05 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/13 17:46:59 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ void	ft_wl_p2(t_loption loption, struct stat sb, time_t curtime)
 {
 	ft_putwidth(ft_lldtoa(sb.st_size), loption.fsize);
 	ft_putstr(" ");
-	ft_putmonth1((ctime(&(sb.st_mtime))));
+	ft_putmonth((ctime(&(sb.st_mtime))));
 	ft_putstr(" ");
 	if (curtime - sb.st_mtime >= 0)
 	{
