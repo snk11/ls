@@ -6,21 +6,20 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/20 06:11:03 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/02 13:41:54 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/13 07:00:57 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "ft_ls.h"
+#include "ft_ls.h"
 
 int		ft_islnk(char *s)
 {
 	struct stat		sb;
 
-	if(lstat(s, &sb) == 0)
+	if (lstat(s, &sb) == 0)
 	{
-		if(S_ISLNK(sb.st_mode))
+		if (S_ISLNK(sb.st_mode))
 			return (1);
 	}
 	return (0);
-
 }

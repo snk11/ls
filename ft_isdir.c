@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/15 12:07:58 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/02 13:41:48 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/13 07:00:12 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ int		ft_isdir(char *s)
 {
 	struct stat		sb;
 
-	if(lstat(s, &sb) == 0)
+	if (lstat(s, &sb) == 0)
 	{
-		if(S_ISDIR(sb.st_mode))
+		if (S_ISDIR(sb.st_mode))
 			return (1);
 	}
 	return (0);
