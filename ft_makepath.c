@@ -6,18 +6,18 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/24 00:45:57 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/02 10:17:48 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/13 07:14:47 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "ft_ls.h"
+#include "ft_ls.h"
 
-char	*ft_makepath(char *str1,char *str2)
+char	*ft_makepath(char *str1, char *str2)
 {
 	char	*str;
 	char	*str3;
-	int len;
-	int	i;
+	int		len;
+	int		i;
 
 	str3 = NULL;
 	len = ft_strlen(str1);
@@ -31,8 +31,8 @@ char	*ft_makepath(char *str1,char *str2)
 	str[i] = '/';
 	i++;
 	str[i] = 0;
-	str3 = ft_strjoin(str,str2);
-	if(str)
+	str3 = ft_strjoin(str, str2);
+	if (str)
 	{
 		free(str);
 		str = NULL;
