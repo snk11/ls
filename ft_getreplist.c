@@ -6,15 +6,13 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 11:00:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/10 20:24:13 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/13 06:59:01 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_ls.h"
 
-# include "ft_ls.h"
-
-
-t_lsto *ft_getreplist(char *rep)
+t_lsto		*ft_getreplist(char *rep)
 {
 	struct dirent	*pdirent1;
 	DIR				*pdir1;
@@ -44,14 +42,14 @@ t_lsto *ft_getreplist(char *rep)
 
 void		ft_getreplist_p1(t_rep **e)
 {
-		if(*e)
-		{
-			free(*e);
-			*e = NULL;
-		}
+	if (*e)
+	{
+		free(*e);
+		*e = NULL;
+	}
 }
 
-t_lsto *ft_getreplist4(char *rep)
+t_lsto		*ft_getreplist4(char *rep)
 {
 	struct dirent	*pdirent1;
 	DIR				*pdir1;
@@ -76,7 +74,7 @@ t_lsto *ft_getreplist4(char *rep)
 	return (lsta);
 }
 
-t_lsto	*ft_getreplisto4(t_lsto *lstmp)
+t_lsto		*ft_getreplisto4(t_lsto *lstmp)
 {
 	t_lsto	*lst1;
 	t_lsto	*lst2;
@@ -86,9 +84,11 @@ t_lsto	*ft_getreplisto4(t_lsto *lstmp)
 	lst2 = NULL;
 	while (lstmp)
 	{
-		if(ft_isdir(ft_makepath(((t_rep*)(lstmp->content))->path,((t_rep*)(lstmp->content))->name)) == 0)
+		if (ft_isdir(ft_makepath(((t_rep*)(lstmp->content))->path,
+						((t_rep*)(lstmp->content))->name)) == 0)
 			lst_addo(&lst1, lstmp);
-		else if(ft_isdir(ft_makepath(((t_rep*)(lstmp->content))->path,((t_rep*)(lstmp->content))->name)) == 1)
+		else if (ft_isdir(ft_makepath(((t_rep*)(lstmp->content))->path,
+						((t_rep*)(lstmp->content))->name)) == 1)
 			lst_addo(&lst2, lstmp);
 		lstmp = lstmp->next;
 	}
