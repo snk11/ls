@@ -6,13 +6,13 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 12:33:08 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/13 10:19:30 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/13 10:27:26 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-int		decreasing_time(t_lsto *lsta)
+int			decreasing_time(t_lsto *lsta)
 {
 	struct stat		sa;
 	struct stat		sb;
@@ -41,7 +41,7 @@ int		decreasing_time(t_lsto *lsta)
 	return (0);
 }
 
-int		decreasing_time_p1(struct stat sa, struct stat sb)
+int			decreasing_time_p1(struct stat sa, struct stat sb)
 {
 	if (sa.st_mtime == sb.st_mtime
 			&& sa.st_mtimespec.tv_nsec >= sb.st_mtimespec.tv_nsec)
@@ -51,10 +51,10 @@ int		decreasing_time_p1(struct stat sa, struct stat sb)
 
 t_lsto		*ft_lst_sort(t_lsto *lst, int (*cmp)(t_lsto*))
 {
-	t_lsto *lstmp1;
-	t_lsto *lstmp2;
-	t_lsto *lstbegi;
-	t_sort	s;
+	t_lsto		*lstmp1;
+	t_lsto		*lstmp2;
+	t_lsto		*lstbegi;
+	t_sort		s;
 
 	lstbegi = lst;
 	lstmp1 = NULL;
@@ -67,13 +67,14 @@ t_lsto		*ft_lst_sort(t_lsto *lst, int (*cmp)(t_lsto*))
 	{
 		s.ind = 0;
 		lst = lstbegi;
-		ft_lst_sort_p1(&lst, &lstbegi, &lstmp1 ,&s);
-		ft_lst_sort_p2(&lst, &lstbegi, &lstmp1 ,&s);
+		ft_lst_sort_p1(&lst, &lstbegi, &lstmp1, &s);
+		ft_lst_sort_p2(&lst, &lstbegi, &lstmp1, &s);
 	}
 	return (lstbegi);
 }
 
-void		ft_lst_sort_p1(t_lsto **lst, t_lsto **lstbegi, t_lsto **lstmp1,t_sort *s)
+void		ft_lst_sort_p1(t_lsto **lst, t_lsto **lstbegi,
+		t_lsto **lstmp1, t_sort *s)
 {
 	t_lsto	*lstmp2;
 
@@ -95,12 +96,12 @@ void		ft_lst_sort_p1(t_lsto **lst, t_lsto **lstbegi, t_lsto **lstmp1,t_sort *s)
 	}
 }
 
-
-void		ft_lst_sort_p2(t_lsto **lst, t_lsto **lstbegi, t_lsto **lstmp1,t_sort *s)
+void		ft_lst_sort_p2(t_lsto **lst, t_lsto **lstbegi,
+		t_lsto **lstmp1, t_sort *s)
 {
 	t_lsto	*lstmp2;
 
-	while((*lst)->next != NULL)
+	while ((*lst)->next != NULL)
 	{
 		if ((s->f)(*lst) == 0)
 		{
