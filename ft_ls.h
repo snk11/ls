@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/13 17:46:48 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/15 10:50:53 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -320,5 +320,7 @@ char				*ft_getday_str(char *s);
 void				ft_getday_str_p1(char **s, int *cnt);
 char				*ft_getyear_str(char *s);
 void				ft_getyear_str_p1(char **s, int *cnt);
+char				*ft_getlinkpath(char *s1);
+int					ft_checkdir(char *s1);
 
 #endif

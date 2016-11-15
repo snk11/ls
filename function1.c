@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 16:38:40 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/13 11:46:24 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/15 10:29:34 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void		lst_addo1(t_lsto ***toplist, t_lsto *lst1)
 	lstmp = NULL;
 	lstmp = ft_create_lsto((lst1)->content);
 	ft_lst_fullfield(lst1, &lstmp);
-	if (*toplist == NULL)
+	if (**toplist == NULL)
 		**toplist = lstmp;
 	else
 	{
