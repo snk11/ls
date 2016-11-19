@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/08 06:45:09 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/19 13:19:33 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/19 15:36:19 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_r(char *s, t_lsto *lstcmd, t_ind *ind)
 	lsti = ft_printlist2(lst);
 	lstibegi = lsti;
 	i = 0;
-	while (lsti)
+	if(lsti)
 	{
 		lstj = ft_function_rl1(&lsti, lst, ft_getreplist, ft_printlist3);
 		lstibegi = ft_copylst1(lstibegi, lsti, lstj);
