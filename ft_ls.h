@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/15 10:50:53 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/19 13:09:29 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -322,5 +322,11 @@ char				*ft_getyear_str(char *s);
 void				ft_getyear_str_p1(char **s, int *cnt);
 char				*ft_getlinkpath(char *s1);
 int					ft_checkdir(char *s1);
+t_lsto		*ft_copylst1(t_lsto *lstbegi, t_lsto *lsti,t_lsto *lstj);
+t_lsto	*ft_function_rl1(t_lsto **lsti, t_lsto *lst,
+		t_lsto *(*f1)(char*), t_lsto *(*f2)(t_lsto*));
+t_lsto		*ft_curs(t_lsto *lst1, int i);
+t_lsto		*lst_addo42(t_lsto *toplist, t_lsto *lst1);
+t_lsto	*ft_reverse_lst(t_lsto *lstmp);
 
 #endif
