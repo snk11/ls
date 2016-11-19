@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/19 11:16:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/19 13:10:28 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/19 13:17:13 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,6 +122,15 @@ t_lsto		*ft_copylst1(t_lsto *lstbegi, t_lsto *lsti,t_lsto *lstj)
 		lst_addo(&lst3, lstmp);
 		lstbegi = lstbegi->next;
 	}
+	/*
+	if(lstbegi && lstbegi == lsti)
+		lst3 = lst_addo_down(lst3, lstbegi);
+	*/
+	while (lstj)
+	{
+		lst_addo(&lst3, lstj);
+		lstj = lstj->next;
+	}
 		if (lst3)
 			lst3 = ft_reverse_lst(lst3);
 		lst2 = lst3;
@@ -130,15 +139,6 @@ t_lsto		*ft_copylst1(t_lsto *lstbegi, t_lsto *lsti,t_lsto *lstj)
 			printf("lst1name = %s\n",((t_rep*)lst2->content)->name);
 			lst2 = lst2->next;
 		}
-	/*
-	if(lstbegi && lstbegi == lsti)
-		lst3 = lst_addo_down(lst3, lstbegi);
-	while (lstj)
-	{
-		lst3 = lst_addo_down(lst3, lstj);
-		lstj = lstj->next;
-	}
-	*/
-		lst3 = NULL;
+//		lst3 = NULL;
 	return (lst3);
 }
