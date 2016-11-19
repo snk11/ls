@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/19 11:16:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/19 15:52:45 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/19 17:18:13 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ t_lsto		*ft_copylst1(t_lsto *lstbegi, t_lsto *lsti,t_lsto *lstj)
 	lst3 = NULL;
 	lstw = NULL;
 			printf("lstiname = %s\n",((t_rep*)lsti->content)->name);
+	/*
 		t_lsto *lst2;
 		lst2 = lstbegi;
 		while (lst2)
@@ -104,6 +105,7 @@ t_lsto		*ft_copylst1(t_lsto *lstbegi, t_lsto *lsti,t_lsto *lstj)
 			lst2 = lst2->next;
 		}
 		lst1 = lstbegi;
+		*/
 //	while (lst1 && lst1 != lsti)
 /*
 	while (lst1)
@@ -138,8 +140,6 @@ t_lsto		*ft_copylst1(t_lsto *lstbegi, t_lsto *lsti,t_lsto *lstj)
 		lst_addo(&lst3, lstj);
 		lstj = lstj->next;
 	}
-		if (lstbegi && lstbegi->next)
-			lstbegi = lstbegi->next;
 	while(lstbegi)
 	{
 		lstmp = ft_create_lsto((lstbegi)->content);
@@ -149,12 +149,14 @@ t_lsto		*ft_copylst1(t_lsto *lstbegi, t_lsto *lsti,t_lsto *lstj)
 	}
 		if (lst3)
 			lst3 = ft_reverse_lst(lst3);
+		/*
 		lst2 = lst3;
 		while (lst2)
 		{
 			printf("lst1name = %s\n",((t_rep*)lst2->content)->name);
 			lst2 = lst2->next;
 		}
+		*/
 //		lst3 = NULL;
 	return (lst3);
 }
