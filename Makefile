@@ -6,7 +6,7 @@
 #    By: syusof <syusof@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/10/15 21:10:44 by syusof            #+#    #+#              #
-#    Updated: 2016/11/19 12:15:35 by syusof           ###   ########.fr        #
+#    Updated: 2016/11/21 21:03:18 by syusof           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = ft_ls
 SRCS = ft_a.c ft_areverse.c ft_art.c ft_at.c ft_ar.c ft_arreverse.c \
 ft_atreverse.c ft_checkhyphen.c ft_check_string.c ft_atrreverse.c \
 ft_checkslash.c ft_countelem.c ft_checkokfile.c ft_checkhyphencase.c \
-ft_checkhyphencase_print.c ft_getindex.c ft_freelst.c ft_getprimelist.c \
+ft_checkhyphencase_print.c ft_getindex.c ft_getprimelist.c \
 ft_isdir.c ft_islnk.c ft_isreg.c ft_init.c ft_ls1.c ft_function_r.c \
 ft_ls3.c ft_getreplist.c ft_ls2.c ft_ls_run1.c ft_ls_run4.c \
 ft_lst_fullfield.c ft_makepath.c ft_mem1.c ft_p0error.c ft_ls_run3.c \
@@ -38,7 +38,7 @@ ft_curs.c
 OFILES = ft_a.o ft_areverse.o ft_art.o ft_at.o ft_ar.o ft_arreverse.o \
 ft_atreverse.o ft_checkhyphen.o ft_check_string.o ft_atrreverse.o \
 ft_checkslash.o ft_countelem.o ft_checkokfile.o ft_checkhyphencase.o \
-ft_checkhyphencase_print.o ft_getindex.o ft_freelst.o ft_getprimelist.o \
+ft_checkhyphencase_print.o ft_getindex.o ft_getprimelist.o \
 ft_isdir.o ft_islnk.o ft_isreg.o ft_init.o ft_ls1.o ft_function_r.o \
 ft_ls3.o ft_getreplist.o ft_ls2.o ft_ls_run1.o ft_ls_run4.o \
 ft_lst_fullfield.o ft_makepath.o ft_mem1.o ft_p0error.o ft_ls_run3.o \

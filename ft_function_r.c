@@ -6,12 +6,12 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 14:21:34 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/21 20:57:11 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/21 21:08:05 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
-
+/*
 t_lsto	*ft_function_rl1(t_lsto **lsti, t_lsto *lst,
 		t_lsto *(*f1)(char*), t_lsto *(*f2)(t_lsto*))
 {
@@ -42,6 +42,7 @@ t_lsto	*ft_function_rl1(t_lsto **lsti, t_lsto *lst,
 	lst = NULL;
 	return (lstj);
 }
+*/
 
 void	ft_function_rl(t_lsto **lsti, t_lsto *lst,
 		t_lsto *(*f1)(char*), t_lsto *(*f2)(t_lsto*))

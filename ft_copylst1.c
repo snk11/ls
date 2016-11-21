@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/19 11:16:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/19 17:18:13 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/21 21:08:28 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,9 +80,9 @@ t_lsto	*ft_reverse_lst(t_lsto *lstmp)
 		ft_lst_fullfield(lstmp1, &lstmp2);
 		lst_addo(&lsta2, lstmp2);
 		lstmp1 = lstmp1->next;
-		free(e);
-		e = NULL;
-		ft_freelst(&lstmp2);
+//		free(e);
+//		e = NULL;
+//		ft_freelst(&lstmp2);
 	}
 	return (lsta2);
 }
