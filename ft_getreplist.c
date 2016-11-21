@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 11:00:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/13 06:59:01 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/21 20:54:47 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ t_lsto		*ft_getreplist(char *rep)
 			((t_rep*)(lstmp->content))->path = rep;
 			lst_addo(&lsta, lstmp);
 		}
-		ft_getreplist_p1(&e);
+//		ft_getreplist_p1(&e);
 	}
 	closedir(pdir1);
 	return (lsta);

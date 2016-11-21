@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/19 17:13:22 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/21 20:52:51 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,7 @@ typedef struct		s_stat
 	struct stat		stat1;
 }					t_stat;
 
+char	*ft_makepath2(char *str1, char *str2);
 void				ft_ls_p1(char **av, t_lsto *lstcmd, t_ind *ind);
 void				ft_ls_p1_p1(t_lsto *lstcmd, t_ind *ind);
 void				ft_ls_p1_p2(t_lsto *lst1, t_lsto *lstcmd, t_ind *ind);

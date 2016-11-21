@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 14:21:34 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/19 17:13:09 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/21 20:57:11 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,10 +66,10 @@ void	ft_function_rl(t_lsto **lsti, t_lsto *lst,
 			}
 		}
 	}
-	free(s1);
-	s1 = NULL;
+//	free(s1);
+//	s1 = NULL;
 	*lsti = (*lsti)->next;
-	lst = NULL;
+//	lst = NULL;
 }
 
 void	ft_function_r4(t_lsto **lsti, t_lsto *lst,
