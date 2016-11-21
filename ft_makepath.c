@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/24 00:45:57 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/21 20:52:31 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/21 21:12:15 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ char	*ft_makepath(char *str1, char *str2)
 	i++;
 	str[i] = 0;
 	str3 = ft_strjoin(str, str2);
-	if (str)
-	{
-		free(str);
-		str = NULL;
-	}
+//	if (str)
+//	{
+//		free(str);
+//		str = NULL;
+//	}
 	return (str3);
 }
 
@@ -60,10 +60,10 @@ char	*ft_makepath2(char *str1, char *str2)
 	i++;
 	str[i] = 0;
 	str3 = ft_strjoin(str, str2);
-	if (str)
-	{
-		free(str);
-		str = NULL;
-	}
+//	if (str)
+//	{
+//		free(str);
+//		str = NULL;
+//	}
 	return (str3);
 }
