@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/20 17:41:07 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/20 17:54:15 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ typedef struct		s_stat
 	struct stat		stat1;
 }					t_stat;
 
-char	*ft_makepath2(char *str1, char *str2);
+char				*ft_makepath2(char *str1, char *str2);
 void				ft_ls_p1(char **av, t_lsto *lstcmd, t_ind *ind);
 void				ft_ls_p1_p1(t_lsto *lstcmd, t_ind *ind);
 void				ft_ls_p1_p2(t_lsto *lst1, t_lsto *lstcmd, t_ind *ind);
@@ -321,9 +321,8 @@ char				*ft_getyear_str(char *s);
 void				ft_getyear_str_p1(char **s, int *cnt);
 char				*ft_getlinkpath(char *s1);
 int					ft_checkdir(char *s1);
-t_lsto				*ft_copylst1(t_lsto *lstbegi, t_lsto *lsti,t_lsto *lstj);
+t_lsto				*ft_copylst1(t_lsto *lstbegi, t_lsto *lsti, t_lsto *lstj);
 t_lsto				*ft_curs(t_lsto *lst1, int i);
 t_lsto				*lst_addo42(t_lsto *toplist, t_lsto *lst1);
 t_lsto				*ft_reverse_lst(t_lsto *lstmp);
-
 #endif
