@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/19 11:16:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/21 21:08:28 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/20 15:44:52 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,14 @@ t_lsto		*lst_addo42(t_lsto *toplist, t_lsto *lst1)
 	lstmp2 = toplist;
 	while (lst1)
 	{
-		lstmp = ft_create_lsto((lst1)->content);
+		lstmp = ft_create_lsto2((t_rep*)(lst1)->content);
 		ft_lst_fullfield(lst1, &lstmp);
 		lst_addo(&lstw, lstmp);
 		lst1 = lst1->next;
 	}
 	if(toplist == NULL)
 	{
-		lstmp = ft_create_lsto((lst1)->content);
+		lstmp = ft_create_lsto2((t_rep*)(lst1)->content);
 		ft_lst_fullfield(lst1, &lstmp);
 //		**toplist = lstw;
 	}
@@ -76,8 +76,9 @@ t_lsto	*ft_reverse_lst(t_lsto *lstmp)
 	{
 		e = (t_rep*)malloc(sizeof(t_rep));
 //		e->val = ((t_numb*)(lstmp1)->content)->val;
-		lstmp2 = ft_create_lsto(e);
-		ft_lst_fullfield(lstmp1, &lstmp2);
+		e->name = ft_memmove2(((t_rep*)((lstmp1)->content))->name);
+		e->path = ft_memmove2(((t_rep*)((lstmp1)->content))->path);
+		lstmp2 = ft_create_lsto2(e);
 		lst_addo(&lsta2, lstmp2);
 		lstmp1 = lstmp1->next;
 //		free(e);
@@ -119,14 +120,14 @@ t_lsto		*ft_copylst1(t_lsto *lstbegi, t_lsto *lsti,t_lsto *lstj)
 //	while (lstbegi && lstbegi != lsti)
 	while (lstbegi && lstbegi != lsti)
 	{
-		lstmp = ft_create_lsto((lstbegi)->content);
+		lstmp = ft_create_lsto2((t_rep*)(lstbegi)->content);
 		ft_lst_fullfield(lstbegi, &lstmp);
 		lst_addo(&lst3, lstmp);
 		lstbegi = lstbegi->next;
 	}
 	if (lstbegi && lstbegi == lsti)
 	{
-		lstmp = ft_create_lsto((lstbegi)->content);
+		lstmp = ft_create_lsto2((t_rep*)(lstbegi)->content);
 		ft_lst_fullfield(lstbegi, &lstmp);
 		lst_addo(&lst3, lstmp);
 		lstbegi = lstbegi->next;
@@ -142,7 +143,7 @@ t_lsto		*ft_copylst1(t_lsto *lstbegi, t_lsto *lsti,t_lsto *lstj)
 	}
 	while(lstbegi)
 	{
-		lstmp = ft_create_lsto((lstbegi)->content);
+		lstmp = ft_create_lsto2((t_rep*)(lstbegi)->content);
 		ft_lst_fullfield(lstbegi, &lstmp);
 		lst_addo(&lst3, lstmp);
 		lstbegi = lstbegi->next;

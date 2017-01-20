@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 16:38:40 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/20 15:08:08 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/20 15:35:50 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void		lst_addo(t_lsto **toplist, t_lsto *lst1)
 	t_lsto		*lstmp;
 
 	lstmp = NULL;
-	lstmp = ft_create_lsto((t_rep*)(lst1)->content);
+	lstmp = ft_create_lsto2((t_rep*)(lst1)->content);
 	ft_lst_fullfield(lst1, &lstmp);
 	if (*toplist == NULL)
 		*toplist = lstmp;
@@ -33,7 +33,7 @@ void		lst_addo1(t_lsto ***toplist, t_lsto *lst1)
 	t_lsto		*lstmp;
 
 	lstmp = NULL;
-	lstmp = ft_create_lsto((t_rep*)(lst1)->content);
+	lstmp = ft_create_lsto2((t_rep*)(lst1)->content);
 	ft_lst_fullfield(lst1, &lstmp);
 	if (**toplist == NULL)
 		**toplist = lstmp;
@@ -69,7 +69,7 @@ t_lsto		*lst_addo_down_p1(t_lsto **lst1, t_lsto **lsttopbegi)
 	lstmp2 = NULL;
 	while (*lst1 && *lsttopbegi)
 	{
-		lstmp = ft_create_lsto((t_rep*)(*lst1)->content);
+		lstmp = ft_create_lsto2((t_rep*)(*lst1)->content);
 		ft_lst_fullfield(*lst1, &lstmp);
 		lstmp2 = *lsttopbegi;
 		while (lstmp2->next)
@@ -89,13 +89,13 @@ t_lsto		*lst_addo_down_p2(t_lsto **lst1, t_lsto **lsttopbegi)
 	lstmp2 = NULL;
 	if (*lst1 && *lsttopbegi == NULL)
 	{
-		lstmp = ft_create_lsto((t_rep*)(*lst1)->content);
+		lstmp = ft_create_lsto2((t_rep*)(*lst1)->content);
 		ft_lst_fullfield(*lst1, &lstmp);
 		*lsttopbegi = lstmp;
 		*lst1 = (*lst1)->next;
 		while (*lst1)
 		{
-			lstmp = ft_create_lsto((*lst1)->content);
+			lstmp = ft_create_lsto2((*lst1)->content);
 			ft_lst_fullfield(*lst1, &lstmp);
 			lstmp2 = *lsttopbegi;
 			while (lstmp2->next)

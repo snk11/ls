@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 19:37:44 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/13 07:05:29 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/20 15:49:03 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ void			ft_ls_p1_p1(t_lsto *lstcmd, t_ind *ind)
 
 	lstmp = NULL;
 	lsta = NULL;
-	lstmp = ft_create_lsto_char(".");
-	lsta = ft_lst_sort(lsta, croissant_char);
+	lstmp = ft_create_lsto_char2(".");
 	lsta = lst_addo_down_char(lsta, lstmp);
+	lsta = ft_lst_sort(lsta, croissant_char);
 	ft_p0error(lsta, ind, lstcmd);
 	if (ind->indfts == 0)
 	{
@@ -55,7 +55,7 @@ void			ft_ls_p1_p3(t_lsto *lstcmd, t_ind *ind)
 
 	lstmp = NULL;
 	lsta = NULL;
-	lstmp = ft_create_lsto_char(".");
+	lstmp = ft_create_lsto_char2(".");
 	lsta = lst_addo_down_char(lsta, lstmp);
 	lsta = ft_lst_sort(lsta, croissant_char);
 	ft_p0error(lsta, ind, lstcmd);

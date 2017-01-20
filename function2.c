@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 17:07:41 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/20 15:12:41 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/20 15:50:35 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ t_lsto		*lst_addo_down_char_p1(t_lsto **lst1, t_lsto **lsttopbegi)
 	lstmp2 = NULL;
 	while (*lst1 && *lsttopbegi)
 	{
-		lstmp = ft_create_lsto_char((*lst1)->content);
+		lstmp = ft_create_lsto_char2((char*)(*lst1)->content);
 		lstmp2 = *lsttopbegi;
 		while (lstmp2->next)
 			lstmp2 = lstmp2->next;
@@ -56,12 +56,12 @@ t_lsto		*lst_addo_down_char_p2(t_lsto **lst1, t_lsto **lsttopbegi)
 	lstmp2 = NULL;
 	if (*lst1 && *lsttopbegi == NULL)
 	{
-		lstmp = ft_create_lsto_char((*lst1)->content);
+		lstmp = ft_create_lsto_char2((char*)(*lst1)->content);
 		*lsttopbegi = lstmp;
 		*lst1 = (*lst1)->next;
 		while (*lst1)
 		{
-			lstmp = ft_create_lsto((*lst1)->content);
+			lstmp = ft_create_lsto2((t_rep*)(*lst1)->content);
 			lstmp2 = *lsttopbegi;
 			while (lstmp2->next)
 				lstmp2 = lstmp2->next;
@@ -72,7 +72,7 @@ t_lsto		*lst_addo_down_char_p2(t_lsto **lst1, t_lsto **lsttopbegi)
 	return (*lsttopbegi);
 }
 
-t_lsto		*ft_create_lsto(t_rep *e)
+t_lsto		*ft_create_lsto2(t_rep *e)
 {
 	t_lsto	*curlst;
 
@@ -92,18 +92,18 @@ t_lsto		*ft_create_lsto(t_rep *e)
 	return (curlst);
 }
 
-t_lsto		*ft_create_lsto_char(char *content)
+t_lsto		*ft_create_lsto_char2(char *str)
 {
 	t_lsto	*curlst;
 
 	curlst = NULL;
 	if (!(curlst = (t_lsto*)malloc(sizeof(t_lsto))))
 		return (NULL);
-	if (content == NULL)
+	if (str == NULL)
 		curlst->content = NULL;
 	else
 	{
-		curlst->content = ft_memmove2(content);
+		curlst->content = ft_memmove2(str);
 	}
 	curlst->next = NULL;
 	return (curlst);

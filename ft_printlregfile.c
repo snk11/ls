@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/14 12:31:45 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/13 08:49:47 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/20 15:34:30 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ void	ft_printlregfile(t_lsto *lst1)
 	ft_init2(&loption);
 	e = (t_rep*)malloc(sizeof(t_rep));
 	{
-		lstmp = ft_create_lsto(e);
-		((t_rep*)(lstmp->content))->name = (char*)lst1->content;
-		((t_rep*)(lstmp->content))->path = ".";
+		e->name = ft_memmove2((char*)lst1->content);
+		e->path = ft_memmove2(".");
+		lstmp = ft_create_lsto2(e);
 	}
 	ft_width2(lstmp, &loption);
 	ft_wl2(lstmp, loption);
