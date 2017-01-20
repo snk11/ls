@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 11:00:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/21 20:54:47 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/20 15:13:19 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ t_lsto		*ft_getreplist(char *rep)
 			return (0);
 		if (pdirent1->d_name[0] != '.')
 		{
+			e->name = ft_memmove2(pdirent1->d_name);
+			e->path = ft_memmove2(rep);
 			lstmp = ft_create_lsto(e);
-			((t_rep*)(lstmp->content))->name = pdirent1->d_name;
-			((t_rep*)(lstmp->content))->path = rep;
 			lst_addo(&lsta, lstmp);
 		}
 //		ft_getreplist_p1(&e);
@@ -64,9 +64,9 @@ t_lsto		*ft_getreplist4(char *rep)
 	{
 		if (!(e = (t_rep*)malloc(sizeof(t_rep))))
 			return (0);
+		e->name = ft_memmove2(pdirent1->d_name);
+		e->path = ft_memmove2(rep);
 		lstmp = ft_create_lsto(e);
-		((t_rep*)(lstmp->content))->name = ft_memmove2(pdirent1->d_name);
-		((t_rep*)(lstmp->content))->path = ft_memmove2(rep);
 		lst_addo(&lsta, lstmp);
 		ft_getreplist_p1(&e);
 	}

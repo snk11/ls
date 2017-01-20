@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/21 20:52:51 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/20 14:56:28 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,8 +143,8 @@ t_lsto				*lst_addo_between_p2(t_lsto **lsttopbegi, t_lsto **lst1);
 void				lst_addo_between_p2_p1(t_lsto ***lsttopbegi,
 		t_lsto ***lst1);
 void				lst_add_del(t_lst **toplist, t_lst **t_lst1);
-t_lst				*ft_create_lst(void *content);
-t_lsto				*ft_create_lsto(void *content);
+//t_lst				*ft_create_lst(void *content);
+t_lsto				*ft_create_lsto(t_rep *rep);
 t_lsto				*ft_create_lsto_char(char *content);
 t_lsto				*ft_getprimelist(char **av, t_ind *ind);
 t_lsto				*ft_getprimelist2(char **av, t_ind *ind);

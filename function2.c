@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 17:07:41 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/13 11:47:38 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/20 15:12:41 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,19 +72,21 @@ t_lsto		*lst_addo_down_char_p2(t_lsto **lst1, t_lsto **lsttopbegi)
 	return (*lsttopbegi);
 }
 
-t_lsto		*ft_create_lsto(void *content)
+t_lsto		*ft_create_lsto(t_rep *e)
 {
 	t_lsto	*curlst;
 
 	curlst = NULL;
 	if (!(curlst = (t_lsto*)malloc(sizeof(t_lsto))))
 		return (NULL);
-	if (content == NULL)
+	if (e == NULL)
 		curlst->content = NULL;
 	else
 	{
-		if (!(curlst->content = malloc(sizeof(content))))
-			return (NULL);
+		curlst->content = (t_rep*)malloc(sizeof(t_rep));
+		((t_rep*)(curlst->content))->path = ft_memmove2(e->path);
+		((t_rep*)(curlst->content))->name = ft_memmove2(e->name);
+		((t_rep*)(curlst->content))->val = e->val;
 	}
 	curlst->next = NULL;
 	return (curlst);
