@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 11:00:42 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/20 17:45:56 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/20 23:20:56 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,9 @@ t_lsto		*ft_getreplist(char *rep)
 			e->name = ft_memmove2(pdirent1->d_name);
 			e->path = ft_memmove2(rep);
 			lstmp = ft_create_lsto2(e);
-			lst_addo(&lsta, lstmp);
+			ft_free2(&e);
+			lst_addo(&lsta, &lstmp);
+			ft_freelst2(&lstmp);
 		}
 	}
 	closedir(pdir1);
@@ -57,7 +59,7 @@ t_lsto		*ft_getreplist4(char *rep)
 		e->name = ft_memmove2(pdirent1->d_name);
 		e->path = ft_memmove2(rep);
 		lstmp = ft_create_lsto2(e);
-		lst_addo(&lsta, lstmp);
+		lst_addo(&lsta, &lstmp);
 	}
 	closedir(pdir1);
 	return (lsta);
@@ -75,10 +77,10 @@ t_lsto		*ft_getreplisto4(t_lsto *lstmp)
 	{
 		if (ft_isdir(ft_makepath(((t_rep*)(lstmp->content))->path,
 						((t_rep*)(lstmp->content))->name)) == 0)
-			lst_addo(&lst1, lstmp);
+			lst_addo(&lst1, &lstmp);
 		else if (ft_isdir(ft_makepath(((t_rep*)(lstmp->content))->path,
 						((t_rep*)(lstmp->content))->name)) == 1)
-			lst_addo(&lst2, lstmp);
+			lst_addo(&lst2, &lstmp);
 		lstmp = lstmp->next;
 	}
 	lst2 = ft_lst_sort(lst2, croissant);

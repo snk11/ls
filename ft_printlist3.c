@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 15:22:26 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/15 10:42:42 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/20 22:54:45 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,10 +65,10 @@ t_lsto	*ft_printlist11(t_lsto *lstmp)
 	{
 		if (ft_isdir(ft_makepath(((t_rep*)(lstmp->content))->path,
 						((t_rep*)(lstmp->content))->name)) == 0)
-			lst_addo(&lst1, lstmp);
+			lst_addo(&lst1, &lstmp);
 		else if (ft_isdir(ft_makepath(((t_rep*)(lstmp->content))->path,
 						((t_rep*)(lstmp->content))->name)) == 1)
-			lst_addo(&lst2, lstmp);
+			lst_addo(&lst2, &lstmp);
 		lstmp = lstmp->next;
 	}
 	lst2 = ft_lst_sort(lst2, decreasing_time);
@@ -110,10 +110,10 @@ void	ft_printlist13(t_lsto *lstmp)
 	{
 		if (ft_isdir(ft_makepath(((t_rep*)(lstmp->content))->path,
 						((t_rep*)(lstmp->content))->name)) == 0)
-			lst_addo(&lst1, lstmp);
+			lst_addo(&lst1, &lstmp);
 		else if (ft_isdir(ft_makepath(((t_rep*)(lstmp->content))->path,
 						((t_rep*)(lstmp->content))->name)) == 1)
-			lst_addo(&lst2, lstmp);
+			lst_addo(&lst2, &lstmp);
 		lstmp = lstmp->next;
 	}
 	lst2 = ft_lst_sort(lst2, decreasing_time);

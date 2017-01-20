@@ -6,18 +6,18 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 16:38:40 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/20 21:17:43 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/20 22:52:25 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-void		lst_addo(t_lsto **toplist, t_lsto *lst1)
+void		lst_addo(t_lsto **toplist, t_lsto **lst1)
 {
 	t_lsto		*lstmp;
 
 	lstmp = NULL;
-	lstmp = ft_create_lsto2((t_rep*)(lst1)->content);
+	lstmp = ft_create_lsto2((t_rep*)(*lst1)->content);
 //	ft_lst_fullfield(lst1, &lstmp);
 	if (*toplist == NULL)
 		*toplist = lstmp;

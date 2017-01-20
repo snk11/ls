@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 15:36:08 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/13 08:16:40 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/20 22:55:33 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ void		ft_printlist14(t_lsto *lstmp)
 	{
 		if (ft_isdir(ft_makepath(((t_rep*)(lstmp->content))->path,
 						((t_rep*)(lstmp->content))->name)) == 0)
-			lst_addo(&lst1, lstmp);
+			lst_addo(&lst1, &lstmp);
 		else if (ft_isdir(ft_makepath(((t_rep*)(lstmp->content))->path,
 						((t_rep*)(lstmp->content))->name)) == 1)
-			lst_addo(&lst2, lstmp);
+			lst_addo(&lst2, &lstmp);
 		lstmp = lstmp->next;
 	}
 	lst2 = ft_lst_sort(lst2, decreasing);
@@ -71,9 +71,9 @@ t_lsto		*ft_printlist16(t_lsto *lstmp)
 	{
 		if (ft_isdir(ft_makepath(((t_rep*)(lstmp->content))->path,
 						((t_rep*)(lstmp->content))->name)) == 0)
-			lst_addo(&lst1, lstmp);
+			lst_addo(&lst1, &lstmp);
 		else
-			lst_addo(&lst2, lstmp);
+			lst_addo(&lst2, &lstmp);
 		lstmp = lstmp->next;
 	}
 	lst2 = ft_lst_sort(lst2, croissant);
@@ -100,9 +100,9 @@ t_lsto		*ft_printlist17(t_lsto *lstmp)
 	{
 		if (ft_isdir(ft_makepath(((t_rep*)(lstmp->content))->path,
 						((t_rep*)(lstmp->content))->name)) == 0)
-			lst_addo(&lst1, lstmp);
+			lst_addo(&lst1, &lstmp);
 		else
-			lst_addo(&lst2, lstmp);
+			lst_addo(&lst2, &lstmp);
 		lstmp = lstmp->next;
 	}
 	lst2 = ft_lst_sort(lst2, decreasing_time);
@@ -129,9 +129,9 @@ t_lsto		*ft_printlist18(t_lsto *lstmp)
 	{
 		if (ft_isdir(ft_makepath(((t_rep*)(lstmp->content))->path,
 						((t_rep*)(lstmp->content))->name)) == 0)
-			lst_addo(&lst1, lstmp);
+			lst_addo(&lst1, &lstmp);
 		else
-			lst_addo(&lst2, lstmp);
+			lst_addo(&lst2, &lstmp);
 		lstmp = lstmp->next;
 	}
 	lst2 = ft_lst_sort(lst2, decreasing);
