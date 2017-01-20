@@ -1,0 +1,7 @@
+total 32
+lrwxr-xr-x  1 syusof  2014_paris    7 Oct 19 00:25 ln_couloir -> couloir
+-rw-r--r--  1 syusof  2014_paris  759 Oct 19 00:25 couloir
+-rw-r--r--  1 syusof  2014_paris    3 Oct 19 00:25 42
+-rw-r--r--  1 syusof  2014_paris   16 Oct 19 00:25 .president
+drwxr-xr-x  6 syusof  2014_paris  204 Oct 19 00:25 .
+drwxr-xr-x  6 syusof  2014_paris  204 Jan 20 16:28 ..

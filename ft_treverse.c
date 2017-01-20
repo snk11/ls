@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/23 11:43:47 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/13 10:29:46 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/20 17:05:11 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,12 @@ void	ft_treverse(char *s, t_ind *ind)
 		ind->indregfile = 0;
 	}
 	lst = ft_getreplist(s);
+	/*
 	if (ind->index1 > 0)
 	{
 		ft_putstr(s);
 		ft_putstr(":\n");
 	}
+	*/
 	ft_printlist15(lst);
 }
