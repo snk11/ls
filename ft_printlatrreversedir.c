@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/17 16:50:57 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/20 17:15:08 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/20 17:37:57 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,6 @@ void	ft_printlatrreversedir(char *s, t_lsto *lstcmd, t_ind *ind)
 	ft_print_n(s, lstcmd, ind);
 	lst = ft_getreplist4(s);
 	ft_printname(s, lstcmd, ind);
-	/*
-	if (ind->indtotal != 1)
-	{
-		ft_putstr(s);
-		ft_putstr(":\n");
-	}
-	*/
 	lsti = ft_printlist31(lst);
 	lstibegi = lsti;
 	while (lsti)
