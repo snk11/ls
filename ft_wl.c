@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/25 14:27:40 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/21 03:08:03 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/21 04:26:05 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,8 +87,31 @@ void	ft_wl_p1(t_loption loption, struct stat sb)
 
 void	ft_wl_p2(t_loption loption, struct stat sb, time_t curtime)
 {
-	ft_putwidth(ft_lldtoa(sb.st_size), loption.fsize);
-	ft_putstr(" ");
+	if (S_ISCHR(sb.st_mode) || S_ISBLK(sb.st_mode))
+	{
+		ft_putwidth(ft_itoa(major(sb.st_rdev)), loption.frdevmaj);
+		ft_putstr(",  ");
+	}
+	else if (loption.frdevmaj > 0)
+	{
+		ft_putwidth("",loption.frdevmaj);
+		ft_putstr("   ");
+	}
+	if (S_ISCHR(sb.st_mode) || S_ISBLK(sb.st_mode))
+	{
+		ft_putwidth(ft_itoa(minor(sb.st_rdev)), loption.frdevmin);
+		ft_putstr(" ");
+	}
+	else if (loption.frdevmin > 0)
+	{
+		ft_putwidth(ft_lldtoa(sb.st_size), loption.frdevmin);
+		ft_putstr("  ");
+	}
+	else
+	{
+		ft_putwidth(ft_lldtoa(sb.st_size), loption.fsize);
+		ft_putstr(" ");
+	}
 	ft_putmonth((ctime(&(sb.st_mtime))));
 	ft_putstr(" ");
 	if (curtime - sb.st_mtime >= 0)
