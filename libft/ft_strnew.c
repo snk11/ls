@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 15:03:37 by syusof            #+#    #+#             */
-/*   Updated: 2016/02/20 11:23:36 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/21 01:37:07 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strnew(size_t size)
 	if ((str = (char*)malloc(sizeof(char) * size)))
 	{
 		i = 0;
-		while (i <= size)
+		while (i < size)
 		{
 			str[i] = 0;
 			i++;
