@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/08 06:45:09 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/20 21:20:02 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/21 02:07:54 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,13 @@ void	ft_r(char *s, t_lsto *lstcmd, t_ind *ind)
 	lstibegi = lsti;
 	i = 0;
 	int g = 0;
-//	while (lsti && g < 455)
+//	while (lsti && g < 2000)
 	while (lsti)
 	{
 		ft_function_rl(&lsti, lst, ft_getreplist, ft_printlist3);
 		g++;
 	}
-	lstibegi = ft_lst_sort(lstibegi, croissant_pathname);
+//	lstibegi = ft_lst_sort(lstibegi, croissant_pathname);
 	lsti = lstibegi;
 	while (lsti)
 		ft_function_r4(&lsti, lst, ft_getreplist, ft_printlist2);
