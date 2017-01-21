@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 20:29:22 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/13 07:20:41 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/21 07:12:33 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,25 @@ void	ft_p0error_p1(t_lsto *lst1, t_ind *ind, t_lsto *lstcmd)
 
 void	ft_p0error_p1_p1(t_lsto *lst1, t_ind *ind)
 {
+	struct stat		sb;
+
 	ft_putstr_fd("ls: ", 2);
-	ft_putstr_fd((char*)(lst1->content), 2);
-	ft_putstr_fd(": ", 2);
-	ft_putstr_fd(strerror(errno), 2);
+	if (lstat(ft_makepath("",(char*)lst1->content), &sb) == 0)
+	{
+		if (!(sb.st_mode & S_IRGRP))
+		{
+			if (ft_checkSlashEndCase((char*)lst1->content) == 0)
+				ft_putstr_fd(ft_getnameWithoutSlash((char*)lst1->content), 2);
+			ft_putstr_fd(": ", 2);
+			ft_putstr_fd("Permission denied", 2);
+		}
+	}
+	else
+	{
+		ft_putstr_fd((char*)lst1->content, 2);
+		ft_putstr_fd(": ", 2);
+		ft_putstr_fd(strerror(errno), 2);
+	}
 	ft_putstr_fd("\n", 2);
 	ind->inderror = 1;
 }

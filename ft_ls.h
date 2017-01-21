@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/21 04:42:05 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/21 06:56:44 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -330,5 +330,7 @@ t_lsto				*lst_addo42(t_lsto *toplist, t_lsto *lst1);
 t_lsto				*ft_reverse_lst(t_lsto *lstmp);
 void				ft_free2(t_rep **e);
 void				ft_putwidth3(char *s, int p);
+char				*ft_getnameWithoutSlash(char *s);
+int					ft_checkSlashEndCase(char *s);
 
 #endif
