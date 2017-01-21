@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/25 14:27:40 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/21 03:00:57 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/21 03:08:03 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,12 +65,12 @@ void	ft_wl_p1(t_loption loption, struct stat sb)
 	gid = NULL;
 	if (sb.st_uid && (uid = getpwuid(sb.st_uid)) != NULL)
 	{
-		ft_putwidth(uid->pw_name, loption.uname);
+		ft_putwidth3(uid->pw_name, loption.uname);
 		ft_putstr("  ");
 	}
 	else if (!(sb.st_uid))
 	{
-		ft_putwidth("root", loption.uname);
+		ft_putwidth3("root", loption.uname);
 		ft_putstr("  ");
 	}
 	if (sb.st_gid && (gid = getgrgid(sb.st_gid)) != NULL)
