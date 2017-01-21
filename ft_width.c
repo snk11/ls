@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/25 13:44:58 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/21 04:15:36 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/21 04:44:44 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ void	ft_width_p1(t_loption *loption, struct stat sb)
 
 void	ft_width_p2(t_loption *loption, struct stat sb, time_t curtime)
 {
+	if (major(sb.st_rdev) > 0)
+		loption->indrdev = 1;
 	if (ft_strlen(ft_itoa(major(sb.st_rdev))) > loption->frdevmaj)
 		loption->frdevmaj = ft_strlen(ft_itoa(major(sb.st_rdev)));
 	if (ft_strlen(ft_itoa(minor(sb.st_rdev))) > loption->frdevmin)

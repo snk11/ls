@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/21 04:19:06 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/21 04:42:05 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ typedef	struct		s_loption
 	int				link;
 	int				uname;
 	int				gname;
+	int				indrdev;
 	int				frdevmin;
 	int				frdevmaj;
 	int				fsize;
