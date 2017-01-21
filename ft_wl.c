@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/25 14:27:40 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/13 17:46:59 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/21 03:00:57 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,12 +75,12 @@ void	ft_wl_p1(t_loption loption, struct stat sb)
 	}
 	if (sb.st_gid && (gid = getgrgid(sb.st_gid)) != NULL)
 	{
-		ft_putwidth(gid->gr_name, loption.gname);
+		ft_putwidth3(gid->gr_name, loption.gname);
 		ft_putstr("  ");
 	}
 	else if (!(sb.st_gid))
 	{
-		ft_putwidth("wheel", loption.gname);
+		ft_putwidth3("wheel", loption.gname);
 		ft_putstr("  ");
 	}
 }
