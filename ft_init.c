@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/30 16:00:49 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/21 04:42:34 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/30 19:32:33 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,5 @@ void	ft_init2(t_loption *loption)
 	loption->hour = 2;
 	loption->minute = 2;
 	loption->year = 0;
+	loption->xattracl = 0;
 }

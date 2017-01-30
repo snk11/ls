@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/25 14:27:40 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/21 08:01:03 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/30 19:36:11 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,7 @@ void	ft_wl_p(t_lsto *lst1, t_loption loption, struct stat sb, time_t curtime)
 void	ft_wl_p0(t_lsto *lst1, t_loption loption, struct stat sb)
 {
 	ft_print_permission(ft_makepath(((t_rep*)(lst1->content))->path,
-				((t_rep*)(lst1->content))->name));
-	ft_putstr("  ");
+				((t_rep*)(lst1->content))->name), loption);
 	ft_putwidth(ft_ustoa(sb.st_nlink), loption.link);
 	ft_putstr(" ");
 }

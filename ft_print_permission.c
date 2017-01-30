@@ -6,13 +6,13 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/14 07:25:15 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/30 19:09:39 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/30 19:36:03 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-void	ft_print_permission(char *s)
+void	ft_print_permission(char *s, t_loption loption)
 {
 	struct stat		sb;
 	ssize_t			xattr;
@@ -45,9 +45,17 @@ void	ft_print_permission(char *s)
 		else
 			ft_putchar('-');
 		if (xattr > 0)
+		{
 			ft_putchar('@');
+			ft_putchar(' ');
+		}
 		else if (acl != NULL)
+		{
 			ft_putchar('+');
+			ft_putchar(' ');
+		}
+		else
+			ft_putstr("  ");
 	}
 }
 
