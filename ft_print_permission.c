@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/14 07:25:15 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/21 07:16:13 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/30 19:09:39 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,13 @@
 void	ft_print_permission(char *s)
 {
 	struct stat		sb;
+	ssize_t			xattr;
+	acl_t			acl;
 
+	acl = NULL;
+	xattr = 0;
+	xattr = listxattr(s, NULL, 0, XATTR_NOFOLLOW);
+	acl = acl_get_link_np(s, ACL_TYPE_EXTENDED);
 	if (lstat(s, &sb) == 0)
 	{
 		ft_print_permission_p1(sb);
@@ -38,6 +44,10 @@ void	ft_print_permission(char *s)
 			ft_putchar('T');
 		else
 			ft_putchar('-');
+		if (xattr > 0)
+			ft_putchar('@');
+		else if (acl != NULL)
+			ft_putchar('+');
 	}
 }
 
@@ -85,6 +95,8 @@ void	ft_print_permission_p3(struct stat sb)
 
 void	ft_print_permission_p4(struct stat sb)
 {
+	if (sb.st_mode & S_ISGID)
+		ft_putchar('S');
 	if (sb.st_mode & S_IRGRP)
 		ft_putchar('r');
 	else

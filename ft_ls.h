@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/21 07:47:02 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/30 19:06:27 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@
 # include <sys/time.h>
 # include <errno.h>
 # include <string.h>
+# include <sys/xattr.h>
+# include <sys/acl.h>
 
 typedef struct		s_lst
 {
