@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/14 07:25:15 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/30 20:58:08 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/31 16:28:50 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,8 +138,6 @@ void	ft_print_permission_p3(struct stat sb)
 
 void	ft_print_permission_p4(struct stat sb)
 {
-	if (sb.st_mode & S_ISGID)
-		ft_putchar('S');
 	if (sb.st_mode & S_IRGRP)
 		ft_putchar('r');
 	else
