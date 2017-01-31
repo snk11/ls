@@ -1,33 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printldir.c                                     :+:      :+:    :+:   */
+/*   ft_cutpath_lcaselink.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/14 14:27:31 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/31 19:02:13 by syusof           ###   ########.fr       */
+/*   Created: 2017/01/31 19:42:55 by syusof            #+#    #+#             */
+/*   Updated: 2017/01/31 19:57:02 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-void	ft_printldir(char *s, t_lsto *lstcmd, t_ind *ind)
+char	*ft_cutpath_lcaselink(char *s1)
 {
-	t_lsto		*lst;
+	char	*s;
+	char	*s2;
+	int		i;
+	int		j;
 
-	if (!ft_islnk(ft_makepath(".", s)))
+	s = NULL;
+	s2 = s1;
+	if (s2)
 	{
-		ft_print_n(s, lstcmd, ind);
-		lst = ft_getreplist(s);
-		if (lst)
+		i = 0;
+		while (s2[i])
+			i++;
+		while (s2[i] != '/' && i != 0)
+			i--;
+	}
+	if (s2[i] == '/')
+	{
+		if (i != 0)
 		{
-			ft_printname(s, lstcmd, ind);
-			ft_printlist7(lst);
+			s = (char*)malloc(sizeof(s1) * i + 1);
+			j = 0;
+			while (s1[j])
+			{
+				s[j] = s1[j];
+				j++;
+			}
+			s[j] = 0;
 		}
+		else if (i == 0)
+			s = "/";
 	}
-	else
-	{
-
-	}
+	else if (i == 0)
+		s = ".";
+	return (s);
 }

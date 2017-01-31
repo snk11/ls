@@ -6,13 +6,50 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 11:00:42 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/21 08:07:51 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/31 19:08:54 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
 t_lsto		*ft_getreplist(char *rep)
+{
+	struct dirent	*pdirent1;
+	DIR				*pdir1;
+	t_rep			*e;
+	t_lsto			*lstmp;
+	t_lsto			*lsta;
+	struct stat		sb;
+
+	lsta = NULL;
+	lstmp = NULL;
+	pdir1 = opendir(rep);
+	while ((pdirent1 = readdir(pdir1)))
+	{
+//		if (lstat(ft_makepath(rep,pdirent1->d_name), &sb) == 0 && ft_strcmp(pdirent1->d_name,"6") !=0)
+		{
+//			if ((sb.st_mode & S_IRGRP))
+//			if (ft_checkLegitFile(ft_makepath(rep,pdirent1->d_name)) == 1)
+			{
+				if (!(e = (t_rep*)malloc(sizeof(t_rep))))
+					return (0);
+				if (pdirent1->d_name[0] != '.')
+				{
+					e->name = ft_memmove2(pdirent1->d_name);
+					e->path = ft_memmove2(rep);
+					lstmp = ft_create_lsto2(e);
+					ft_free2(&e);
+					lst_addo(&lsta, &lstmp);
+					ft_freelst2(&lstmp);
+				}
+			}
+		}
+	}
+	closedir(pdir1);
+	return (lsta);
+}
+
+t_lsto		*ft_getreplist5(char *rep)
 {
 	struct dirent	*pdirent1;
 	DIR				*pdir1;
