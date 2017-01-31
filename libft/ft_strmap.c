@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/06 10:32:07 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/11 15:47:57 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/31 18:22:38 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	int		i;
 	char	*str;
 
-	if ((str = ft_strnew(ft_strlen(s))))
+	if ((str = ft_strnew(ft_strlen(s) + 1)))
 	{
 		i = 0;
 		while (s && s[i] && f)
