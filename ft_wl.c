@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/25 14:27:40 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/30 21:31:17 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/31 15:26:59 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,15 @@ void	ft_wl(t_lsto *lst1, t_loption loption)
 {
 	struct stat		sb;
 	time_t			curtime;
+	char			*s;
 
 	curtime = time(NULL);
 	while (lst1)
 	{
-		if (lstat(ft_makepath(((t_rep*)(lst1->content))->path,
-						((t_rep*)(lst1->content))->name), &sb) == 0)
+	s = ft_makepath(((t_rep*)(lst1->content))->path, ((t_rep*)(lst1->content))->name);
+		if (lstat(s, &sb) == 0)
 		{
-			ft_wl_p(lst1, loption, sb, curtime);
+			ft_wl_p(s, loption, sb, curtime);
 			if (curtime - sb.st_mtime > 15778458)
 				ft_wl_p3(loption, sb, curtime);
 			else if (curtime - sb.st_mtime < 0)
@@ -31,8 +32,7 @@ void	ft_wl(t_lsto *lst1, t_loption loption)
 			else
 				ft_wl_p5(loption, sb, curtime);
 			ft_putstr(((t_rep*)lst1->content)->name);
-			if (ft_islnk(ft_makepath(((t_rep*)lst1->content)->path,
-							((t_rep*)lst1->content)->name)))
+			if (ft_islnk(s))
 				ft_wl_p6(lst1, loption, sb, curtime);
 			ft_putstr("\n");
 		}
@@ -40,17 +40,16 @@ void	ft_wl(t_lsto *lst1, t_loption loption)
 	}
 }
 
-void	ft_wl_p(t_lsto *lst1, t_loption loption, struct stat sb, time_t curtime)
+void	ft_wl_p(char *s, t_loption loption, struct stat sb, time_t curtime)
 {
-	ft_wl_p0(lst1, loption, sb);
+	ft_wl_p0(s, loption, sb);
 	ft_wl_p1(loption, sb);
 	ft_wl_p2(loption, sb, curtime);
 }
 
-void	ft_wl_p0(t_lsto *lst1, t_loption loption, struct stat sb)
+void	ft_wl_p0(char *s, t_loption loption, struct stat sb)
 {
-	ft_print_permission(ft_makepath(((t_rep*)(lst1->content))->path,
-				((t_rep*)(lst1->content))->name), loption);
+	ft_print_permission(s, loption);
 	ft_putwidth(ft_ustoa(sb.st_nlink), loption.link);
 	ft_putstr(" ");
 }

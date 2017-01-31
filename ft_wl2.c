@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 10:39:04 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/30 21:34:16 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/31 15:14:05 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,15 @@ void	ft_wl2(t_lsto *lst1, t_loption loption)
 {
 	struct stat		sb;
 	time_t			curtime;
+	char *s;
 
+	s = ((t_rep*)(lst1->content))->name;
 	curtime = time(NULL);
 	if (lst1)
 	{
-		ft_putstr("gggg");
-		if (lstat(ft_makepath("",
-						((t_rep*)(lst1->content))->name), &sb) == 0)
+		if (lstat(s, &sb) == 0)
 		{
-			ft_wl_p(lst1, loption, sb, curtime);
+			ft_wl_p(s, loption, sb, curtime);
 			if (curtime - sb.st_mtime > 15778458)
 				ft_wl_p3(loption, sb, curtime);
 			else if (curtime - sb.st_mtime < 0)
@@ -32,8 +32,7 @@ void	ft_wl2(t_lsto *lst1, t_loption loption)
 			else
 				ft_wl_p5(loption, sb, curtime);
 			ft_putstr(((t_rep*)lst1->content)->name);
-			if (ft_islnk(ft_makepath(((t_rep*)lst1->content)->path,
-							((t_rep*)lst1->content)->name)))
+			if (ft_islnk(s))
 				ft_wl_p6(lst1, loption, sb, curtime);
 			ft_putstr("\n");
 		}

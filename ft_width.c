@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/25 13:44:58 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/30 20:06:05 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/31 15:26:52 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ void	ft_width(t_lsto *lst1, t_loption *loption)
 
 	acl = NULL;
 	xattr = 0;
-	s = ft_makepath(((t_rep*)(lst1->content))->path,
-				((t_rep*)(lst1->content))->name);
 	xattr = listxattr(s, NULL, 0, XATTR_NOFOLLOW);
 	acl = acl_get_link_np(s, ACL_TYPE_EXTENDED);
 	curtime = time(NULL);
 	while (lst1)
 	{
+	s = ft_makepath(((t_rep*)(lst1->content))->path,
+				((t_rep*)(lst1->content))->name);
 		if (lstat(s, &sb) == 0)
 		{
 			if (ft_strlen(ft_ustoa(sb.st_nlink)) > loption->link)

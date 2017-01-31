@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 14:55:39 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/30 21:30:38 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/21 07:58:41 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,9 +87,7 @@ void		ft_printlist7_p1(t_lsto *lstmp2)
 	{
 		if (lstat(ft_makepath(((t_rep*)(lstmp2->content))->path,
 						((t_rep*)(lstmp2->content))->name), &sb) == 0)
-		{
 			l = l + sb.st_blocks;
-		}
 		lstmp2 = lstmp2->next;
 	}
 	ft_putstr("total ");

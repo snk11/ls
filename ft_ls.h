@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/30 19:35:57 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/31 14:58:39 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -286,9 +286,9 @@ void				ft_width_p1(t_loption *loption, struct stat sb);
 void				ft_width_p2(t_loption *loption, struct stat sb,
 		time_t curtime);
 void				ft_wl(t_lsto *lst1, t_loption loption);
-void				ft_wl_p(t_lsto *lst1, t_loption loption, struct stat sb,
+void				ft_wl_p(char *s, t_loption loption, struct stat sb,
 		time_t curtime);
-void				ft_wl_p0(t_lsto *lst1, t_loption loption, struct stat sb);
+void				ft_wl_p0(char *s, t_loption loption, struct stat sb);
 void				ft_wl_p1(t_loption loption, struct stat sb);
 void				ft_wl_p2(t_loption loption, struct stat sb, time_t curtime);
 void				ft_wl_p3(t_loption loption, struct stat sb, time_t curtime);
