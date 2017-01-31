@@ -6,28 +6,28 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 20:29:22 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/31 16:18:28 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/31 16:53:47 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-void	ft_p0error_p1(t_lsto *lst1, t_ind *ind, t_lsto *lstcmd)
+void	ft_p0error_p1(char *s, t_ind *ind, t_lsto *lstcmd)
 {
 	int		inderror;
 	char	*s1;
 
 	inderror = 0;
 	ind->ind1 = 0;
-	if (!opendir((char*)(lst1->content)))
+	if (!opendir(s))
 	{
 		inderror = 1;
 	}
-	if (inderror == 1 && !ft_isreg(ft_makepath(".", (char*)lst1->content))
-			&& !ft_islnk(ft_makepath(".", (char*)lst1->content)))
-		ft_p0error_p1_p1(lst1, ind);
+	if (inderror == 1 && !ft_isreg(ft_makepath(".", s))
+			&& !ft_islnk(ft_makepath(".", s)))
+		ft_p0error_p1_p1(s, ind);
 	else if (ft_checkhyphencase(lstcmd, ind) == 1 && ind->indoption > 0
-			&& ind->indexyet == 0 && ft_strcmp((char*)lst1->content, "--") == 0)
+			&& ind->indexyet == 0 && ft_strcmp(s, "--") == 0)
 		ind->indexyet = 1;
 	/*
 	else if (inderror == 1 && !ft_isreg(ft_makepath(".", (char*)lst1->content))
@@ -36,24 +36,24 @@ void	ft_p0error_p1(t_lsto *lst1, t_ind *ind, t_lsto *lstcmd)
 	*/
 }
 
-void	ft_p0error_p1_p1(t_lsto *lst1, t_ind *ind)
+void	ft_p0error_p1_p1(char *s, t_ind *ind)
 {
 	struct stat		sb;
 
 	ft_putstr_fd("ls: ", 2);
-	if (lstat(ft_makepath("",(char*)lst1->content), &sb) == 0)
+	if (lstat(ft_makepath("", s), &sb) == 0)
 	{
 		if (!(sb.st_mode & S_IRGRP))
 		{
-			if (ft_checkSlashEndCase((char*)lst1->content) == 0)
-				ft_putstr_fd(ft_getnameWithoutSlash((char*)lst1->content), 2);
+			if (ft_checkSlashEndCase(s) == 0)
+				ft_putstr_fd(ft_getnameWithoutSlash(s), 2);
 			ft_putstr_fd(": ", 2);
 			ft_putstr_fd("Permission denied", 2);
 		}
 	}
 	else
 	{
-		ft_putstr_fd((char*)lst1->content, 2);
+		ft_putstr_fd(s, 2);
 		ft_putstr_fd(": ", 2);
 		ft_putstr_fd(strerror(errno), 2);
 	}
