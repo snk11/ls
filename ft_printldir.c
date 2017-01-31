@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/14 14:27:31 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/31 21:30:51 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/31 23:28:31 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,19 @@ void	ft_printldir(char *s, t_lsto *lstcmd, t_ind *ind)
 {
 	t_lsto		*lst;
 
-//	printf("path = %s\n", ft_cutpath_lcaselink(s));
-//	printf("name = %s\n", ft_cutname_lcaselink(s));
-	
-	if (ft_lcaselink_print(s, lstcmd, ind, ft_getreplist) == 0)
+	//	printf("path = %s\n", ft_cutpath_lcaselink(s));
+	//	printf("name = %s\n", ft_cutname_lcaselink(s));
+
+//	if (ft_lcaselink_print(s, lstcmd, ind, ft_getreplist) == 0)
 	{
 		ft_print_n(s, lstcmd, ind);
-		lst = ft_getreplist(s);
-		if (lst)
-		{
-			ft_printname(s, lstcmd, ind);
-			ft_printlist7(lst);
-		}
+		/*
+		if (!ft_islnk(ft_makepath(".", s)))
+			lst = ft_getreplist(s);
+		else
+		*/
+			lst = ft_getreplist5(s);
+		ft_printname(s, lstcmd, ind);
+		ft_printlist7(lst);
 	}
 }

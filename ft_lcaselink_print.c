@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/31 21:14:48 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/31 21:31:26 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/31 22:57:59 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,8 @@ int		ft_lcaselink_print(char *s, t_lsto *lstcmd, t_ind *ind,t_lsto *(*f1)(char*)
 	{
 		ft_print_n(s, lstcmd, ind);
 		lst = f1(s);
-		if (lst)
-		{
-			ft_printname(s, lstcmd, ind);
-			ft_printlist7(lst);
-		}
+		ft_printname(s, lstcmd, ind);
+		ft_printlist7(lst);
 		return (1);
 	}
 	return (0);
