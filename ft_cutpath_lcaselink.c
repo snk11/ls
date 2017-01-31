@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/31 19:42:55 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/31 19:57:02 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/31 20:37:08 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_cutpath_lcaselink(char *s1)
 		{
 			s = (char*)malloc(sizeof(s1) * i + 1);
 			j = 0;
-			while (s1[j])
+			while (s1[j] && j < i)
 			{
 				s[j] = s1[j];
 				j++;
@@ -43,7 +43,7 @@ char	*ft_cutpath_lcaselink(char *s1)
 			s[j] = 0;
 		}
 		else if (i == 0)
-			s = "/";
+			s = "";
 	}
 	else if (i == 0)
 		s = ".";

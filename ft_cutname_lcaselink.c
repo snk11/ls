@@ -6,11 +6,11 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/31 19:09:36 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/31 19:43:26 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/31 20:40:39 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_ls.c"
+#include "ft_ls.h"
 
 char	*ft_cutname_lcaselink(char *s1)
 {
@@ -29,7 +29,7 @@ char	*ft_cutname_lcaselink(char *s1)
 		while (s2[i] != '/' && i != 0)
 			i--;
 	}
-	if (s2[i] == '/')
+	if (s2[i] == '/' && i > 0)
 	{
 		if (s2[i + 1])
 		{
