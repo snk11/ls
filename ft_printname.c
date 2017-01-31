@@ -6,24 +6,25 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/20 00:06:32 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/13 08:58:37 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/31 17:55:27 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-void	ft_printname(char *s, t_lsto *lstcmd, t_ind *ind)
+void		ft_printname(char *s, t_lsto *lstcmd, t_ind *ind)
 {
 	int	cnt;
 
 	cnt = ft_countelem(lstcmd);
 	if (ft_checkhyphencase(lstcmd, ind) == 1 && ind->indhyphsolo == 0)
+	{
 		ft_printname_p1(s, lstcmd, ind, cnt);
+	}
 	else if (ft_checkhyphencase(lstcmd, ind) == 0 || ind->indhyphsolo == 1)
 	{
 		if (ft_printname_p2(s, lstcmd, ind, cnt))
-		{
-		}
+			;
 		else
 			ft_printname_p3(s, lstcmd, ind);
 	}
@@ -78,7 +79,7 @@ int		ft_printname_p2(char *s, t_lsto *lstcmd, t_ind *ind, int cnt)
 	return (0);
 }
 
-void	ft_printname_p3(char *s, t_lsto *lstcmd, t_ind *ind)
+void		ft_printname_p3(char *s, t_lsto *lstcmd, t_ind *ind)
 {
 	if (((ind->index1 == (2 + ind->indoption)
 					&& ft_checkhyphencase(lstcmd, ind) == 0)
