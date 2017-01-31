@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/31 19:57:49 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/31 21:30:45 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -338,5 +338,6 @@ int					ft_checkSlashEndCase(char *s);
 int					ft_checkLegitFile(char *s);
 char				*ft_cutpath_lcaselink(char *s1);
 char				*ft_cutname_lcaselink(char *s1);
+int		ft_lcaselink_print(char *s, t_lsto *lstcmd, t_ind *ind,t_lsto *(*f1)(char*));
 
 #endif

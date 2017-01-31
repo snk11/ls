@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printldir.c                                     :+:      :+:    :+:   */
+/*   ft_lcaselink_print.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/14 14:27:31 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/31 21:30:51 by syusof           ###   ########.fr       */
+/*   Created: 2017/01/31 21:14:48 by syusof            #+#    #+#             */
+/*   Updated: 2017/01/31 21:31:26 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-void	ft_printldir(char *s, t_lsto *lstcmd, t_ind *ind)
+int		ft_lcaselink_print(char *s, t_lsto *lstcmd, t_ind *ind,t_lsto *(*f1)(char*))
 {
-	t_lsto		*lst;
+	t_lsto *lst;
 
-//	printf("path = %s\n", ft_cutpath_lcaselink(s));
-//	printf("name = %s\n", ft_cutname_lcaselink(s));
-	
-	if (ft_lcaselink_print(s, lstcmd, ind, ft_getreplist) == 0)
+	lst = NULL;
+	if (ft_islnk(ft_makepath(".", s)))
 	{
 		ft_print_n(s, lstcmd, ind);
-		lst = ft_getreplist(s);
+		lst = f1(s);
 		if (lst)
 		{
 			ft_printname(s, lstcmd, ind);
 			ft_printlist7(lst);
 		}
+		return (1);
 	}
+	return (0);
 }

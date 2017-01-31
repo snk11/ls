@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/14 12:31:45 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/31 20:23:21 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/31 21:12:14 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ void	ft_printlregfile(t_lsto *lst1)
 
 	lstmp = NULL;
 	ft_init2(&loption);
-	printf("path = %s\n", ft_cutpath_lcaselink((char*)lst1->content));
-	printf("name = %s\n", ft_cutname_lcaselink((char*)lst1->content));
+//	printf("path = %s\n", ft_cutpath_lcaselink((char*)lst1->content));
+//	printf("name = %s\n", ft_cutname_lcaselink((char*)lst1->content));
 	e = (t_rep*)malloc(sizeof(t_rep));
 	{
 		e->name = ft_memmove2((char*)lst1->content);
