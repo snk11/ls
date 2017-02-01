@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 14:21:34 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/01 04:16:45 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/01 06:25:58 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ void	ft_function_rl(t_lsto **lsti, t_lsto *lst,
 	{
 		if (stat(s1, &sb) == 0)
 		{
-			if ((sb.st_mode & S_IRGRP) && (sb.st_mode & S_IROTH))
+			if ((sb.st_mode & S_IRGRP) && (sb.st_mode & S_IROTH) && ((sb.st_mode & S_IWUSR) || (sb.st_mode & S_IXUSR)))
 				lst = f1(s1);
-			if (lst && (sb.st_mode & S_IRGRP) && (sb.st_mode & S_IROTH))
+			if (lst && (sb.st_mode & S_IRGRP) && (sb.st_mode & S_IROTH) && ((sb.st_mode & S_IWUSR) || (sb.st_mode & S_IXUSR)))
 			{
 				lstj = f2(lst);
 				*lsti = lst_addo_between(*lsti, lstj);
@@ -53,11 +53,12 @@ void	ft_function_r4(t_lsto **lsti, t_lsto *lst,
 		ft_function_r4_p1(s1);
 		if (stat(s1, &sb) == 0)
 		{
-			if ((sb.st_mode & S_IRGRP) && (sb.st_mode & S_IROTH))
+			if ((sb.st_mode & S_IRGRP) && (sb.st_mode & S_IROTH) && ((sb.st_mode & S_IWUSR) || (sb.st_mode & S_IXUSR)))
 				lst = f1(s1);
-			if (lst && (sb.st_mode & S_IRGRP) && (sb.st_mode & S_IROTH))
+			if (lst && (sb.st_mode & S_IRGRP) && (sb.st_mode & S_IROTH) && ((sb.st_mode & S_IWUSR) || (sb.st_mode & S_IXUSR)))
 				lstj = f2(lst);
 			else if (!((sb.st_mode & S_IRGRP) && (sb.st_mode & S_IROTH)))
+//			if (lst && (sb.st_mode & S_IRGRP) && (sb.st_mode & S_IROTH) && ((sb.st_mode & S_IWUSR) || (sb.st_mode & S_IXUSR)))
 			{
 				ft_putstr_fd("ls: ", 2);
 				opendir(s1);

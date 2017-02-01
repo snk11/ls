@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 14:55:39 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/01 05:22:13 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/01 05:48:35 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,8 +116,12 @@ t_lsto		*ft_printlist8(t_lsto *lstmp)
 		if ((!(sb.st_mode & S_IWUSR) && !(sb.st_mode & S_IXUSR)) || (ft_isdir(ft_makepath(((t_rep*)(lstmp->content))->path,
 						((t_rep*)(lstmp->content))->name))) == 0)
 			lst_addo(&lst1, &lstmp);
+//		else if (ft_strcmp(((t_rep*)(lstmp->content))->name,"fd") == 0)
 		else
+		{
+//		printf("lstmp = %s\n",((t_rep*)(lstmp->content))->name);
 			lst_addo(&lst2, &lstmp);
+		}
 	}
 		lstmp = lstmp->next;
 	}
