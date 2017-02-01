@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 14:21:34 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/01 19:44:56 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/01 06:38:28 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,39 +44,29 @@ void	ft_function_r4(t_lsto **lsti, t_lsto *lst,
 	char			*s1;
 	t_lsto			*lstj;
 	struct stat		sb;
-	int				error;
 
-	error = 0;
-	while (*lsti)
-	{
 	s1 = ft_makepath(((t_rep*)((*lsti)->content))->path,
 			((t_rep*)((*lsti)->content))->name);
-		if (ft_strcmp((((t_rep*)(*lsti)->content)->name), ".") != 0
-				&& ft_strcmp((((t_rep*)(*lsti)->content)->name), "..") != 0)
+	if (ft_strcmp((((t_rep*)(*lsti)->content)->name), ".") != 0
+			&& ft_strcmp((((t_rep*)(*lsti)->content)->name), "..") != 0)
+	{
+		ft_function_r4_p1(s1);
+		if (stat(s1, &sb) == 0)
 		{
-			if (error == 0)
-				ft_function_r4_p1(s1);
-			if (stat(s1, &sb) == 0)
+			if ((sb.st_mode & S_IRGRP) && (sb.st_mode & S_IROTH) && ((sb.st_mode & S_IWUSR) || (sb.st_mode & S_IXUSR)))
+				lst = f1(s1);
+			if (lst && (sb.st_mode & S_IRGRP) && (sb.st_mode & S_IROTH) && ((sb.st_mode & S_IWUSR) || (sb.st_mode & S_IXUSR)))
+				lstj = f2(lst);
+//			else if (!((sb.st_mode & S_IRGRP) && (sb.st_mode & S_IROTH)))
+			else if (!((sb.st_mode & S_IRGRP) && (sb.st_mode & S_IROTH) && ((sb.st_mode & S_IWUSR) || (sb.st_mode & S_IXUSR))))
 			{
-				if ((sb.st_mode & S_IRGRP) && (sb.st_mode & S_IROTH) && ((sb.st_mode & S_IWUSR) || (sb.st_mode & S_IXUSR)))
-					lst = f1(s1);
-				if (lst && (sb.st_mode & S_IRGRP) && (sb.st_mode & S_IROTH) && ((sb.st_mode & S_IWUSR) || (sb.st_mode & S_IXUSR)))
-				{
-					lstj = f2(lst);
-					error = 0;
-				}
-				//			else if (!((sb.st_mode & S_IRGRP) && (sb.st_mode & S_IROTH)))
-				else if (!((sb.st_mode & S_IRGRP) && (sb.st_mode & S_IROTH) && ((sb.st_mode & S_IWUSR) || (sb.st_mode & S_IXUSR))))
-				{
-					ft_putstr_fd("ls: ", 2);
-					opendir(s1);
-					perror(((t_rep*)((*lsti)->content))->name);
-					error = 1;
-				}
+				ft_putstr_fd("ls: ", 2);
+				opendir(s1);
+				perror(((t_rep*)((*lsti)->content))->name);
 			}
 		}
-		(*lsti) = (*lsti)->next;
 	}
+	(*lsti) = (*lsti)->next;
 }
 
 void	ft_function_r4_p1(char *s1)
