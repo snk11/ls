@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 15:36:08 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/20 22:55:33 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/01 02:33:59 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ void		ft_printlist14(t_lsto *lstmp)
 	lst2 = ft_lst_sort(lst2, decreasing);
 	lst1 = lst_addo_down(lst1, lst2);
 	lst1 = ft_lst_sort(lst1, decreasing);
-	ft_printlist7_p1(lst1);
+	if (lst1)
+		ft_printlist7_p1(lst1);
 	ft_init2(&loption);
 	ft_width(lst1, &loption);
 	ft_wl(lst1, loption);
@@ -80,7 +81,8 @@ t_lsto		*ft_printlist16(t_lsto *lstmp)
 	lstbegio = lst2;
 	lst1 = lst_addo_down(lst1, lst2);
 	lst1 = ft_lst_sort(lst1, croissant);
-	ft_printlist7_p1(lst1);
+	if (lst1)
+		ft_printlist7_p1(lst1);
 	ft_init2(&loption);
 	ft_width(lst1, &loption);
 	ft_wl(lst1, loption);
@@ -109,7 +111,8 @@ t_lsto		*ft_printlist17(t_lsto *lstmp)
 	lstbegio = lst2;
 	lst1 = lst_addo_down(lst1, lst2);
 	lst1 = ft_lst_sort(lst1, decreasing_time);
-	ft_printlist7_p1(lst1);
+	if (lst1)
+		ft_printlist7_p1(lst1);
 	ft_init2(&loption);
 	ft_width(lst1, &loption);
 	ft_wl(lst1, loption);
@@ -138,7 +141,8 @@ t_lsto		*ft_printlist18(t_lsto *lstmp)
 	lstbegio = lst2;
 	lst1 = lst_addo_down(lst1, lst2);
 	lst1 = ft_lst_sort(lst1, decreasing);
-	ft_printlist7_p1(lst1);
+	if (lst1)
+		ft_printlist7_p1(lst1);
 	ft_init2(&loption);
 	ft_width(lst1, &loption);
 	ft_wl(lst1, loption);

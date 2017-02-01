@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 15:44:29 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/20 22:57:11 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/01 02:35:06 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,8 @@ void	ft_printlist21(t_lsto *lstmp)
 	lst2 = ft_lst_sort(lst2, croissant_time);
 	lst1 = lst_addo_down(lst1, lst2);
 	lst1 = ft_lst_sort(lst1, croissant_time);
-	ft_printlist7_p1(lst1);
+	if (lst1)
+		ft_printlist7_p1(lst1);
 	ft_init2(&loption);
 	ft_width(lst1, &loption);
 	ft_wl(lst1, loption);
