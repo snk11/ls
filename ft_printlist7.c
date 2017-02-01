@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 15:55:27 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/01 01:54:56 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/01 02:11:15 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ t_lsto	*ft_printlist31(t_lsto *lstmp)
 	return (lstbegio);
 }
 
-void		ft_printlist37(t_lsto *lstmp)
+void	ft_printlist33(t_lsto *lstmp)
 {
 	t_lsto		*lst1;
 	t_lsto		*lst2;
@@ -104,9 +104,9 @@ void		ft_printlist37(t_lsto *lstmp)
 			lst_addo(&lst2, &lstmp);
 		lstmp = lstmp->next;
 	}
-	lst2 = ft_lst_sort(lst2, croissant);
+	lst2 = ft_lst_sort(lst2, decreasing_time);
 	lst1 = lst_addo_down(lst1, lst2);
-	lst1 = ft_lst_sort(lst1, croissant);
+	lst1 = ft_lst_sort(lst1, decreasing_time);
 	ft_init2(&loption);
 	ft_width(lst1, &loption);
 	ft_wl(lst1, loption);
@@ -137,6 +137,58 @@ void	ft_printlist34(t_lsto *lstmp)
 	ft_width(lst1, &loption);
 	ft_wl(lst1, loption);
 }
+
+void		ft_printlist37(t_lsto *lstmp)
+{
+	t_lsto		*lst1;
+	t_lsto		*lst2;
+	t_loption	loption;
+
+	lst1 = NULL;
+	lst2 = NULL;
+	while (lstmp)
+	{
+		if (ft_isdir(ft_makepath(((t_rep*)(lstmp->content))->path,
+						((t_rep*)(lstmp->content))->name)) == 0)
+			lst_addo(&lst1, &lstmp);
+		else if (ft_isdir(ft_makepath(((t_rep*)(lstmp->content))->path,
+						((t_rep*)(lstmp->content))->name)) == 1)
+			lst_addo(&lst2, &lstmp);
+		lstmp = lstmp->next;
+	}
+	lst2 = ft_lst_sort(lst2, croissant);
+	lst1 = lst_addo_down(lst1, lst2);
+	lst1 = ft_lst_sort(lst1, croissant);
+	ft_init2(&loption);
+	ft_width(lst1, &loption);
+	ft_wl(lst1, loption);
+}
+
+void	ft_printlist41(t_lsto *lstmp)
+{
+	t_lsto		*lst1;
+	t_lsto		*lst2;
+	t_loption	loption;
+
+	lst1 = NULL;
+	lst2 = NULL;
+	while (lstmp)
+	{
+		if (ft_isdir(ft_makepath(((t_rep*)(lstmp->content))->path,
+						((t_rep*)(lstmp->content))->name)) == 0)
+			lst_addo(&lst1, &lstmp);
+		else
+			lst_addo(&lst2, &lstmp);
+		lstmp = lstmp->next;
+	}
+	lst2 = ft_lst_sort(lst2, croissant_time);
+	lst1 = lst_addo_down(lst1, lst2);
+	lst1 = ft_lst_sort(lst1, croissant_time);
+	ft_init2(&loption);
+	ft_width(lst1, &loption);
+	ft_wl(lst1, loption);
+}
+
 
 void	ft_printlist43(t_lsto *lstmp)
 {

@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/01 01:55:47 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/01 02:13:32 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -340,8 +340,10 @@ char				*ft_cutpath_lcaselink(char *s1);
 char				*ft_cutname_lcaselink(char *s1);
 int		ft_lcaselink_print(char *s, t_lsto *lstcmd, t_ind *ind,t_lsto *(*f1)(char*));
 t_lsto				*ft_getreplist5(char *rep);
-void				ft_printlist37(t_lsto *lstmp);
+void				ft_printlist33(t_lsto *lstmp);
 void				ft_printlist34(t_lsto *lstmp);
+void				ft_printlist37(t_lsto *lstmp);
+void				ft_printlist41(t_lsto *lstmp);
 void				ft_printlist43(t_lsto *lstmp);
 void				ft_printlist44(t_lsto *lstmp);
 
