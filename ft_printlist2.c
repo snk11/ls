@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 14:55:39 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/01 03:57:32 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/01 05:22:13 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,16 +102,23 @@ t_lsto		*ft_printlist8(t_lsto *lstmp)
 	t_lsto		*lst2;
 	t_lsto		*lstbegio;
 	t_loption	loption;
+	struct stat		sb;
+	char			*s1;
 
 	lst1 = NULL;
 	lst2 = NULL;
 	while (lstmp)
 	{
-		if (ft_isdir(ft_makepath(((t_rep*)(lstmp->content))->path,
-						((t_rep*)(lstmp->content))->name)) == 0)
+	s1 = ft_makepath(((t_rep*)((lstmp)->content))->path,
+			((t_rep*)((lstmp)->content))->name);
+	if (lstat(s1, &sb) == 0)
+	{
+		if ((!(sb.st_mode & S_IWUSR) && !(sb.st_mode & S_IXUSR)) || (ft_isdir(ft_makepath(((t_rep*)(lstmp->content))->path,
+						((t_rep*)(lstmp->content))->name))) == 0)
 			lst_addo(&lst1, &lstmp);
 		else
 			lst_addo(&lst2, &lstmp);
+	}
 		lstmp = lstmp->next;
 	}
 	lst2 = ft_lst_sort(lst2, croissant);
