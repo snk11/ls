@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 11:00:42 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/01 01:04:21 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/01 04:46:09 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ t_lsto		*ft_getreplist5(char *rep)
 
 	lsta = NULL;
 	lstmp = NULL;
+//	printf("path = %s\n",ft_cutpath_lcaselink(rep));
+//	printf("name = %s\n",ft_cutname_lcaselink(rep));
 	if (!(e = (t_rep*)malloc(sizeof(t_rep))))
 		return (0);
 	e->path = ft_cutpath_lcaselink(rep);

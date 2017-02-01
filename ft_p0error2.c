@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 20:29:22 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/01 04:19:40 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/01 04:44:46 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ void	ft_p0error_p1(char *s, t_ind *ind, t_lsto *lstcmd)
 			&& ind->indexyet == 0 && ft_strcmp(s, "--") == 0)
 		ind->indexyet = 1;
 	/*
-	else if (inderror == 1 && !ft_isreg(ft_makepath(".", (char*)lst1->content))
-			&& !ft_islnk((ft_makepath(".", (char*)lst1->content))))
-		ft_p0error_p1_p2(lst1, ind);
-	*/
+	   else if (inderror == 1 && !ft_isreg(ft_makepath(".", (char*)lst1->content))
+	   && !ft_islnk((ft_makepath(".", (char*)lst1->content))))
+	   ft_p0error_p1_p2(lst1, ind);
+	   */
 }
 
 void	ft_p0error_p1_p1(char *s, t_ind *ind)
@@ -41,15 +41,12 @@ void	ft_p0error_p1_p1(char *s, t_ind *ind)
 	struct stat		sb;
 
 	ft_putstr_fd("ls: ", 2);
-	if (lstat(ft_makepath("", s), &sb) == 0)
+	if (lstat(ft_makepath("", s), &sb) == 0 && !((sb.st_mode & S_IRGRP) && (sb.st_mode & S_IROTH)))
 	{
-		if (!((sb.st_mode & S_IRGRP) && (sb.st_mode & S_IROTH)))
-		{
-			if (ft_checkSlashEndCase(s) == 0)
-				ft_putstr_fd(ft_getnameWithoutSlash(s), 2);
-			ft_putstr_fd(": ", 2);
-			ft_putstr_fd(strerror(errno), 2);
-		}
+		if (ft_checkSlashEndCase(s) == 0)
+			ft_putstr_fd(ft_getnameWithoutSlash(s), 2);
+		ft_putstr_fd(": ", 2);
+		ft_putstr_fd(strerror(errno), 2);
 	}
 	else
 	{
