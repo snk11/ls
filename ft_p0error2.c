@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 20:29:22 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/31 17:11:20 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/01 01:16:22 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_p0error_p1(char *s, t_ind *ind, t_lsto *lstcmd)
 		inderror = 1;
 	}
 	if (inderror == 1 && !ft_isreg(s)
-			&& !ft_islnk(ft_makepath(".", s)))
+			&& !ft_islnk(s))
 		ft_p0error_p1_p1(s, ind);
 	else if (ft_checkhyphencase(lstcmd, ind) == 1 && ind->indoption > 0
 			&& ind->indexyet == 0 && ft_strcmp(s, "--") == 0)

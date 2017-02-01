@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/18 15:14:46 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/20 16:55:08 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/01 01:25:21 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	ft_p0regfile_p1(t_lsto *lst1, t_ind *ind, char *s1, int inderror)
 {
 	if (inderror == 1 && ind->indl == 1
 			&& (ft_isreg(ft_makepath(".", (char*)(lst1->content)))
-				|| ft_islnk(ft_makepath(".", (char*)lst1->content))))
+				|| ft_islnk((char*)lst1->content)))
 	{
 		ft_printlregfile(lst1);
 		ind->indregfile = 1;
@@ -57,7 +57,7 @@ void	ft_p0regfile_p2(t_lsto *lst1, t_ind *ind, char *s1, int inderror)
 {
 	if (ind->index1 > 1 && inderror == 1 && ind->indl == 1
 			&& (ft_isreg(ft_makepath(".", (char*)(lst1->content)))
-				|| ft_islnk(ft_makepath(".", s1))))
+				|| ft_islnk(s1)))
 	{
 		ft_printlregfile(lst1);
 		ind->indregfile = 1;
