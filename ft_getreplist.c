@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 11:00:42 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/01 00:56:26 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/01 01:04:21 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,6 @@ t_lsto		*ft_getreplist5(char *rep)
 		return (0);
 	e->path = ft_cutpath_lcaselink(rep);
 	pdir1 = opendir(e->path);
-	printf("cutname = %s\n", ft_cutname_lcaselink(rep));
 	while ((pdirent1 = readdir(pdir1)))
 	{
 			if (ft_strcmp(pdirent1->d_name, ft_cutname_lcaselink(rep)) == 0)
@@ -72,7 +71,6 @@ t_lsto		*ft_getreplist5(char *rep)
 				if (pdirent1->d_name[0] != '.')
 				{
 					e->name = ft_memmove2(pdirent1->d_name);
-//					e->path = ft_memmove2(rep);
 					lstmp = ft_create_lsto2(e);
 					ft_free2(&e);
 					lst_addo(&lsta, &lstmp);
