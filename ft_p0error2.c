@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 20:29:22 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/01 03:35:43 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/01 04:19:40 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	ft_p0error_p1_p1(char *s, t_ind *ind)
 			if (ft_checkSlashEndCase(s) == 0)
 				ft_putstr_fd(ft_getnameWithoutSlash(s), 2);
 			ft_putstr_fd(": ", 2);
-			ft_putstr_fd("Permission denied", 2);
+			ft_putstr_fd(strerror(errno), 2);
 		}
 	}
 	else
