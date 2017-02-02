@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/02 10:41:21 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/02 13:33:24 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -346,5 +346,8 @@ void				ft_printlist37(t_lsto *lstmp);
 void				ft_printlist41(t_lsto *lstmp);
 void				ft_printlist43(t_lsto *lstmp);
 void				ft_printlist44(t_lsto *lstmp);
+void	ft_wl_pmod(char *s, t_loption loption, struct stat sb, time_t curtime);
+void	ft_wl_p12(t_loption loption, struct stat sb);
+void	ft_wl_p22(t_loption loption, struct stat sb, time_t curtime);
 
 #endif
