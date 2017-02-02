@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 10:39:04 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/02 13:33:10 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/02 16:29:10 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,33 +36,7 @@ void	ft_wl2(t_lsto *lst1, t_loption loption)
 				ft_wl_p6(lst1, loption, sb, curtime);
 			ft_putstr("\n");
 		}
-//		lst1 = lst1->next;
 	}
-	/*
-	struct stat		sb;
-	time_t			curtime;
-
-	curtime = time(NULL);
-	while (lst1)
-	{
-		if (lstat(((t_rep*)(lst1->content))->name, &sb) == 0)
-		{
-			ft_wl_p(lst1, loption, sb, curtime);
-			if (curtime - sb.st_mtime > 15778458)
-				ft_wl_p3(loption, sb, curtime);
-			else if (curtime - sb.st_mtime < 0)
-				ft_wl_p4(loption, sb, curtime);
-			else
-				ft_wl_p5(loption, sb, curtime);
-			ft_putstr(((t_rep*)lst1->content)->name);
-			if (ft_islnk(ft_makepath(((t_rep*)lst1->content)->path,
-							((t_rep*)lst1->content)->name)))
-				ft_wl_p6(lst1, loption, sb, curtime);
-			ft_putstr("\n");
-		}
-		lst1 = lst1->next;
-	}
-	*/
 }
 
 void	ft_wl_pmod(char *s, t_loption loption, struct stat sb, time_t curtime)
@@ -103,16 +77,7 @@ void	ft_wl_p12(t_loption loption, struct stat sb)
 
 void	ft_wl_p22(t_loption loption, struct stat sb, time_t curtime)
 {
-	if (S_ISCHR(sb.st_mode) || S_ISBLK(sb.st_mode))
-	{
-		ft_putwidth(ft_itoa(major(sb.st_rdev)), loption.frdevmaj);
-		ft_putstr(",   ");
-	}
-	else if (loption.indrdev)
-	{
-		ft_putwidth("",loption.frdevmaj);
-		ft_putstr("   ");
-	}
+	ft_wl_p22_p1(loption, sb);
 	if (S_ISCHR(sb.st_mode) || S_ISBLK(sb.st_mode))
 	{
 		ft_putwidth(ft_itoa(minor(sb.st_rdev)), loption.frdevmin);
@@ -137,14 +102,27 @@ void	ft_wl_p22(t_loption loption, struct stat sb, time_t curtime)
 	}
 }
 
+void	ft_wl_p22_p1(t_loption loption, struct stat sb)
+{
+	if (S_ISCHR(sb.st_mode) || S_ISBLK(sb.st_mode))
+	{
+		ft_putwidth(ft_itoa(major(sb.st_rdev)), loption.frdevmaj);
+		ft_putstr(",   ");
+	}
+	else if (loption.indrdev)
+	{
+		ft_putwidth("",loption.frdevmaj);
+		ft_putstr("   ");
+	}
+}
+
 void	ft_wl_p6(t_lsto *lst1, t_loption loption, struct stat sb,
 		time_t curtime)
 {
 	char		*linkname;
 	ssize_t		r;
 
-	linkname = NULL;
-	ft_putstr(" -> ");
+	ft_wl_p6_p1(&linkname);
 	if (loption.indrdev)
 	{
 		linkname = (char*)malloc(sb.st_blksize + 1);
@@ -167,4 +145,10 @@ void	ft_wl_p6(t_lsto *lst1, t_loption loption, struct stat sb,
 			ft_putstr(linkname);
 		}
 	}
+}
+
+void	ft_wl_p6_p1(char **linkname)
+{
+	*linkname = NULL;
+	ft_putstr(" -> ");
 }
