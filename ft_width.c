@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/25 13:44:58 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/31 15:26:52 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/02 17:00:04 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	ft_width(t_lsto *lst1, t_loption *loption)
 	char			*s;
 
 	acl = NULL;
-	xattr = 0;
 	xattr = listxattr(s, NULL, 0, XATTR_NOFOLLOW);
 	acl = acl_get_link_np(s, ACL_TYPE_EXTENDED);
 	curtime = time(NULL);

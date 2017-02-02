@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/25 14:27:40 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/02 13:22:32 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/02 16:56:20 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,16 +85,7 @@ void	ft_wl_p1(t_loption loption, struct stat sb)
 
 void	ft_wl_p2(t_loption loption, struct stat sb, time_t curtime)
 {
-	if (S_ISCHR(sb.st_mode) || S_ISBLK(sb.st_mode))
-	{
-		ft_putwidth(ft_itoa(major(sb.st_rdev)), loption.frdevmaj);
-		ft_putstr(",  ");
-	}
-	else if (loption.indrdev)
-	{
-		ft_putwidth("",loption.frdevmaj);
-		ft_putstr("   ");
-	}
+	ft_wl_p2_p1(loption, sb);
 	if (S_ISCHR(sb.st_mode) || S_ISBLK(sb.st_mode))
 	{
 		ft_putwidth(ft_itoa(minor(sb.st_rdev)), loption.frdevmin);
@@ -116,5 +107,19 @@ void	ft_wl_p2(t_loption loption, struct stat sb, time_t curtime)
 	{
 		ft_putwidth(ft_getday_str(ctime(&(sb.st_mtime))), loption.day);
 		ft_putstr(" ");
+	}
+}
+
+void	ft_wl_p2_p1(t_loption loption, struct stat sb)
+{
+	if (S_ISCHR(sb.st_mode) || S_ISBLK(sb.st_mode))
+	{
+		ft_putwidth(ft_itoa(major(sb.st_rdev)), loption.frdevmaj);
+		ft_putstr(",  ");
+	}
+	else if (loption.indrdev)
+	{
+		ft_putwidth("",loption.frdevmaj);
+		ft_putstr("   ");
 	}
 }

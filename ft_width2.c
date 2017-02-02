@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 10:37:44 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/31 15:26:31 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/02 17:00:23 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	ft_width2(t_lsto *lst1, t_loption *loption)
 	char			*s;
 
 	acl = NULL;
-	xattr = 0;
 	xattr = listxattr(s, NULL, 0, XATTR_NOFOLLOW);
 	acl = acl_get_link_np(s, ACL_TYPE_EXTENDED);
 	curtime = time(NULL);
@@ -37,23 +36,5 @@ void	ft_width2(t_lsto *lst1, t_loption *loption)
 		}
 		if (xattr > 0 || acl != NULL)
 			loption->xattracl = 1;
-//		lst1 = lst1->next;
 	}
-	/*
-	struct stat		sb;
-	time_t			curtime;
-
-	curtime = time(NULL);
-	while (lst1)
-	{
-		if (lstat(((t_rep*)(lst1->content))->name, &sb) == 0)
-		{
-			if (ft_strlen(ft_ustoa(sb.st_nlink)) > loption->link)
-				loption->link = ft_strlen(ft_ustoa(sb.st_nlink));
-			ft_width_p1(loption, sb);
-			ft_width_p2(loption, sb, curtime);
-		}
-		lst1 = lst1->next;
-	}
-	*/
 }
