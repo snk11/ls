@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 15:55:27 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/01 02:35:55 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/02 16:52:22 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,7 @@ t_lsto	*ft_printlist31(t_lsto *lstmp)
 	t_lsto		*lstbegio;
 	t_loption	loption;
 
-	lst1 = NULL;
-	lst2 = NULL;
+	ft_printlist8_p1(&lst1, &lst2);
 	while (lstmp)
 	{
 		if (ft_isdir(ft_makepath(((t_rep*)(lstmp->content))->path,

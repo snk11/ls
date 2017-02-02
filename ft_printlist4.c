@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 15:36:08 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/01 02:33:59 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/02 16:48:24 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,7 @@ t_lsto		*ft_printlist16(t_lsto *lstmp)
 	t_lsto		*lstbegio;
 	t_loption	loption;
 
-	lst1 = NULL;
-	lst2 = NULL;
+	ft_printlist8_p1(&lst1, &lst2);
 	while (lstmp)
 	{
 		if (ft_isdir(ft_makepath(((t_rep*)(lstmp->content))->path,
@@ -96,8 +95,7 @@ t_lsto		*ft_printlist17(t_lsto *lstmp)
 	t_lsto		*lstbegio;
 	t_loption	loption;
 
-	lst1 = NULL;
-	lst2 = NULL;
+	ft_printlist8_p1(&lst1, &lst2);
 	while (lstmp)
 	{
 		if (ft_isdir(ft_makepath(((t_rep*)(lstmp->content))->path,
@@ -126,8 +124,7 @@ t_lsto		*ft_printlist18(t_lsto *lstmp)
 	t_lsto		*lstbegio;
 	t_loption	loption;
 
-	lst1 = NULL;
-	lst2 = NULL;
+	ft_printlist8_p1(&lst1, &lst2);
 	while (lstmp)
 	{
 		if (ft_isdir(ft_makepath(((t_rep*)(lstmp->content))->path,
