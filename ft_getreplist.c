@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 11:00:42 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/02 17:26:42 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/02 17:55:49 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ t_lsto		*ft_getreplist(char *rep)
 	pdir1 = opendir(rep);
 	while ((pdirent1 = readdir(pdir1)))
 	{
-//		if (lstat(ft_makepath(rep,pdirent1->d_name), &sb) == 0 && ft_strcmp(pdirent1->d_name,"6") !=0)
+		//		if (lstat(ft_makepath(rep,pdirent1->d_name), &sb) == 0 && ft_strcmp(pdirent1->d_name,"6") !=0)
 		{
-//			if ((sb.st_mode & S_IRGRP))
-//			if (ft_checkLegitFile(ft_makepath(rep,pdirent1->d_name)) == 1)
+			//			if ((sb.st_mode & S_IRGRP))
+			//			if (ft_checkLegitFile(ft_makepath(rep,pdirent1->d_name)) == 1)
 			{
 				if (!(e = (t_rep*)malloc(sizeof(t_rep))))
 					return (0);
@@ -65,20 +65,23 @@ t_lsto		*ft_getreplist5(char *rep)
 	pdir1 = opendir(e->path);
 	while ((pdirent1 = readdir(pdir1)))
 	{
-			if (ft_strcmp(pdirent1->d_name, ft_cutname_lcaselink(rep)) == 0)
-			{
-				if (pdirent1->d_name[0] != '.')
-				{
-					e->name = ft_memmove2(rep);
-					getr1.lstmp = ft_create_lsto2(e);
-					ft_free2(&e);
-					lst_addo(&(getr1.lsta), &(getr1.lstmp));
-					ft_freelst2(&(getr1.lstmp));
-				}
-			}
+		if (ft_strcmp(pdirent1->d_name, ft_cutname_lcaselink(rep)) == 0)
+		{
+			if (pdirent1->d_name[0] != '.')
+				ft_getreplist5_p1(&e, rep, &getr1);
+		}
 	}
 	closedir(pdir1);
 	return (getr1.lsta);
+}
+
+void		ft_getreplist5_p1(t_rep **e, char *rep, t_getr *getr1)
+{
+	(*e)->name = ft_memmove2(rep);
+	getr1->lstmp = ft_create_lsto2(*e);
+	ft_free2(e);
+	lst_addo(&(getr1->lsta), &(getr1->lstmp));
+	ft_freelst2(&(getr1->lstmp));
 }
 
 t_lsto		*ft_getreplist4(char *rep)
