@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/14 07:25:15 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/02 17:10:40 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/02 17:15:36 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,7 @@ void	ft_print_permission(char *s, t_loption loption)
 		ft_print_permission_p3(sb);
 		ft_print_permission_p4(sb);
 		ft_print_permission_p5(sb);
-		if (xattr > 0)
-		{
-			ft_putchar('@');
-			ft_putchar(' ');
-		}
-		else if (acl != NULL)
-		{
-			ft_putchar('+');
-			ft_putchar(' ');
-		}
-		else
-			ft_putstr("  ");
+		ft_print_permission_p6(xattr, acl);
 	}
 }
 
@@ -123,4 +112,20 @@ void	ft_print_permission_p5(struct stat sb)
 		else
 			ft_putchar('-');
 
+}
+
+void	ft_print_permission_p6(ssize_t xattr, acl_t acl)
+{
+		if (xattr > 0)
+		{
+			ft_putchar('@');
+			ft_putchar(' ');
+		}
+		else if (acl != NULL)
+		{
+			ft_putchar('+');
+			ft_putchar(' ');
+		}
+		else
+			ft_putstr("  ");
 }
