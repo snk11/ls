@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 05:08:20 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/13 07:01:09 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/02 13:15:08 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		ft_isreg(char *s)
 
 	if (lstat(s, &sb) == 0)
 	{
-		if (S_ISREG(sb.st_mode))
+		if (!S_ISDIR(sb.st_mode))
 			return (1);
 	}
 	return (0);
