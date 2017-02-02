@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/14 07:25:15 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/31 16:28:50 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/02 17:10:40 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void	ft_print_permission(char *s, t_loption loption)
 	ssize_t			xattr;
 	acl_t			acl;
 
-	acl = NULL;
-	xattr = 0;
 	xattr = listxattr(s, NULL, 0, XATTR_NOFOLLOW);
 	acl = acl_get_link_np(s, ACL_TYPE_EXTENDED);
 	if (lstat(s, &sb) == 0)
@@ -28,57 +26,7 @@ void	ft_print_permission(char *s, t_loption loption)
 		ft_print_permission_p2(sb);
 		ft_print_permission_p3(sb);
 		ft_print_permission_p4(sb);
-		if (sb.st_mode & S_IROTH)
-			ft_putchar('r');
-		else
-			ft_putchar('-');
-		if (sb.st_mode & S_IWOTH)
-			ft_putchar('w');
-		else
-			ft_putchar('-');
-		if ((sb.st_mode & S_IXOTH) && (sb.st_mode & S_ISVTX))
-			ft_putchar('t');
-		else if (sb.st_mode & S_IXOTH)
-			ft_putchar('x');
-		else if (sb.st_mode & S_ISVTX)
-			ft_putchar('T');
-		else
-			ft_putchar('-');
-		if (xattr > 0)
-		{
-			ft_putchar('@');
-			ft_putchar(' ');
-		}
-		else if (acl != NULL)
-		{
-			ft_putchar('+');
-			ft_putchar(' ');
-		}
-		else
-			ft_putstr("  ");
-	}
-	else
-	{
-		ft_print_permission_p1(sb);
-		ft_print_permission_p2(sb);
-		ft_print_permission_p3(sb);
-		ft_print_permission_p4(sb);
-		if (sb.st_mode & S_IROTH)
-			ft_putchar('r');
-		else
-			ft_putchar('-');
-		if (sb.st_mode & S_IWOTH)
-			ft_putchar('w');
-		else
-			ft_putchar('-');
-		if ((sb.st_mode & S_IXOTH) && (sb.st_mode & S_ISVTX))
-			ft_putchar('t');
-		else if (sb.st_mode & S_IXOTH)
-			ft_putchar('x');
-		else if (sb.st_mode & S_ISVTX)
-			ft_putchar('T');
-		else
-			ft_putchar('-');
+		ft_print_permission_p5(sb);
 		if (xattr > 0)
 		{
 			ft_putchar('@');
@@ -154,4 +102,25 @@ void	ft_print_permission_p4(struct stat sb)
 		ft_putchar('S');
 	else
 		ft_putchar('-');
+}
+
+void	ft_print_permission_p5(struct stat sb)
+{
+		if (sb.st_mode & S_IROTH)
+			ft_putchar('r');
+		else
+			ft_putchar('-');
+		if (sb.st_mode & S_IWOTH)
+			ft_putchar('w');
+		else
+			ft_putchar('-');
+		if ((sb.st_mode & S_IXOTH) && (sb.st_mode & S_ISVTX))
+			ft_putchar('t');
+		else if (sb.st_mode & S_IXOTH)
+			ft_putchar('x');
+		else if (sb.st_mode & S_ISVTX)
+			ft_putchar('T');
+		else
+			ft_putchar('-');
+
 }
