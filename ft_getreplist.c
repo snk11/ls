@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 11:00:42 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/01 20:20:22 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/02 17:26:42 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,14 +54,11 @@ t_lsto		*ft_getreplist5(char *rep)
 	struct dirent	*pdirent1;
 	DIR				*pdir1;
 	t_rep			*e;
-	t_lsto			*lstmp;
-	t_lsto			*lsta;
+	t_getr			getr1;
 	struct stat		sb;
 
-	lsta = NULL;
-	lstmp = NULL;
-//	printf("path = %s\n",ft_cutpath_lcaselink(rep));
-//	printf("name = %s\n",ft_cutname_lcaselink(rep));
+	getr1.lsta = NULL;
+	getr1.lstmp = NULL;
 	if (!(e = (t_rep*)malloc(sizeof(t_rep))))
 		return (0);
 	e->path = ft_cutpath_lcaselink(rep);
@@ -72,17 +69,16 @@ t_lsto		*ft_getreplist5(char *rep)
 			{
 				if (pdirent1->d_name[0] != '.')
 				{
-//					e->name = ft_memmove2(pdirent1->d_name);
 					e->name = ft_memmove2(rep);
-					lstmp = ft_create_lsto2(e);
+					getr1.lstmp = ft_create_lsto2(e);
 					ft_free2(&e);
-					lst_addo(&lsta, &lstmp);
-					ft_freelst2(&lstmp);
+					lst_addo(&(getr1.lsta), &(getr1.lstmp));
+					ft_freelst2(&(getr1.lstmp));
 				}
 			}
 	}
 	closedir(pdir1);
-	return (lsta);
+	return (getr1.lsta);
 }
 
 t_lsto		*ft_getreplist4(char *rep)

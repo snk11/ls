@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/02 17:15:30 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/02 17:22:39 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,12 @@ typedef struct		s_rep
 	char			*path;
 	int				val;
 }					t_rep;
+
+typedef struct		s_getr
+{
+	t_lsto			*lstmp;
+	t_lsto			*lsta;
+}					t_getr;
 
 typedef struct		s_ind
 {

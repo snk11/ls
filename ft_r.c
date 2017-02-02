@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/08 06:45:09 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/21 02:07:54 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/02 17:18:01 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	ft_r(char *s, t_lsto *lstcmd, t_ind *ind)
 	t_lsto			*lsti;
 	t_lsto			*lstj;
 	t_lsto			*lstibegi;
-	int				i;
 
 	lstj = NULL;
 	ft_print_n(s, lstcmd, ind);
@@ -26,7 +25,6 @@ void	ft_r(char *s, t_lsto *lstcmd, t_ind *ind)
 	ft_printname(s, lstcmd, ind);
 	lsti = ft_printlist2(lst);
 	lstibegi = lsti;
-	i = 0;
 	int g = 0;
 //	while (lsti && g < 2000)
 	while (lsti)
