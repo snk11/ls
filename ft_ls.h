@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/02 16:27:23 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/02 16:36:08 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -350,6 +350,6 @@ void	ft_wl_pmod(char *s, t_loption loption, struct stat sb, time_t curtime);
 void	ft_wl_p12(t_loption loption, struct stat sb);
 void	ft_wl_p22(t_loption loption, struct stat sb, time_t curtime);
 void	ft_wl_p22_p1(t_loption loption, struct stat sb);
-void	ft_wl_p6_p1(char **linkname);
+void	ft_wl_p6_p1(char **linkname, ssize_t r);
 
 #endif
