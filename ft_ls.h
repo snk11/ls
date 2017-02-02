@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/01 02:13:32 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/02 10:27:52 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -346,5 +346,8 @@ void				ft_printlist37(t_lsto *lstmp);
 void				ft_printlist41(t_lsto *lstmp);
 void				ft_printlist43(t_lsto *lstmp);
 void				ft_printlist44(t_lsto *lstmp);
+void				ft_function_r4_p2(char *s1);
+void				ft_function_r40(t_lsto **lsti, t_lsto *lst,
+		t_lsto *(*f1)(char *), t_lsto *(*f2)(t_lsto *));
 
 #endif
