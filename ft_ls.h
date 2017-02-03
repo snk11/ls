@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/03 03:05:58 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/03 03:22:00 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -364,5 +364,7 @@ void	ft_print_permission_p6(ssize_t xattr, acl_t acl);
 void		ft_getreplist5_p1(char *rep,t_rep *e, t_getr *getr1);
 void	ft_function_r4_p2(char *s1, t_lsto **lsti);
 void		ft_getname_without_slash_p1(int *i, int *index, int *j,char *s);
+void	ft_cutpath_lcaselink_p1(int *i, char *s2);
+void	ft_cutpath_lcaselink_p2(char **s, char *s1, int i);
 
 #endif
