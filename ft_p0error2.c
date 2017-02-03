@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 20:29:22 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/02 13:08:53 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/03 02:52:28 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ void	ft_p0error_p1_p1(char *s, t_ind *ind)
 	ft_putstr_fd("ls: ", 2);
 	if (lstat(ft_makepath("", s), &sb) == 0 && !((sb.st_mode & S_IRGRP) && (sb.st_mode & S_IROTH)))
 	{
-		if (ft_checkSlashEndCase(s) == 0)
-			ft_putstr_fd(ft_getnameWithoutSlash(s), 2);
+		if (ft_check_slash_end_case(s) == 0)
+			ft_putstr_fd(ft_getname_without_slash(s), 2);
 		ft_putstr_fd(": ", 2);
 		ft_putstr_fd(strerror(errno), 2);
 	}

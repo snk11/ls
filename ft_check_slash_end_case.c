@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_checkSlashEndCase.c                             :+:      :+:    :+:   */
+/*   ft_check_slash_end_case.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/21 06:52:26 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/21 06:56:19 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/03 02:50:59 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-int		ft_checkSlashEndCase(char *s)
+int		ft_check_slash_end_case(char *s)
 {
 	int		i;
 

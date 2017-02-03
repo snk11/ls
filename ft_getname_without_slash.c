@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_getnameWithoutSlash.c                           :+:      :+:    :+:   */
+/*   ft_getname_without_slash.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/21 06:13:13 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/21 07:12:14 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/03 02:51:08 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "ft_ls.h"
 
-char		*ft_getnameWithoutSlash(char *s)
+char		*ft_getname_without_slash(char *s)
 {
 	int		i;
 	int		j;
