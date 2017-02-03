@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 14:21:34 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/02 10:41:35 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/03 02:41:36 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ void	ft_function_rl(t_lsto **lsti, t_lsto *lst,
 void	ft_function_r4(t_lsto **lsti, t_lsto *lst,
 		t_lsto *(*f1)(char *), t_lsto *(*f2)(t_lsto *))
 {
-	char			*s1;
 	t_lsto			*lstj;
+	char			*s1;
 	struct stat		sb;
 
 	s1 = ft_makepath(((t_rep*)((*lsti)->content))->path,
@@ -53,19 +53,15 @@ void	ft_function_r4(t_lsto **lsti, t_lsto *lst,
 		ft_function_r4_p1(s1);
 		if (stat(s1, &sb) == 0)
 		{
-			if ((sb.st_mode & S_IRGRP) && (sb.st_mode & S_IROTH) && ((sb.st_mode & S_IWUSR) || (sb.st_mode & S_IXUSR)))
+			if ((sb.st_mode & S_IRGRP) && (sb.st_mode & S_IROTH)
+					&& ((sb.st_mode & S_IWUSR) || (sb.st_mode & S_IXUSR)))
 				lst = f1(s1);
-			if (lst && (sb.st_mode & S_IRGRP) && (sb.st_mode & S_IROTH) && ((sb.st_mode & S_IWUSR) || (sb.st_mode & S_IXUSR)))
-			{
+			if (lst && (sb.st_mode & S_IRGRP) && (sb.st_mode & S_IROTH)
+					&& ((sb.st_mode & S_IWUSR) || (sb.st_mode & S_IXUSR)))
 				lstj = f2(lst);
-			}
-//			else if (!((sb.st_mode & S_IRGRP) && (sb.st_mode & S_IROTH)))
-			else if (!((sb.st_mode & S_IRGRP) && (sb.st_mode & S_IROTH) && ((sb.st_mode & S_IWUSR) || (sb.st_mode & S_IXUSR))))
-			{
-				ft_putstr_fd("ls: ", 2);
-				opendir(s1);
-				perror(((t_rep*)((*lsti)->content))->name);
-			}
+			else if (!((sb.st_mode & S_IRGRP) && (sb.st_mode & S_IROTH)
+						&& ((sb.st_mode & S_IWUSR) || (sb.st_mode & S_IXUSR))))
+				ft_function_r4_p2(s1, lsti);
 		}
 	}
 	(*lsti) = (*lsti)->next;
@@ -76,4 +72,11 @@ void	ft_function_r4_p1(char *s1)
 	ft_putstr("\n");
 	ft_putstr(s1);
 	ft_putstr(":\n");
+}
+
+void	ft_function_r4_p2(char *s1, t_lsto **lsti)
+{
+				ft_putstr_fd("ls: ", 2);
+				opendir(s1);
+				perror(((t_rep*)((*lsti)->content))->name);
 }

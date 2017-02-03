@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/03 02:29:22 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/03 02:41:56 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -362,5 +362,6 @@ void	ft_wl_p2_p1(t_loption loption, struct stat sb);
 void	ft_print_permission_p5(struct stat sb);
 void	ft_print_permission_p6(ssize_t xattr, acl_t acl);
 void		ft_getreplist5_p1(char *rep,t_rep *e, t_getr *getr1);
+void	ft_function_r4_p2(char *s1, t_lsto **lsti);
 
 #endif
