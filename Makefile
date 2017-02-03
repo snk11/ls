@@ -6,7 +6,7 @@
 #    By: syusof <syusof@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/10/15 21:10:44 by syusof            #+#    #+#              #
-#    Updated: 2017/01/31 20:17:52 by syusof           ###   ########.fr        #
+#    Updated: 2017/02/03 02:57:25 by syusof           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,8 +33,8 @@ ft_sort.c ft_printname.c ft_printlist6.c ft_t.c ft_treverse.c \
 ft_trreverse.c ft_scan_option.c ft_width2.c ft_sort3.c ft_width.c ft_sort2.c \
 ft_wl1.c ft_wl2.c ft_wl.c function1.c function2.c function3.c \
 ft_getyear_str.c ft_getday_str.c ft_getlinkpath.c ft_checkdir.c \
-ft_curs.c ft_freelst.c ft_getnameWithoutSlash.c ft_checkSlashEndCase.c \
-ft_checkLegitFile.c ft_cutname_lcaselink.c ft_cutpath_lcaselink.c
+ft_curs.c ft_freelst.c ft_getname_without_slash.c ft_check_slash_end_case.c \
+ft_check_legit_file.c ft_cutname_lcaselink.c ft_cutpath_lcaselink.c
 
 OFILES = ft_a.o ft_areverse.o ft_art.o ft_at.o ft_ar.o ft_arreverse.o \
 ft_atreverse.o ft_checkhyphen.o ft_check_string.o ft_atrreverse.o \
@@ -57,8 +57,8 @@ ft_sort.o ft_printname.o ft_printlist6.o ft_t.o ft_treverse.o \
 ft_trreverse.o ft_scan_option.o ft_width2.o ft_sort3.o ft_width.o ft_sort2.o \
 ft_wl1.o ft_wl2.o ft_wl.o function1.o function2.o function3.o \
 ft_getyear_str.o ft_getday_str.o ft_getlinkpath.o ft_checkdir.o \
-ft_curs.o ft_freelst.o ft_getnameWithoutSlash.o ft_checkSlashEndCase.o \
-ft_checkLegitFile.o ft_cutname_lcaselink.o ft_cutpath_lcaselink.o
+ft_curs.o ft_freelst.o ft_getname_without_slash.o ft_check_slash_end_case.o \
+ft_check_legit_file.o ft_cutname_lcaselink.o ft_cutpath_lcaselink.o
 
 FLAGS = -I ./ -I libft/ -c
 
