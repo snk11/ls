@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/31 17:58:32 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/20 23:24:05 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/07 20:32:20 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void		ft_freelst2(t_lsto **lstmp)
 	}
 }
 
-void	ft_free2(t_rep **e)
+void		ft_free2(t_rep **e)
 {
 	if (*e)
 	{

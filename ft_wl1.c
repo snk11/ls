@@ -6,11 +6,25 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/13 11:07:37 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/13 17:47:03 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/07 20:56:33 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
+
+void	ft_wl_p2_p1(t_loption loption, struct stat sb)
+{
+	if (S_ISCHR(sb.st_mode) || S_ISBLK(sb.st_mode))
+	{
+		ft_putwidth(ft_itoa(major(sb.st_rdev)), loption.frdevmaj);
+		ft_putstr(",  ");
+	}
+	else if (loption.indrdev)
+	{
+		ft_putwidth("", loption.frdevmaj);
+		ft_putstr("   ");
+	}
+}
 
 void	ft_wl_p3(t_loption loption, struct stat sb, time_t curtime)
 {

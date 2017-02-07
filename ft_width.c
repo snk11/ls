@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/25 13:44:58 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/02 17:00:04 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/07 20:50:12 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_width(t_lsto *lst1, t_loption *loption)
 	curtime = time(NULL);
 	while (lst1)
 	{
-	s = ft_makepath(((t_rep*)(lst1->content))->path,
+		s = ft_makepath(((t_rep*)(lst1->content))->path,
 				((t_rep*)(lst1->content))->name);
 		if (lstat(s, &sb) == 0)
 		{

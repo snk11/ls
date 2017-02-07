@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 14:55:39 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/02 16:46:58 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/07 20:45:20 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,10 +123,4 @@ t_lsto		*ft_printlist8(t_lsto *lstmp)
 	ft_width(lst1, &loption);
 	ft_wl(lst1, loption);
 	return (lstbegio);
-}
-
-void		ft_printlist8_p1(t_lsto **lst1, t_lsto **lst2)
-{
-	*lst1 = NULL;
-	*lst2 = NULL;
 }

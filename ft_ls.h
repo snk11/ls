@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/03 03:41:36 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/07 21:01:22 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -324,7 +324,6 @@ void				ft_function_rl(t_lsto **lsti, t_lsto *lst,
 void				ft_function_r4(t_lsto **lsti, t_lsto *lst,
 		t_lsto *(*f1)(char *), t_lsto *(*f2)(t_lsto *));
 void				ft_function_r4_p1(char *s1);
-void				ft_lst_fullfield(t_lsto *lst1, t_lsto **lstmp);
 void				ft_putmonth(char *s);
 void				ft_puttime(char *s);
 char				*ft_getday_str(char *s);
@@ -344,7 +343,8 @@ int					ft_check_slash_end_case(char *s);
 int					ft_check_legit_file(char *s);
 char				*ft_cutpath_lcaselink(char *s1);
 char				*ft_cutname_lcaselink(char *s1);
-int		ft_lcaselink_print(char *s, t_lsto *lstcmd, t_ind *ind,t_lsto *(*f1)(char*));
+int					ft_lcaselink_print(char *s, t_lsto *lstcmd, t_ind *ind,
+		t_lsto *(*f1)(char*));
 t_lsto				*ft_getreplist5(char *rep);
 void				ft_printlist33(t_lsto *lstmp);
 void				ft_printlist34(t_lsto *lstmp);
@@ -352,22 +352,26 @@ void				ft_printlist37(t_lsto *lstmp);
 void				ft_printlist41(t_lsto *lstmp);
 void				ft_printlist43(t_lsto *lstmp);
 void				ft_printlist44(t_lsto *lstmp);
-void	ft_wl_pmod(char *s, t_loption loption, struct stat sb, time_t curtime);
-void	ft_wl_p12(t_loption loption, struct stat sb);
-void	ft_wl_p22(t_loption loption, struct stat sb, time_t curtime);
-void	ft_wl_p22_p1(t_loption loption, struct stat sb);
-void	ft_wl_p6_p1(char **linkname, ssize_t r);
-void		ft_printlist8_p1(t_lsto **lst1, t_lsto **lst2);
-void	ft_wl_p2_p1(t_loption loption, struct stat sb);
-void	ft_print_permission_p5(struct stat sb);
-void	ft_print_permission_p6(ssize_t xattr, acl_t acl);
-void		ft_getreplist5_p1(char *rep,t_rep *e, t_getr *getr1);
-void	ft_function_r4_p2(char *s1, t_lsto **lsti);
-void		ft_getname_without_slash_p1(int *i, int *index, int *j,char *s);
-void	ft_cutpath_lcaselink_p1(int *i, char *s2);
-void	ft_cutpath_lcaselink_p2(char **s, char *s1, int i);
-void	ft_cutname_lcaselink_p1(int *i, char *s2);
-void	ft_cutname_lcaselink_p2(char **s, char *s1, char *s2, int i);
-int		ft_check_legit_file_p1(struct stat sb);
+void				ft_wl_pmod(char *s, t_loption loption, struct stat sb,
+		time_t curtime);
+void				ft_wl_p12(t_loption loption, struct stat sb);
+void				ft_wl_p22(t_loption loption, struct stat sb,
+		time_t curtime);
+void				ft_wl_p22_p1(t_loption loption, struct stat sb);
+void				ft_wl_p6_p1(char **linkname, ssize_t r);
+void				ft_printlist8_p1(t_lsto **lst1, t_lsto **lst2);
+void				ft_wl_p2_p1(t_loption loption, struct stat sb);
+void				ft_print_permission_p5(struct stat sb);
+void				ft_print_permission_p6(ssize_t xattr, acl_t acl);
+void				ft_getreplist5_p1(char *rep, t_rep *e, t_getr *getr1);
+void				ft_function_r4_p2(char *s1, t_lsto **lsti);
+void				ft_getname_without_slash_p1(int *i, int *index,
+		int *j, char *s);
+void				ft_cutpath_lcaselink_p1(int *i, char *s2);
+void				ft_cutpath_lcaselink_p2(char **s, char *s1, int i);
+void				ft_cutname_lcaselink_p1(int *i, char *s2);
+void				ft_cutname_lcaselink_p2(char **s, char *s1, char *s2,
+		int i);
+int					ft_check_legit_file_p1(struct stat sb);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: syusof <syusof@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/10/15 21:10:44 by syusof            #+#    #+#              #
-#    Updated: 2017/02/03 02:57:25 by syusof           ###   ########.fr        #
+#    Updated: 2017/02/07 20:43:57 by syusof           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,9 +18,9 @@ ft_checkslash.c ft_countelem.c ft_checkokfile.c ft_checkhyphencase.c \
 ft_checkhyphencase_print.c ft_getindex.c ft_getprimelist.c \
 ft_isdir.c ft_islnk.c ft_isreg.c ft_init.c ft_ls1.c ft_function_r.c \
 ft_ls3.c ft_getreplist.c ft_ls2.c ft_ls_run1.c ft_ls_run4.c \
-ft_lst_fullfield.c ft_makepath.c ft_mem1.c ft_p0error.c ft_ls_run3.c \
+ft_makepath.c ft_mem1.c ft_p0error.c ft_ls_run3.c \
 ft_p0error2.c ft_p_illegal.c ft_print_n.c ft_p0regfile.c \
-ft_print_permission.c ft_printladir.c ft_printlardir.c \
+ft_print_permission.c ft_print_permission2.c ft_printladir.c ft_printlardir.c \
 ft_printlareversedir.c ft_printlarreversedir.c ft_ls_run2.c ft_printlatdir.c \
 ft_printerror.c ft_printlatreversedir.c ft_printldir.c ft_printlartdir.c \
 ft_printlatrreversedir.c ft_printlist1.c ft_printlist2.c \
@@ -42,9 +42,9 @@ ft_checkslash.o ft_countelem.o ft_checkokfile.o ft_checkhyphencase.o \
 ft_checkhyphencase_print.o ft_getindex.o ft_getprimelist.o \
 ft_isdir.o ft_islnk.o ft_isreg.o ft_init.o ft_ls1.o ft_function_r.o \
 ft_ls3.o ft_getreplist.o ft_ls2.o ft_ls_run1.o ft_ls_run4.o \
-ft_lst_fullfield.o ft_makepath.o ft_mem1.o ft_p0error.o ft_ls_run3.o \
+ft_makepath.o ft_mem1.o ft_p0error.o ft_ls_run3.o \
 ft_p0error2.o ft_p_illegal.o ft_print_n.o ft_p0regfile.o \
-ft_print_permission.o ft_printladir.o ft_printlardir.o \
+ft_print_permission.o ft_print_permission2.o ft_printladir.o ft_printlardir.o \
 ft_printlareversedir.o ft_printlarreversedir.o ft_ls_run2.o ft_printlatdir.o \
 ft_printerror.o ft_printlatreversedir.o ft_printldir.o ft_printlartdir.o \
 ft_printlatrreversedir.o ft_printlist1.o ft_printlist2.o \

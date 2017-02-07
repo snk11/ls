@@ -6,11 +6,11 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/21 06:13:13 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/03 03:06:43 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/07 20:33:02 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "ft_ls.h"
+#include "ft_ls.h"
 
 char		*ft_getname_without_slash(char *s)
 {
@@ -36,11 +36,11 @@ char		*ft_getname_without_slash(char *s)
 	return (str);
 }
 
-void		ft_getname_without_slash_p1(int *i, int *index, int *j,char *s)
+void		ft_getname_without_slash_p1(int *i, int *index, int *j, char *s)
 {
 	*i = 0;
 	*index = 0;
-	while(s[*i])
+	while (s[*i])
 	{
 		if (s[*i] == '/' && s[*i + 1] && s[*i + 1] != '/')
 			*index = *i;
@@ -50,7 +50,7 @@ void		ft_getname_without_slash_p1(int *i, int *index, int *j,char *s)
 	if (s[*i] == '/')
 		(*i)++;
 	*j = 0;
-	while(s[*i] && s[*i] != '/')
+	while (s[*i] && s[*i] != '/')
 	{
 		(*i)++;
 		(*j)++;

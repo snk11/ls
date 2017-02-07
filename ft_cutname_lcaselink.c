@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/31 19:09:36 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/03 03:33:17 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/07 20:31:55 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,17 +52,18 @@ void	ft_cutname_lcaselink_p1(int *i, char *s2)
 void	ft_cutname_lcaselink_p2(char **s, char *s1, char *s2, int i)
 {
 	int		j;
-		if (s2[i + 1])
+
+	if (s2[i + 1])
+	{
+		i++;
+		*s = (char*)malloc(sizeof(s1) * ft_strlen(s1) + 1);
+		j = 0;
+		while (s1[i])
 		{
+			(*s)[j] = s1[i];
+			j++;
 			i++;
-			*s = (char*)malloc(sizeof(s1) * ft_strlen(s1) + 1);
-			j = 0;
-			while (s1[i])
-			{
-				(*s)[j] = s1[i];
-				j++;
-				i++;
-			}
-			(*s)[j] = 0;
 		}
+		(*s)[j] = 0;
+	}
 }

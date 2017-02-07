@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/20 00:06:32 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/31 17:55:27 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/07 20:48:35 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void		ft_printname(char *s, t_lsto *lstcmd, t_ind *ind)
 	}
 }
 
-void	ft_printname_p1(char *s, t_lsto *lstcmd, t_ind *ind, int cnt)
+void		ft_printname_p1(char *s, t_lsto *lstcmd, t_ind *ind, int cnt)
 {
 	if (ft_checkhyphencase_print(lstcmd, ind) == 1)
 	{
@@ -50,7 +50,7 @@ void	ft_printname_p1(char *s, t_lsto *lstcmd, t_ind *ind, int cnt)
 	}
 }
 
-int		ft_printname_p2(char *s, t_lsto *lstcmd, t_ind *ind, int cnt)
+int			ft_printname_p2(char *s, t_lsto *lstcmd, t_ind *ind, int cnt)
 {
 	if (ind->indoption > 0 && (cnt - ind->indoption) >= 2)
 	{

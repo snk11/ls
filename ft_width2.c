@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 10:37:44 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/02 17:00:23 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/07 20:49:57 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_width2(t_lsto *lst1, t_loption *loption)
 	curtime = time(NULL);
 	if (lst1)
 	{
-	s = ((t_rep*)(lst1->content))->name;
+		s = ((t_rep*)(lst1->content))->name;
 		if (lstat(s, &sb) == 0)
 		{
 			if (ft_strlen(ft_ustoa(sb.st_nlink)) > loption->link)

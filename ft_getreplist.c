@@ -6,12 +6,11 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 11:00:42 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/03 02:32:28 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/07 20:36:23 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
-
 
 t_lsto		*ft_getreplist(char *rep)
 {
@@ -26,17 +25,17 @@ t_lsto		*ft_getreplist(char *rep)
 	pdir1 = opendir(rep);
 	while ((pdirent1 = readdir(pdir1)))
 	{
-				if (!(e = (t_rep*)malloc(sizeof(t_rep))))
-					return (0);
-				if (pdirent1->d_name[0] != '.')
-				{
-					e->name = ft_memmove2(pdirent1->d_name);
-					e->path = ft_memmove2(rep);
-					lstmp = ft_create_lsto2(e);
-					ft_free2(&e);
-					lst_addo(&lsta, &lstmp);
-					ft_freelst2(&lstmp);
-				}
+		if (!(e = (t_rep*)malloc(sizeof(t_rep))))
+			return (0);
+		if (pdirent1->d_name[0] != '.')
+		{
+			e->name = ft_memmove2(pdirent1->d_name);
+			e->path = ft_memmove2(rep);
+			lstmp = ft_create_lsto2(e);
+			ft_free2(&e);
+			lst_addo(&lsta, &lstmp);
+			ft_freelst2(&lstmp);
+		}
 	}
 	closedir(pdir1);
 	return (lsta);
@@ -57,11 +56,11 @@ t_lsto		*ft_getreplist5(char *rep)
 	pdir1 = opendir(e->path);
 	while ((pdirent1 = readdir(pdir1)))
 	{
-			if (ft_strcmp(pdirent1->d_name, ft_cutname_lcaselink(rep)) == 0)
-			{
-				if (pdirent1->d_name[0] != '.')
-					ft_getreplist5_p1(rep, e, &getr1);
-			}
+		if (ft_strcmp(pdirent1->d_name, ft_cutname_lcaselink(rep)) == 0)
+		{
+			if (pdirent1->d_name[0] != '.')
+				ft_getreplist5_p1(rep, e, &getr1);
+		}
 	}
 	closedir(pdir1);
 	return (getr1.lsta);
@@ -69,11 +68,11 @@ t_lsto		*ft_getreplist5(char *rep)
 
 void		ft_getreplist5_p1(char *rep, t_rep *e, t_getr *getr1)
 {
-					e->name = ft_memmove2(rep);
-					getr1->lstmp = ft_create_lsto2(e);
-					ft_free2(&e);
-					lst_addo(&(getr1->lsta), &(getr1->lstmp));
-					ft_freelst2(&(getr1->lstmp));
+	e->name = ft_memmove2(rep);
+	getr1->lstmp = ft_create_lsto2(e);
+	ft_free2(&e);
+	lst_addo(&(getr1->lsta), &(getr1->lstmp));
+	ft_freelst2(&(getr1->lstmp));
 }
 
 t_lsto		*ft_getreplist4(char *rep)

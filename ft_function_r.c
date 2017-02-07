@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 14:21:34 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/03 02:41:36 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/07 20:33:42 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,11 @@ void	ft_function_rl(t_lsto **lsti, t_lsto *lst,
 	{
 		if (stat(s1, &sb) == 0)
 		{
-			if ((sb.st_mode & S_IRGRP) && (sb.st_mode & S_IROTH) && ((sb.st_mode & S_IWUSR) || (sb.st_mode & S_IXUSR)))
+			if ((sb.st_mode & S_IRGRP) && (sb.st_mode & S_IROTH)
+					&& ((sb.st_mode & S_IWUSR) || (sb.st_mode & S_IXUSR)))
 				lst = f1(s1);
-			if (lst && (sb.st_mode & S_IRGRP) && (sb.st_mode & S_IROTH) && ((sb.st_mode & S_IWUSR) || (sb.st_mode & S_IXUSR)))
+			if (lst && (sb.st_mode & S_IRGRP) && (sb.st_mode & S_IROTH)
+					&& ((sb.st_mode & S_IWUSR) || (sb.st_mode & S_IXUSR)))
 			{
 				lstj = f2(lst);
 				*lsti = lst_addo_between(*lsti, lstj);
@@ -76,7 +78,7 @@ void	ft_function_r4_p1(char *s1)
 
 void	ft_function_r4_p2(char *s1, t_lsto **lsti)
 {
-				ft_putstr_fd("ls: ", 2);
-				opendir(s1);
-				perror(((t_rep*)((*lsti)->content))->name);
+	ft_putstr_fd("ls: ", 2);
+	opendir(s1);
+	perror(((t_rep*)((*lsti)->content))->name);
 }
