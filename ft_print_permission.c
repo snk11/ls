@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/14 07:25:15 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/07 20:44:17 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/07 21:15:14 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_print_permission(char *s, t_loption loption)
 	acl_t			acl;
 
 	xattr = listxattr(s, NULL, 0, XATTR_NOFOLLOW);
-	acl = acl_get_link_np(s, ACL_TYPE_EXTENDED);
+	acl = acl_get_file(s, ACL_TYPE_EXTENDED);
 	if (lstat(s, &sb) == 0)
 	{
 		ft_print_permission_p1(sb);
