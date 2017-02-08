@@ -1,41 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/04 22:57:57 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/06 14:31:24 by syusof           ###   ########.fr       */
+/*   Created: 2014/11/13 05:58:47 by syusof            #+#    #+#             */
+/*   Updated: 2016/10/06 13:48:40 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *nptr)
+void	ft_lstadd(t_list **alst, t_list *new1)
 {
-	int		sign;
-	int		i;
-	int		res;
-
-	i = 0;
-	sign = 1;
-	while (nptr[i] == ' ' || nptr[i] == '\n' || nptr[i] == '\t'
-			|| nptr[i] == '\v' || nptr[i] == '\r' || nptr[i] == '\f')
-		i++;
-	if (nptr[i] == '-')
+	if (alst && new1)
 	{
-		sign = -1;
-		i++;
+		new1->next = *alst;
+		*alst = new1;
 	}
-	else if (nptr[i] == '+')
-		i++;
-	res = 0;
-	while (nptr[i] >= '0' && nptr[i] <= '9')
-	{
-		res = res * 10;
-		res = res + (nptr[i] - '0');
-		i++;
-	}
-	return (sign * res);
 }

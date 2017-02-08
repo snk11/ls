@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/04 13:00:41 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/31 18:24:51 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/08 11:07:27 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,14 @@
 # include <fcntl.h>
 # include <limits.h>
 
+typedef struct		s_list
+{
+	void			*content;
+	size_t			content_size;
+	struct s_list	*next;
+}					t_list;
+
+void				ft_lstadd(t_list **alst, t_list *new1);
 char				*ft_lldtoa(long long int n);
 char				*ft_ustoa(unsigned short n);
 int					ft_strcmp2(const char *s1, const char *s2);
