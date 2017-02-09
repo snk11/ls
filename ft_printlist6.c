@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 15:49:11 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/02 16:48:52 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/09 12:15:07 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	ft_printlist24(t_lsto *lstmp)
 {
 	t_lsto		*lst1;
 	t_lsto		*lst2;
-	t_lsto		*lstbegi;
 	t_loption	loption;
 
 	lst1 = NULL;
@@ -44,7 +43,6 @@ t_lsto	*ft_printlist25(t_lsto *lstmp)
 {
 	t_lsto		*lst1;
 	t_lsto		*lst2;
-	t_lsto		*lstbegio;
 	t_loption	loption;
 
 	lst1 = NULL;
@@ -73,7 +71,6 @@ t_lsto	*ft_printlist26(t_lsto *lstmp)
 {
 	t_lsto		*lst1;
 	t_lsto		*lst2;
-	t_lsto		*lstbegio;
 	t_loption	loption;
 
 	lst1 = NULL;
@@ -125,7 +122,6 @@ t_lsto	*ft_printlist28(t_lsto *lstmp)
 {
 	t_lsto		*lst1;
 	t_lsto		*lst2;
-	t_lsto		*lstbegio;
 	t_loption	loption;
 
 	lst1 = NULL;

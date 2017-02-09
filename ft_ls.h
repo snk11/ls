@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/07 21:01:22 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/09 12:25:07 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -158,7 +158,7 @@ void				lst_add_del(t_lst **toplist, t_lst **t_lst1);
 t_lsto				*ft_create_lsto2(t_rep *rep);
 t_lsto				*ft_create_lsto_char2(char *content);
 t_lsto				*ft_getprimelist(char **av, t_ind *ind);
-t_lsto				*ft_getprimelist2(char **av, t_ind *ind);
+t_lsto				*ft_getprimelist2(char **av);
 t_lsto				*ft_getreplist(char *rep);
 t_lsto				*ft_getreplist4(char *rep);
 t_lsto				*ft_getreplisto4(t_lsto *lstmp);
@@ -222,7 +222,7 @@ void				ft_printerror_p1(char **av, t_ind *ind, t_lsto **lst1,
 		t_lsto **lst2);
 int					ft_printerror_p1_p1(char **av, t_ind *ind, int i);
 void				ft_scan_ind(char **av, t_ind *ind);
-void				ft_print_permission(char *s, t_loption loption);
+void				ft_print_permission(char *s);
 void				ft_print_permission_p1(struct stat sb);
 void				ft_print_permission_p2(struct stat sb);
 void				ft_print_permission_p3(struct stat sb);
@@ -233,9 +233,9 @@ void				ft_printlrdir(char *s, t_lsto *lstcmd, t_ind *ind);
 void				ft_printltdir(char *s, t_lsto *lstcmd, t_ind *ind);
 void				ft_printlreversedir(char *s, t_lsto *lstcmd, t_ind *ind);
 int					ft_check_string(char *s);
-void				ft_a(char *s, t_ind *ind);
-void				ft_reverse(char *s, t_ind *ind);
-void				ft_areverse(char *s, t_ind *ind);
+void				ft_a(char *s);
+void				ft_reverse(char *s);
+void				ft_areverse(char *s);
 void				ft_at(char *s, t_lsto *lstcmd, t_ind *ind);
 void				ft_ar(char *s, t_lsto *lstcmd, t_ind *ind);
 void				ft_atreverse(char *s, t_lsto *lstcmd, t_ind *ind);
@@ -271,7 +271,7 @@ void				ft_p0error_p1(char *s, t_ind *ind, t_lsto *lstcmd);
 void				ft_p0error_p1_p1(char *s, t_ind *ind);
 void				ft_p0error_p1_p2(t_lsto *lst1, t_ind *ind);
 int					ft_getindex(t_lsto *lst1, t_lsto *lstcmd);
-int					ft_checkhyphen(t_lsto *lst1, t_lsto *lstcmd, t_ind *ind);
+int					ft_checkhyphen(t_lsto *lst1, t_lsto *lstcmd);
 int					ft_checkhyphencase(t_lsto *lst1, t_ind *ind);
 int					ft_checkhyphencase_print(t_lsto *lst1, t_ind *ind);
 void				ft_printlst(t_lsto *lstmp);
@@ -281,7 +281,7 @@ void				ft_printname_p1(char *s, t_lsto *lstcmd, t_ind *ind,
 int					ft_printname_p2(char *s, t_lsto *lstcmd, t_ind *ind,
 		int cnt);
 void				ft_printname_p3(char *s, t_lsto *lstcmd, t_ind *ind);
-void				ft_print_n(char *s, t_lsto *lstcmd, t_ind *ind);
+void				ft_print_n(t_lsto *lstcmd, t_ind *ind);
 void				ft_scan_option(char **av, t_ind *ind);
 void				ft_scan_option_p1(char **av, t_ind *ind, int i, int j);
 int					ft_scan_option2(char *av);
@@ -297,11 +297,10 @@ void				ft_wl_p(char *s, t_loption loption, struct stat sb,
 void				ft_wl_p0(char *s, t_loption loption, struct stat sb);
 void				ft_wl_p1(t_loption loption, struct stat sb);
 void				ft_wl_p2(t_loption loption, struct stat sb, time_t curtime);
-void				ft_wl_p3(t_loption loption, struct stat sb, time_t curtime);
-void				ft_wl_p4(t_loption loption, struct stat sb, time_t curtime);
-void				ft_wl_p5(t_loption loption, struct stat sb, time_t curtime);
-void				ft_wl_p6(t_lsto *lst1, t_loption loption, struct stat sb,
-		time_t curtime);
+void				ft_wl_p3(t_loption loption, struct stat sb);
+void				ft_wl_p4(t_loption loption, struct stat sb);
+void				ft_wl_p5(t_loption loption, struct stat sb);
+void				ft_wl_p6(t_lsto *lst1, t_loption loption, struct stat sb);
 void				ft_putwidth(char *s, int p);
 void				ft_putwidth2(char *s, int p);
 void				ft_freelst(t_lsto **lstmp);
@@ -317,8 +316,7 @@ void				ft_mem1_char(char **s1, char **s2, t_lsto *lsta);
 t_lsto				*ft_lst_sort(t_lsto *lst, int (*cmp)(t_lsto*));
 void				ft_lst_sort_p1(t_lsto **lst, t_lsto **lstbegi,
 		t_lsto **lstmp1, t_sort *s);
-void				ft_lst_sort_p2(t_lsto **lst, t_lsto **lstbegi,
-		t_lsto **lstmp1, t_sort *s);
+void				ft_lst_sort_p2(t_lsto **lst, t_lsto **lstmp1, t_sort *s);
 void				ft_function_rl(t_lsto **lsti, t_lsto *lst,
 		t_lsto *(*f1)(char *), t_lsto *(*f2)(t_lsto *));
 void				ft_function_r4(t_lsto **lsti, t_lsto *lst,

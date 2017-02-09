@@ -6,13 +6,13 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/20 00:18:14 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/13 07:36:27 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/09 12:07:23 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-void	ft_print_n(char *s, t_lsto *lstcmd, t_ind *ind)
+void	ft_print_n(t_lsto *lstcmd, t_ind *ind)
 {
 	if (ft_checkhyphencase(lstcmd, ind) == 1)
 	{

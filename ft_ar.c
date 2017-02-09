@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/22 13:45:07 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/07 20:30:28 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/09 12:27:57 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_ar(char *s, t_lsto *lstcmd, t_ind *ind)
 	t_lsto			*lsti;
 	t_lsto			*lstibegi;
 
-	ft_print_n(s, lstcmd, ind);
+	ft_print_n(lstcmd, ind);
 	lst = ft_getreplist4(s);
 	ft_printname(s, lstcmd, ind);
 	lsti = ft_printlist2(lst);

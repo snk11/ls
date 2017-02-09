@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 18:55:02 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/13 07:13:07 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/09 12:28:57 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void		ft_ls_run_p2(t_lsto *lst1, t_lsto *lstcmd, t_ind *ind)
 
 	lst = NULL;
 	lstj = NULL;
-	ft_print_n((char*)lst1->content, lstcmd, ind);
+	ft_print_n(lstcmd, ind);
 	lst = ft_getreplist((char*)(lst1->content));
 	ft_printname((char*)lst1->content, lstcmd, ind);
 	lstj = ft_printlist2(lst);

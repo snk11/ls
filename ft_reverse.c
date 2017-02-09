@@ -6,13 +6,13 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/22 13:32:14 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/17 16:32:34 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/09 12:00:56 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-void	ft_reverse(char *s, t_ind *ind)
+void	ft_reverse(char *s)
 {
 	t_lsto			*lst;
 

@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/25 13:44:58 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/07 21:17:27 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/09 12:20:36 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_width(t_lsto *lst1, t_loption *loption)
 				((t_rep*)(lst1->content))->name);
 		if (lstat(s, &sb) == 0)
 		{
-			if (ft_strlen(ft_ustoa(sb.st_nlink)) > loption->link)
+			if (ft_strlen(ft_ustoa(sb.st_nlink)) > (size_t)loption->link)
 				loption->link = ft_strlen(ft_ustoa(sb.st_nlink));
 			ft_width_p1(loption, sb);
 			ft_width_p2(loption, sb, curtime);
@@ -50,22 +50,22 @@ void	ft_width_p1(t_loption *loption, struct stat sb)
 	gid = NULL;
 	if (sb.st_uid && (uid = getpwuid(sb.st_uid)) != NULL)
 	{
-		if (ft_strlen(uid->pw_name) > loption->uname)
+		if (ft_strlen(uid->pw_name) > (size_t)loption->uname)
 			loption->uname = ft_strlen(uid->pw_name);
 	}
 	else if (!(sb.st_uid))
 	{
-		if (ft_strlen("root") > loption->uname)
+		if (ft_strlen("root") > (size_t)loption->uname)
 			loption->uname = 4;
 	}
 	if (sb.st_gid && (gid = getgrgid(sb.st_gid)) != NULL)
 	{
-		if (ft_strlen(gid->gr_name) > loption->gname)
+		if (ft_strlen(gid->gr_name) > (size_t)loption->gname)
 			loption->gname = ft_strlen(gid->gr_name);
 	}
 	else if (!(sb.st_gid))
 	{
-		if (ft_strlen("wheel") > loption->gname)
+		if (ft_strlen("wheel") > (size_t)loption->gname)
 			loption->gname = 5;
 	}
 }
@@ -74,11 +74,11 @@ void	ft_width_p2(t_loption *loption, struct stat sb, time_t curtime)
 {
 	if (major(sb.st_rdev) > 0)
 		loption->indrdev = 1;
-	if (ft_strlen(ft_itoa(major(sb.st_rdev))) > loption->frdevmaj)
+	if (ft_strlen(ft_itoa(major(sb.st_rdev))) > (size_t)loption->frdevmaj)
 		loption->frdevmaj = ft_strlen(ft_itoa(major(sb.st_rdev)));
-	if (ft_strlen(ft_itoa(minor(sb.st_rdev))) > loption->frdevmin)
+	if (ft_strlen(ft_itoa(minor(sb.st_rdev))) > (size_t)loption->frdevmin)
 		loption->frdevmin = ft_strlen(ft_itoa(minor(sb.st_rdev)));
-	if (ft_strlen(ft_lldtoa(sb.st_size)) > loption->fsize)
+	if (ft_strlen(ft_lldtoa(sb.st_size)) > (size_t)loption->fsize)
 		loption->fsize = ft_strlen(ft_lldtoa(sb.st_size));
 	if (curtime - sb.st_mtime > 15778458)
 		loption->year = ft_strlen(ft_getyear_str(ctime(&(sb.st_mtime))));

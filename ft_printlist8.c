@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/07 20:46:21 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/07 20:55:59 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/09 12:24:20 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	ft_printlist34(t_lsto *lstmp)
 {
 	t_lsto		*lst1;
 	t_lsto		*lst2;
-	t_lsto		*lstbegi;
 	t_loption	loption;
 
 	lst1 = NULL;

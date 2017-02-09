@@ -6,14 +6,13 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/07 20:57:34 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/07 20:58:12 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/09 12:24:45 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-void	ft_wl_p6(t_lsto *lst1, t_loption loption, struct stat sb,
-		time_t curtime)
+void	ft_wl_p6(t_lsto *lst1, t_loption loption, struct stat sb)
 {
 	char		*linkname;
 	ssize_t		r;

@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/23 15:03:00 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/01 02:10:21 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/09 12:12:18 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_printltreversedir(char *s, t_lsto *lstcmd, t_ind *ind)
 {
 	t_lsto		*lst;
 
-	ft_print_n(s, lstcmd, ind);
+	ft_print_n(lstcmd, ind);
 	if (!ft_islnk(s))
 	{
 		lst = ft_getreplist(s);

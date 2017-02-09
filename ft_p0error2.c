@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 20:29:22 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/07 20:39:37 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/09 12:06:54 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	ft_p0error_p1(char *s, t_ind *ind, t_lsto *lstcmd)
 {
 	int		inderror;
-	char	*s1;
 
 	inderror = 0;
 	ind->ind1 = 0;

@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/26 20:01:33 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/20 15:47:06 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/09 12:04:44 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ t_lsto		*ft_getprimelist(char **av, t_ind *ind)
 	return (lsta);
 }
 
-t_lsto		*ft_getprimelist2(char **av, t_ind *ind)
+t_lsto		*ft_getprimelist2(char **av)
 {
 	int			j;
 	t_lsto		*lstmp;

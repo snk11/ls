@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:29:54 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/20 15:13:43 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/09 12:33:03 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int		main(int ac, char **av)
 	t_lsto			*lstcmd;
 	t_lsto			*lst;
 	t_ind			*ind;
-	int				j;
 
 	lstcmd = NULL;
 	ind = NULL;

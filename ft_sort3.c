@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 12:33:08 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/13 10:27:26 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/09 12:18:02 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ t_lsto		*ft_lst_sort(t_lsto *lst, int (*cmp)(t_lsto*))
 		s.ind = 0;
 		lst = lstbegi;
 		ft_lst_sort_p1(&lst, &lstbegi, &lstmp1, &s);
-		ft_lst_sort_p2(&lst, &lstbegi, &lstmp1, &s);
+		ft_lst_sort_p2(&lst, &lstmp1, &s);
 	}
 	return (lstbegi);
 }
@@ -96,8 +96,7 @@ void		ft_lst_sort_p1(t_lsto **lst, t_lsto **lstbegi,
 	}
 }
 
-void		ft_lst_sort_p2(t_lsto **lst, t_lsto **lstbegi,
-		t_lsto **lstmp1, t_sort *s)
+void		ft_lst_sort_p2(t_lsto **lst, t_lsto **lstmp1, t_sort *s)
 {
 	t_lsto	*lstmp2;
 

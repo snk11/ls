@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/31 19:42:55 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/07 20:31:36 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/09 12:23:47 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ char	*ft_cutpath_lcaselink(char *s1)
 	char	*s;
 	char	*s2;
 	int		i;
-	int		j;
 
 	s = NULL;
 	s2 = s1;

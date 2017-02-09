@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/14 12:31:45 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/07 20:47:39 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/09 12:13:05 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	ft_printlregfile(t_lsto *lst1)
 {
 	t_loption	loption;
-	ssize_t		r;
 	t_rep		*e;
 	t_lsto		*lstmp;
 

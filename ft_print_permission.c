@@ -6,13 +6,13 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/14 07:25:15 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/07 21:15:14 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/09 12:08:20 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-void	ft_print_permission(char *s, t_loption loption)
+void	ft_print_permission(char *s)
 {
 	struct stat		sb;
 	ssize_t			xattr;

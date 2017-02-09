@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/25 14:27:40 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/07 20:50:43 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/09 12:29:30 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,14 @@ void	ft_wl(t_lsto *lst1, t_loption loption)
 		{
 			ft_wl_p(s, loption, sb, curtime);
 			if (curtime - sb.st_mtime > 15778458)
-				ft_wl_p3(loption, sb, curtime);
+				ft_wl_p3(loption, sb);
 			else if (curtime - sb.st_mtime < 0)
-				ft_wl_p4(loption, sb, curtime);
+				ft_wl_p4(loption, sb);
 			else
-				ft_wl_p5(loption, sb, curtime);
+				ft_wl_p5(loption, sb);
 			ft_putstr(((t_rep*)lst1->content)->name);
 			if (ft_islnk(s))
-				ft_wl_p6(lst1, loption, sb, curtime);
+				ft_wl_p6(lst1, loption, sb);
 			ft_putstr("\n");
 		}
 		lst1 = lst1->next;
@@ -50,7 +50,7 @@ void	ft_wl_p(char *s, t_loption loption, struct stat sb, time_t curtime)
 
 void	ft_wl_p0(char *s, t_loption loption, struct stat sb)
 {
-	ft_print_permission(s, loption);
+	ft_print_permission(s);
 	ft_putwidth(ft_ustoa(sb.st_nlink), loption.link);
 	ft_putstr(" ");
 }

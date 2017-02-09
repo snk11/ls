@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 10:39:04 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/07 20:59:06 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/09 12:29:15 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,14 @@ void	ft_wl2(t_lsto *lst1, t_loption loption)
 		{
 			ft_wl_pmod(s, loption, sb, curtime);
 			if (curtime - sb.st_mtime > 15778458)
-				ft_wl_p3(loption, sb, curtime);
+				ft_wl_p3(loption, sb);
 			else if (curtime - sb.st_mtime < 0)
-				ft_wl_p4(loption, sb, curtime);
+				ft_wl_p4(loption, sb);
 			else
-				ft_wl_p5(loption, sb, curtime);
+				ft_wl_p5(loption, sb);
 			ft_putstr(((t_rep*)lst1->content)->name);
 			if (ft_islnk(s))
-				ft_wl_p6(lst1, loption, sb, curtime);
+				ft_wl_p6(lst1, loption, sb);
 			ft_putstr("\n");
 		}
 	}

@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 18:46:48 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/20 17:05:28 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/09 12:02:31 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		ft_ls_run_p1_p5(t_lsto *lst1, t_lsto *lstcmd, t_ind *ind)
 	}
 	else if (ind->inda == 1 && ind->indreverse == 1)
 	{
-		ft_areverse((char*)(lst1->content), ind);
+		ft_areverse((char*)(lst1->content));
 		return (1);
 	}
 	else if (ind->inda == 1 && ind->indt == 1)
@@ -96,7 +96,7 @@ int		ft_ls_run_p1_p8(t_lsto *lst1, t_lsto *lstcmd, t_ind *ind)
 	}
 	else if (ind->inda == 1)
 	{
-		ft_a((char*)(lst1->content), ind);
+		ft_a((char*)(lst1->content));
 		return (1);
 	}
 	else if (ind->indt == 1)
@@ -106,7 +106,7 @@ int		ft_ls_run_p1_p8(t_lsto *lst1, t_lsto *lstcmd, t_ind *ind)
 	}
 	else if (ind->indreverse == 1)
 	{
-		ft_reverse((char*)(lst1->content), ind);
+		ft_reverse((char*)(lst1->content));
 		return (1);
 	}
 	return (0);

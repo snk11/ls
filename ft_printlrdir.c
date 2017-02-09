@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/14 15:13:22 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/02 10:41:04 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/09 12:11:43 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_printlrdir(char *s, t_lsto *lstcmd, t_ind *ind)
 	t_lsto			*lsti;
 	t_lsto			*lstibegi;
 
-	ft_print_n(s, lstcmd, ind);
+	ft_print_n(lstcmd, ind);
 	if (!ft_islnk(s))
 	{
 		lst = ft_getreplist(s);
