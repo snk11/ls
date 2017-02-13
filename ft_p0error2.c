@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 20:29:22 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/13 17:01:52 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/13 19:07:47 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ void	ft_p0error_p1_p1(char *s, t_ind *ind)
 	struct stat		sb;
 
 	ft_putstr_fd("ls: ", 2);
-	if (lstat(ft_makepath("", s), &sb) == 0 && !((sb.st_mode & S_IRGRP)
+//	if (lstat(ft_makepath("", s), &sb) == 0 && !((sb.st_mode & S_IRGRP)
+	if (lstat(s, &sb) == 0 && !((sb.st_mode & S_IRGRP)
 				&& (sb.st_mode & S_IROTH)))
 	{
 		if (ft_check_slash_end_case(s) == 0)
