@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/25 13:44:58 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/09 12:20:36 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/13 15:42:12 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,12 @@ void	ft_width(t_lsto *lst1, t_loption *loption)
 			loption->xattracl = 1;
 		lst1 = lst1->next;
 	}
+	/*
+	if (loption->fsize > (loption->frdevmin + 1))
+		loption->frdevmin = loption->fsize - 1;
+	else
+		loption->fsize = loption->frdevmin + 1;
+		*/
 }
 
 void	ft_width_p1(t_loption *loption, struct stat sb)
