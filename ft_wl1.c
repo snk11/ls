@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/13 11:07:37 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/13 15:22:56 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/13 15:52:46 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_wl_p2_p1(t_loption loption, struct stat sb)
 	else if (loption.indrdev)
 	{
 		ft_putwidth("", loption.frdevmaj);
-		ft_putstr("   ");
+		ft_putstr("  ");
 	}
 }
 
