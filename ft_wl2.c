@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 10:39:04 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/13 15:23:09 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/13 16:04:05 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,11 +83,13 @@ void	ft_wl_p22(t_loption loption, struct stat sb, time_t curtime)
 		ft_putwidth(ft_itoa(minor(sb.st_rdev)), loption.frdevmin);
 		ft_putstr(" ");
 	}
+	/*
 	else if (loption.indrdev)
 	{
 		ft_putwidth(ft_lldtoa(sb.st_size), loption.frdevmin);
 		ft_putstr("  ");
 	}
+	*/
 	else
 	{
 		ft_putwidth(ft_lldtoa(sb.st_size), loption.fsize);
@@ -108,11 +110,11 @@ void	ft_wl_p22_p1(t_loption loption, struct stat sb)
 	{
 		ft_putstr(" ");
 		ft_putwidth(ft_itoa(major(sb.st_rdev)), loption.frdevmaj);
-		ft_putstr(", ");
+		ft_putstr(",   ");
 	}
 	else if (loption.indrdev)
 	{
 		ft_putwidth("", loption.frdevmaj);
-		ft_putstr("   ");
+		ft_putstr("  ");
 	}
 }
