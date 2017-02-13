@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printldir.c                                     :+:      :+:    :+:   */
+/*   ft_printl_link.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/14 14:27:31 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/13 17:36:15 by syusof           ###   ########.fr       */
+/*   Created: 2017/02/13 17:35:08 by syusof            #+#    #+#             */
+/*   Updated: 2017/02/13 17:36:53 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-void	ft_printldir(char *s, t_lsto *lstcmd, t_ind *ind)
+void		ft_printl_link(char *s)
 {
-	t_lsto		*lst;
+	t_loption	loption;
+	t_rep		*e;
+	t_lsto		*lstmp;
 
-	ft_print_n(lstcmd, ind);
-	if (!ft_islnk(s))
+	lstmp = NULL;
+	ft_init2(&loption);
+	e = (t_rep*)malloc(sizeof(t_rep));
 	{
-		lst = ft_getreplist(s);
-		ft_printname(s, lstcmd, ind);
-		ft_printlist7(lst);
+		e->name = ft_memmove2(s);
+		e->path = ft_memmove2(".");
+		lstmp = ft_create_lsto2(e);
 	}
-	else if (ft_islnk(s))
-	{
-		ft_printl_link(s);
-	}
-	else
-	{
-		lst = ft_getreplist5(s);
-		ft_printname(s, lstcmd, ind);
-		ft_printlist37(lst);
-	}
+	ft_width2(lstmp, &loption);
+	ft_wl2(lstmp, loption);
 }

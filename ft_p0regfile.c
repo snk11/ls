@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/18 15:14:46 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/01 01:25:21 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/13 17:25:22 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,8 @@ void	ft_p0regfile(t_lsto *lst1, t_ind *ind, t_lsto *lstcmd)
 	{
 		s1 = ft_memmove2((char*)(lst1->content));
 		inderror = 0;
-		{
 			if (!opendir((char*)(lst1->content)))
 				inderror = 1;
-		}
 		ind->index1 = ft_getindex(lst1, lstcmd);
 		if (ft_checkhyphencase(lstcmd, ind) == 1)
 			ft_p0regfile_p1(lst1, ind, s1, inderror);
@@ -39,8 +37,8 @@ void	ft_p0regfile(t_lsto *lst1, t_ind *ind, t_lsto *lstcmd)
 void	ft_p0regfile_p1(t_lsto *lst1, t_ind *ind, char *s1, int inderror)
 {
 	if (inderror == 1 && ind->indl == 1
-			&& (ft_isreg(ft_makepath(".", (char*)(lst1->content)))
-				|| ft_islnk((char*)lst1->content)))
+			&& (ft_isreg(s1)
+				|| ft_islnk(s1)))
 	{
 		ft_printlregfile(lst1);
 		ind->indregfile = 1;
@@ -56,7 +54,7 @@ void	ft_p0regfile_p1(t_lsto *lst1, t_ind *ind, char *s1, int inderror)
 void	ft_p0regfile_p2(t_lsto *lst1, t_ind *ind, char *s1, int inderror)
 {
 	if (ind->index1 > 1 && inderror == 1 && ind->indl == 1
-			&& (ft_isreg(ft_makepath(".", (char*)(lst1->content)))
+			&& (ft_isreg(s1)
 				|| ft_islnk(s1)))
 	{
 		ft_printlregfile(lst1);
@@ -69,7 +67,7 @@ void	ft_p0regfile_p2(t_lsto *lst1, t_ind *ind, char *s1, int inderror)
 		ind->indregfile = 1;
 	}
 	else if (inderror == 1 && ind->indl == 1 &&
-			(ft_isreg((char*)(lst1->content)) || ft_islnk(s1)))
+			(ft_isreg(s1) || ft_islnk(s1)))
 	{
 		ft_printlregfile(lst1);
 		ind->indregfile = 1;
