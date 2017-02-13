@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/13 17:35:08 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/13 17:36:53 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/13 17:48:06 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,10 @@ void		ft_printl_link(char *s)
 	e = (t_rep*)malloc(sizeof(t_rep));
 	{
 		e->name = ft_memmove2(s);
-		e->path = ft_memmove2(".");
+		if (s[0] == '/')
+			e->path = ft_memmove2("");
+		else
+			e->path = ft_memmove2(".");
 		lstmp = ft_create_lsto2(e);
 	}
 	ft_width2(lstmp, &loption);
