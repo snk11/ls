@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/14 13:57:40 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/14 16:43:32 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -374,5 +374,9 @@ void				ft_cutname_lcaselink_p2(char **s, char *s1, char *s2,
 int					ft_check_legit_file_p1(struct stat sb);
 void		ft_printl_link(char *s);
 int	ft_scan_option_p0(char **av, t_ind *ind, int i, int j);
+void		ft_lstdel(t_lsto **toplist, int pos);
+void		ft_lstdel_p1(t_lsto **lstmp, t_lsto **lstmp2);
+void		ft_lstdel_p2(t_lsto ***toplist, t_lsto **lstmp);
+t_lsto	*ft_copylst(t_lsto *lstmp);
 
 #endif
