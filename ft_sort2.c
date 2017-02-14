@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 12:00:35 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/14 17:34:45 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/14 18:59:28 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,23 +20,26 @@ int		croissant_time(t_lsto *lsta)
 	char			*s2;
 
 	ft_mem1(&s1, &s2, lsta);
-	if (lstat(s1, &sa) == 0 && lstat(s2, &sb) == 0
-			&& sa.st_mtime <= sb.st_mtime)
+	if (lstat(s1, &sa) == 0 && lstat(s2, &sb) == 0)
 	{
-		if (sa.st_mtime < sb.st_mtime)
-			return (1);
-		if (croissant_time_p1(sa, sb))
+		if (sa.st_mtime <= sb.st_mtime)
 		{
-			if (sa.st_mtimespec.tv_nsec < sb.st_mtimespec.tv_nsec)
+			if (sa.st_mtime < sb.st_mtime)
 				return (1);
-			if (sa.st_mtimespec.tv_nsec == sb.st_mtimespec.tv_nsec
-					&& ft_strcmp(s1, s2) >= 0)
-				return (1);
+			if (croissant_time_p1(sa, sb))
+			{
+				if (sa.st_mtimespec.tv_nsec < sb.st_mtimespec.tv_nsec)
+					return (1);
+				else if (sa.st_mtimespec.tv_nsec == sb.st_mtimespec.tv_nsec
+						&& ft_strcmp(s1, s2) >= 0)
+					return (1);
+				else
+					return (0);
+			}
 			else
 				return (0);
 		}
-		else
-			return (0);
+		return (0);
 	}
 	return (1);
 }
@@ -57,23 +60,26 @@ int		croissant_time_char(t_lsto *lsta)
 	char			*s2;
 
 	ft_mem1(&s1, &s2, lsta);
-	if (lstat(s1, &sa) == 0 && lstat(s2, &sb) == 0
-			&& sa.st_mtime <= sb.st_mtime)
+	if (lstat(s1, &sa) == 0 && lstat(s2, &sb) == 0)
 	{
-		if (sa.st_mtime < sb.st_mtime)
-			return (1);
-		if (croissant_time_p1(sa, sb))
+		if (sa.st_mtime <= sb.st_mtime)
 		{
-			if (sa.st_mtimespec.tv_nsec < sb.st_mtimespec.tv_nsec)
+			if (sa.st_mtime < sb.st_mtime)
 				return (1);
-			if (sa.st_mtimespec.tv_nsec == sb.st_mtimespec.tv_nsec
-					&& ft_strcmp(s1, s2) >= 0)
-				return (1);
+			if (croissant_time_p1(sa, sb))
+			{
+				if (sa.st_mtimespec.tv_nsec < sb.st_mtimespec.tv_nsec)
+					return (1);
+				else if (sa.st_mtimespec.tv_nsec == sb.st_mtimespec.tv_nsec
+						&& ft_strcmp(s1, s2) >= 0)
+					return (1);
+				else
+					return (0);
+			}
 			else
 				return (0);
 		}
-		else
-			return (0);
+		return (0);
 	}
 	return (1);
 }
@@ -86,23 +92,26 @@ int		decreasing_time_char(t_lsto *lsta)
 	char			*s2;
 
 	ft_mem1_char(&s1, &s2, lsta);
-	if (lstat(s1, &sa) == 0 && lstat(s2, &sb) == 0
-			&& sa.st_mtime >= sb.st_mtime)
+	if (lstat(s1, &sa) == 0 && lstat(s2, &sb) == 0)
 	{
-		if (sa.st_mtime > sb.st_mtime)
-			return (1);
-		if (decreasing_time_p1(sa, sb))
+		if (sa.st_mtime >= sb.st_mtime)
 		{
-			if (sa.st_mtimespec.tv_nsec > sb.st_mtimespec.tv_nsec)
+			if (sa.st_mtime > sb.st_mtime)
 				return (1);
-			if (sa.st_mtimespec.tv_nsec == sb.st_mtimespec.tv_nsec
-					&& ft_strcmp(s1, s2) <= 0)
-				return (1);
+			if (decreasing_time_p1(sa, sb))
+			{
+				if (sa.st_mtimespec.tv_nsec > sb.st_mtimespec.tv_nsec)
+					return (1);
+				else if (sa.st_mtimespec.tv_nsec == sb.st_mtimespec.tv_nsec
+						&& ft_strcmp(s1, s2) <= 0)
+					return (1);
+				else
+					return (0);
+			}
 			else
 				return (0);
 		}
-		else
-			return (0);
+		return (0);
 	}
 	return (1);
 }
