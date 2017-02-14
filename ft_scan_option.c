@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/12 23:31:06 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/14 14:53:43 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/14 15:29:31 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,8 @@ void	ft_scan_option(char **av, t_ind *ind)
 int	ft_scan_option_p0(char **av, t_ind *ind, int i, int j)
 {
 	if (av[i][j] != 'R' && av[i][j] != 'a' && av[i][j] != 'r' && av[i][j] != 't'
-			&& av[i][j] != 'l' && av[i][j] == '1')
+			&& av[i][j] != 'l' && av[i][j] != '1')
+	if (av[i][j] != 'R')
 	{
 		ind->indillegal = av[i][j];
 		return (1);
