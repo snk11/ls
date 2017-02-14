@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/12 23:31:06 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/14 14:40:02 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/14 14:53:43 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ void	ft_scan_option(char **av, t_ind *ind)
 		}
 		i++;
 	}
+	if (av[i] && ft_strcmp(av[i], "--") == 0)
+		ind->indoption++;
 	k = i;
 	i = 1;
 	while (k > 1 && hyphenillegal == 0 && av[i] && av[i][0] == '-' && ft_strcmp(av[i], "--") != 0)
