@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/12 23:31:06 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/14 12:45:23 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/14 14:40:02 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,26 @@ void	ft_scan_option(char **av, t_ind *ind)
 {
 	int		i;
 	int		j;
+	int		k;
 	int		hyphenillegal;
 
 	i = 1;
 	hyphenillegal = 0;
-	while (av[i] && av[i][0] == '-' && ft_strcmp(av[i], "--") != 0)
+	while (ind->inderror2 == 0 && av[i] && ft_strcmp(av[i], "--") != 0)
 	{
 		j = 1;
-		while (av[i][j] && hyphenillegal == 0)
+		if (av[i][0] != '-' || ft_strcmp(av[i], "-") == 0)
+			ind->inderror2 = 1;
+		while (ind->inderror2 == 0 && av[i][j] && hyphenillegal == 0)
 		{
 			hyphenillegal = ft_scan_option_p0(av, ind, i, j);
 			j++;
 		}
 		i++;
 	}
+	k = i;
 	i = 1;
-	while (hyphenillegal == 0 && av[i] && av[i][0] == '-' && ft_strcmp(av[i], "--") != 0)
+	while (k > 1 && hyphenillegal == 0 && av[i] && av[i][0] == '-' && ft_strcmp(av[i], "--") != 0)
 	{
 		ind->indoption++;
 		j = 1;
@@ -41,6 +45,7 @@ void	ft_scan_option(char **av, t_ind *ind)
 			j++;
 		}
 		i++;
+		k--;
 	}
 }
 /*

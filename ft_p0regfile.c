@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/18 15:14:46 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/13 17:25:22 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/14 13:12:40 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,11 @@ void	ft_p0regfile(t_lsto *lst1, t_ind *ind, t_lsto *lstcmd)
 			if (!opendir((char*)(lst1->content)))
 				inderror = 1;
 		ind->index1 = ft_getindex(lst1, lstcmd);
+		/*
 		if (ft_checkhyphencase(lstcmd, ind) == 1)
 			ft_p0regfile_p1(lst1, ind, s1, inderror);
 		else if (ft_checkhyphencase(lstcmd, ind) == 0)
+		*/
 			ft_p0regfile_p2(lst1, ind, s1, inderror);
 		lst1 = lst1->next;
 	}

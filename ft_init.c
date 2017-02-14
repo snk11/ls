@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/30 16:00:49 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/21 04:42:34 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/14 13:57:55 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	ft_init(t_ind *ind)
 	ind->indl = 0;
 	ind->indoption = 0;
 	ind->ind1 = 0;
+	ind->inderror2 = 0;
 }
 
 void	ft_init2(t_loption *loption)

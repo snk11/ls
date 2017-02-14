@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/14 12:33:00 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/14 13:57:40 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ typedef struct		s_ind
 	int				indoption;
 	int				ind1;
 	int				ind2;
+	int				inderror2;
 }					t_ind;
 
 typedef	struct		s_sort
