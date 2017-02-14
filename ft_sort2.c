@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 12:00:35 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/13 09:51:17 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/14 17:34:45 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int		croissant_time(t_lsto *lsta)
 		else
 			return (0);
 	}
-	return (0);
+	return (1);
 }
 
 int		croissant_time_p1(struct stat sa, struct stat sb)
@@ -75,7 +75,7 @@ int		croissant_time_char(t_lsto *lsta)
 		else
 			return (0);
 	}
-	return (0);
+	return (1);
 }
 
 int		decreasing_time_char(t_lsto *lsta)
@@ -104,7 +104,7 @@ int		decreasing_time_char(t_lsto *lsta)
 		else
 			return (0);
 	}
-	return (0);
+	return (1);
 }
 
 int		croissant_pathname(t_lsto *lsti)

@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 12:33:08 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/14 16:58:03 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/14 17:35:01 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int			decreasing_time(t_lsto *lsta)
 		else
 			return (0);
 	}
-	return (0);
+	return (1);
 }
 
 int			decreasing_time_p1(struct stat sa, struct stat sb)
