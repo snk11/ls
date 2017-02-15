@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 12:00:35 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/14 18:59:28 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/15 20:44:59 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,7 @@ int		croissant_time(t_lsto *lsta)
 			if (sa.st_mtime < sb.st_mtime)
 				return (1);
 			if (croissant_time_p1(sa, sb))
-			{
-				if (sa.st_mtimespec.tv_nsec < sb.st_mtimespec.tv_nsec)
-					return (1);
-				else if (sa.st_mtimespec.tv_nsec == sb.st_mtimespec.tv_nsec
-						&& ft_strcmp(s1, s2) >= 0)
-					return (1);
-				else
-					return (0);
-			}
+				return (croissant_time_p2(sa, sb, s1, s2));
 			else
 				return (0);
 		}
@@ -50,6 +42,17 @@ int		croissant_time_p1(struct stat sa, struct stat sb)
 			&& sa.st_mtimespec.tv_nsec <= sb.st_mtimespec.tv_nsec)
 		return (1);
 	return (0);
+}
+
+int		croissant_time_p2(struct stat sa, struct stat sb, char *s1, char *s2)
+{
+	if (sa.st_mtimespec.tv_nsec < sb.st_mtimespec.tv_nsec)
+		return (1);
+	else if (sa.st_mtimespec.tv_nsec == sb.st_mtimespec.tv_nsec
+			&& ft_strcmp(s1, s2) >= 0)
+		return (1);
+	else
+		return (0);
 }
 
 int		croissant_time_char(t_lsto *lsta)
@@ -67,15 +70,7 @@ int		croissant_time_char(t_lsto *lsta)
 			if (sa.st_mtime < sb.st_mtime)
 				return (1);
 			if (croissant_time_p1(sa, sb))
-			{
-				if (sa.st_mtimespec.tv_nsec < sb.st_mtimespec.tv_nsec)
-					return (1);
-				else if (sa.st_mtimespec.tv_nsec == sb.st_mtimespec.tv_nsec
-						&& ft_strcmp(s1, s2) >= 0)
-					return (1);
-				else
-					return (0);
-			}
+				return (croissant_time_p2(sa, sb, s1, s2));
 			else
 				return (0);
 		}
@@ -99,15 +94,7 @@ int		decreasing_time_char(t_lsto *lsta)
 			if (sa.st_mtime > sb.st_mtime)
 				return (1);
 			if (decreasing_time_p1(sa, sb))
-			{
-				if (sa.st_mtimespec.tv_nsec > sb.st_mtimespec.tv_nsec)
-					return (1);
-				else if (sa.st_mtimespec.tv_nsec == sb.st_mtimespec.tv_nsec
-						&& ft_strcmp(s1, s2) <= 0)
-					return (1);
-				else
-					return (0);
-			}
+				return (decreasing_time_p2(sa, sb, s1, s2));
 			else
 				return (0);
 		}
