@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/15 21:33:47 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/15 21:57:51 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -284,9 +284,9 @@ int					ft_printname_p2(char *s, t_lsto *lstcmd, t_ind *ind,
 void				ft_printname_p3(char *s, t_lsto *lstcmd, t_ind *ind);
 void				ft_print_n(t_lsto *lstcmd, t_ind *ind);
 void				ft_scan_option(char **av, t_ind *ind);
-void				ft_scan_option_p1(char **av, t_ind *ind, int i, int j);
-int					ft_scan_option2(char *av);
-int					ft_scan_option2_p1(char *av, char *l, int j);
+void				ft_scan_option_p1_p1(char **av, t_ind *ind, int i, int j);
+//int					ft_scan_option2(char *av);
+//int					ft_scan_option2_p1(char *av, char *l, int j);
 void				ft_init2(t_loption *loption);
 void				ft_width(t_lsto *lst1, t_loption *loption);
 void				ft_width_p1(t_loption *loption, struct stat sb);
@@ -379,5 +379,6 @@ int					croissant_time_p2(struct stat sa, struct stat sb, char *s1,
 		char *s2);
 int					decreasing_time_p2(struct stat sa, struct stat sb, char *s1,
 		char *s2);
+void				ft_scan_option_p1(char **av, t_ind *ind, int *i, int *k);
 
 #endif
