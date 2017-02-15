@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 12:33:08 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/15 21:12:02 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/15 22:30:55 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,11 @@ int			decreasing_time_p1(struct stat sa, struct stat sb)
 int			decreasing_time_p2(struct stat sa, struct stat sb, char *s1,
 		char *s2)
 {
-				if (sa.st_mtimespec.tv_nsec > sb.st_mtimespec.tv_nsec)
-					return (1);
-				else if (sa.st_mtimespec.tv_nsec == sb.st_mtimespec.tv_nsec
-						&& ft_strcmp(s1, s2) <= 0)
-					return (1);
-				else
-					return (0);
+	if (sa.st_mtimespec.tv_nsec > sb.st_mtimespec.tv_nsec)
+		return (1);
+	else if (sa.st_mtimespec.tv_nsec == sb.st_mtimespec.tv_nsec
+			&& ft_strcmp(s1, s2) <= 0)
+		return (1);
+	else
+		return (0);
 }
-

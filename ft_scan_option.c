@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/12 23:31:06 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/15 21:58:13 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/15 22:30:25 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,16 +56,17 @@ void	ft_scan_option_p1(char **av, t_ind *ind, int *i, int *k)
 {
 	int		j;
 
-		ind->indoption++;
-		j = 1;
-		while (av[*i][j])
-		{
-			ft_scan_option_p1_p1(av, ind, *i, j);
-			j++;
-		}
-		(*i)++;
-		(*k)--;
+	ind->indoption++;
+	j = 1;
+	while (av[*i][j])
+	{
+		ft_scan_option_p1_p1(av, ind, *i, j);
+		j++;
+	}
+	(*i)++;
+	(*k)--;
 }
+
 void	ft_scan_option_p1_p1(char **av, t_ind *ind, int i, int j)
 {
 	if (av[i][j] == 'R')
