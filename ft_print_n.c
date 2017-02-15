@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/20 00:18:14 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/15 13:43:42 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/15 14:09:05 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,15 @@
 
 void	ft_print_n(t_lsto *lstcmd, t_ind *ind)
 {
+	int	cnt;
+
+	cnt = ft_countelem(lstcmd);
 	if (ind->indregfile == 1)
 		ft_putstr("\n");
+	else if (ind->indexyet4 != 0)
+		ft_putstr("\n");
+	else if (ind->indregfile == 0 && ind->indexyet4 == 0)
+		ind->indexyet4 = 1;
 	/*
 	if (ft_checkhyphencase(lstcmd, ind) == 1)
 	{

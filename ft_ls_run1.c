@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/27 17:13:01 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/14 18:55:09 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/15 14:05:40 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,12 @@ void	ft_ls_run(t_lsto *lst1, t_ind *ind, t_lsto *lstcmd)
 	int inderror;
 
 	ind->indposition = 0;
+	/*
 	ind->indexyet = 0;
 	ind->indexyet2 = 0;
 	ind->indexyet3 = 0;
+	ind->indexyet4 = 0;
+	*/
 	ind->indexyet4 = 0;
 	while (lst1)
 	{
