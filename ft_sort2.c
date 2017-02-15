@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 12:00:35 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/15 20:44:59 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/15 20:47:21 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,10 +103,3 @@ int		decreasing_time_char(t_lsto *lsta)
 	return (1);
 }
 
-int		croissant_pathname(t_lsto *lsti)
-{
-	return (ft_strcmp(ft_makepath(((t_rep*)(lsti->content))->path,
-					((t_rep*)(lsti)->content)->name),
-				ft_makepath(((t_rep*)((lsti->next)->content))->path,
-					((t_rep*)((lsti->next)->content))->name)) <= 0);
-}
