@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/15 22:41:13 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/15 23:16:25 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -266,8 +266,8 @@ void				ft_p0regfile_p1(t_lsto *lst1, t_ind *ind, char *s1,
 		int inderror);
 void				ft_p0regfile_p2(t_lsto *lst1, t_ind *ind, char *s1,
 		int inderror);
-void				ft_p0error(t_lsto *lst1, t_ind *ind, t_lsto *lstcmd);
-void				ft_p0error_p1(char *s, t_ind *ind, t_lsto *lstcmd);
+void				ft_p0error(t_lsto *lst1, t_ind *ind);
+void				ft_p0error_p1(char *s, t_ind *ind);
 void				ft_p0error_p1_p1(char *s, t_ind *ind);
 void				ft_p0error_p1_p2(t_lsto *lst1, t_ind *ind);
 int					ft_getindex(t_lsto *lst1, t_lsto *lstcmd);

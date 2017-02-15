@@ -6,13 +6,13 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 20:29:22 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/15 22:35:13 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/15 23:14:42 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-void	ft_p0error_p1(char *s, t_ind *ind, t_lsto *lstcmd)
+void	ft_p0error_p1(char *s, t_ind *ind)
 {
 	int		inderror;
 

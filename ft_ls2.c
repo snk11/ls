@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 19:37:44 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/14 19:38:05 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/15 23:16:59 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void			ft_ls_p1_p1(t_lsto *lstcmd, t_ind *ind)
 	lstmp = ft_create_lsto_char2(".");
 	lsta = lst_addo_down_char(lsta, lstmp);
 	lsta = ft_lst_sort(lsta, croissant_char);
-	ft_p0error(lsta, ind, lstcmd);
+	ft_p0error(lsta, ind);
 	if (ind->indfts == 0)
 	{
 		ft_p0regfile(lsta, ind, lstcmd);
@@ -33,7 +33,7 @@ void			ft_ls_p1_p1(t_lsto *lstcmd, t_ind *ind)
 void			ft_ls_p1_p2(t_lsto *lst1, t_lsto *lstcmd, t_ind *ind)
 {
 	lst1 = ft_lst_sort(lst1, croissant_char);
-	ft_p0error(lst1, ind, lstcmd);
+	ft_p0error(lst1, ind);
 	if (ind->indreverse == 1 && ind->indt == 1)
 		lst1 = ft_lst_sort(lst1, croissant_time_char);
 	else if (ind->indreverse == 1)
@@ -58,7 +58,7 @@ void			ft_ls_p1_p3(t_lsto *lstcmd, t_ind *ind)
 	lstmp = ft_create_lsto_char2(".");
 	lsta = lst_addo_down_char(lsta, lstmp);
 	lsta = ft_lst_sort(lsta, croissant_char);
-	ft_p0error(lsta, ind, lstcmd);
+	ft_p0error(lsta, ind);
 	if (ind->indfts == 0)
 	{
 		ft_p0regfile(lsta, ind, lstcmd);
