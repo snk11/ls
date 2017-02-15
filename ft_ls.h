@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/15 22:10:24 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/15 22:41:13 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -222,7 +222,6 @@ void				ft_printerror(char **av, t_ind *ind);
 void				ft_printerror_p1(char **av, t_ind *ind, t_lsto **lst1,
 		t_lsto **lst2);
 int					ft_printerror_p1_p1(char **av, t_ind *ind, int i);
-//void				ft_scan_ind(char **av, t_ind *ind);
 void				ft_print_permission(char *s);
 void				ft_print_permission_p1(struct stat sb);
 void				ft_print_permission_p2(struct stat sb);
@@ -272,9 +271,6 @@ void				ft_p0error_p1(char *s, t_ind *ind, t_lsto *lstcmd);
 void				ft_p0error_p1_p1(char *s, t_ind *ind);
 void				ft_p0error_p1_p2(t_lsto *lst1, t_ind *ind);
 int					ft_getindex(t_lsto *lst1, t_lsto *lstcmd);
-//int					ft_checkhyphen(t_lsto *lst1, t_lsto *lstcmd);
-//int					ft_checkhyphencase(t_lsto *lst1, t_ind *ind);
-//int					ft_checkhyphencase_print(t_lsto *lst1, t_ind *ind);
 void				ft_printlst(t_lsto *lstmp);
 void				ft_printname(char *s, t_lsto *lstcmd, t_ind *ind);
 void				ft_printname_p1(char *s, t_lsto *lstcmd, t_ind *ind,
@@ -285,8 +281,6 @@ void				ft_printname_p3(char *s, t_lsto *lstcmd, t_ind *ind);
 void				ft_print_n(t_lsto *lstcmd, t_ind *ind);
 void				ft_scan_option(char **av, t_ind *ind);
 void				ft_scan_option_p1_p1(char **av, t_ind *ind, int i, int j);
-//int					ft_scan_option2(char *av);
-//int					ft_scan_option2_p1(char *av, char *l, int j);
 void				ft_init2(t_loption *loption);
 void				ft_width(t_lsto *lst1, t_loption *loption);
 void				ft_width_p1(t_loption *loption, struct stat sb);

@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/14 15:13:22 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/15 22:11:07 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/15 22:40:29 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	ft_printlrdir_p1(char *s, t_lsto *lstcmd, t_ind *ind)
 {
 	t_lsto		*lst;
 
-		lst = ft_getreplist5(s);
-		ft_printname(s, lstcmd, ind);
-		ft_printlist37(lst);
+	lst = ft_getreplist5(s);
+	ft_printname(s, lstcmd, ind);
+	ft_printlist37(lst);
 }

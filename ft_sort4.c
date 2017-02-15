@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/15 20:50:45 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/15 22:29:46 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/15 22:40:11 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void		ft_lst_sort_p2(t_lsto **lst, t_lsto **lstmp1, t_sort *s)
 	}
 }
 
-int		croissant_pathname(t_lsto *lsti)
+int			croissant_pathname(t_lsto *lsti)
 {
 	return (ft_strcmp(ft_makepath(((t_rep*)(lsti->content))->path,
 					((t_rep*)(lsti)->content)->name),
