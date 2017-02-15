@@ -6,7 +6,7 @@
 #    By: syusof <syusof@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/10/15 21:10:44 by syusof            #+#    #+#              #
-#    Updated: 2017/02/15 21:11:12 by syusof           ###   ########.fr        #
+#    Updated: 2017/02/15 21:35:24 by syusof           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ ft_printlist3.o ft_printlist4.o ft_printlrdir.o ft_printlregfile.o \
 ft_printlreversedir.o ft_printlrreversedir.o ft_puttime.o ft_printlrtdir.o \
 ft_printltdir.o ft_printltreversedir.o ft_printlist7.o \
 ft_printltrreversedir.o ft_putlongnbr.o ft_printlist5.o ft_putmonth.o \
-ft_putwidth.o ft_r.o ft_reverse.o ft_rreverse.o ft_rt.o ft_scan_ind.o \
+ft_putwidth.o ft_r.o ft_reverse.o ft_rreverse.o ft_rt.o \
 ft_sort.o ft_printname.o ft_printlist6.o ft_t.o ft_treverse.o \
 ft_trreverse.o ft_scan_option.o ft_width2.o ft_sort3.o ft_width.o ft_sort2.o \
 ft_wl1.o ft_wl2.o ft_wl.o function1.o function2.o function3.o \

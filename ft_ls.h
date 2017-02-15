@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/15 20:44:19 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/15 21:33:47 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -222,7 +222,7 @@ void				ft_printerror(char **av, t_ind *ind);
 void				ft_printerror_p1(char **av, t_ind *ind, t_lsto **lst1,
 		t_lsto **lst2);
 int					ft_printerror_p1_p1(char **av, t_ind *ind, int i);
-void				ft_scan_ind(char **av, t_ind *ind);
+//void				ft_scan_ind(char **av, t_ind *ind);
 void				ft_print_permission(char *s);
 void				ft_print_permission_p1(struct stat sb);
 void				ft_print_permission_p2(struct stat sb);
