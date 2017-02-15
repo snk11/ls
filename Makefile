@@ -6,7 +6,7 @@
 #    By: syusof <syusof@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/10/15 21:10:44 by syusof            #+#    #+#              #
-#    Updated: 2017/02/14 15:51:41 by syusof           ###   ########.fr        #
+#    Updated: 2017/02/15 20:10:34 by syusof           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,9 @@ NAME = ft_ls
 LIB = libft/libft.a
 
 OBJ = ft_ls.o ft_a.o ft_areverse.o ft_art.o ft_at.o ft_ar.o ft_arreverse.o \
-ft_atreverse.o ft_checkhyphen.o ft_check_string.o ft_atrreverse.o \
-ft_checkslash.o ft_countelem.o ft_checkokfile.o ft_checkhyphencase.o \
-ft_checkhyphencase_print.o ft_getindex.o ft_getprimelist.o \
+ft_atreverse.o  ft_check_string.o ft_atrreverse.o \
+ft_checkslash.o ft_countelem.o ft_checkokfile.o \
+ft_getindex.o ft_getprimelist.o \
 ft_isdir.o ft_islnk.o ft_isreg.o ft_init.o ft_ls1.o ft_function_r.o \
 ft_ls3.o ft_getreplist.o ft_ls2.o ft_ls_run1.o ft_ls_run4.o \
 ft_makepath.o ft_mem1.o ft_p0error.o ft_ls_run3.o \
