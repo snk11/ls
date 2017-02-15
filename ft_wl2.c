@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 10:39:04 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/15 16:29:57 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/15 20:18:12 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,12 +71,7 @@ void	ft_wl_p12(t_loption loption, struct stat sb)
 	else if (!(sb.st_gid))
 	{
 		ft_putwidth3("wheel", loption.gname);
-		/*
-		if (S_ISLNK(sb.st_mode))
-			ft_putstr("  ");
-		else
-		*/
-			ft_putstr("  ");
+		ft_putstr("  ");
 	}
 }
 
@@ -88,13 +83,6 @@ void	ft_wl_p22(t_loption loption, struct stat sb, time_t curtime)
 		ft_putwidth(ft_itoa(minor(sb.st_rdev)), loption.frdevmin);
 		ft_putstr(" ");
 	}
-	/*
-	else if (loption.indrdev)
-	{
-		ft_putwidth(ft_lldtoa(sb.st_size), loption.frdevmin);
-		ft_putstr("  ");
-	}
-	*/
 	else
 	{
 		ft_putwidth(ft_lldtoa(sb.st_size), loption.fsize);

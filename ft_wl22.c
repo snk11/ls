@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/07 20:57:34 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/13 18:42:20 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/15 20:15:16 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,6 @@ void	ft_wl_p6(t_lsto *lst1, t_loption loption, struct stat sb)
 
 	linkname = NULL;
 	ft_putstr(" -> ");
-	/*
-	ft_putstr("name = ");
-	ft_putstr(((t_rep*)lst1->content)->name);
-	ft_putstr("  ");
-	ft_putstr("path = ");
-	ft_putstr(((t_rep*)lst1->content)->path);
-	ft_putstr("  ");
-	*/
 	if (loption.indrdev)
 	{
 		linkname = (char*)malloc(sb.st_blksize + 1);
@@ -37,11 +29,9 @@ void	ft_wl_p6(t_lsto *lst1, t_loption loption, struct stat sb)
 	}
 	else
 	{
-//		printf("\nname = %s\n",((t_rep*)lst1->content)->name);
 		linkname = (char*)malloc(sb.st_size + 1);
 		r = readlink(ft_makepath(((t_rep*)lst1->content)->path,
 					((t_rep*)lst1->content)->name), linkname, sb.st_blksize);
-//		r = readlink(((t_rep*)lst1->content)->name, linkname, sb.st_size);
 		if (linkname)
 			ft_wl_p6_p1(&linkname, r);
 	}

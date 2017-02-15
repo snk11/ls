@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/25 13:44:58 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/13 15:44:06 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/15 20:22:35 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	ft_width(t_lsto *lst1, t_loption *loption)
 {
 	struct stat		sb;
-	time_t			curtime;
 	ssize_t			xattr;
 	acl_t			acl;
 	char			*s;
@@ -23,7 +22,6 @@ void	ft_width(t_lsto *lst1, t_loption *loption)
 	acl = NULL;
 	xattr = listxattr(s, NULL, 0, XATTR_NOFOLLOW);
 	acl = acl_get_file(s, ACL_TYPE_EXTENDED);
-	curtime = time(NULL);
 	while (lst1)
 	{
 		s = ft_makepath(((t_rep*)(lst1->content))->path,
@@ -33,19 +31,13 @@ void	ft_width(t_lsto *lst1, t_loption *loption)
 			if (ft_strlen(ft_ustoa(sb.st_nlink)) > (size_t)loption->link)
 				loption->link = ft_strlen(ft_ustoa(sb.st_nlink));
 			ft_width_p1(loption, sb);
-			ft_width_p2(loption, sb, curtime);
+			ft_width_p2(loption, sb, time(NULL));
 		}
 		if (xattr > 0 || acl != NULL)
 			loption->xattracl = 1;
 		lst1 = lst1->next;
 	}
-	if(loption->indrdev == 1)
-	{
-		if (loption->fsize > (loption->frdevmin + 1))
-			loption->frdevmin = loption->fsize - 1;
-		else
-			loption->fsize = loption->frdevmin + 1;
-	}
+	ft_width_p3(loption);
 }
 
 void	ft_width_p1(t_loption *loption, struct stat sb)
@@ -91,4 +83,15 @@ void	ft_width_p2(t_loption *loption, struct stat sb, time_t curtime)
 		loption->year = ft_strlen(ft_getyear_str(ctime(&(sb.st_mtime))));
 	else if (curtime - sb.st_mtime < 0)
 		loption->year = ft_strlen(ft_getyear_str(ctime(&(sb.st_mtime))));
+}
+
+void	ft_width_p3(t_loption *loption)
+{
+	if (loption->indrdev == 1)
+	{
+		if (loption->fsize > (loption->frdevmin + 1))
+			loption->frdevmin = loption->fsize - 1;
+		else
+			loption->fsize = loption->frdevmin + 1;
+	}
 }
