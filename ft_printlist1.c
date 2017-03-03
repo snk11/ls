@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 14:33:34 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/20 22:53:40 by syusof           ###   ########.fr       */
+/*   Updated: 2017/03/03 20:41:19 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	ft_printlist_p1(t_lsto *lstmp, t_lsto **lst1, t_lsto **lst2)
 				((t_rep*)(lstmp->content))->name);
 		if (ft_checkdir(s1) == 0)
 			lst_addo1(&lst1, lstmp);
-		else if (ft_checkdir(s1) == 1)
+		else if (ft_checkdir(s1) == 1 && ft_islnk(s1) == 0)
 			lst_addo1(&lst2, lstmp);
 		lstmp = lstmp->next;
 	}
