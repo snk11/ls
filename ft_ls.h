@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/15 23:16:25 by syusof           ###   ########.fr       */
+/*   Updated: 2017/03/03 20:57:29 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -375,5 +375,6 @@ int					decreasing_time_p2(struct stat sa, struct stat sb, char *s1,
 		char *s2);
 void				ft_scan_option_p1(char **av, t_ind *ind, int *i, int *k);
 void				ft_printlrdir_p1(char *s, t_lsto *lstcmd, t_ind *ind);
+void				ft_printlist_p2(t_lsto *lstmp, t_lsto **lst1, t_lsto **lst2);
 
 #endif
