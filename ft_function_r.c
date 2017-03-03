@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 14:21:34 by syusof            #+#    #+#             */
-/*   Updated: 2017/03/03 19:28:45 by syusof           ###   ########.fr       */
+/*   Updated: 2017/03/03 20:09:48 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,9 @@ void	ft_function_r4(t_lsto **lsti, t_lsto *lst,
 			else if (!((sb.st_mode & S_IRGRP) && (sb.st_mode & S_IROTH)
 						&& ((sb.st_mode & S_IWUSR) || (sb.st_mode & S_IXUSR))))
 				ft_function_r4_p2(s1, lsti);
-				*/
+			*/
+			else if (!(sb.st_mode & S_IRWXU))
+				ft_function_r4_p2(s1, lsti);
 		}
 	}
 	(*lsti) = (*lsti)->next;
@@ -99,7 +101,7 @@ void	ft_function_r4_p1(char *s1)
 
 void	ft_function_r4_p2(char *s1, t_lsto **lsti)
 {
-	ft_putstr_fd("Uls: ", 2);
+	ft_putstr_fd("ls: ", 2);
 	opendir(s1);
 	perror(((t_rep*)((*lsti)->content))->name);
 }
