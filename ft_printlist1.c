@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 14:33:34 by syusof            #+#    #+#             */
-/*   Updated: 2017/03/04 12:36:11 by syusof           ###   ########.fr       */
+/*   Updated: 2017/03/04 13:12:36 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_printlist(t_lsto *lstmp)
 
 	lst1 = NULL;
 	lst2 = NULL;
-//	ft_printlist_p1(lstmp, &lst1, &lst2);
+	ft_printlist_p1(lstmp, &lst1, &lst2);
 	lst2 = ft_lst_sort(lst2, croissant);
 	lst1 = lst_addo_down(lst1, lst2);
 	lst1 = ft_lst_sort(lst1, croissant);
@@ -34,7 +34,7 @@ void	ft_printlist(t_lsto *lstmp)
 	}
 }
 
-void	ft_printlist_p1(t_lsto *lstmp, t_lsto **lst1, t_lsto **lst2, t_lsto **lst3)
+void	ft_printlist_p1(t_lsto *lstmp, t_lsto **lst1, t_lsto **lst2)
 {
 	char	*s1;
 
@@ -45,13 +45,8 @@ void	ft_printlist_p1(t_lsto *lstmp, t_lsto **lst1, t_lsto **lst2, t_lsto **lst3)
 				((t_rep*)(lstmp->content))->name);
 		if (ft_checkdir(s1) == 0)
 			lst_addo1(&lst1, lstmp);
-		else if (ft_checkdir(s1) == 1)
-		{
+		else if (ft_checkdir(s1) == 1 && ft_islnk(s1) == 0)
 			lst_addo1(&lst2, lstmp);
-			if (ft_islnk(s1) == 0)
-				lst_addo1(&lst3, lstmp);
-
-		}
 		lstmp = lstmp->next;
 	}
 }
@@ -77,13 +72,13 @@ t_lsto	*ft_printlist2(t_lsto *lstmp)
 {
 	t_lsto	*lst1;
 	t_lsto	*lst2;
-	t_lsto	*lst3;
+	t_lsto	*lstbegio;
 
 	lst1 = NULL;
 	lst2 = NULL;
-	lst3 = NULL;
-	ft_printlist_p1(lstmp, &lst1, &lst2, &lst3);
+	ft_printlist_p1(lstmp, &lst1, &lst2);
 	lst2 = ft_lst_sort(lst2, croissant);
+	lstbegio = lst2;
 	lst1 = lst_addo_down(lst1, lst2);
 	lst1 = ft_lst_sort(lst1, croissant);
 	while (lst1)
@@ -92,7 +87,7 @@ t_lsto	*ft_printlist2(t_lsto *lstmp)
 		ft_putstr("\n");
 		lst1 = lst1->next;
 	}
-	return (lst3);
+	return (lstbegio);
 }
 
 t_lsto	*ft_printlist3(t_lsto *lstmp)
@@ -103,7 +98,7 @@ t_lsto	*ft_printlist3(t_lsto *lstmp)
 
 	lst1 = NULL;
 	lst2 = NULL;
-//	ft_printlist_p1(lstmp, &lst1, &lst2);
+	ft_printlist_p1(lstmp, &lst1, &lst2);
 	lst2 = ft_lst_sort(lst2, croissant);
 	lstbegio = lst2;
 	return (lstbegio);
@@ -116,7 +111,7 @@ void	ft_printlist4(t_lsto *lstmp)
 
 	lst1 = NULL;
 	lst2 = NULL;
-//	ft_printlist_p1(lstmp, &lst1, &lst2);
+	ft_printlist_p1(lstmp, &lst1, &lst2);
 	lst2 = ft_lst_sort(lst2, croissant);
 	lst1 = lst_addo_down(lst1, lst2);
 	lst1 = ft_lst_sort(lst1, croissant);

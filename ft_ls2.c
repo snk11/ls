@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 19:37:44 by syusof            #+#    #+#             */
-/*   Updated: 2017/03/04 12:41:11 by syusof           ###   ########.fr       */
+/*   Updated: 2017/03/04 13:33:22 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void			ft_ls_p1_p1(t_lsto *lstcmd, t_ind *ind)
 void			ft_ls_p1_p2(t_lsto *lst1, t_lsto *lstcmd, t_ind *ind)
 {
 	lst1 = ft_lst_sort(lst1, croissant_char);
-//	ft_p0error(lst1, ind);
+	ft_p0error(lst1, ind);
 	if (ind->indreverse == 1 && ind->indt == 1)
 		lst1 = ft_lst_sort(lst1, croissant_time_char);
 	else if (ind->indreverse == 1)

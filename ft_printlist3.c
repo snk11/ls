@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 15:22:26 by syusof            #+#    #+#             */
-/*   Updated: 2017/03/04 12:30:54 by syusof           ###   ########.fr       */
+/*   Updated: 2017/03/04 13:12:51 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_printlist9(t_lsto *lstmp)
 
 	lst1 = NULL;
 	lst2 = NULL;
-//	ft_printlist_p1(lstmp, &lst1, &lst2);
+	ft_printlist_p1(lstmp, &lst1, &lst2);
 	lst2 = ft_lst_sort(lst2, croissant_time);
 	lst1 = lst_addo_down(lst1, lst2);
 	lst1 = ft_lst_sort(lst1, croissant_time);
@@ -39,7 +39,7 @@ t_lsto	*ft_printlist10(t_lsto *lstmp)
 
 	lst1 = NULL;
 	lst2 = NULL;
-//	ft_printlist_p1(lstmp, &lst1, &lst2);
+	ft_printlist_p1(lstmp, &lst1, &lst2);
 	lst2 = ft_lst_sort(lst2, decreasing_time);
 	lstbegio = lst2;
 	lst1 = lst_addo_down(lst1, lst2);
@@ -84,7 +84,7 @@ t_lsto	*ft_printlist12(t_lsto *lstmp)
 
 	lst1 = NULL;
 	lst2 = NULL;
-//	ft_printlist_p1(lstmp, &lst1, &lst2);
+	ft_printlist_p1(lstmp, &lst1, &lst2);
 	lst2 = ft_lst_sort(lst2, decreasing);
 	lstbegio = lst2;
 	lst1 = lst_addo_down(lst1, lst2);

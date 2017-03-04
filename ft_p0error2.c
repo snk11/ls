@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 20:29:22 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/15 23:14:42 by syusof           ###   ########.fr       */
+/*   Updated: 2017/03/04 13:37:52 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,17 +31,20 @@ void	ft_p0error_p1_p1(char *s, t_ind *ind)
 {
 	struct stat		sb;
 
-	ft_putstr_fd("ls: ", 2);
 	if (lstat(s, &sb) == 0 && !((sb.st_mode & S_IRGRP)
 				&& (sb.st_mode & S_IROTH)))
 	{
+		/*
+		ft_putstr_fd("ls: ", 2);
 		if (ft_check_slash_end_case(s) == 0)
 			ft_putstr_fd(ft_getname_without_slash(s), 2);
 		ft_putstr_fd(": ", 2);
 		ft_putstr_fd(strerror(errno), 2);
+		*/
 	}
 	else
 	{
+		ft_putstr_fd("ls: ", 2);
 		ft_putstr_fd(s, 2);
 		ft_putstr_fd(": ", 2);
 		ft_putstr_fd(strerror(errno), 2);
@@ -49,7 +52,7 @@ void	ft_p0error_p1_p1(char *s, t_ind *ind)
 	ft_putstr_fd("\n", 2);
 	ind->inderror = 1;
 }
-
+/*
 void	ft_p0error_p1_p2(t_lsto *lst1, t_ind *ind)
 {
 	char	*s1;
@@ -71,3 +74,4 @@ void	ft_p0error_p1_p2(t_lsto *lst1, t_ind *ind)
 		ind->inderror = 1;
 	}
 }
+*/
