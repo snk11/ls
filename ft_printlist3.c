@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 15:22:26 by syusof            #+#    #+#             */
-/*   Updated: 2017/03/04 13:12:51 by syusof           ###   ########.fr       */
+/*   Updated: 2017/03/04 17:28:59 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,12 @@ void	ft_printlist9(t_lsto *lstmp)
 {
 	t_lsto	*lst1;
 	t_lsto	*lst2;
+	t_lsto	*lst3;
 
 	lst1 = NULL;
 	lst2 = NULL;
-	ft_printlist_p1(lstmp, &lst1, &lst2);
+	lst3 = NULL;
+	ft_printlist_p3(lstmp, &lst1, &lst2, &lst3);
 	lst2 = ft_lst_sort(lst2, croissant_time);
 	lst1 = lst_addo_down(lst1, lst2);
 	lst1 = ft_lst_sort(lst1, croissant_time);
@@ -35,13 +37,14 @@ t_lsto	*ft_printlist10(t_lsto *lstmp)
 {
 	t_lsto	*lst1;
 	t_lsto	*lst2;
-	t_lsto	*lstbegio;
+	t_lsto	*lst3;
 
 	lst1 = NULL;
 	lst2 = NULL;
-	ft_printlist_p1(lstmp, &lst1, &lst2);
+	lst3 = NULL;
+	ft_printlist_p3(lstmp, &lst1, &lst2, &lst3);
 	lst2 = ft_lst_sort(lst2, decreasing_time);
-	lstbegio = lst2;
+	lst3 = ft_lst_sort(lst3, decreasing_time);
 	lst1 = lst_addo_down(lst1, lst2);
 	lst1 = ft_lst_sort(lst1, decreasing_time);
 	while (lst1)
@@ -50,7 +53,7 @@ t_lsto	*ft_printlist10(t_lsto *lstmp)
 		ft_putstr("\n");
 		lst1 = lst1->next;
 	}
-	return (lstbegio);
+	return (lst3);
 }
 
 t_lsto	*ft_printlist11(t_lsto *lstmp)
@@ -80,13 +83,15 @@ t_lsto	*ft_printlist12(t_lsto *lstmp)
 {
 	t_lsto	*lst1;
 	t_lsto	*lst2;
+	t_lsto	*lst3;
 	t_lsto	*lstbegio;
 
 	lst1 = NULL;
 	lst2 = NULL;
-	ft_printlist_p1(lstmp, &lst1, &lst2);
+	lst3 = NULL;
+	ft_printlist_p3(lstmp, &lst1, &lst2, &lst3);
 	lst2 = ft_lst_sort(lst2, decreasing);
-	lstbegio = lst2;
+	lst3 = ft_lst_sort(lst3, decreasing);
 	lst1 = lst_addo_down(lst1, lst2);
 	lst1 = ft_lst_sort(lst1, decreasing);
 	while (lst1)
@@ -95,7 +100,7 @@ t_lsto	*ft_printlist12(t_lsto *lstmp)
 		ft_putstr("\n");
 		lst1 = lst1->next;
 	}
-	return (lstbegio);
+	return (lst3);
 }
 
 void	ft_printlist13(t_lsto *lstmp)

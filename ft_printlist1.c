@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 14:33:34 by syusof            #+#    #+#             */
-/*   Updated: 2017/03/04 17:17:23 by syusof           ###   ########.fr       */
+/*   Updated: 2017/03/04 17:36:13 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,12 @@ void	ft_printlist(t_lsto *lstmp)
 {
 	t_lsto	*lst1;
 	t_lsto	*lst2;
+	t_lsto	*lst3;
 
 	lst1 = NULL;
 	lst2 = NULL;
-	ft_printlist_p1(lstmp, &lst1, &lst2);
+	lst3 = NULL;
+	ft_printlist_p3(lstmp, &lst1, &lst2, &lst3);
 	lst2 = ft_lst_sort(lst2, croissant);
 	lst1 = lst_addo_down(lst1, lst2);
 	lst1 = ft_lst_sort(lst1, croissant);
@@ -33,7 +35,7 @@ void	ft_printlist(t_lsto *lstmp)
 		lst1 = lst1->next;
 	}
 }
-
+/*
 void	ft_printlist_p1(t_lsto *lstmp, t_lsto **lst1, t_lsto **lst2)
 {
 	char	*s1;
@@ -50,7 +52,6 @@ void	ft_printlist_p1(t_lsto *lstmp, t_lsto **lst1, t_lsto **lst2)
 		lstmp = lstmp->next;
 	}
 }
-
 void	ft_printlist_p2(t_lsto *lstmp, t_lsto **lst1, t_lsto **lst2)
 {
 	char	*s1;
@@ -67,6 +68,7 @@ void	ft_printlist_p2(t_lsto *lstmp, t_lsto **lst1, t_lsto **lst2)
 		lstmp = lstmp->next;
 	}
 }
+*/
 
 void	ft_printlist_p3(t_lsto *lstmp, t_lsto **lst1, t_lsto **lst2, t_lsto **lst3)
 {
@@ -130,10 +132,12 @@ void	ft_printlist4(t_lsto *lstmp)
 {
 	t_lsto	*lst1;
 	t_lsto	*lst2;
+	t_lsto	*lst3;
 
 	lst1 = NULL;
 	lst2 = NULL;
-	ft_printlist_p1(lstmp, &lst1, &lst2);
+	lst3 = NULL;
+	ft_printlist_p3(lstmp, &lst1, &lst2, &lst3);
 	lst2 = ft_lst_sort(lst2, croissant);
 	lst1 = lst_addo_down(lst1, lst2);
 	lst1 = ft_lst_sort(lst1, croissant);
