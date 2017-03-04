@@ -6,7 +6,7 @@
 #    By: syusof <syusof@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/10/15 21:10:44 by syusof            #+#    #+#              #
-#    Updated: 2017/02/15 23:14:09 by syusof           ###   ########.fr        #
+#    Updated: 2017/03/04 12:34:07 by syusof           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,7 @@ ft_curs.o ft_freelst.o ft_getname_without_slash.o ft_check_slash_end_case.o \
 ft_check_legit_file.o ft_cutname_lcaselink.o ft_cutpath_lcaselink.o \
 ft_printlist8.o ft_wl22.o ft_printl_link.o ft_sort4.o
 
-FLAGS = -Wall -Werror -Wextra
+FLAGS = 
 
 MAIN = ft_ls.c
 
