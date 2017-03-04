@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 14:21:34 by syusof            #+#    #+#             */
-/*   Updated: 2017/03/03 20:43:26 by syusof           ###   ########.fr       */
+/*   Updated: 2017/03/04 14:42:34 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,13 @@ void	ft_function_rl(t_lsto **lsti, t_lsto *lst,
 				*lsti = lst_addo_between(*lsti, lstj);
 			}
 			*/
-			if (((sb.st_mode & S_IRGRP) && (sb.st_mode & S_IROTH)
-					&& ((sb.st_mode & S_IWUSR) || (sb.st_mode & S_IXUSR))) || (xattr > 0) || (acl != NULL))
+//			if (((sb.st_mode & S_IRGRP) && (sb.st_mode & S_IROTH)
+//					&& ((sb.st_mode & S_IWUSR) || (sb.st_mode & S_IXUSR))) || (xattr > 0) || (acl != NULL))
+			if (sb.st_mode & S_IRWXU)
 				lst = f1(s1);
-			if (lst && ((((sb.st_mode & S_IRGRP) && (sb.st_mode & S_IROTH))
-					&& ((sb.st_mode & S_IWUSR) || (sb.st_mode & S_IXUSR))) || (xattr > 0) || (acl != NULL)))
+			//if (lst && ((((sb.st_mode & S_IRGRP) && (sb.st_mode & S_IROTH))
+//					&& ((sb.st_mode & S_IWUSR) || (sb.st_mode & S_IXUSR))) || (xattr > 0) || (acl != NULL)))
+			if (sb.st_mode & S_IRWXU)
 			{
 				lstj = f2(lst);
 				*lsti = lst_addo_between(*lsti, lstj);
@@ -74,11 +76,13 @@ void	ft_function_r4(t_lsto **lsti, t_lsto *lst,
 		ft_function_r4_p1(s1);
 		if (stat(s1, &sb) == 0)
 		{
-			if (((sb.st_mode & S_IRGRP) && (sb.st_mode & S_IROTH)
-					&& ((sb.st_mode & S_IWUSR) || (sb.st_mode & S_IXUSR))) || (xattr > 0) || (acl != NULL))
+//			if (((sb.st_mode & S_IRGRP) && (sb.st_mode & S_IROTH)
+//					&& ((sb.st_mode & S_IWUSR) || (sb.st_mode & S_IXUSR))) || (xattr > 0) || (acl != NULL))
+			if (sb.st_mode & S_IRWXU)
 				lst = f1(s1);
-			if (lst && ((((sb.st_mode & S_IRGRP) && (sb.st_mode & S_IROTH))
-					&& ((sb.st_mode & S_IWUSR) || (sb.st_mode & S_IXUSR))) || (xattr > 0) || (acl != NULL)))
+//			if (lst && ((((sb.st_mode & S_IRGRP) && (sb.st_mode & S_IROTH))
+//					&& ((sb.st_mode & S_IWUSR) || (sb.st_mode & S_IXUSR))) || (xattr > 0) || (acl != NULL)))
+			if (sb.st_mode & S_IRWXU)
 				lstj = f2(lst);
 			/*
 			else if (!((sb.st_mode & S_IRGRP) && (sb.st_mode & S_IROTH)
