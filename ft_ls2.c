@@ -6,12 +6,12 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 19:37:44 by syusof            #+#    #+#             */
-/*   Updated: 2017/03/04 13:33:22 by syusof           ###   ########.fr       */
+/*   Updated: 2017/03/08 00:07:51 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
-
+/*
 void			ft_ls_p1_p1(t_lsto *lstcmd, t_ind *ind)
 {
 	t_lsto		*lstmp;
@@ -29,7 +29,7 @@ void			ft_ls_p1_p1(t_lsto *lstcmd, t_ind *ind)
 		ft_ls_run(lsta, ind, lstcmd);
 	}
 }
-
+*/
 void			ft_ls_p1_p2(t_lsto *lst1, t_lsto *lstcmd, t_ind *ind)
 {
 	lst1 = ft_lst_sort(lst1, croissant_char);
