@@ -6,13 +6,13 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/18 15:31:27 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/15 23:16:12 by syusof           ###   ########.fr       */
+/*   Updated: 2017/03/08 06:01:30 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-void	ft_p0error(t_lsto *lst1, t_ind *ind)
+void	ft_p0error(t_lsto *lst1, t_ind *ind, t_lsto **lsta)
 {
 	char	*s;
 
@@ -30,7 +30,7 @@ void	ft_p0error(t_lsto *lst1, t_ind *ind)
 			ind->inderror = 1;
 		}
 		else
-			ft_p0error_p1(s, ind);
+			ft_p0error_p1(s, ind, lsta);
 		lst1 = lst1->next;
 	}
 }

@@ -6,15 +6,16 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 20:29:22 by syusof            #+#    #+#             */
-/*   Updated: 2017/03/04 13:37:52 by syusof           ###   ########.fr       */
+/*   Updated: 2017/03/08 06:11:22 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-void	ft_p0error_p1(char *s, t_ind *ind)
+void	ft_p0error_p1(char *s, t_ind *ind, t_lsto **lsta)
 {
 	int		inderror;
+	t_lsto	*lstmp;
 
 	inderror = 0;
 	ind->ind1 = 0;
@@ -24,10 +25,15 @@ void	ft_p0error_p1(char *s, t_ind *ind)
 	}
 	if (inderror == 1 && !ft_isreg(s)
 			&& !ft_islnk(s))
-		ft_p0error_p1_p1(s, ind);
+		ft_p0error_p1_p1(s, ind, lsta);
+	else
+	{
+		lstmp = ft_create_lsto_char2(s);
+		*lsta = lst_addo_down_char(*lsta, lstmp);
+	}
 }
 
-void	ft_p0error_p1_p1(char *s, t_ind *ind)
+void	ft_p0error_p1_p1(char *s, t_ind *ind, t_lsto **lsta)
 {
 	struct stat		sb;
 
