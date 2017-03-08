@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 14:33:34 by syusof            #+#    #+#             */
-/*   Updated: 2017/03/04 17:36:13 by syusof           ###   ########.fr       */
+/*   Updated: 2017/03/09 00:45:30 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void	ft_printlist_p3(t_lsto *lstmp, t_lsto **lst1, t_lsto **lst2, t_lsto **lst3)
 				((t_rep*)(lstmp->content))->name);
 		if (ft_isdir(s1) == 0)
 			lst_addo1(&lst1, lstmp);
-		else if (ft_isdir(s1) == 1)
+		else if (ft_isdir(s1) == 1 && ft_checkdev(((t_rep*)(lstmp->content))->path) == 0)
 		{
 			lst_addo1(&lst2, lstmp);
 			if (ft_islnk(s1) == 0)

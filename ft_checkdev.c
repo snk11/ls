@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_r.c                                             :+:      :+:    :+:   */
+/*   ft_checkdev.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/08 06:45:09 by syusof            #+#    #+#             */
-/*   Updated: 2017/03/09 00:46:46 by syusof           ###   ########.fr       */
+/*   Created: 2017/03/08 23:56:10 by syusof            #+#    #+#             */
+/*   Updated: 2017/03/09 00:43:28 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-void	ft_r(char *s, t_lsto *lstcmd, t_ind *ind)
+int		ft_checkdev(char *s)
 {
-	t_lsto			*lst;
-	t_lsto			*lsti;
-	t_lsto			*lstj;
-	t_lsto			*lstibegi;
+	char	*s1;
+	int		i;
 
-	lstj = NULL;
-	ft_print_n(lstcmd, ind);
-	lst = ft_getreplist(s);
-	ft_printname(s, lstcmd, ind);
-	lsti = ft_printlist2(lst);
-	lstibegi = lsti;
-	while (lsti)
-		ft_function_rl(&lsti, lst, ft_getreplist, ft_printlist3);
-	lsti = lstibegi;
-	while (lsti)
-		ft_function_r4(&lsti, lst, ft_getreplist, ft_printlist2);
+	s1 = ft_getname_without_slash(s);
+	i = 0;
+	while (s1[i])
+		i++;
+	while (s1[i] != '/' && i > 0)
+		i--;
+	if (ft_strcmp("fd", &(s1[i])) == 0)
+		return (1);
+	return (0);
 }
