@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 15:22:26 by syusof            #+#    #+#             */
-/*   Updated: 2017/03/04 17:28:59 by syusof           ###   ########.fr       */
+/*   Updated: 2017/03/09 03:07:14 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,18 +60,15 @@ t_lsto	*ft_printlist11(t_lsto *lstmp)
 {
 	t_lsto	*lst1;
 	t_lsto	*lst2;
+	t_lsto	*lst3;
 	t_lsto	*lstbegio;
 
 	lst1 = NULL;
 	lst2 = NULL;
+	lst3 = NULL;
 	while (lstmp)
 	{
-		if (ft_isdir(ft_makepath(((t_rep*)(lstmp->content))->path,
-						((t_rep*)(lstmp->content))->name)) == 0)
-			lst_addo(&lst1, &lstmp);
-		else if (ft_isdir(ft_makepath(((t_rep*)(lstmp->content))->path,
-						((t_rep*)(lstmp->content))->name)) == 1)
-			lst_addo(&lst2, &lstmp);
+		ft_printlist8_p2(lstmp, &lst1, &lst2, &lst3);
 		lstmp = lstmp->next;
 	}
 	lst2 = ft_lst_sort(lst2, decreasing_time);
@@ -107,18 +104,15 @@ void	ft_printlist13(t_lsto *lstmp)
 {
 	t_lsto		*lst1;
 	t_lsto		*lst2;
+	t_lsto		*lst3;
 	t_loption	loption;
 
 	lst1 = NULL;
 	lst2 = NULL;
+	lst3 = NULL;
 	while (lstmp)
 	{
-		if (ft_isdir(ft_makepath(((t_rep*)(lstmp->content))->path,
-						((t_rep*)(lstmp->content))->name)) == 0)
-			lst_addo(&lst1, &lstmp);
-		else if (ft_isdir(ft_makepath(((t_rep*)(lstmp->content))->path,
-						((t_rep*)(lstmp->content))->name)) == 1)
-			lst_addo(&lst2, &lstmp);
+		ft_printlist8_p2(lstmp, &lst1, &lst2, &lst3);
 		lstmp = lstmp->next;
 	}
 	lst2 = ft_lst_sort(lst2, decreasing_time);
