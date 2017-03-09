@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 14:55:39 by syusof            #+#    #+#             */
-/*   Updated: 2017/03/04 17:26:18 by syusof           ###   ########.fr       */
+/*   Updated: 2017/03/09 01:06:08 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,21 +104,28 @@ t_lsto		*ft_printlist8(t_lsto *lstmp)
 {
 	t_lsto		*lst1;
 	t_lsto		*lst2;
-	t_lsto		*lstbegio;
+	t_lsto		*lst3;
 	t_loption	loption;
+	char		*s1;
 
+	lst3 = NULL;
 	ft_printlist8_p1(&lst1, &lst2);
 	while (lstmp)
 	{
-		if (ft_isdir(ft_makepath(((t_rep*)(lstmp->content))->path,
-						((t_rep*)(lstmp->content))->name)) == 0)
+		s1 = ft_makepath(((t_rep*)(lstmp->content))->path,
+						((t_rep*)(lstmp->content))->name);
+		if (ft_isdir(s1) == 0)
 			lst_addo(&lst1, &lstmp);
-		else
+		else if (ft_isdir(s1) == 1 && ft_checkdev(((t_rep*)(lstmp->content))->path) == 0)
+		{
 			lst_addo(&lst2, &lstmp);
+			if (ft_islnk(s1) == 0)
+				lst_addo(&lst3, &lstmp);
+		}
 		lstmp = lstmp->next;
 	}
 	lst2 = ft_lst_sort(lst2, croissant);
-	lstbegio = lst2;
+	lst3 = ft_lst_sort(lst3, croissant);
 	lst1 = lst_addo_down(lst1, lst2);
 	lst1 = ft_lst_sort(lst1, croissant);
 	if (lst1)
@@ -126,5 +133,5 @@ t_lsto		*ft_printlist8(t_lsto *lstmp)
 	ft_init2(&loption);
 	ft_width(lst1, &loption);
 	ft_wl(lst1, loption);
-	return (lstbegio);
+	return (lst3);
 }
