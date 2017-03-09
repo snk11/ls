@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/08 23:56:10 by syusof            #+#    #+#             */
-/*   Updated: 2017/03/09 00:43:28 by syusof           ###   ########.fr       */
+/*   Updated: 2017/03/09 01:50:29 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,14 @@ int		ft_checkdev(char *s)
 
 	s1 = ft_getname_without_slash(s);
 	i = 0;
-	while (s1[i])
-		i++;
-	while (s1[i] != '/' && i > 0)
-		i--;
-	if (ft_strcmp("fd", &(s1[i])) == 0)
-		return (1);
+	if (s1)
+	{
+		while (s1[i])
+			i++;
+		while (s1[i] != '/' && i > 0)
+			i--;
+		if (ft_strcmp("fd", &(s1[i])) == 0)
+			return (1);
+	}
 	return (0);
 }

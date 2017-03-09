@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/21 06:13:13 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/07 20:33:02 by syusof           ###   ########.fr       */
+/*   Updated: 2017/03/09 01:41:47 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,17 @@ char		*ft_getname_without_slash(char *s)
 	ft_getname_without_slash_p1(&i, &index, &j, s);
 	if (j > 0)
 	{
-		str = (char*)malloc(sizeof(char) * j);
+		str = (char*)malloc(sizeof(char) * j + 1);
 		i = 0;
-		index++;
+		if (s[index] == '/')
+			index++;
 		while (s[index] && s[index] != '/')
 		{
 			str[i] = s[index];
 			i++;
 			index++;
 		}
+		str[i] = 0;
 	}
 	return (str);
 }
