@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 11:00:42 by syusof            #+#    #+#             */
-/*   Updated: 2017/03/04 12:47:14 by syusof           ###   ########.fr       */
+/*   Updated: 2017/03/14 16:19:06 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,22 +22,26 @@ t_lsto		*ft_getreplist(char *rep)
 
 	lsta = NULL;
 	lstmp = NULL;
-	pdir1 = opendir(rep);
-	while ((pdirent1 = readdir(pdir1)))
+	if ((pdir1 = opendir(rep)))
 	{
-		if (!(e = (t_rep*)malloc(sizeof(t_rep))))
-			return (0);
-		if (pdirent1->d_name[0] != '.')
+		while ((pdirent1 = readdir(pdir1)))
 		{
-			e->name = ft_memmove2(pdirent1->d_name);
-			e->path = ft_memmove2(rep);
-			lstmp = ft_create_lsto2(e);
-			ft_free2(&e);
-			lst_addo(&lsta, &lstmp);
-			ft_freelst2(&lstmp);
+			if (!(e = (t_rep*)malloc(sizeof(t_rep))))
+				return (0);
+			if (pdirent1->d_name[0] != '.')
+			{
+				e->name = ft_memmove2(pdirent1->d_name);
+				e->path = ft_memmove2(rep);
+				lstmp = ft_create_lsto2(e);
+				ft_free2(&e);
+				lst_addo(&lsta, &lstmp);
+				ft_freelst2(&lstmp);
+			}
 		}
+		closedir(pdir1);
 	}
-	closedir(pdir1);
+//	else
+//		ft_p0error_getrep(rep);
 	return (lsta);
 }
 
@@ -53,16 +57,18 @@ t_lsto		*ft_getreplist5(char *rep)
 	if (!(e = (t_rep*)malloc(sizeof(t_rep))))
 		return (0);
 	e->path = ft_cutpath_lcaselink(rep);
-	pdir1 = opendir(e->path);
-	while ((pdirent1 = readdir(pdir1)))
+	if ((pdir1 = opendir(e->path)))
 	{
-		if (ft_strcmp(pdirent1->d_name, ft_cutname_lcaselink(rep)) == 0)
+		while ((pdirent1 = readdir(pdir1)))
 		{
-			if (pdirent1->d_name[0] != '.')
-				ft_getreplist5_p1(rep, e, &getr1);
+			if (ft_strcmp(pdirent1->d_name, ft_cutname_lcaselink(rep)) == 0)
+			{
+				if (pdirent1->d_name[0] != '.')
+					ft_getreplist5_p1(rep, e, &getr1);
+			}
 		}
+		closedir(pdir1);
 	}
-	closedir(pdir1);
 	return (getr1.lsta);
 }
 
@@ -85,17 +91,19 @@ t_lsto		*ft_getreplist4(char *rep)
 
 	lsta = NULL;
 	lstmp = NULL;
-	pdir1 = opendir(rep);
-	while ((pdirent1 = readdir(pdir1)))
+	if ((pdir1 = opendir(rep)))
 	{
-		if (!(e = (t_rep*)malloc(sizeof(t_rep))))
-			return (0);
-		e->name = ft_memmove2(pdirent1->d_name);
-		e->path = ft_memmove2(rep);
-		lstmp = ft_create_lsto2(e);
-		lst_addo(&lsta, &lstmp);
+		while ((pdirent1 = readdir(pdir1)))
+		{
+			if (!(e = (t_rep*)malloc(sizeof(t_rep))))
+				return (0);
+			e->name = ft_memmove2(pdirent1->d_name);
+			e->path = ft_memmove2(rep);
+			lstmp = ft_create_lsto2(e);
+			lst_addo(&lsta, &lstmp);
+		}
+		closedir(pdir1);
 	}
-	closedir(pdir1);
 	return (lsta);
 }
 
