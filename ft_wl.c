@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/25 14:27:40 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/15 20:16:03 by syusof           ###   ########.fr       */
+/*   Updated: 2017/03/14 17:52:20 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@ void	ft_wl(t_lsto *lst1, t_loption loption)
 	time_t			curtime;
 	char			*s;
 
+	struct passwd	*uid;
+	struct group	*gid;
+
+	uid = NULL;
+	gid = NULL;
 	curtime = time(NULL);
 	while (lst1)
 	{
@@ -62,6 +67,13 @@ void	ft_wl_p1(t_loption loption, struct stat sb)
 
 	uid = NULL;
 	gid = NULL;
+	uid = getpwuid(sb.st_uid);
+	gid = getgrgid(sb.st_gid);
+	ft_putwidth3(uid->pw_name, loption.uname);
+	ft_putstr("  ");
+	ft_putwidth3(gid->gr_name, loption.gname);
+	ft_putstr("  ");
+	/*
 	if (sb.st_uid && (uid = getpwuid(sb.st_uid)) != NULL)
 	{
 		ft_putwidth3(uid->pw_name, loption.uname);
@@ -82,6 +94,7 @@ void	ft_wl_p1(t_loption loption, struct stat sb)
 		ft_putwidth3("wheel", loption.gname);
 		ft_putstr("  ");
 	}
+	*/
 }
 
 void	ft_wl_p2(t_loption loption, struct stat sb, time_t curtime)

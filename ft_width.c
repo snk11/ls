@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/25 13:44:58 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/15 20:26:14 by syusof           ###   ########.fr       */
+/*   Updated: 2017/03/14 17:51:19 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,13 @@ void	ft_width_p1(t_loption *loption, struct stat sb)
 
 	uid = NULL;
 	gid = NULL;
+	uid = getpwuid(sb.st_uid);
+		if (ft_strlen(uid->pw_name) > (size_t)loption->uname)
+			loption->uname = ft_strlen(uid->pw_name);
+	gid = getgrgid(sb.st_gid);
+		if (ft_strlen(gid->gr_name) > (size_t)loption->gname)
+			loption->gname = ft_strlen(gid->gr_name);
+		/*
 	if (sb.st_uid && (uid = getpwuid(sb.st_uid)) != NULL)
 	{
 		if (ft_strlen(uid->pw_name) > (size_t)loption->uname)
@@ -67,6 +74,7 @@ void	ft_width_p1(t_loption *loption, struct stat sb)
 		if (ft_strlen("wheel") > (size_t)loption->gname)
 			loption->gname = 5;
 	}
+	*/
 }
 
 void	ft_width_p2(t_loption *loption, struct stat sb, time_t curtime)
