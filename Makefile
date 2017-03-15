@@ -6,7 +6,7 @@
 #    By: syusof <syusof@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/10/15 21:10:44 by syusof            #+#    #+#              #
-#    Updated: 2017/03/14 17:20:20 by syusof           ###   ########.fr        #
+#    Updated: 2017/03/15 13:49:44 by syusof           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ ft_getyear_str.o ft_getday_str.o ft_getlinkpath.o ft_checkdir.o \
 ft_curs.o ft_freelst.o ft_getname_without_slash.o ft_check_slash_end_case.o \
 ft_check_legit_file.o ft_cutname_lcaselink.o ft_cutpath_lcaselink.o \
 ft_printlist8.o ft_wl22.o ft_printl_link.o ft_sort4.o \
-ft_p0error_getrep.o
+ft_p0error_getrep.o ft_printlist9.o
 
 FLAGS = 
 

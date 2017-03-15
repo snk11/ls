@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 12:00:35 by syusof            #+#    #+#             */
-/*   Updated: 2017/03/08 00:07:36 by syusof           ###   ########.fr       */
+/*   Updated: 2017/03/15 13:32:41 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,12 +87,8 @@ int		decreasing_time_char(t_lsto *lsta)
 	char			*s2;
 
 	ft_mem1_char(&s1, &s2, lsta);
-//			printf("name %s\n", s1);
-//			printf("name %s\n", s2);
 	if (lstat(s1, &sa) == 0 && lstat(s2, &sb) == 0)
 	{
-//			printf("%s = %ld\n", s1,sa.st_mtime);
-//			printf("%s = %ld\n", s2,sb.st_mtime);
 		if (sa.st_mtime >= sb.st_mtime)
 		{
 			if (sa.st_mtime > sb.st_mtime)

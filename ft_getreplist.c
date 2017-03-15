@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 11:00:42 by syusof            #+#    #+#             */
-/*   Updated: 2017/03/14 16:19:06 by syusof           ###   ########.fr       */
+/*   Updated: 2017/03/15 13:43:50 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,6 @@ t_lsto		*ft_getreplist(char *rep)
 		}
 		closedir(pdir1);
 	}
-//	else
-//		ft_p0error_getrep(rep);
 	return (lsta);
 }
 

@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/27 17:13:01 by syusof            #+#    #+#             */
-/*   Updated: 2017/03/08 07:08:10 by syusof           ###   ########.fr       */
+/*   Updated: 2017/03/15 13:48:37 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,16 @@ void	ft_ls_run(t_lsto *lst1, t_ind *ind, t_lsto *lstcmd)
 				ft_ls_run_p2(lst1, lstcmd, ind);
 		}
 		else if (ft_isdir((char*)lst1->content))
-		{
+			ft_ls_run_p0(lst1, ind, lstcmd);
+		lst1 = lst1->next;
+	}
+}
+
+void	ft_ls_run_p0(t_lsto *lst1, t_ind *ind, t_lsto *lstcmd)
+{
 			ft_printname((char*)lst1->content, lstcmd, ind);
 			ft_putstr_fd("ls: ", 2);
 			opendir((char*)lst1->content);
 			perror(ft_cutname_lcaselink((char*)lst1->content));
-		}
-		lst1 = lst1->next;
-	}
+
 }

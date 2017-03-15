@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/14 16:01:48 by syusof            #+#    #+#             */
-/*   Updated: 2017/03/14 16:08:55 by syusof           ###   ########.fr       */
+/*   Updated: 2017/03/15 13:41:23 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ void	ft_p0error_getrep(char *s)
 void	ft_p0error_getrep_p1(char *s)
 {
 	struct stat		sb;
-
 
 	if (lstat(s, &sb) == 0 && !((sb.st_mode & S_IRGRP)
 				&& (sb.st_mode & S_IROTH)))
