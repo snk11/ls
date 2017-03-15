@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/15 14:17:59 by syusof            #+#    #+#             */
-/*   Updated: 2017/03/15 14:20:00 by syusof           ###   ########.fr       */
+/*   Updated: 2017/03/15 17:03:41 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ t_lsto		*ft_getreplist4(char *rep)
 	}
 	return (lsta);
 }
-
+/*
 t_lsto		*ft_getreplisto4(t_lsto *lstmp)
 {
 	t_lsto	*lst1;
@@ -96,3 +96,4 @@ t_lsto		*ft_getreplisto4(t_lsto *lstmp)
 	lstbegio = lst2;
 	return (lstbegio);
 }
+*/

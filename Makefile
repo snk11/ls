@@ -6,7 +6,7 @@
 #    By: syusof <syusof@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/10/15 21:10:44 by syusof            #+#    #+#              #
-#    Updated: 2017/03/15 14:19:55 by syusof           ###   ########.fr        #
+#    Updated: 2017/03/15 16:13:49 by syusof           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ ft_check_legit_file.o ft_cutname_lcaselink.o ft_cutpath_lcaselink.o \
 ft_printlist8.o ft_wl22.o ft_printl_link.o ft_sort4.o \
 ft_p0error_getrep.o ft_printlist9.o ft_getreplist2.o
 
-FLAGS = -Wall -Werror -Wextra
+FLAGS = 
 
 MAIN = ft_ls.c
 

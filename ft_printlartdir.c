@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/23 16:25:08 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/13 17:52:07 by syusof           ###   ########.fr       */
+/*   Updated: 2017/03/15 17:09:44 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_printlartdir(char *s, t_lsto *lstcmd, t_ind *ind)
 		lsti = ft_printlist25(lst);
 		lstibegi = lsti;
 		while (lsti)
-			ft_function_rl(&lsti, lst, ft_getreplist, ft_printlist11);
+			ft_function_rl(&lsti, lst, ft_getreplist4, ft_printlist11);
 		lsti = lstibegi;
 		while (lsti)
 			ft_function_r4(&lsti, lst, ft_getreplist4, ft_printlist25);
