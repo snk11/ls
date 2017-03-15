@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2017/03/15 13:59:31 by syusof           ###   ########.fr       */
+/*   Updated: 2017/03/15 14:26:06 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,13 +122,10 @@ typedef struct		s_stat
 
 char				*ft_makepath2(char *str1, char *str2);
 void				ft_ls_p1(char **av, t_lsto *lstcmd, t_ind *ind);
-//void				ft_ls_p1_p1(t_lsto *lstcmd, t_ind *ind);
 void				ft_ls_p1_p2(t_lsto *lst1, t_lsto *lstcmd, t_ind *ind);
 void				ft_ls_p1_p3(t_lsto *lstcmd, t_ind *ind);
 void				ft_ls_p2(char **av, t_lsto **lstcmd);
 void				ft_printlist7_p1(t_lsto *lstmp2);
-//void				ft_printlist_p1(t_lsto *lstmp, t_lsto **lst1,
-//		t_lsto **lst2);
 int					ft_p_illegal(t_ind *ind);
 void				ft_ls_run(t_lsto *lst1, t_ind *ind, t_lsto *lstcmd);
 int					ft_ls_run_p1(t_lsto *lst1, t_lsto *lstcmd, t_ind *ind);
@@ -269,7 +266,6 @@ void				ft_p0regfile_p2(t_lsto *lst1, t_ind *ind, char *s1,
 void				ft_p0error(t_lsto *lst1, t_ind *ind, t_lsto **lsta);
 void				ft_p0error_p1(char *s, t_ind *ind, t_lsto **lsta);
 void				ft_p0error_p1_p1(char *s, t_ind *ind);
-//void				ft_p0error_p1_p2(t_lsto *lst1, t_ind *ind);
 int					ft_getindex(t_lsto *lst1, t_lsto *lstcmd);
 void				ft_printlst(t_lsto *lstmp);
 void				ft_printname(char *s, t_lsto *lstcmd, t_ind *ind);
@@ -375,12 +371,14 @@ int					decreasing_time_p2(struct stat sa, struct stat sb, char *s1,
 		char *s2);
 void				ft_scan_option_p1(char **av, t_ind *ind, int *i, int *k);
 void				ft_printlrdir_p1(char *s, t_lsto *lstcmd, t_ind *ind);
-//void				ft_printlist_p2(t_lsto *lstmp, t_lsto **lst1, t_lsto **lst2);
-void	ft_printlist_p3(t_lsto *lstmp, t_lsto **lst1, t_lsto **lst2, t_lsto **lst3);
-//int		ft_checkdev(char *s);
-void		ft_printlist8_p2(t_lsto *lstmp, t_lsto **lst1, t_lsto **lst2, t_lsto **lst3);
-void	ft_p0error_getrep(char *s);
-void	ft_p0error_getrep_p1(char *s);
-void	ft_ls_run_p0(t_lsto *lst1, t_ind *ind, t_lsto *lstcmd);
+void				ft_printlist_p3(t_lsto *lstmp, t_lsto **lst1, t_lsto **lst2,
+		t_lsto **lst3);
+void				ft_printlist8_p2(t_lsto *lstmp, t_lsto **lst1,
+		t_lsto **lst2, t_lsto **lst3);
+void				ft_p0error_getrep(char *s);
+void				ft_p0error_getrep_p1(char *s);
+void				ft_ls_run_p0(t_lsto *lst1, t_ind *ind, t_lsto *lstcmd);
+void				ft_getreplist_p1(t_lsto **lsta, t_lsto **lstmp);
+void				ft_getreplist_p2(t_rep *e, char *rep, char *s);
 
 #endif
