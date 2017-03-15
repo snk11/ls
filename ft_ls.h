@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2017/03/15 14:26:06 by syusof           ###   ########.fr       */
+/*   Updated: 2017/03/15 17:15:59 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -159,7 +159,6 @@ t_lsto				*ft_getprimelist(char **av, t_ind *ind);
 t_lsto				*ft_getprimelist2(char **av);
 t_lsto				*ft_getreplist(char *rep);
 t_lsto				*ft_getreplist4(char *rep);
-t_lsto				*ft_getreplisto4(t_lsto *lstmp);
 void				ft_printlist(t_lsto *lstmp);
 t_lsto				*ft_printlist2(t_lsto *lstmp);
 t_lsto				*ft_printlist3(t_lsto *lstmp);
