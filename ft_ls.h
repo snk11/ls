@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 00:30:22 by syusof            #+#    #+#             */
-/*   Updated: 2017/03/15 13:48:16 by syusof           ###   ########.fr       */
+/*   Updated: 2017/03/15 13:59:31 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,7 +122,7 @@ typedef struct		s_stat
 
 char				*ft_makepath2(char *str1, char *str2);
 void				ft_ls_p1(char **av, t_lsto *lstcmd, t_ind *ind);
-void				ft_ls_p1_p1(t_lsto *lstcmd, t_ind *ind);
+//void				ft_ls_p1_p1(t_lsto *lstcmd, t_ind *ind);
 void				ft_ls_p1_p2(t_lsto *lst1, t_lsto *lstcmd, t_ind *ind);
 void				ft_ls_p1_p3(t_lsto *lstcmd, t_ind *ind);
 void				ft_ls_p2(char **av, t_lsto **lstcmd);
@@ -268,7 +268,7 @@ void				ft_p0regfile_p2(t_lsto *lst1, t_ind *ind, char *s1,
 		int inderror);
 void				ft_p0error(t_lsto *lst1, t_ind *ind, t_lsto **lsta);
 void				ft_p0error_p1(char *s, t_ind *ind, t_lsto **lsta);
-void				ft_p0error_p1_p1(char *s, t_ind *ind, t_lsto **lsta);
+void				ft_p0error_p1_p1(char *s, t_ind *ind);
 //void				ft_p0error_p1_p2(t_lsto *lst1, t_ind *ind);
 int					ft_getindex(t_lsto *lst1, t_lsto *lstcmd);
 void				ft_printlst(t_lsto *lstmp);

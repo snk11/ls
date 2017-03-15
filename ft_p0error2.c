@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 20:29:22 by syusof            #+#    #+#             */
-/*   Updated: 2017/03/15 13:42:52 by syusof           ###   ########.fr       */
+/*   Updated: 2017/03/15 13:59:13 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_p0error_p1(char *s, t_ind *ind, t_lsto **lsta)
 	}
 	if (inderror == 1 && !ft_isreg(s)
 			&& !ft_islnk(s))
-		ft_p0error_p1_p1(s, ind, lsta);
+		ft_p0error_p1_p1(s, ind);
 	else
 	{
 		lstmp = ft_create_lsto_char2(s);
@@ -33,7 +33,7 @@ void	ft_p0error_p1(char *s, t_ind *ind, t_lsto **lsta)
 	}
 }
 
-void	ft_p0error_p1_p1(char *s, t_ind *ind, t_lsto **lsta)
+void	ft_p0error_p1_p1(char *s, t_ind *ind)
 {
 	struct stat		sb;
 
