@@ -1,6 +1,6 @@
 # INTRODUCTION
 ```
-It's the unix feature ls recoded.
+This is the unix feature ls recoded.
 ```
 
 # MAKEFILE
